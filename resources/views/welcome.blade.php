@@ -81,7 +81,7 @@
         <h5 class="mt-5 mb-4 text-min-white">Open Data Kosovo (ODK) beson se hapja e te dhenave publike eshte shume e rendesishme ne ndertimin e nje qeverisjeje te mire, transparente dhe llogaridhenese.
             <br>Prandaj, te dhenat e zotuara nga institucionet shteterore duhet te jene publike, lehte te qasshme dhe te prezentohen ne formate te hapura.</h5>
 
-        <a class="btn btn-primary" target="_blank" href="main.html">Shiko Aplikacionin</a>
+        <a class="btn btn-primary" target="_blank" href="{{ url('/home') }}">Shiko Aplikacionin</a>
     </div>
 </section>
 
