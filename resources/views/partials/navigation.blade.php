@@ -12,7 +12,7 @@
         <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
             <li class="dropdown nav-item" ><a class=" nav-link" href="{{ url('home') }}" ><i class="ft-home"></i><span>Ballina</span></a>
             </li>
-            <li class="dropdown nav-item" ><a class=" nav-link" href="udherefyesi.html" ><i class="la la-line-chart"></i><span>Udhërrëfyesi i Edukimit</span></a>
+            <li class="dropdown nav-item" ><a class=" nav-link" href="{{ url('roadmap') }}" ><i class="la la-line-chart"></i><span>Udhërrëfyesi i Edukimit</span></a>
             </li>
 
             <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="la la-map"></i><span>Hartat</span></a>
@@ -32,7 +32,7 @@
             </li>
             <li class="dropdown nav-item" ><a class=" nav-link" href="stats.html" ><i class="la la-bar-chart"></i><span>Statistikat</span></a>
             </li>
-            <li class="dropdown nav-item" ><a class=" nav-link" href="blog.html" ><i class="ft-aperture"></i><span>Blogu</span></a>
+            <li class="dropdown nav-item" ><a class=" nav-link" href="{{ url('blog') }}" ><i class="ft-aperture"></i><span>Blogu</span></a>
             </li>
 
         </ul>

@@ -23,4 +23,7 @@ Route::get('inst_map', 'InstMapController@index');
 
 Route::get('business_map', 'BusinessMapController@index');
 
+Route::get('blog', 'BlogController@index');
+
+Route::get('roadmap', 'RoadMapController@index');
 
