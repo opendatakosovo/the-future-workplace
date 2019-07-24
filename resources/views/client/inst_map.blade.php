@@ -109,7 +109,7 @@
                     </div>
                 </ul>
             </li>
-            <li class="dropdown nav-item" ><a class=" nav-link" href="stats.html" ><i class="la la-bar-chart"></i><span>Statistikat</span></a>
+            <li class="dropdown nav-item" ><a class=" nav-link" href="{{ url('stats') }}" ><i class="la la-bar-chart"></i><span>Statistikat</span></a>
             </li>
             <li class="dropdown nav-item" ><a class=" nav-link" href="{{ url('blog') }}" ><i class="ft-aperture"></i><span>Blogu</span></a>
             </li>

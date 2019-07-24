@@ -27,3 +27,5 @@ Route::get('blog', 'BlogController@index');
 
 Route::get('roadmap', 'RoadMapController@index');
 
+Route::get('stats', 'StatsController@index');
+
