@@ -93,10 +93,6 @@
             </section>
         </div>
     </div>
-    <!-- END: Content-->
-
-
-
     <!-- BEGIN: Vendor JS-->
     <script src="app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
     <!-- BEGIN Vendor JS-->
@@ -122,5 +118,4 @@
     <script src="app-assets/js/scripts/charts/chartjs/polar-radar/polar.js" type="text/javascript"></script>
     <script src="app-assets/js/scripts/charts/chartjs/polar-radar/radar.js" type="text/javascript"></script>
     <!-- END: Page JS-->
-
 @endsection

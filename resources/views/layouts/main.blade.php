@@ -18,5 +18,5 @@
     <!-- END: Content-->
 </div>
 @include('partials.footer')
-@include('partials/scripts')
+@include('partials.scripts')
 </body>

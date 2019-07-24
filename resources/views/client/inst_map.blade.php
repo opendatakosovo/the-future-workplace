@@ -251,26 +251,12 @@
             </div>
         </div>
     </div>
-    <!-- BEGIN: Vendor JS-->
-    <script src="app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
-    <!-- BEGIN Vendor JS-->
-
-    <!-- BEGIN: Page Vendor JS-->
-    <script type="text/javascript" src="app-assets/vendors/js/ui/jquery.sticky.js"></script>
-    <script src="app-assets/vendors/js/charts/chartist.min.js" type="text/javascript"></script>
-    <script src="app-assets/vendors/js/charts/chartist-plugin-tooltip.min.js" type="text/javascript"></script>
-    <!-- END: Page Vendor JS-->
-
-    <!-- BEGIN: Theme JS-->
-    <script src="app-assets/js/core/app-menu.js" type="text/javascript"></script>
-    <script src="app-assets/js/core/app.js" type="text/javascript"></script>
-    <!-- END: Theme JS-->
-
-    <!-- BEGIN: Page JS-->
-    <script src="app-assets/js/scripts/charts/chartist/bar/vertical-bar.js" type="text/javascript"></script>
-    <script src="app-assets/js/scripts/charts/chartist/bar/stacked-bar.js" type="text/javascript"></script>
-    <script src="app-assets/js/scripts/charts/chartist/line/area.js" type="text/javascript"></script>
-    <script src="app-assets/js/scripts/charts/chartist/line/line.js" type="text/javascript"></script>
-    <script src="app-assets/js/scripts/charts/chartist/pie/pie.js" type="text/javascript"></script>
-    <script src="app-assets/js/scripts/charts/chartist/pie/donut.js" type="text/javascript"></script>
+            <!-- BEGIN: Page JS-->
+            <script src="{{URL::asset('/app-assets/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
+            <script src="{{URL::asset('/app-assets/js/scripts/charts/chartist/bar/vertical-bar.js')}}" type="text/javascript"></script>
+            <script src="{{URL::asset('/app-assets/js/scripts/charts/chartist/bar/stacked-bar.js')}}" type="text/javascript"></script>
+            <script src="{{URL::asset('/app-assets/js/scripts/charts/chartist/line/area.js')}}" type="text/javascript"></script>
+            <script src="{{URL::asset('/app-assets/js/scripts/charts/chartist/line/line.js')}}" type="text/javascript"></script>
+            <script src="{{URL::asset('/app-assets/js/scripts/charts/chartist/pie/pie.js')}}" type="text/javascript"></script>
+            <script src="{{URL::asset('/app-assets/js/scripts/charts/chartist/pie/donut.js')}}" type="text/javascript"></script>
 @endsection
