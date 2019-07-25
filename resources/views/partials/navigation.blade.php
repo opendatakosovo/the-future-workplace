@@ -18,13 +18,13 @@
             <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="la la-map"></i><span>Hartat</span></a>
                 <ul class="dropdown-menu">
                     <div class="arrow_box">
-                        <li class="" ><a class="dropdown-item " href="{{ url('inst_map') }}" >Harta e Institucioneve Arsimore</a>
+                        <li class="" ><a class="dropdown-item " href="{{ url('inst-map') }}" >Harta e Institucioneve Arsimore</a>
 
                         </li>
-                        <li class="" ><a class="dropdown-item " href="{{ url('work_force_map') }}" >Harta e fuqisë punëtore </a>
+                        <li class="" ><a class="dropdown-item " href="{{ url('work-force-map') }}" >Harta e fuqisë punëtore </a>
 
                         </li>
-                        <li class="" ><a class="dropdown-item " href="{{ url('business_map') }}" >Harta e Bizneseve</a>
+                        <li class="" ><a class="dropdown-item " href="{{ url('business-map') }}" >Harta e Bizneseve</a>
 
                         </li>
                     </div>

@@ -17,11 +17,11 @@ Route::get('/', function () {
 
 Route::get('home', 'HomeController@index');
 
-Route::get('work_force_map', 'WorkForceMapController@index');
+Route::get('work-force-map', 'WorkForceMapController@index');
 
-Route::get('inst_map', 'InstMapController@index');
+Route::get('inst-map', 'InstMapController@index');
 
-Route::get('business_map', 'BusinessMapController@index');
+Route::get('business-map', 'BusinessMapController@index');
 
 Route::get('blog', 'BlogController@index');
 

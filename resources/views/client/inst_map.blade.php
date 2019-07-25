@@ -188,6 +188,7 @@
                                         <li>
                                             <a data-action="collapse">
                                                 <i class="ft-minus"></i>
+                                                <i class="ft-minus"></i>
                                             </a>
                                         </li>
                                         <li>
