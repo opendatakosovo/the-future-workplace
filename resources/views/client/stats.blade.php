@@ -1,5 +1,5 @@
 @extends('layouts/main')
-
+@section('title', 'Statistikat e Pëegjithshme')
 @section('content')
 
     <!-- BEGIN: Content-->

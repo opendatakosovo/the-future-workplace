@@ -1,5 +1,5 @@
 @extends('layouts/main')
-
+@section('title', 'Harta e Fuqise Punetore')
 @section('content')
             <div class="content-header-left col-md-6 col-12 mb-2">
                 <h3 class="content-header-title">Harta e Institucioneve Arsimore</h3>

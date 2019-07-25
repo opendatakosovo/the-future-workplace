@@ -1,5 +1,5 @@
 @extends('layouts/main')
-
+@section('title', 'Udherrefyesi')
 @section('content')
 
     <div class="content-header-left col-md-4 col-12 mb-2">

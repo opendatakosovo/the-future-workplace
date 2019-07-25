@@ -7,7 +7,7 @@
  */
 ?>
 @extends('layouts/main')
-
+@section('title', 'Ballina')
 @section('content')
     <div class="content-header-left col-md-4 col-12 mb-2">
         <h3 class="content-header-title">Ballina</h3>

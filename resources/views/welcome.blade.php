@@ -70,7 +70,7 @@
     </div>
     <!-- Welcome thumb -->
 
-    <a href="main.html" target="_blank">
+    <a href="{{ url('home') }}" target="_blank">
         <div class="welcome-thumb mx-auto wow fadeInDown cover atvImg mx-auto d-block">
             <div class="cover atvImg">
                 <div class="atvImg-layer"  data-img="https://opendatakosovo.github.io/thefutureworkplace/app-assets/landing/img/bg-img/app_img.PNG"></div>
