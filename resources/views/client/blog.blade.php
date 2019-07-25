@@ -44,7 +44,5 @@
     <script src="app-assets/js/core/app.js" type="text/javascript"></script>
     <!-- END: Theme JS-->
 
-    </body>
-    <!-- END: Body-->
 
 @endsection
