@@ -24,7 +24,7 @@
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
-                                <li><button type="button" class="btn btn-glow btn-round btn-bg-gradient-x-red-pink">Më Shumë</button></li>
+                                <li><button type="button" class="btn btn-glow btn-round btn-bg-gradient-x-red-pink" href="{{ url('stats') }}">Më Shumë</button></li>
                             </ul>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
                                         <li>
-                                            <a class="btn btn-sm btn-white danger box-shadow-1 round btn-min-width pull-right" href="stats.html" target="_blank">Më shumë <i class="ft-bar-chart pl-1"></i></a>
+                                            <a class="btn btn-sm btn-white danger box-shadow-1 round btn-min-width pull-right" href="{{ url('stats') }}" target="_blank">Më shumë <i class="ft-bar-chart pl-1"></i></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -94,7 +94,7 @@
             <div class="col-md-12 col-lg-12">
                 <div class="card">
                     <div class="card-header p-1">
-                        <h4 class="card-title float-left">Statistika te pergjithshme - <span class="blue-grey lighten-2 font-small-3 mb-0">2018</span></h4>
+                        <h4 class="card-title float-left" >Statistika te pergjithshme  - <span class="blue-grey lighten-2 font-small-3 mb-0">2018</span></h4>
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-footer text-center p-1">
@@ -118,7 +118,7 @@
 
                             </div>
                             <hr>
-                            <span class="text-muted"><a href="stats.html" class="danger darken-2">Statistika te pergjithshme</a></span>
+                            <span class="text-muted"><a href="{{ url('stats') }}" class="danger darken-2">Statistika te pergjithshme</a></span>
                         </div>
                     </div>
                 </div>
