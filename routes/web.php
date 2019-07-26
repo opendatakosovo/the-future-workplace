@@ -29,3 +29,4 @@ Route::get('roadmap', 'RoadMapController@index');
 
 Route::get('stats', 'StatsController@index');
 
+Route::get('apcu_stats', 'CacheController@index');
