@@ -1,5 +1,13 @@
 @extends('layouts/main')
 @section('title', 'Blog')
+<style>
+    .read-more{
+        padding-top: 100px;
+        align-items: baseline;
+    }
+
+
+</style>
 @section('content')
 
     <div class="content-header-left col-md-4 col-12 mb-2">
@@ -12,14 +20,14 @@
             <div class="card-header">
 
                 <div id="retainable-rss-embed"
-                     data-rss="https://medium.com/feed/@open_data_kosovo"
+                     data-rss="https://medium.com/feed/@opendatakosovo"
                      data-maxcols="3"
                      data-layout="grid"
                      data-poststyle="inline"
                      data-readmore="Read the rest"
-                     data-buttonclass="btn btn-primary"
+                     data-buttonclass="btn btn-outline-success"
                      data-offset="-100"></div>
-                <script src="https://www.retainable.io/assets/retainable/rss-embed/retainable-rss-embed.js"></script>
+                <script src="https://www.retainable.io/assets/retainable/rss-embed/retainable-rss-embed.js" ></script>
             </div>
         </div>
         <!--/ Basic Horizontal Timeline -->
