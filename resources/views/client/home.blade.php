@@ -24,7 +24,8 @@
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
-                                <li><button type="button" class="btn btn-glow btn-round btn-bg-gradient-x-red-pink" href="{{ url('stats') }}">Më Shumë</button></li>
+                                <li>
+                                    <a class="btn btn-glow btn-round btn-bg-gradient-x-red-pink" href="{{ url('stats') }}">Më Shumë</a>
                             </ul>
                         </div>
                     </div>
@@ -66,7 +67,7 @@
                                 <div class="heading-elements">
                                     <ul class="list-inline mb-0">
                                         <li>
-                                            <a class="btn btn-sm btn-white danger box-shadow-1 round btn-min-width pull-right" href="{{ url('stats') }}" target="_blank">Më shumë <i class="ft-bar-chart pl-1"></i></a>
+                                            <a class="btn btn-sm btn-white danger box-shadow-1 round btn-min-width pull-right" href="{{ url('stats') }}">Më shumë <i class="ft-bar-chart pl-1"></i></a>
                                         </li>
                                     </ul>
                                 </div>
