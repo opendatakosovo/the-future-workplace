@@ -32,68 +32,68 @@
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                        <label class="custom-control-label" for="customCheck1">Universiteti Haxhi
+                                        <label class="custom-control-label" for="customCheck2">Universiteti Haxhi
                                             Zeka</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                        <label class="custom-control-label" for="customCheck1">Universiteti i
+                                        <label class="custom-control-label" for="customCheck3">Universiteti i
                                             Pristines</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                        <label class="custom-control-label" for="customCheck1">Universiteti i
+                                        <label class="custom-control-label" for="customCheck4">Universiteti i
                                             Prizrenit</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck5">
-                                        <label class="custom-control-label" for="customCheck1">Universiteti i Shkencave Te
+                                        <label class="custom-control-label" for="customCheck5">Universiteti i Shkencave Te
                                             Aplikuara</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                        <label class="custom-control-label" for="customCheck1">Universiteti "Kadri
+                                        <label class="custom-control-label" for="customCheck6">Universiteti "Kadri
                                             Zeka"</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                        <label class="custom-control-label" for="customCheck1">Universiteti I Prishtines Ne Mitrovice</label>
+                                        <input type="checkbox" class="custom-control-input" id="customCheck7">
+                                        <label class="custom-control-label" for="customCheck7">Universiteti I Prishtines Ne Mitrovice</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                        <label class="custom-control-label" for="customCheck1">Universiteti Europian I Kosoves"</label>
+                                        <input type="checkbox" class="custom-control-input" id="customCheck8">
+                                        <label class="custom-control-label" for="customCheck8">Universiteti Europian I Kosoves"</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                        <label class="custom-control-label" for="customCheck1">IBC-M International Business College </label>
+                                        <input type="checkbox" class="custom-control-input" id="customCheck9">
+                                        <label class="custom-control-label" for="customCheck9">IBC-M International Business College </label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                        <label class="custom-control-label" for="customCheck1">Universiteti Europian I Kosoves
+                                        <input type="checkbox" class="custom-control-input" id="customCheck10">
+                                        <label class="custom-control-label" for="customCheck10">Universiteti Europian I Kosoves
                                         </label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                        <label class="custom-control-label" for="customCheck1">Universiteti Europian I Kosoves
+                                        <label class="custom-control-label" for="customCheck11">Universiteti Europian I Kosoves
                                         </label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                        <label class="custom-control-label" for="customCheck1">Kolegji AAB</label>
+                                        <label class="custom-control-label" for="customCheck12">Kolegji AAB</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                        <label class="custom-control-label" for="customCheck1">American University in Kosovo
+                                        <label class="custom-control-label" for="customCheck13">American University in Kosovo
                                         </label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                        <label class="custom-control-label" for="customCheck1">European Vision University
+                                        <label class="custom-control-label" for="customCheck14">European Vision University
                                         </label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                        <label class="custom-control-label" for="customCheck1">Universiteti Iliria
+                                        <label class="custom-control-label" for="customCheck15">Universiteti Iliria
                                         </label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
