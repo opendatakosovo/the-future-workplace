@@ -30,6 +30,7 @@ Route::get('roadmap', 'RoadMapController@index');
 Route::get('stats', 'StatsController@index');
 
 Route::get('apcu_stats', 'CacheController@index');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -39,6 +40,7 @@ Route::get('/admin', 'AdminController@admin')
     ->middleware('is_admin')
     ->name('admin');
 
+Route::get('/admin/home', 'AdminController@index');
 
 Route::get('logout', 'Auth\LoginController@logout');
 
