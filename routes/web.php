@@ -41,3 +41,7 @@ Route::get('/admin', 'AdminController@admin')
 
 
 Route::get('logout', 'Auth\LoginController@logout');
+
+
+
+
