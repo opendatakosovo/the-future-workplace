@@ -56,15 +56,26 @@
                                 <div class="card-content">
 
                                     <div class="card-body">
-                                        <form  class="form-horizontal" action="{{ route('login') }}" >
+                                        <form  method="POST" action="{{ route('login') }}" >
+                                            @csrf
                                             <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="text" class="form-control round" id="user-name" placeholder="Your Username" required>
+                                                <input type="text" class="form-control round @error('email') is-invalid @enderror" id="user-name"  name="email" value="{{ old('email') }}" placeholder="Your Email" required>
+                                                @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                                 <div class="form-control-position">
                                                     <i class="ft-user"></i>
                                                 </div>
                                             </fieldset>
                                             <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="password" class="form-control round" id="user-password" placeholder="Enter Password" required>
+                                                <input type="password" class="form-control round  @error('password') is-invalid @enderror" id="user-password" placeholder="Enter Password" name="password" required autocomplete="current-password">
+                                                @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
                                                 <div class="form-control-position">
                                                     <i class="ft-lock"></i>
                                                 </div>
