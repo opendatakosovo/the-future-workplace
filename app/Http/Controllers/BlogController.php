@@ -10,4 +10,8 @@ class BlogController extends Controller
     {
         return view('client.blog');
     }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 }
