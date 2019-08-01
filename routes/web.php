@@ -44,6 +44,22 @@ Route::get('/admin/home', 'AdminController@index');
 
 Route::get('logout', 'Auth\LoginController@logout');
 
+Route::get('/admin/inst_map', 'Admin\InstMapController@index');
+
+Route::get('/admin/business_map', 'Admin\BusinessController@index');
+
+Route::get('/admin/work_force_map', 'Admin\WorkForceMapController@index');
+
+Route::get('/admin/stats', 'Admin\StatsController@index');
+
+Route::get('/admin/blog', 'Admin\BlogController@index');
+
+
+
+
+
+
+
 
 
 
