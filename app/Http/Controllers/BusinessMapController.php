@@ -21,10 +21,6 @@ class BusinessMapController extends Controller
         $bussiness_result = businesses_map::all();
         $activities = Business_ActivitiesModel::all();
 
-
-
-//        $column = ['publishing_of_computer_games', 'computer_programming_activities', 'computer_consultancy_activities', 'computer_facilities_management_activities', 'information_technology_and_computer_service', 'wired_telecommunications_activities', 'wireless_telecommunication_activities', 'satellite_telecommunication_activities', 'other_telecommunication_activities', 'other_software_publishing', 'data_processing_hosting_and_related_activities'];
-//
         $cities = [];
         $activities_array = [];
 
@@ -49,7 +45,7 @@ class BusinessMapController extends Controller
 
 
         echo json_encode(array($cities,$data));
-//
+
     }
 
     public function get_col_data($activity,$cities)
@@ -59,34 +55,28 @@ class BusinessMapController extends Controller
         $data_converted = [];
         $final_res = [];
 
+        //Results from the database
         $results = DB::table('businesses_map')
                 ->select( DB::raw('COUNT(municipality) as count') , 'municipality')
                 ->where('activities', 'LIKE', '%' . $activity . '%')
                 ->groupBy('businesses_map.municipality')
                 ->get();
 
-
+            //Cities
             foreach($cities as $city){
                 $cities_converted[$city] = $city;
             }
 
 
-
+          //Results Array Convertion with Municipality Keys
             foreach($results as $result){
                 $data_converted[$result->municipality] = array(
                     'count' => $result->count
                 );
             }
 
-//            foreach($cities_converted as $city){
-//               foreach($results as $result){
-//                   if($result->municipality == $city){
-//                       $res[] = $result->count;
-//                   }else{
-//                       $res[] = $result->count;
-//                   }
-//               }
-//            }
+
+        // This below is For Adding 0-s in Municipalities whitch don't have data results , and Municipality Matching
 
         foreach($cities_converted as $city){
             if(isset($data_converted[$city])){
@@ -96,15 +86,8 @@ class BusinessMapController extends Controller
             }
 
         }
-//                foreach ($results as $result) {
-//                    if(in_array($result->municipality , $cities_converted )){
-//                        $res[] = $result->count;
-//                    }else{
-//                        $res[] = 0;
-//                    }
-//
-//                }
 
+        // Only Counts without municipality names
         foreach($res as $r){
             $final_res[] = $r;
         }
