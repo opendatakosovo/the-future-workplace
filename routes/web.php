@@ -31,6 +31,9 @@ Route::get('stats', 'StatsController@index');
 
 Route::get('apcu_stats', 'CacheController@index');
 
+
+Route::get('get_business_data', 'BusinessMapController@fetch_data');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
