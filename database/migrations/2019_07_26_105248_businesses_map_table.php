@@ -14,22 +14,22 @@ class BusinessesMapTable extends Migration
     public function up()
     {
         Schema::create('businesses_map', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('municipality');
-            $table->integer('publishing_of_computer_games');
-            $table->integer('computer_programming_activities');
-            $table->integer('computer_consultancy_activities');
-            $table->integer('computer_facilities_management_activities');
-            $table->integer('information_technology_and_computer_service');
-            $table->integer('wired_telecommunications_activities');
-            $table->integer('wireless_telecommunication_activities');
-            $table->integer('satellite_telecommunication_activities');
-            $table->integer('other_telecommunication_activities');
-            $table->integer('other_software_publishing');
-            $table->integer('data_processing_hosting_and_related_activities');
-            $table->integer('year');
-            $table->integer('total');
-            $table->timestamps();
+            $table->increments('id');
+            $table->string('name_of_business')->nullable();
+            $table->string('status')->nullable();
+            $table->string('fiscal_number')->nullable();
+            $table->string('business_type')->nullable();
+            $table->string('capital')->nullable();
+            $table->string('number_of_employees')->nullable();
+            $table->string('owners')->nullable();
+            $table->string('owners_gender')->nullable();
+            $table->string('authorized_persons')->nullable();
+            $table->string('date_of_registration')->nullable();
+            $table->string('link_of_arbk')->nullable();
+            $table->string('registration_number')->nullable();
+            $table->string('municipality')->nullable();
+            $table->longText('activities')->nullable();
+//            $table->timestamps();
         });
     }
 
