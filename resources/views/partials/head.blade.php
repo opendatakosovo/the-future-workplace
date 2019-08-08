@@ -14,25 +14,27 @@
     <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/vendors/css/vendors.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/vendors/css/charts/chartist.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/vendors/css/charts/chartist-plugin-tooltip.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/vendors/css/forms/selects/select2.min.css')}}">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/bootstrap.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/bootstrap-extended.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/colors.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/components.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/bootstrap-extended.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/colors.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/components.min.css')}}">
     <!-- END: Theme CSS-->
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/core/menu/menu-types/horizontal-menu.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/core/colors/palette-gradient.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/core/colors/palette-gradient.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/pages/chat-application.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/pages/dashboard-analytics.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/core/menu/menu-types/horizontal-menu.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/core/colors/palette-gradient.min.css')}}">
+    {{--<link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/core/colors/palette-gradient.css')}}">--}}
+    {{--<link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/pages/chat-application.css')}}">--}}
+    {{--<link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/pages/dashboard-analytics.css')}}">--}}
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('/assets/css/style.css')}}">
+    {{--<link rel="stylesheet" type="text/css" href="{{URL::asset('/assets/css/style.css')}}">--}}
     <!-- END: Custom CSS-->
 
 
