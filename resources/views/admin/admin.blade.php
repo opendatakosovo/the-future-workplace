@@ -1,7 +1,7 @@
 @extends('layouts/admin/main')
 @section('content')
-<div class="content-body">
-<!-- BEGIN: Content-->
+        <div class="content-body">
+            <!-- BEGIN: Content-->
             <!-- Chart -->
             <div class="row match-height">
                 <div class="col-12">
@@ -57,7 +57,7 @@
                 </div>
             </div>
             <!--/ eCommerce statistic -->
-                      <div class="row match-height">
+            <div class="row match-height">
                 <div class="col-xl-8 col-lg-12">
                     <h5 class="card-title text-bold-700 my-2">Product Summary</h5>
                     <div class="card">
@@ -82,7 +82,9 @@
                                                 <a href="#">Apple</a>
                                             </td>
                                             <td>
-                                                <button class="btn btn-sm btn-outline-danger round" type="button">Mobile</button>
+                                                <button class="btn btn-sm btn-outline-danger round" type="button">
+                                                    Mobile
+                                                </button>
                                             </td>
                                             <td class="text-truncate">
                                                         <span>
@@ -90,7 +92,9 @@
                                             </td>
                                             <td>
                                                 <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                                                    <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-gradient-x-danger" role="progressbar"
+                                                         style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+                                                         aria-valuemax="100"></div>
                                                 </div>
                                             </td>
                                             <td class="text-truncat mr-1">
@@ -105,7 +109,9 @@
                                                 <a href="#">Nike</a>
                                             </td>
                                             <td>
-                                                <button class="btn btn-sm btn-outline-warning round" type="button">Fashion</button>
+                                                <button class="btn btn-sm btn-outline-warning round" type="button">
+                                                    Fashion
+                                                </button>
                                             </td>
                                             <td class="text-truncate">
                                                         <span>
@@ -113,7 +119,9 @@
                                             </td>
                                             <td>
                                                 <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                                                    <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-gradient-x-success" role="progressbar"
+                                                         style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+                                                         aria-valuemax="100"></div>
                                                 </div>
                                             </td>
                                             <td class="text-truncat mr-1">
@@ -128,7 +136,9 @@
                                                 <a href="#">MI</a>
                                             </td>
                                             <td>
-                                                <button class="btn btn-sm btn-outline-danger round" type="button">Mobile</button>
+                                                <button class="btn btn-sm btn-outline-danger round" type="button">
+                                                    Mobile
+                                                </button>
                                             </td>
                                             <td class="text-truncate">
                                                         <span>
@@ -136,7 +146,9 @@
                                             </td>
                                             <td>
                                                 <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                                                    <div class="progress-bar bg-gradient-x-danger" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-gradient-x-danger" role="progressbar"
+                                                         style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                         aria-valuemax="100"></div>
                                                 </div>
                                             </td>
                                             <td class="text-truncat mr-1">
@@ -151,7 +163,9 @@
                                                 <a href="#">Rolex</a>
                                             </td>
                                             <td>
-                                                <button class="btn btn-sm btn-outline-success round" type="button">Watch</button>
+                                                <button class="btn btn-sm btn-outline-success round" type="button">
+                                                    Watch
+                                                </button>
                                             </td>
                                             <td class="text-truncate">
                                                         <span>
@@ -159,7 +173,9 @@
                                             </td>
                                             <td>
                                                 <div class="progress progress-sm mt-1 mb-0 box-shadow-2">
-                                                    <div class="progress-bar bg-gradient-x-success" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-gradient-x-success" role="progressbar"
+                                                         style="width: 90%" aria-valuenow="90" aria-valuemin="0"
+                                                         aria-valuemax="100"></div>
                                                 </div>
                                             </td>
                                             <td class="text-truncat mr-1">
@@ -251,7 +267,8 @@
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
                                     <li>
-                                        <a class="btn btn-sm btn-danger box-shadow-2 round btn-min-width pull-right" href="#">New Task</a>
+                                        <a class="btn btn-sm btn-danger box-shadow-2 round btn-min-width pull-right"
+                                           href="#">New Task</a>
                                     </li>
                                 </ul>
                             </div>
@@ -273,17 +290,25 @@
                                             </td>
                                             <td class="text-truncate border-0">
                                                 <ul class="list-unstyled users-list m-0 text-right">
-                                                    <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="John Doe" class="avatar avatar-sm pull-up">
-                                                        <img class="media-object rounded-circle" src="/app-assets/images/portrait/small/avatar-s-19.png" alt="Avatar">
+                                                    <li data-toggle="tooltip" data-popup="tooltip-custom"
+                                                        data-original-title="John Doe" class="avatar avatar-sm pull-up">
+                                                        <img class="media-object rounded-circle"
+                                                             src="/app-assets/images/portrait/small/avatar-s-19.png"
+                                                             alt="Avatar">
                                                     </li>
-                                                    <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Katherine Nichols" class="avatar avatar-sm pull-up">
-                                                        <img class="media-object rounded-circle" src="/app-assets/images/portrait/small/avatar-s-18.png" alt="Avatar">
+                                                    <li data-toggle="tooltip" data-popup="tooltip-custom"
+                                                        data-original-title="Katherine Nichols"
+                                                        class="avatar avatar-sm pull-up">
+                                                        <img class="media-object rounded-circle"
+                                                             src="/app-assets/images/portrait/small/avatar-s-18.png"
+                                                             alt="Avatar">
                                                     </li>
                                                 </ul>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="text-truncate border-0"><input type="checkbox" class="chk-task"></td>
+                                            <td class="text-truncate border-0"><input type="checkbox" class="chk-task">
+                                            </td>
                                             <td class="text-truncate border-0 pl-0">
                                                 <span class="list-group-item-heading text-decoration">Proin varius at lacinia.</span>
                                             </td>
@@ -292,17 +317,25 @@
                                             </td>
                                             <td class="text-truncate border-0">
                                                 <ul class="list-unstyled users-list m-0 text-right">
-                                                    <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="John Doe" class="avatar avatar-sm pull-up">
-                                                        <img class="media-object rounded-circle" src="/app-assets/images/portrait/small/avatar-s-15.png" alt="Avatar">
+                                                    <li data-toggle="tooltip" data-popup="tooltip-custom"
+                                                        data-original-title="John Doe" class="avatar avatar-sm pull-up">
+                                                        <img class="media-object rounded-circle"
+                                                             src="/app-assets/images/portrait/small/avatar-s-15.png"
+                                                             alt="Avatar">
                                                     </li>
-                                                    <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Joseph Weaver" class="avatar avatar-sm pull-up">
-                                                        <img class="media-object rounded-circle" src="/app-assets/images/portrait/small/avatar-s-14.png" alt="Avatar">
+                                                    <li data-toggle="tooltip" data-popup="tooltip-custom"
+                                                        data-original-title="Joseph Weaver"
+                                                        class="avatar avatar-sm pull-up">
+                                                        <img class="media-object rounded-circle"
+                                                             src="/app-assets/images/portrait/small/avatar-s-14.png"
+                                                             alt="Avatar">
                                                     </li>
                                                 </ul>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="text-truncate border-0"><input type="checkbox" class="chk-task"></td>
+                                            <td class="text-truncate border-0"><input type="checkbox" class="chk-task">
+                                            </td>
                                             <td class="text-truncate border-0 pl-0">
                                                 <span class="list-group-item-heading">Curabitur tempor, quam vel finibus.</span>
                                             </td>
@@ -311,17 +344,25 @@
                                             </td>
                                             <td class="text-truncate border-0">
                                                 <ul class="list-unstyled users-list m-0 text-right">
-                                                    <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="John Doe" class="avatar avatar-sm pull-up">
-                                                        <img class="media-object rounded-circle" src="/app-assets/images/portrait/small/avatar-s-11.png" alt="Avatar">
+                                                    <li data-toggle="tooltip" data-popup="tooltip-custom"
+                                                        data-original-title="John Doe" class="avatar avatar-sm pull-up">
+                                                        <img class="media-object rounded-circle"
+                                                             src="/app-assets/images/portrait/small/avatar-s-11.png"
+                                                             alt="Avatar">
                                                     </li>
-                                                    <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Katherine Nichols" class="avatar avatar-sm pull-up">
-                                                        <img class="media-object rounded-circle" src="/app-assets/images/portrait/small/avatar-s-12.png" alt="Avatar">
+                                                    <li data-toggle="tooltip" data-popup="tooltip-custom"
+                                                        data-original-title="Katherine Nichols"
+                                                        class="avatar avatar-sm pull-up">
+                                                        <img class="media-object rounded-circle"
+                                                             src="/app-assets/images/portrait/small/avatar-s-12.png"
+                                                             alt="Avatar">
                                                     </li>
                                                 </ul>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="text-truncate border-0"><input type="checkbox" class="chk-task"></td>
+                                            <td class="text-truncate border-0"><input type="checkbox" class="chk-task">
+                                            </td>
                                             <td class="text-truncate border-0 pl-0">
                                                 <span class="list-group-item-heading text-decoration">Donec pulvinar nisi ac convallis porta.</span>
                                             </td>
@@ -330,14 +371,19 @@
                                             </td>
                                             <td class="text-truncate border-0">
                                                 <ul class="list-unstyled users-list m-0 text-right">
-                                                    <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Joseph Weaver" class="avatar avatar-sm pull-up">
-                                                        <img class="media-object rounded-circle" src="/app-assets/images/portrait/small/avatar-s-10.png" alt="Avatar">
+                                                    <li data-toggle="tooltip" data-popup="tooltip-custom"
+                                                        data-original-title="Joseph Weaver"
+                                                        class="avatar avatar-sm pull-up">
+                                                        <img class="media-object rounded-circle"
+                                                             src="/app-assets/images/portrait/small/avatar-s-10.png"
+                                                             alt="Avatar">
                                                     </li>
                                                 </ul>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="text-truncate border-0"><input type="checkbox" class="chk-task"></td>
+                                            <td class="text-truncate border-0"><input type="checkbox" class="chk-task">
+                                            </td>
                                             <td class="text-truncate border-0 pl-0">
                                                 <span class="list-group-item-heading">Aliquam finibus tellus magna.</span>
                                             </td>
@@ -346,11 +392,18 @@
                                             </td>
                                             <td class="text-truncate border-0">
                                                 <ul class="list-unstyled users-list m-0 text-right">
-                                                    <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="John Doe" class="avatar avatar-sm pull-up">
-                                                        <img class="media-object rounded-circle" src="/app-assets/images/portrait/small/avatar-s-12.png" alt="Avatar">
+                                                    <li data-toggle="tooltip" data-popup="tooltip-custom"
+                                                        data-original-title="John Doe" class="avatar avatar-sm pull-up">
+                                                        <img class="media-object rounded-circle"
+                                                             src="/app-assets/images/portrait/small/avatar-s-12.png"
+                                                             alt="Avatar">
                                                     </li>
-                                                    <li data-toggle="tooltip" data-popup="tooltip-custom" data-original-title="Katherine Nichols" class="avatar avatar-sm pull-up">
-                                                        <img class="media-object rounded-circle" src="/app-assets/images/portrait/small/avatar-s-15.png" alt="Avatar">
+                                                    <li data-toggle="tooltip" data-popup="tooltip-custom"
+                                                        data-original-title="Katherine Nichols"
+                                                        class="avatar avatar-sm pull-up">
+                                                        <img class="media-object rounded-circle"
+                                                             src="/app-assets/images/portrait/small/avatar-s-15.png"
+                                                             alt="Avatar">
                                                     </li>
                                                 </ul>
                                             </td>
@@ -389,8 +442,9 @@
             </div>
 
             <!-- Statistics -->
-            </div>
-            <!--/ Statistics -->
-<!-- END: Content-->
-</div>
+        </div>
+        <!--/ Statistics -->
+        <!-- END: Content-->
+    </div>
+
 @endsection

@@ -14,28 +14,30 @@
 <link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/charts/chartist.css">
 <link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/charts/chartist-plugin-tooltip.css">
 <link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/file-uploaders/dropzone.min.css">
-<link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/forms/icheck/icheck.css">
-<link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/forms/icheck/custom.css">
+{{--<link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/forms/icheck/icheck.css">--}}
+{{--<link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/forms/icheck/custom.css">--}}
 <link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/timeline/vertical-timeline.css">
 <!-- END: Vendor CSS-->
 
 <!-- BEGIN: Theme CSS-->
-<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/bootstrap-extended.css">
-<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/colors.css">
-<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/components.css">
+<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/bootstrap-extended.min.css">
+<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/colors.min.css">
+<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/components.min.css">
 <!-- END: Theme CSS-->
 
 <!-- BEGIN: Page CSS-->
-<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/core/menu/menu-types/vertical-menu-modern.css">
-<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/core/colors/palette-gradient.css">
-<link rel="stylesheet" type="text/css" href="/admin/app-assets/fonts/simple-line-icons/style.css">
-<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/core/colors/palette-gradient.css">
-<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/pages/timeline.css">
-<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/plugins/file-uploaders/dropzone.css">
-<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/pages/dashboard-ecommerce.css">
+<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/core/menu/menu-types/vertical-menu-modern.min.css">
+<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/core/colors/palette-gradient.min.css">
+{{--<link rel="stylesheet" type="text/css" href="/admin/app-assets/fonts/simple-line-icons/style.css">--}}
+<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/core/colors/palette-gradient.min.css">
+{{--<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/pages/timeline.css">--}}
+{{--<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/plugins/file-uploaders/dropzone.css">--}}
+<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/pages/dashboard-ecommerce.min.css">
 <!-- END: Page CSS-->
 
+
+<link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/tables/datatable/datatables.min.css">
 <!-- BEGIN: Custom CSS-->
-<link rel="stylesheet" type="text/css" href="/admin/assets/css/style.css">
+{{--<link rel="stylesheet" type="text/css" href="/admin/assets/css/style.css">--}}
 <!-- END: Custom CSS-->

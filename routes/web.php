@@ -44,19 +44,28 @@ Route::get('/admin', 'AdminController@admin')
     ->middleware('is_admin')
     ->name('admin');
 
-Route::get('/admin/home', 'AdminController@index');
 
-Route::get('logout', 'Auth\LoginController@logout');
+Route::group(['middleware' => 'auth'], function(){
 
-Route::get('/admin/inst_map', 'Admin\InstMapController@index');
+    Route::get('/admin/edit-profile', 'AdminController@update_user');
+    Route::get('/admin/home', 'AdminController@index');
 
-Route::get('/admin/business_map', 'Admin\BusinessController@index');
+    Route::get('logout', 'Auth\LoginController@logout');
 
-Route::get('/admin/work_force_map', 'Admin\WorkForceMapController@index');
+    Route::get('/admin/inst_map', 'Admin\InstMapController@index');
 
-Route::get('/admin/stats', 'Admin\StatsController@index');
+    Route::get('/admin/business_map', 'Admin\BusinessController@index');
 
-Route::get('/admin/blog', 'Admin\BlogController@index');
+    Route::get('/admin/work_force_map', 'Admin\WorkForceMapController@index');
+
+    Route::get('/admin/stats', 'Admin\StatsController@index');
+
+    Route::get('/admin/blog', 'Admin\BlogController@index');
+
+    Route::get('/admin/user-management', 'Admin\UsersController@index');
+    Route::get('/admin/navigation', 'Admin\SettingsController@navigation');
+});
+
 
 
 
