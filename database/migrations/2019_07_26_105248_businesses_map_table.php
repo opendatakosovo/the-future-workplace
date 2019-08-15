@@ -17,6 +17,7 @@ class BusinessesMapTable extends Migration
             $table->increments('id');
             $table->string('name_of_business')->nullable();
             $table->string('status')->nullable();
+            $table->string('unique_identity_number')->nullable();
             $table->string('fiscal_number')->nullable();
             $table->string('business_type')->nullable();
             $table->string('capital')->nullable();

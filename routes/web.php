@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('home', 'HomeController@index');
 
-Route::get('work-force-map', 'WorkForceMapController@index');
+Route::get('workforce-map', 'WorkForceMapController@index');
 
 Route::get('inst-map', 'InstMapController@index');
 
@@ -28,6 +28,10 @@ Route::get('blog', 'BlogController@index');
 Route::get('roadmap', 'RoadMapController@index');
 
 Route::get('stats', 'StatsController@index');
+
+Route::get('company-data', 'BusinessMapController@index');
+
+Route::get('employee-data', 'EmployeeDataController@index');
 
 //Route::get('apcu_stats', 'CacheController@index');
 

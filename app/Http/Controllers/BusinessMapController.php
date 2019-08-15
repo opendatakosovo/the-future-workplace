@@ -14,6 +14,7 @@ class BusinessMapController extends Controller
 {
     public function index()
     {
+        $default_cities  = ['Pristina', 'Prizren', 'Peja', 'Gjakova', 'Mitrovica', 'Gjilan'];
 
         $statuses = ['Active','Dissolved'];
         $activities =  Business_ActivitiesModel::select('activity_name')->get();
@@ -27,23 +28,16 @@ class BusinessMapController extends Controller
         $data = array(
             'statuses'=>$statuses,
             'cities' => $cities_result,
-            'activities' => $activities_result
+            'activities' => $activities_result,
+            'def_cities' => $default_cities
         );
 
-        return view('client.business_map')->with('data',$data);
+        return view('client.company_data')->with('data',$data);
     }
 
 
     public function fetch_data()
     {
-        if(Cache::store('apc')->get('_business_result')){
-            $bussiness_result =   Cache::store('apc')->get('_business_result');
-        }else{
-            $bussiness_result = businesses_map::all();
-            Cache::store('apc')->put('_business_result', $bussiness_result, 10000);
-        }
-
-        $activities = Business_ActivitiesModel::all();
 
         $year = $_GET['year'] ?? null;
         $cities = $_GET['cities'] ?? null;
@@ -51,6 +45,30 @@ class BusinessMapController extends Controller
         $activity = $_GET['activity'] ?? null;
 
         $activities_array = [];
+
+        if($cities == null){
+            $default_cities  = ['Pristina', 'Prizren', 'Peja', 'Gjakova', 'Mitrovica', 'Gjilan'];
+
+            $cities_imploded  = implode(',',$default_cities);
+            if(Cache::store('apc')->get('_business_result_'.$cities_imploded)){
+                $bussiness_result =   Cache::store('apc')->get('_business_result_'.$cities_imploded);
+            }else{
+                $bussiness_result = businesses_map::whereIn('municipality',$default_cities)->get();
+                Cache::store('apc')->put('_business_result_'.$cities_imploded, $bussiness_result, 10000);
+            }
+
+        }else{
+            if(Cache::store('apc')->get('_business_result_'.implode(',',$cities))){
+                $bussiness_result =   Cache::store('apc')->get('_business_result_'.implode(',',$cities));
+            }else{
+                $bussiness_result = businesses_map::whereIn('municipality',$cities)->get();
+                Cache::store('apc')->put('_business_result_'.implode(',',$cities), $bussiness_result, 10000);
+            }
+        }
+
+
+        $activities = Business_ActivitiesModel::all();
+
 
 
         if($cities == null){

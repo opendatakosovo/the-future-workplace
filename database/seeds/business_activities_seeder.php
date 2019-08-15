@@ -12,7 +12,8 @@ class business_activities_seeder extends Seeder
     public function run()
     {
         DB::table('business_activities')->insert([
-            'activity_name' => 'Publishing of Computer Games'
+            'activity_name' => 'Publishing of Computer Games',
+
         ]);
 
         DB::table('business_activities')->insert([
