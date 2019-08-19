@@ -14,19 +14,14 @@
             <li class=" nav-item"><a href="{{url('admin/home')}}"><i class="ft-home"></i><span class="menu-title" data-i18n="">Ballina</span></a>
 
             </li>
-            <li class=" nav-item"><a href="#"><i class="ft-layers"></i><span class="menu-title" data-i18n="">Hartat</span></a>
-                <ul class="menu-content">
-                    <li><a class="menu-item" href="{{url('admin/business_map')}}">Harta e Bizneseve</a>
-                    </li>
-                    <li><a class="menu-item" href="{{url('admin/inst_map')}}">Harta e Institucioneve</a>
-                    </li>
-                    <li><a class="menu-item" href="{{url('admin/work_force_map')}}">Harta e Fuqise Punetore</a>
-                    </li>
-                </ul>
+            <li class=" nav-item"><a href="{{ url('admin/business-data') }}"><i class="ft-layers"></i><span class="menu-title" data-i18n="">Business Data</span></a>
 
             </li>
 
-            <li class=" nav-item"><a href="{{url('admin/blog')}}"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Blogu</span></a>
+            <li class=" nav-item"><a href="{{url('admin/workforce-data')}}"><i class="ft-layout"></i><span class="menu-title" data-i18n="">WorkForce Data</span></a>
+
+            <li class=" nav-item"><a href="{{url('admin/skills-mismatch')}}"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Skills Mismatch</span></a>
+
 
             <li class=" nav-item"><a href="#"><i class="ft-settings"></i><span class="menu-title" data-i18n="">Settings</span></a>
                 <ul class="menu-content">
@@ -34,8 +29,6 @@
                     <li><a class="menu-item" href="{{url('admin/statistics')}}">Statistics</a></li>
                     <li><a class="menu-item" href="{{url('admin/navigation')}}">Navigation</a></li>
                 </ul>
-            </li>
-
             </li>
         </ul>
     </div>
