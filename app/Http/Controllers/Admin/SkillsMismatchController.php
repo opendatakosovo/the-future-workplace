@@ -6,10 +6,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 
-class BusinessController extends Controller
+class SkillsMismatchController extends Controller
 {
     public function index(){
 
-        return view('admin.business_map');
+        return view('admin.skills_mismatch');
     }
 }

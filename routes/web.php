@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('home', 'HomeController@index');
 
-Route::get('workforce-map', 'WorkForceMapController@index');
+Route::get('workforce-map', 'WorkForceDataController@index');
 
 Route::get('inst-map', 'InstMapController@index');
 
@@ -27,7 +27,7 @@ Route::get('blog', 'BlogController@index');
 
 Route::get('roadmap', 'RoadMapController@index');
 
-Route::get('stats', 'StatsController@index');
+Route::get('stats', 'SkillsMismatchController@index');
 
 Route::get('company-data', 'BusinessMapController@index');
 
@@ -37,7 +37,7 @@ Route::get('employee-data', 'EmployeeDataController@index');
 
 
 Route::get('get_business_data', 'BusinessMapController@fetch_data');
-Route::get('get_workforce_data', 'WorkForceMapController@fetch_data');
+Route::get('get_workforce_data', 'WorkForceDataController@fetch_data');
 
 Auth::routes();
 
@@ -58,15 +58,16 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/admin/inst_map', 'Admin\InstMapController@index');
 
-    Route::get('/admin/business_map', 'Admin\BusinessController@index');
+    Route::get('/admin/business_data', 'Admin\BusinessDataController@index');
 
-    Route::get('/admin/work_force_map', 'Admin\WorkForceMapController@index');
+    Route::get('/admin/workforce_data', 'Admin\WorkForceDataController@index');
 
-    Route::get('/admin/stats', 'Admin\StatsController@index');
+    Route::get('/admin/skills_mismatch', 'Admin\SkillsMismatchController@index');
 
     Route::get('/admin/blog', 'Admin\BlogController@index');
 
     Route::get('/admin/user-management', 'Admin\UsersController@index');
+
     Route::get('/admin/navigation', 'Admin\SettingsController@navigation');
 });
 
