@@ -77,7 +77,6 @@
                                                             @endforeach
                                                         </optgroup>
                                                     </select>
-
                                                 </div>
                                             </div>
                                         </div>
@@ -88,7 +87,6 @@
                                         <i class="la la-check-square-o"></i> Filtro
                                     </button>
                                 </div>
-
                         </div>
                     </div>
                 </div>
@@ -122,7 +120,6 @@
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
-
                             <div id="chartContainer2" style="width:100%; height:300px;"></div>
                         </div>
                     </div>

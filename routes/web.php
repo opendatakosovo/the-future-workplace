@@ -37,7 +37,7 @@ Route::get('employee-data', 'EmployeeDataController@index');
 
 
 Route::get('get_business_data', 'BusinessMapController@fetch_data');
-
+Route::get('get_workforce_data', 'WorkForceMapController@fetch_data');
 
 Auth::routes();
 

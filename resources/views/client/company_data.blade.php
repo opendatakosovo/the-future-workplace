@@ -519,10 +519,6 @@
             });
         }
 
-        $(document).ready(function () {
-            get_filtered();
-            get_filtered2();
-        });
 
 
 
@@ -640,6 +636,14 @@
             });
 
         }
+
+
+
+        $(document).ready(function () {
+            get_filtered();
+            get_filtered2();
+        });
+
 
         function reload_data() {
             // Reload Card
