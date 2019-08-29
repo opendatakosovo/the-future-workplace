@@ -54,41 +54,52 @@
 
                                             </div>
                                         </div>
-
                                         <div class="col-md-3">
-                                            <div class="form-group ">
-                                                <label class="col-md-12 label-control"
-                                                       for="userinput2">University</label>
-                                                <select class="select2 form-control" id="activity">
-                                                    <optgroup label="Choose University">
-                                                        <option name='activity' selected value="all">Të gjitha</option>
-                                                        @foreach($data['degrees'] as $degree)
-                                                            <option name="activity"
-                                                                    value="{{$degree}}">{{$degree}}</option>
+                                            <div class="form-group">
+                                                <label class="col-md-12 label-control" for="userinput2">Degree</label>
+                                                <select class="select2 form-control" id="degree">
+                                                    <optgroup label="Choose Degree">
+                                                       @foreach($data['degrees'] as $degree)
+                                                            <option name='degree' value="{{$degree['degree_id']}}">{{ $degree['degree_name'] }}</option>
                                                         @endforeach
                                                     </optgroup>
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <div class="form-group ">
                                                 <label class="col-md-12 label-control"
-                                                       for="userinput2">Gender</label>
-                                                <select class="select2 form-control" name="gender"
-                                                        id="gender">
-                                                    <optgroup label="Choose Gender">
-                                                        <option  value="all" disabled>Të
-                                                            gjitha
-                                                        </option>
-                                                        <option value="male" disabled>Male
-                                                        </option>
-                                                        <option  value="all" disabled>Female
-                                                        </option>
+                                                       for="userinput2">University</label>
+                                                <select class="select2 form-control" id="university">
+                                                    <optgroup label="Choose University">
+                                                        <option name='university' selected value="all">Të gjitha</option>
+                                                        @foreach($data['universities'] as $university)
+                                                            <option name="university"
+                                                                    value="{{$university['uni_id']}}">{{$university['uni_name']}}</option>
+                                                        @endforeach
                                                     </optgroup>
                                                 </select>
-
                                             </div>
                                         </div>
+                                        {{--<div class="col-md-4">--}}
+                                            {{--<div class="form-group ">--}}
+                                                {{--<label class="col-md-12 label-control"--}}
+                                                       {{--for="userinput2">Gender</label>--}}
+                                                {{--<select class="select2 form-control" name="gender"--}}
+                                                        {{--id="gender">--}}
+                                                    {{--<optgroup label="Choose Gender">--}}
+                                                        {{--<option  value="all" disabled>Të--}}
+                                                            {{--gjitha--}}
+                                                        {{--</option>--}}
+                                                        {{--<option value="male" disabled>Male--}}
+                                                        {{--</option>--}}
+                                                        {{--<option  value="all" disabled>Female--}}
+                                                        {{--</option>--}}
+                                                    {{--</optgroup>--}}
+                                                {{--</select>--}}
+
+                                            {{--</div>--}}
+                                        {{--</div>--}}
                                         <div class="col-md-2" style="padding: 5px">
                                             <label class="col-md-12 label-control" for="userinput2"></label>
                                             <button type="button" onclick="get_filtered('clicked')"
@@ -168,9 +179,8 @@
                                             <label class="col-md-12 label-control" for="userinput2">Year</label>
                                             <select class="select2 form-control" id="year">
                                                 <optgroup label="Zgjedh Vitin">
-                                                    <option name='year' selected value="all">Të gjitha</option>
-                                                    @for ($i = 2008; $i < 2019; $i++)
-                                                        <option name='year' value="{{$i}}">{{ $i }}</option>
+                                                    @for ($i = 2008; $i <= 2019; $i++)
+                                                        <option name='year' @if($i == 2019) selected @endif value="{{$i}}">{{ $i }}</option>
                                                     @endfor
                                                 </optgroup>
                                             </select>
@@ -188,8 +198,8 @@
                                                     <option name='city' value="all" disabled>Të
                                                         gjitha
                                                     </option>
-                                                    @foreach($data['cities'] as $city)
-                                                        <option value="{{$city}}">{{$city}}</option>
+                                                    @foreach($data['skills'] as $skill)
+                                                        <option value="{{$skill['skill_id']}}">{{$skill['skill_name']}}</option>
                                                     @endforeach
                                                 </optgroup>
                                             </select>
@@ -270,8 +280,8 @@
                                                         <option name='city' value="all" disabled>Të
                                                             gjitha
                                                         </option>
-                                                        @foreach($data['cities'] as $city)
-                                                            <option value="{{$city}}">{{$city}}</option>
+                                                        @foreach($data['skills'] as $skill)
+                                                            <option value="{{$skill['skill_id']}}">{{$skill['skill_name']}}</option>
                                                         @endforeach
                                                     </optgroup>
                                                 </select>
@@ -338,7 +348,7 @@
                                                         <option  value="female">Female</option>
                                                         @foreach($data['degrees'] as $degree)
                                                             <option name="activity"
-                                                                    value="{{$degree}}">{{$degree}}</option>
+                                                                    value="{{$degree['degree_id']}}">{{$degree['degree_name']}}</option>
                                                         @endforeach
                                                     </optgroup>
                                                 </select>
@@ -354,8 +364,8 @@
                                                         <option name='city' value="all" disabled>Të
                                                             gjitha
                                                         </option>
-                                                        @foreach($data['cities'] as $city)
-                                                            <option value="{{$city}}">{{$city}}</option>
+                                                        @foreach($data['skills'] as $skill)
+                                                            <option value="{{$skill['skill_id']}}">{{$skill['skill_name']}}</option>
                                                         @endforeach
                                                     </optgroup>
                                                 </select>
@@ -387,7 +397,6 @@
     <script src="{{URL::asset('/app-assets/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
 
     <script src="app-assets/vendors/js/forms/select/select2.full.min.js" type="text/javascript"></script>
-
     <script src="app-assets/js/scripts/forms/select/form-select2.js" type="text/javascript"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.8.3/apexcharts.js" type="text/javascript"></script>
@@ -398,89 +407,63 @@
 
         function get_filtered(clicked = null) {
 
-            var year = $('#year').find(":selected").text();
-            var cities = $('#cities').val();
-            var degree = $('#degree').find(":selected").text();
+            var year = $('#year').find(":selected").val();
+            var degree =$('#degree').find(":selected").val();
+            var university = $('#university').find(":selected").val();
 
             $.ajax({
                 type: "GET",
-                url: "get_business_data",
-                data: {"year": year,"degree": degree, "cities": cities},
+                url: "graduating_per_ict_dep_each_university",
+                data: {"year": year,"university": university, "degree": degree},
                 beforeSend: function() {
                     reload_data();
                 },
                 success: function (result) {
-                    var municipalities = [];
+                    var universities = [];
                     var data_sets = [];
                     data = JSON.parse(result);
 
                     $.each(data[0], function (key, value) {
-                        municipalities.push(value);
+                        universities.push(value);
                     });
 
                     $.each(data[1], function (key, value) {
                         data_sets.push(value);
                     });
-                    console.log(data_sets);
+                    console.log(universities);
 
                     var options1 = {
                         chart: {
-                            height: 700,
+                            height: 430,
                             type: 'bar',
                         },
                         plotOptions: {
                             bar: {
-                                horizontal: false,
+                                horizontal: true,
                                 dataLabels: {
                                     position: 'top',
                                 },
                             }
                         },
                         dataLabels: {
-                            enabled: false,
-                            offsetX: 10,
+                            enabled: true,
+                            offsetX: -6,
                             style: {
                                 fontSize: '12px',
-
+                                colors: ['#fff']
                             }
                         },
                         stroke: {
                             show: true,
-                            width: 0.01,
-                            colors: ['#fff'],
+                            width: 1,
+                            colors: ['#fff']
                         },
                         series: data_sets,
-
                         xaxis: {
-                            categories: municipalities,
+                            categories: universities,
                         },
-                        yaxis: {
-                            offsetY: 200,
-                        },
-                        legend: {
-                            position: 'top',
-                            horizontalAlign: 'left',
-                            offsetX: 40
-                        },
-                        breakpoint: 1000,
-                        responsive: [{
-                            breakpoint: 1000,
-                            options: {
-                                chart: {
-                                    height: 900,
-                                },
-                                plotOptions: {
-                                    bar: {
-                                        horizontal: true,
-                                    },
-
-                                }
-                            },
-                        }]
 
                     }
-
-
 
 
                     var chart3 = new ApexCharts(
@@ -501,9 +484,6 @@
                         })
 
                     }
-
-
-
                 }
             });
         }
@@ -515,7 +495,7 @@
 
             $.ajax({
                 type: "GET",
-                url: "get_business_data",
+                url: "grad_students_per_skill_area",
                 data: {"year": year2,"degree": degree2, "cities": cities2},
                 beforeSend: function() {
                     reload_data();
@@ -536,60 +516,63 @@
 
                     var options2 = {
                         chart: {
-                            height: 700,
+                            height: 350,
                             type: 'bar',
+                            stacked: true,
                         },
                         plotOptions: {
                             bar: {
                                 horizontal: false,
-                                dataLabels: {
-                                    position: 'top',
-                                },
-                            }
-                        },
-                        dataLabels: {
-                            enabled: false,
-                            offsetX: 10,
-                            style: {
-                                fontSize: '12px',
+                            },
 
-                            }
                         },
                         stroke: {
-                            show: true,
-                            width: 0.01,
-                            colors: ['#fff'],
+                            width: 1,
+                            colors: ['#fff']
                         },
-                        series: data_sets2,
-
+                        series: [{
+                            name: 'Male',
+                            data: [44, 55, 41, 37]
+                        },{
+                            name: 'Female',
+                            data: [53, 32, 33, 52]
+                        }],
+                        title: {
+                            text: 'Year ' + 2019
+                        },
                         xaxis: {
-                            categories: municipalities2,
+                            categories: ['Skill 1', 'Skill 2', 'Skill 3', 'Skill 4'],
+                            labels: {
+                                formatter: function(val) {
+                                    return val
+                                }
+                            }
                         },
                         yaxis: {
-                            offsetY: 200,
+                            title: {
+                                text: undefined
+                            },
+
                         },
+                        tooltip: {
+                            y: {
+                                formatter: function(val) {
+                                    return val
+                                }
+                            }
+                        },
+                        fill: {
+                            opacity: 1
+
+                        },
+
                         legend: {
                             position: 'top',
                             horizontalAlign: 'left',
                             offsetX: 40
-                        },
-                        breakpoint: 1000,
-                        responsive: [{
-                            breakpoint: 1000,
-                            options: {
-                                chart: {
-                                    height: 900,
-                                },
-                                plotOptions: {
-                                    bar: {
-                                        horizontal: true,
-                                    },
-
-                                }
-                            },
-                        }]
-
+                        }
                     }
+
 
 
 

@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('home', 'HomeController@index');
 
-Route::get('workforce-map', 'WorkForceDataController@index');
+Route::get('workforce-map', 'WorkForceMapController@index');
 
 Route::get('inst-map', 'InstMapController@index');
 
@@ -38,6 +38,10 @@ Route::get('employee-data', 'EmployeeDataController@index');
 
 Route::get('get_business_data', 'BusinessMapController@fetch_data');
 Route::get('get_workforce_data', 'WorkForceDataController@fetch_data');
+
+Route::get('graduating_per_ict_dep_each_university','WorkForceMapController@grad_per_ict_dep_each_university');
+
+Route::get('grad_students_per_skill_area','WorkForceMapController@grad_students_per_skill_area');
 
 Auth::routes();
 
@@ -69,6 +73,31 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/admin/user-management', 'Admin\UsersController@index');
 
     Route::get('/admin/navigation', 'Admin\SettingsController@navigation');
+    Route::get('/admin/uni-settings', 'Admin\UniSettingsController@index');
+
+    Route::post('/admin/uni-settings/store_university', 'Admin\UniSettingsController@store_university');
+    Route::post('/admin/uni-settings/destroy_university', 'Admin\UniSettingsController@destroy_university');
+    Route::post('/admin/uni-settings/edit_university', 'Admin\UniSettingsController@edit_university');
+
+    Route::post('/admin/uni-settings/store_skill', 'Admin\UniSettingsController@store_skill');
+    Route::post('/admin/uni-settings/destroy_skill', 'Admin\UniSettingsController@destroy_skill');
+    Route::post('/admin/uni-settings/edit_skill', 'Admin\UniSettingsController@edit_skill');
+
+    Route::post('/admin/uni-settings/store_degree', 'Admin\UniSettingsController@store_degree');
+    Route::post('/admin/uni-settings/destroy_degree', 'Admin\UniSettingsController@destroy_degree');
+    Route::post('/admin/uni-settings/edit_degree', 'Admin\UniSettingsController@edit_degree');
+
+
+    Route::post('/admin/uni-settings/import-graduates', 'Admin\UniSettingsController@import_graduates');
+
+    Route::post('/admin/uni-settings/fetch_graduates', 'Admin\UniSettingsController@fetch_graduates');
+
+
+
+    Route::post('/admin/uni-settings/store_graduate', 'Admin\UniSettingsController@store_graduate');
+    Route::post('/admin/uni-settings/edit_graduate', 'Admin\UniSettingsController@edit_graduate');
+    Route::post('/admin/uni-settings/destroy_graduate', 'Admin\UniSettingsController@destroy_graduate');
+
 });
 
 

@@ -15,8 +15,9 @@ class CreateGraduatesTable extends Migration
     {
         Schema::create('graduates', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('uni_id');
+            $table->integer('uni_name');
             $table->integer('degree_id');
+            $table->string('instit_type');
             $table->string('number_of_graduates');
             $table->string('number_of_males');
             $table->string('number_of_females');

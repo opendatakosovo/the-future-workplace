@@ -30,8 +30,4 @@
     </div>
 
 
-    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/file-uploaders/dropzone.min.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/file-uploaders/dropzone.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/js/scripts/extensions/dropzone.js">
-
 @endsection

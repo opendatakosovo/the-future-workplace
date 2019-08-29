@@ -4,6 +4,7 @@
 <meta name="description" content="Chameleon Admin is a modern Bootstrap 4 webapp &amp; admin dashboard html template with a large number of components, elegant design, clean and organized code.">
 <meta name="keywords" content="admin template, Chameleon admin template, dashboard template, gradient admin template, responsive admin template, webapp, eCommerce dashboard, analytic dashboard">
 <meta name="author" content="ThemeSelect">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <title>Dashboard eCommerce - Chameleon Admin - Modern Bootstrap 4 WebApp & Dashboard HTML Template + UI Kit</title>
 <link rel="apple-touch-icon" href="/admin/app-assets/images/ico/apple-icon-120.png">
 <link rel="shortcut icon" type="image/x-icon" href="/app-assets/images/ico/favicon.ico">
@@ -17,6 +18,8 @@
 {{--<link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/forms/icheck/icheck.css">--}}
 {{--<link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/forms/icheck/custom.css">--}}
 <link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/timeline/vertical-timeline.css">
+
+<link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/forms/selects/select2.min.css">
 <!-- END: Vendor CSS-->
 
 <!-- BEGIN: Theme CSS-->
@@ -38,6 +41,12 @@
 
 
 <link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/tables/datatable/datatables.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+
+
+<link rel="stylesheet" type="text/css" href="app-assets/vendors/css/file-uploaders/dropzone.min.css">
+<link rel="stylesheet" type="text/css" href="app-assets/css/plugins/file-uploaders/dropzone.css">
+
 <!-- BEGIN: Custom CSS-->
 {{--<link rel="stylesheet" type="text/css" href="/admin/assets/css/style.css">--}}
 <!-- END: Custom CSS-->

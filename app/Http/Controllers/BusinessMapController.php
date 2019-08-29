@@ -48,8 +48,8 @@ class BusinessMapController extends Controller
 
         if($cities == null){
             $default_cities  = ['Pristina', 'Prizren', 'Peja', 'Gjakova', 'Mitrovica', 'Gjilan'];
-
             $cities_imploded  = implode(',',$default_cities);
+
             if(Cache::store('apc')->get('_business_result_'.$cities_imploded)){
                 $bussiness_result =   Cache::store('apc')->get('_business_result_'.$cities_imploded);
             }else{
@@ -84,8 +84,6 @@ class BusinessMapController extends Controller
                 Cache::store('apc')->put('_cities', $cities, 10000);
             }
         }
-
-
 
 
         if($activity == null  || $activity == 'Të gjitha'){
@@ -154,7 +152,7 @@ class BusinessMapController extends Controller
             }
 
 
-        // This below is For Adding 0-s in Municipalities whitch don't have data results , and Municipality Matching
+        // This below is For Adding 0-s in Municipalities which don't have data results , and Municipality Matching
 
         foreach($cities as $city){
             $cities_converted[$city] = $city;
@@ -166,7 +164,6 @@ class BusinessMapController extends Controller
             }else{
                 $res[$city]  = 0;
             }
-
         }
 
         // Only Counts without municipality names

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUniversitiesDegreesTable extends Migration
+class CreateUniversitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateUniversitiesDegreesTable extends Migration
      */
     public function up()
     {
-        Schema::create('universities_degrees', function (Blueprint $table) {
+        Schema::create('universities', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('uni_id');
-            $table->integer('degree_id');
-//            $table->timestamps();
+            $table->string('uni_name');
+            $table->string('uni_type');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ class CreateUniversitiesDegreesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('universities_degrees');
+        Schema::dropIfExists('universities');
     }
 }
