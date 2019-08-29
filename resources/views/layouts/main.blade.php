@@ -3,7 +3,7 @@
 <head>
 @include('partials.head')
 </head>
-<body class="horizontal-layout horizontal-menu 2-columns  " data-open="hover" data-menu="horizontal-menu" data-color="bg-gradient-x-blue-green" data-col="2-columns">
+<body class="horizontal-layout horizontal-menu 2-columns  " data-open="hover" data-menu="horizontal-menu" data-color="bg-gradient-x-orca" data-col="2-columns">
 @include('partials/top')
 @include('partials.header')
 @include('partials.navigation')

@@ -444,6 +444,7 @@
                                 horizontal: false,
                                 dataLabels: {
                                     position: 'top',
+
                                 },
                             }
                         },
@@ -467,6 +468,16 @@
                         },
                         yaxis: {
                             offsetY: 200,
+                        },
+                        fill: {
+                            type: 'gradient',
+                            gradient: {
+                                shadeIntensity: 1,
+                                gradientToColors: ['#237A57', '#093028', '#093028'],
+                                opacityFrom: 0.7,
+                                opacityTo: 0.9,
+                                stops: [0, 500, 1500]
+                            }
                         },
                         legend: {
                             position: 'top',
@@ -588,7 +599,14 @@
                             }
                         },
                         fill: {
-                            opacity: 1
+                            type: 'gradient',
+                            gradient: {
+                                shadeIntensity: 1,
+                                gradientToColors: ['#237A57', '#093028', '#093028'],
+                                opacityFrom: 0.7,
+                                opacityTo: 0.9,
+                                stops: [0, 90, 100]
+                            }
 
                         },
 
