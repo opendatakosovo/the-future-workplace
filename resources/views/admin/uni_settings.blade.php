@@ -31,7 +31,8 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                {{ Form::open(array('url' => 'admin/uni-settings/destroy_skill')) }}
+                <form action="/admin/uni-settings/destroy_university" method="post" id="delete_form">
+                    @CSRF
                 <div class="modal-body">
                     Are you sure you want to delete the item , it cannot be reverted!
                 </div>
@@ -40,7 +41,7 @@
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </div>
-                {{ Form::close() }}
+                </form>
             </div>
         </div>
     </div>
@@ -325,6 +326,8 @@
         }
 
         function deleteDegree(id) {
+            var url = '/admin/uni-settings/destroy_degree';
+            $('#delete_form').attr('action', url);
             $('#del_hidden_id').val(id);
         }
 

@@ -11,23 +11,22 @@
     <div class="navigation-background"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class=" nav-item"><a href="{{url('admin/home')}}"><i class="ft-home"></i><span class="menu-title" data-i18n="">Ballina</span></a>
-
-            </li>
+            <li class=" nav-item"><a href="{{url('admin/home')}}"><i class="ft-home"></i><span class="menu-title" data-i18n="">Ballina</span></a></li>
+            <li class=" nav-item"><a href="{{url('admin/uni-settings')}}"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Universities</span></a></li>
             <li class=" nav-item"><a href="{{ url('admin/business_data') }}"><i class="ft-layers"></i><span class="menu-title" data-i18n="">Business Data</span></a>
 
             </li>
 
-            <li class=" nav-item"><a href="{{url('admin/workforce_data')}}"><i class="ft-layout"></i><span class="menu-title" data-i18n="">WorkForce Data</span></a>
+            {{--<li class=" nav-item"><a href="{{url('admin/workforce_data')}}"><i class="ft-layout"></i><span class="menu-title" data-i18n="">WorkForce Data</span></a>--}}
 
-            <li class=" nav-item"><a href="{{url('admin/skills_mismatch')}}"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Skills Mismatch</span></a>
+            {{--<li class=" nav-item"><a href="{{url('admin/skills_mismatch')}}"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Skills Mismatch</span></a>--}}
 
 
             <li class=" nav-item"><a href="#"><i class="ft-settings"></i><span class="menu-title" data-i18n="">Settings</span></a>
                 <ul class="menu-content">
                     <li><a class="menu-item" href="{{url('admin/user-management')}}">User Management</a></li>
-                    <li><a class="menu-item" href="{{url('admin/statistics')}}">Statistics</a></li>
-                    <li><a class="menu-item" href="{{url('admin/navigation')}}">Navigation</a></li>
+                    {{--<li><a class="menu-item" href="{{url('admin/statistics')}}">Statistics</a></li>--}}
+                    {{--<li><a class="menu-item" href="{{url('admin/navigation')}}">Navigation</a></li>--}}
                 </ul>
             </li>
         </ul>

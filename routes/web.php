@@ -36,12 +36,17 @@ Route::get('employee-data', 'EmployeeDataController@index');
 //Route::get('apcu_stats', 'CacheController@index');
 
 
+Route::get('grads_ict', 'HomeController@grads_ict');
+Route::get('number_businnesses', 'HomeController@number_businnesses');
+
 Route::get('get_business_data', 'BusinessMapController@fetch_data');
 Route::get('get_workforce_data', 'WorkForceDataController@fetch_data');
 
 Route::get('graduating_per_ict_dep_each_university','WorkForceMapController@grad_per_ict_dep_each_university');
 
 Route::get('grad_students_per_skill_area','WorkForceMapController@grad_students_per_skill_area');
+Route::get('get_ict_per_year','WorkForceMapController@get_ict_per_year');
+Route::get('get_aggregate_supply','WorkForceMapController@get_aggregate_supply');
 
 Auth::routes();
 

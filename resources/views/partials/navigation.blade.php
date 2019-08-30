@@ -23,6 +23,7 @@
                     </div>
                 </ul>
             </li>
+
             <li class="dropdown nav-item" ><a class=" nav-link" href="{{ url('workforce-map') }}" ><i class="ft-aperture"></i><span>Workforce Data</span></a>
             </li>
             <li class="dropdown nav-item" ><a class=" nav-link" href="{{ url('skills-mismatch') }}" ><i class="ft-aperture"></i><span>Skills Mismatch</span></a>

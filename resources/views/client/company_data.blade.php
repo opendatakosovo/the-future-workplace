@@ -10,15 +10,16 @@
 @extends('layouts/main')
 
 @section('content')
+
     <style>
         .select2-container--classic .select2-selection--multiple .select2-selection__choice, .select2-container--default .select2-selection--multiple .select2-selection__choice {
 
-            border-color: #00dbcf!important;
-            background-color: #00e3ba!important;
+            border-color: #256960 !important;
+            background-color: #256960 !important;
         }
         .btn-primary {
             border-color: #00e4b5;
-            background-color: #00deac;
+            background-color:  #256960 !important;
         }
         .btn-primary:hover {
             border-color: #00e6b0;
@@ -461,6 +462,9 @@
                             width: 0.01,
                             colors: ['#fff'],
                         },
+                        fill: {
+                            colors: [ '#266961','#093637','#449f8c','#358577']
+                        },
                         series: data_sets,
 
                         xaxis: {
@@ -468,16 +472,6 @@
                         },
                         yaxis: {
                             offsetY: 200,
-                        },
-                        fill: {
-                            type: 'gradient',
-                            gradient: {
-                                shadeIntensity: 1,
-                                gradientToColors: ['#237A57', '#093028', '#093028'],
-                                opacityFrom: 0.7,
-                                opacityTo: 0.9,
-                                stops: [0, 500, 1500]
-                            }
                         },
                         legend: {
                             position: 'top',
@@ -581,6 +575,9 @@
                             width: 1,
                             colors: ['#fff']
                         },
+                        fill: {
+                            colors: [ '#266961','#093637','#449f8c','#358577']
+                        },
                         series:
                         data_sets2
                         , title: {
@@ -597,17 +594,6 @@
                                     return val
                                 }
                             }
-                        },
-                        fill: {
-                            type: 'gradient',
-                            gradient: {
-                                shadeIntensity: 1,
-                                gradientToColors: ['#237A57', '#093028', '#093028'],
-                                opacityFrom: 0.7,
-                                opacityTo: 0.9,
-                                stops: [0, 90, 100]
-                            }
-
                         },
 
                         legend: {

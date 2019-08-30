@@ -1,6 +1,11 @@
 @extends('layouts/main')
 @section('title', 'Harta e Fuqise Punetore')
 @section('content')
+    <style>
+        .btn-primary{
+            background-color: #256960 !important;
+        }
+    </style>
     <div class="content-header-left col-md-6 col-12 mb-2">
         <h3 class="content-header-title">Harta e Institucioneve Arsimore</h3>
     </div>
@@ -256,13 +261,12 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="col-md-12 label-control" for="userinput2">Year</label>
-                                                <select class="select2 form-control" id="year3">
+                                                <label class="col-md-12 label-control" for="userinput2">Gender</label>
+                                                <select class="select2 form-control" id="gender3" name="gender3">
                                                     <optgroup label="Zgjedh Vitin">
-                                                        <option name='year' selected value="all">Të gjitha</option>
-                                                        @for ($i = 2008; $i < 2019; $i++)
-                                                            <option name='year' value="{{$i}}">{{ $i }}</option>
-                                                        @endfor
+                                                        <option selected value="all">Të gjitha</option>
+                                                        <option   value="Male">Male</option>
+                                                        <option   value="Female">Female</option>
                                                     </optgroup>
                                                 </select>
 
@@ -346,32 +350,28 @@
                                                         <option  selected value="all">Të gjitha</option>
                                                         <option  value="male">Male</option>
                                                         <option  value="female">Female</option>
-                                                        @foreach($data['degrees'] as $degree)
-                                                            <option name="activity"
-                                                                    value="{{$degree['degree_id']}}">{{$degree['degree_name']}}</option>
-                                                        @endforeach
                                                     </optgroup>
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group ">
-                                                <label class="col-md-12 label-control"
-                                                       for="userinput2">Skills</label>
-                                                <select class="select2 form-control" name="skills4" multiple="multiple"
-                                                        id="skills4">
-                                                    <optgroup label="Choose Skills">
-                                                        <option name='city' value="all" disabled>Të
-                                                            gjitha
-                                                        </option>
-                                                        @foreach($data['skills'] as $skill)
-                                                            <option value="{{$skill['skill_id']}}">{{$skill['skill_name']}}</option>
-                                                        @endforeach
-                                                    </optgroup>
-                                                </select>
+                                        {{--<div class="col-md-4">--}}
+                                            {{--<div class="form-group ">--}}
+                                                {{--<label class="col-md-12 label-control"--}}
+                                                       {{--for="userinput2">Skills</label>--}}
+                                                {{--<select class="select2 form-control" name="skills4" multiple="multiple"--}}
+                                                        {{--id="skills4">--}}
+                                                    {{--<optgroup label="Choose Skills">--}}
+                                                        {{--<option name='city' value="all" disabled>Të--}}
+                                                            {{--gjitha--}}
+                                                        {{--</option>--}}
+                                                        {{--@foreach($data['skills'] as $skill)--}}
+                                                            {{--<option value="{{$skill['skill_id']}}">{{$skill['skill_name']}}</option>--}}
+                                                        {{--@endforeach--}}
+                                                    {{--</optgroup>--}}
+                                                {{--</select>--}}
 
-                                            </div>
-                                        </div>
+                                            {{--</div>--}}
+                                        {{--</div>--}}
                                         <div class="col-md-2" style="padding: 5px">
                                             <label class="col-md-12 label-control" for="userinput2"></label>
                                             <button type="button" onclick="get_filtered('clicked')"
@@ -453,10 +453,8 @@
                                 colors: ['#fff']
                             }
                         },
-                        stroke: {
-                            show: true,
-                            width: 1,
-                            colors: ['#fff']
+                        fill: {
+                            colors: [ '#266961','#093637']
                         },
                         series: data_sets,
                         xaxis: {
@@ -501,12 +499,12 @@
                     reload_data();
                 },
                 success: function (result) {
-                    var municipalities2 = [];
+                    var skills2 = [];
                     var data_sets2 = [];
                     data = JSON.parse(result);
 
                     $.each(data[0], function (key, value) {
-                        municipalities2.push(value);
+                        skills2.push(value);
                     });
 
                     $.each(data[1], function (key, value) {
@@ -526,22 +524,16 @@
                             },
 
                         },
-                        stroke: {
-                            width: 1,
-                            colors: ['#fff']
+
+                        fill: {
+                            colors: [ '#266961','#358577']
                         },
-                        series: [{
-                            name: 'Male',
-                            data: [44, 55, 41, 37]
-                        },{
-                            name: 'Female',
-                            data: [53, 32, 33, 52]
-                        }],
+                        series: data_sets2,
                         title: {
                             text: 'Year ' + 2019
                         },
                         xaxis: {
-                            categories: ['Skill 1', 'Skill 2', 'Skill 3', 'Skill 4'],
+                            categories: skills2,
                             labels: {
                                 formatter: function(val) {
                                     return val
@@ -561,10 +553,7 @@
                                 }
                             }
                         },
-                        fill: {
-                            opacity: 1
 
-                        },
 
                         legend: {
                             position: 'top',
@@ -603,37 +592,35 @@
         }
         function get_filtered3(clicked = null) {
 
-            var year3 = $('#year3').find(":selected").text();
-            var cities3 = $('#cities3').val();
-            var degree3 = $('#degree3').find(":selected").text();
+            var year3 = $('#gender3').find(":selected").text();
+            var skills3 = $('#skills3').val();
 
             $.ajax({
                 type: "GET",
-                url: "get_business_data",
-                data: {"year": year3,"degree": degree3, "cities": cities3},
+                url: "get_ict_per_year",
+                data: {"year": year3, "skills": skills3},
                 beforeSend: function() {
                     reload_data();
                 },
                 success: function (result) {
-                    var municipalities3 = [];
+                    var years_set = [];
                     var data_sets3 = [];
                     data = JSON.parse(result);
 
                     $.each(data[0], function (key, value) {
-                        municipalities3.push(value);
+                        years_set.push(value);
                     });
 
                     $.each(data[1], function (key, value) {
                         data_sets3.push(value);
                     });
-                    console.log(data_sets3);
+                    console.log(years_set);
 
                     var options3 = {
                         chart: {
                             height: 750,
                             type: 'bar',
                             stacked: true,
-                            stackType: '100%',
                             width: '100%'
                         },
                         plotOptions: {
@@ -655,12 +642,14 @@
                         stroke: {
                             show: true,
                             width: 0.01,
-                            colors: ['#fff'],
+                        },
+                        fill: {
+                            colors: [ '#266961','#093637','#449f8c','#358577']
                         },
                         series: data_sets3,
 
                         xaxis: {
-                            categories: municipalities3,
+                            categories: years_set,
                         },
                         yaxis: {
                             offsetY: 200,
@@ -717,24 +706,24 @@
         }
         function get_filtered4(clicked = null) {
 
-            var year4 = $('#year4').find(":selected").text();
+            var gender4 = $('#gender4').find(":selected").text();
             var cities4 = $('#cities4').val();
             var degree4 = $('#degree4').find(":selected").text();
 
             $.ajax({
                 type: "GET",
-                url: "get_business_data",
-                data: {"year": year4,"degree": degree4, "cities": cities4},
+                url: "get_aggregate_supply",
+                data: {"gender": gender4},
                 beforeSend: function() {
                     reload_data();
                 },
                 success: function (result) {
-                    var municipalities4 = [];
+                    var years4 = [];
                     var data_sets4 = [];
                     data = JSON.parse(result);
 
                     $.each(data[0], function (key, value) {
-                        municipalities4.push(value);
+                        years4.push(value);
                     });
 
                     $.each(data[1], function (key, value) {
@@ -746,6 +735,10 @@
                         chart: {
                             height: 700,
                             type: 'bar',
+                            stacked: true,
+                            stackType: '100%',
+                            width: '100%'
+
                         },
                         plotOptions: {
                             bar: {
@@ -766,12 +759,14 @@
                         stroke: {
                             show: true,
                             width: 0.01,
-                            colors: ['#fff'],
+                        },
+                        fill: {
+                            colors: ['#093637', '#266961','#358577','#449f8c']
                         },
                         series: data_sets4,
 
                         xaxis: {
-                            categories: municipalities4,
+                            categories: years4,
                         },
                         yaxis: {
                             offsetY: 200,

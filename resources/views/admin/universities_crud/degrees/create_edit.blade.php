@@ -25,7 +25,6 @@
                         <label for="recipient-name" class="col-form-label">Degree Name:</label>
                         <input type="text" class="form-control" id="degree_name" name="degree_name">
                     </div>
-                    <input type="hidden" name="id" id="hidden_id">
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Select University:</label>
                         <select class="select2 form-control" id="uni_id" name="uni_id">
