@@ -13,8 +13,6 @@
         <h3 class="content-header-title">Ballina</h3>
     </div>
     <div class="content-body">
-
-
         <!-- Revenue, Hit Rate & Deals -->
         <div class="row">
             <div class="col-lg-8 col-md-12">
@@ -25,15 +23,13 @@
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
                                 <li>
-                                    <a class="btn btn-glow btn-round btn-bg-gradient-x-red-pink" href="{{ url('stats') }}">Më Shumë</a>
+                                    <a class="btn btn-glow btn-round btn-bg-gradient-x-green-pink" href="{{ url('workforce-map') }}">Më Shumë</a>
                             </ul>
                         </div>
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body p-0 pb-0">
-                            <div class="chartist">
-                                <div id="project-stats" class="height-350 areaGradientShadow1"></div>
-                            </div>
+                            <div id="chartContainer3" style="width:100%; height:300px;"></div>
                         </div>
                     </div>
                 </div>
@@ -45,52 +41,37 @@
                     <div class="col-12">
                         <div class="card pull-up border-top-info border-top-3 rounded-0">
                             <div class="card-header">
-                                <h4 class="card-title">Numri i te regjistruarve ne Shkenca Kompjuterike </h4>
+                                <h4 class="card-title">Numri Total i te diplomuarve ne Shkenca Kompjuterike </h4>
                             </div>
                             <div class="card-content collapse show">
                                 <div class="card-body p-1">
-                                    <h4 class="font-large-1 text-bold-400">3990 <i class="ft-users float-right"></i></h4>
+                                    <h4 class="font-large-1 text-bold-400">{{$data['total_graduated']}} <i class="ft-users float-right"></i></h4>
                                 </div>
                                 <div class="card-footer p-1">
-                                    <span class="text-muted"><i class="la la-arrow-circle-o-up info"></i> 42% Rritje mrenda 8 viteve</span>
+                                    <span class="text-muted"><i class="la @if($data['growth'] < 0 )la-arrow-circle-o-down @else la-arrow-circle-o-up @endif  info"></i> {{$data['growth']}}% @if($data['growth'] < 0 )Ulje @else Rritje @endif mrenda 10 viteve</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="card pull-up border-top-info border-top-3 rounded-0">
+                            <div class="card-header">
+                                <h4 class="card-title">Numri Total i Bizneseve ne sektorin TIK </h4>
+                            </div>
+                            <div class="card-content collapse show">
+                                <div class="card-body p-1">
+                                    <h4 class="font-large-1 text-bold-400">{{$data['total_biz']}} <i class="ft-users float-right"></i></h4>
+                                </div>
+                                <div class="card-footer p-1">
+                                    <span class="text-muted"><i class="la @if($data['growth_biz'] < 0 )la-arrow-circle-o-down @else la-arrow-circle-o-up @endif  info"></i> {{$data['growth_biz']}}% @if($data['growth_biz'] < 0 )Ulje @else Rritje @endif mrenda 10 viteve</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card pull-up bg-gradient-directional-danger">
-                            <div class="card-header bg-hexagons-danger">
-                                <h4 class="card-title white">Statistikat</h4>
-                                <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                                <div class="heading-elements">
-                                    <ul class="list-inline mb-0">
-                                        <li>
-                                            <a class="btn btn-sm btn-white danger box-shadow-1 round btn-min-width pull-right" href="{{ url('stats') }}">Më shumë <i class="ft-bar-chart pl-1"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-content collapse show bg-hexagons-danger">
-                                <div class="card-body">
-                                    <div class="media d-flex inc-graph">
-                                        <div class="align-self-center width-100">
-                                            <div id="Analytics-donut-chart" class="height-100 donutShadow"></div>
-                                        </div>
-                                        <div class="media-body text-right mt-1">
-                                            <h3 class="font-large-2 white">70%</h3>
-                                            <h6 class="mt-1"><span class="text-muted white">Numri i te punesuareve<a href="#" class="darken-2 white"> 2015-2018</a></span></h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
-            </div>
-        </div>
+             </div>
         <div class="row">
             <div class="col-md-12 col-lg-12">
                 <div class="card">
@@ -100,26 +81,22 @@
                     <div class="card-content collapse show">
                         <div class="card-footer text-center p-1">
                             <div class="row">
-                                <div class="col-md-3 col-12 border-right-blue-grey border-right-lighten-5 text-center">
-                                    <p class="blue-grey lighten-2 mb-0">Paga Mesatare Meshkuj</p>
-                                    <p class="font-medium-5 text-bold-400">450 euro</p>
+                                <div class="col-md-4 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                                    <p class="blue-grey lighten-2 mb-0">Numri i Bizneseve</p>
+                                    <p class="font-medium-5 text-bold-400">{{$data['number_of_bussinesses']}}</p>
                                 </div>
-                                <div class="col-md-3 col-12 border-right-blue-grey border-right-lighten-5 text-center">
-                                    <p class="blue-grey lighten-2 mb-0">Paga Mesatare Femra</p>
-                                    <p class="font-medium-5 text-bold-400">470 euro</p>
+                                <div class="col-md-4 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                                    <p class="blue-grey lighten-2 mb-0">Numri i Bizneseve Aktive</p>
+                                    <p class="font-medium-5 text-bold-400">{{$data['number_of_active']}}</p>
                                 </div>
-                                <div class="col-md-3 col-12 border-right-blue-grey border-right-lighten-5 text-center">
-                                    <p class="blue-grey lighten-2 mb-0">Numri i punesuarve</p>
-                                    <p class="font-medium-5 text-bold-400">58%</p>
-                                </div>
-                                <div class="col-md-3 col-12 border-right-blue-grey border-right-lighten-5 text-center">
-                                    <p class="blue-grey lighten-2 mb-0">Numri i te diplomuarve</p>
-                                    <p class="font-medium-5 text-bold-400">42%</p>
+                                <div class="col-md-4 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                                    <p class="blue-grey lighten-2 mb-0">Numri i Bizneseve te shuara</p>
+                                    <p class="font-medium-5 text-bold-400">{{$data['number_of_dissolved']}}</p>
                                 </div>
 
                             </div>
                             <hr>
-                            <span class="text-muted"><a href="{{ url('stats') }}" class="danger darken-2">Statistika te pergjithshme</a></span>
+                            <span class="text-muted"><a href="http://biznesetehapura.com/en" class="danger darken-2">Statistika te pergjithshme</a></span>
                         </div>
                     </div>
                 </div>
@@ -128,14 +105,15 @@
 
         </div>
         <div class="row">
-            <div class="col-lg-8 col-md-8">
+
+            <div class="col-lg-12 col-md-12">
                 <div class="card" style="height: 100%">
                     <div class="card-header">
                         <h4 class="card-title">Pershkrimi Dhe Qellimi</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     </div>
 
-                    <div class="col-xl-8 col-lg-8">
+                    <div class="col-xl-12 col-lg-12">
                         <div class="card" >
 
                             <div class="card-content">
@@ -170,15 +148,13 @@
 
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-4">
+            <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="card card-transparent">
                     <div class="card-header bg-transparent pl-0">
-                        <h5 class="card-title text-bold-700">Graph 1</h5>
+                        <h5 class="card-title text-bold-700">Krahasimi i komunave sipas aktiviteteve</h5>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     </div>
-                    <div class="card-content">
-                        <div id="project-income-chart" class="height-450 BarChartShadow"></div>
-                    </div>
+                    <div id="chartContainer2" style="width:100%; height:300px;"></div>
                 </div>
             </div>
         </div>
@@ -187,7 +163,7 @@
             <div class="col-md-12 col-lg-12 col-xl-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Numri i te diplomuarve ne Universitetet e TIK</h4>
+                        <h4 class="card-title">Numri i Bisneseve te regjistruar ne fushen TIK mrenda 10 viteve</h4>
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>
@@ -202,7 +178,7 @@
                         </div>
                     </div>
                     <div class="card-content mt-1">
-                        <div id="new-projects" class="height-400 GradientlineShadow"></div>
+                        <div id="chartContainer4" style="width:100%; height:300px;"></div>
                     </div>
                 </div>
             </div>
@@ -217,4 +193,303 @@
         <!-- Total earning & Recent Sales  -->
         <!--/ Total earning & Recent Sales  -->
     </div>
+    <!-- BEGIN: Page JS-->
+    <script src="{{URL::asset('/app-assets/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
+
+    <script src="app-assets/vendors/js/forms/select/select2.full.min.js" type="text/javascript"></script>
+    <script src="app-assets/js/scripts/forms/select/form-select2.js" type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.8.3/apexcharts.js" type="text/javascript"></script>
+
+
+    <script>
+        function number_of_ict_grads(clicked = null) {
+
+            var year = $('#year').find(":selected").val();
+            var degree =$('#degree').find(":selected").val();
+            var university = $('#university').find(":selected").val();
+
+            $.ajax({
+                type: "GET",
+                url: "grads_ict",
+                data: {"year": year,"university": university, "degree": degree},
+                success: function (result) {
+                    var years = [];
+                    var data_sets = [];
+                    data = JSON.parse(result);
+
+                    $.each(data[0], function (key, value) {
+                        years.push(value);
+                    });
+
+                    $.each(data[1], function (key, value) {
+                        data_sets.push(value);
+                    });
+                    console.log(data_sets);
+
+                    var options1 = {
+                        chart: {
+                            height: 350,
+                            type: 'area',
+                        },
+                        dataLabels: {
+                            enabled: false
+                        },
+                        stroke: {
+                            curve: 'smooth'
+                        },
+                        fill: {
+                            colors: ['#093637', '#266961','#358577','#449f8c']
+                        },
+                        series: data_sets,
+
+                        xaxis: {
+                            categories: years,
+                        },
+                        tooltip: {
+                            x: {
+                                format: 'yy'
+                            },
+                        }
+                    }
+
+
+                    var chart3 = new ApexCharts(
+                        document.querySelector("#chartContainer3"),
+                        options1
+                    );
+
+                    chart3.render();
+
+
+                    if (clicked != null) {
+                        update();
+                    }
+
+                    function update() {
+                        chart3.updateOptions({
+                            series: data_sets,
+                        })
+
+                    }
+                }
+            });
+        }
+
+        function get_filtered2(clicked = null) {
+            var year2 = $('#year2').find(":selected").text();
+            var status2 = $('#status2').find(":selected").text();
+            var cities2 = $('#cities2').val();
+            var activity2 = $('#activity2').find(":selected").text();
+
+
+
+            $.ajax({
+                type: "GET",
+                url: "get_business_data",
+                data: {"year": year2, "status": status2, "activity": activity2, "cities": cities2},
+                success: function (result) {
+                    var municipalities2 = [];
+                    var data_sets2 = [];
+                    data = JSON.parse(result);
+
+                    $.each(data[0], function (key, value) {
+                        municipalities2.push(value);
+                    });
+
+                    $.each(data[1], function (key, value) {
+                        data_sets2.push(value);
+                    });
+                    console.log(data_sets2);
+
+
+                    var options1 = {
+                        chart: {
+                            height: 750,
+                            type: 'bar',
+                            stacked: true,
+                            stackType: '100%',
+                            width: '100%'
+                        },
+                        plotOptions: {
+                            bar: {
+                                horizontal: false,
+                            },
+
+                        },
+                        stroke: {
+                            width: 1,
+                            colors: ['#fff']
+                        },
+                        fill: {
+                            colors: [ '#266961','#093637','#449f8c','#358577']
+                        },
+                        series:
+                        data_sets2
+                        ,
+
+                        xaxis: {
+                            categories: municipalities2,
+                        },
+
+                        tooltip: {
+                            y: {
+                                formatter: function (val) {
+                                    return val
+                                }
+                            }
+                        },
+
+                        legend: {
+                            position: 'top',
+                            horizontalAlign: 'left',
+                            offsetX: 40
+                        },
+
+                        responsive: [{
+                            breakpoint: 2000,
+                            options: {
+                                chart: {
+                                    height: 900,
+                                },
+                                plotOptions: {
+                                    bar: {
+                                        horizontal: true,
+                                    },
+
+                                }
+                            },
+                        }]
+                    }
+                    var chart2 = new ApexCharts(
+                        document.querySelector("#chartContainer2"),
+                        options1
+                    );
+
+
+                    chart2.render();
+
+
+
+                    if (clicked != null) {
+                        update2();
+                    }
+
+                    function update2() {
+                        chart2.updateOptions({
+                            series: data_sets2,
+                        })
+                    }
+                }
+            });
+
+        }
+
+        function number_of_bussiness_years(clicked = null) {
+
+
+            $.ajax({
+                type: "GET",
+                url: "number_businnesses",
+                success: function (result) {
+                    var years4 = [];
+                    var data_sets4 = [];
+                    data = JSON.parse(result);
+
+                    $.each(data[0], function (key, value) {
+                        years4.push(value);
+                    });
+
+                    $.each(data[1], function (key, value) {
+                        data_sets4.push(value);
+                    });
+                    console.log(data_sets4);
+
+                    var options3 = {
+                        chart: {
+                            height: 350,
+                            type: 'line',
+                            shadow: {
+                                enabled: true,
+                                color: '#000',
+                                top: 18,
+                                left: 7,
+                                blur: 10,
+                                opacity: 1
+                            },
+                            toolbar: {
+                                show: false
+                            }
+                        },
+
+                        colors: ['#093637', '#358577'],
+                        dataLabels: {
+                            enabled: true,
+                        },
+                        stroke: {
+                            curve: 'smooth'
+                        },
+                        series: data_sets4,
+                        grid: {
+                            borderColor: '#e7e7e7',
+                            row: {
+                                colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
+                                opacity: 0.5
+                            },
+                        },
+                        markers: {
+
+                            size: 6
+                        },
+                        xaxis: {
+                            categories: years4,
+                            title: {
+                                text: 'Years'
+                            }
+                        },
+                        yaxis: {
+                            title: {
+                                text: 'Number of Businesses'
+                            }
+
+                        },
+                        legend: {
+                            position: 'top',
+                            horizontalAlign: 'right',
+                            floating: true,
+                            offsetY: -25,
+                            offsetX: -5
+                        }
+                    }
+
+
+                    var chart3 = new ApexCharts(
+                        document.querySelector("#chartContainer4"),
+                        options3
+                    );
+
+                    chart3.render();
+
+
+                    if (clicked != null) {
+                        update();
+                    }
+
+                    function update() {
+                        chart3.updateOptions({
+                            series: data_sets,
+                        })
+
+                    }
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            number_of_ict_grads();
+            get_filtered2();
+            number_of_bussiness_years();
+        });
+
+    </script>
 @endsection
