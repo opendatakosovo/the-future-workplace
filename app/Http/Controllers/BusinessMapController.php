@@ -50,20 +50,23 @@ class BusinessMapController extends Controller
             $default_cities  = ['Pristina', 'Prizren', 'Peja', 'Gjakova', 'Mitrovica', 'Gjilan'];
             $cities_imploded  = implode(',',$default_cities);
 
-            if(Cache::store('apc')->get('_business_result_'.$cities_imploded)){
-                $bussiness_result =   Cache::store('apc')->get('_business_result_'.$cities_imploded);
-            }else{
-                $bussiness_result = businesses_map::whereIn('municipality',$default_cities)->get();
-                Cache::store('apc')->put('_business_result_'.$cities_imploded, $bussiness_result, 10000);
-            }
+            $bussiness_result = businesses_map::whereIn('municipality',$default_cities)->get();
+//
+//            if(Cache::store('apc')->get('_business_result_'.$cities_imploded)){
+//                $bussiness_result =   Cache::store('apc')->get('_business_result_'.$cities_imploded);
+//            }else{
+//                $bussiness_result = businesses_map::whereIn('municipality',$default_cities)->get();
+//                Cache::store('apc')->put('_business_result_'.$cities_imploded, $bussiness_result, 10000);
+//            }
 
         }else{
-            if(Cache::store('apc')->get('_business_result_'.implode(',',$cities))){
-                $bussiness_result =   Cache::store('apc')->get('_business_result_'.implode(',',$cities));
-            }else{
-                $bussiness_result = businesses_map::whereIn('municipality',$cities)->get();
-                Cache::store('apc')->put('_business_result_'.implode(',',$cities), $bussiness_result, 10000);
-            }
+            $bussiness_result = businesses_map::whereIn('municipality',$cities)->get();
+//            if(Cache::store('apc')->get('_business_result_'.implode(',',$cities))){
+//                $bussiness_result =   Cache::store('apc')->get('_business_result_'.implode(',',$cities));
+//            }else{
+//                $bussiness_result = businesses_map::whereIn('municipality',$cities)->get();
+//                Cache::store('apc')->put('_business_result_'.implode(',',$cities), $bussiness_result, 10000);
+//            }
         }
 
 
@@ -73,16 +76,21 @@ class BusinessMapController extends Controller
 
         if($cities == null){
             $cities = [];
-            if(Cache::store('apc')->get('_cities')){
-                $cities =   Cache::store('apc')->get('_cities');
-            }else{
-                foreach ($bussiness_result as $business) {
-                    if(!in_array($business->municipality,$cities)){
-                        $cities[] = $business->municipality;
-                    }
+            foreach ($bussiness_result as $business) {
+                if(!in_array($business->municipality,$cities)){
+                    $cities[] = $business->municipality;
                 }
-                Cache::store('apc')->put('_cities', $cities, 10000);
             }
+//            if(Cache::store('apc')->get('_cities')){
+//                $cities =   Cache::store('apc')->get('_cities');
+//            }else{
+//                foreach ($bussiness_result as $business) {
+//                    if(!in_array($business->municipality,$cities)){
+//                        $cities[] = $business->municipality;
+//                    }
+//                }
+//                Cache::store('apc')->put('_cities', $cities, 10000);
+//            }
         }
 
 
