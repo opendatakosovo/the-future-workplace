@@ -1,5 +1,8 @@
+<?php
+?>
+@section('title', 'About')
 @extends('layouts/main')
-@section('title', 'Udherrefyesi')
+
 @section('content')
 
 @endsection

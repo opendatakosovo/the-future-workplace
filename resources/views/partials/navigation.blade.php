@@ -12,24 +12,21 @@
         <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
             <li class="dropdown nav-item" ><a class=" nav-link" href="{{ url('home') }}" ><i class="ft-home"></i><span>Home</span></a>
             </li>
-            <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="la la-map"></i><span>Business Data</span></a>
-                <ul class="dropdown-menu">
-                    <div class="arrow_box">
-                        <li class="" ><a class="dropdown-item " href="{{ url('company-data') }}" >Company Data</a>
-
-                        </li>
-                        <li class="" ><a class="dropdown-item " href="{{ url('employee-data') }}" >Employee Data </a>
-                        </li>
-                    </div>
-                </ul>
+            <li class="dropdown nav-item" ><a class=" nav-link" href="{{ url('stats') }}" ><i class="ft-bar-chart-2"></i><span>Statistikat</span></a>
             </li>
 
-            <li class="dropdown nav-item" ><a class=" nav-link" href="{{ url('workforce-map') }}" ><i class="ft-aperture"></i><span>Workforce Data</span></a>
+            <li class="dropdown nav-item"><a class="nav-link" href="{{ url('company-data') }}"><i class="ft-activity"></i><span>Company Data</span></a>
             </li>
-            <li class="dropdown nav-item" ><a class=" nav-link" href="{{ url('skills-mismatch') }}" ><i class="ft-aperture"></i><span>Skills Mismatch</span></a>
+
+            <li class="dropdown nav-item" ><a class=" nav-link" href="{{ url('workforce-map') }}" ><i class="ft-trending-up"></i><span>Workforce Data</span></a>
+            </li>
+            <li class="dropdown nav-item" ><a class=" nav-link" href="{{ url('skills-mismatch') }}" ><i class="ft-grid"></i><span>Skills Mismatch</span></a>
             </li>
             <li class="dropdown nav-item" ><a class=" nav-link" href="{{ url('blog') }}" ><i class="ft-aperture"></i><span>Blog</span></a>
             </li>
+            <li class="dropdown nav-item" ><a class=" nav-link" href="{{ url('about') }}" ><i class="ft-info"></i><span>About</span></a>
+            </li>
+
 
         </ul>
     </div>
