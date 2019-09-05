@@ -10,7 +10,7 @@
 @section('title', 'Statistikat')
 @section('content')
     <div class="content-header-left col-md-4 col-12 mb-2">
-        <h3 class="content-header-title">Statistikat</h3>
+        <h3 class="content-header-title">{{Lang::get('translation.statistics')}}</h3>
     </div>
     <div class="content-body">
         <!-- Revenue, Hit Rate & Deals -->
@@ -18,7 +18,7 @@
             <div class="col-lg-8 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Numri i te Diplomuarve ne TIK</h4>
+                        <h4 class="card-title">{{Lang::get('translation.num_grads_ict')}}</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
