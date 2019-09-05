@@ -18,12 +18,12 @@
             <div class="col-lg-8 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">{{Lang::get('translation.num_grads_ict')}}</h4>
+                        <h4 class="card-title">{{Lang::get('translation.num_ict_grads')}}</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
                                 <li>
-                                    <a class="btn btn-glow btn-round btn-bg-gradient-x-green-pink" href="{{ url('workforce-map') }}">Më Shumë</a>
+                                    <a class="btn btn-glow btn-round btn-bg-gradient-x-green-pink" href="{{ url('workforce-map') }}">{{Lang::get('translation.more')}}</a>
                             </ul>
                         </div>
                     </div>
@@ -41,14 +41,14 @@
                     <div class="col-12">
                         <div class="card pull-up border-top-info border-top-3 rounded-0">
                             <div class="card-header">
-                                <h4 class="card-title">Numri Total i te diplomuarve ne Shkenca Kompjuterike </h4>
+                                <h4 class="card-title">{{Lang::get('translation.total_num_ict_grads')}}</h4>
                             </div>
                             <div class="card-content collapse show">
                                 <div class="card-body p-1">
                                     <h4 class="font-large-1 text-bold-400">{{$data['total_graduated']}} <i class="ft-users float-right"></i></h4>
                                 </div>
                                 <div class="card-footer p-1">
-                                    <span class="text-muted"><i class="la @if($data['growth'] < 0 )la-arrow-circle-o-down @else la-arrow-circle-o-up @endif  info"></i> {{$data['growth']}}% @if($data['growth'] < 0 )Ulje @else Rritje @endif mrenda 10 viteve</span>
+                                    <span class="text-muted"><i class="la @if($data['growth'] < 0 )la-arrow-circle-o-down @else la-arrow-circle-o-up @endif  info"></i> {{$data['growth']}}% @if($data['growth'] < 0 ){{Lang::get('translation.drop')}} @else {{Lang::get('translation.growth')}}  @endif {{Lang::get('translation.within_10_years')}} </span>
                                 </div>
                             </div>
                         </div>
@@ -56,47 +56,46 @@
                     <div class="col-12">
                         <div class="card pull-up border-top-info border-top-3 rounded-0">
                             <div class="card-header">
-                                <h4 class="card-title">Numri Total i Bizneseve ne sektorin TIK </h4>
+                                <h4 class="card-title">{{Lang::get('translation.total_num_ict_business')}}</h4>
                             </div>
                             <div class="card-content collapse show">
                                 <div class="card-body p-1">
                                     <h4 class="font-large-1 text-bold-400">{{$data['total_biz']}} <i class="ft-users float-right"></i></h4>
                                 </div>
                                 <div class="card-footer p-1">
-                                    <span class="text-muted"><i class="la @if($data['growth_biz'] < 0 )la-arrow-circle-o-down @else la-arrow-circle-o-up @endif  info"></i> {{$data['growth_biz']}}% @if($data['growth_biz'] < 0 )Ulje @else Rritje @endif mrenda 10 viteve</span>
+                                    <span class="text-muted"><i class="la @if($data['growth_biz'] < 0 )la-arrow-circle-o-down @else la-arrow-circle-o-up @endif  info"></i> {{$data['growth_biz']}}% @if($data['growth_biz'] < 0 ){{Lang::get('translation.drop')}} @else {{Lang::get('translation.growth')}}  @endif {{Lang::get('translation.within_10_years')}} </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="row">
             <div class="col-md-12 col-lg-12">
                 <div class="card">
                     <div class="card-header p-1">
-                        <h4 class="card-title float-left" >Statistika te pergjithshme  - <span class="blue-grey lighten-2 font-small-3 mb-0">2018</span></h4>
+                        <h4 class="card-title float-left" >{{Lang::get('translation.general_stats')}} - <span class="blue-grey lighten-2 font-small-3 mb-0">2018</span></h4>
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-footer text-center p-1">
                             <div class="row">
                                 <div class="col-md-4 col-12 border-right-blue-grey border-right-lighten-5 text-center">
-                                    <p class="blue-grey lighten-2 mb-0">Numri i Bizneseve</p>
+                                    <p class="blue-grey lighten-2 mb-0">{{Lang::get('translation.num_businesses')}}</p>
                                     <p class="font-medium-5 text-bold-400">{{$data['number_of_bussinesses']}}</p>
                                 </div>
                                 <div class="col-md-4 col-12 border-right-blue-grey border-right-lighten-5 text-center">
-                                    <p class="blue-grey lighten-2 mb-0">Numri i Bizneseve Aktive</p>
+                                    <p class="blue-grey lighten-2 mb-0">{{Lang::get('translation.num_active_businesses')}}</p>
                                     <p class="font-medium-5 text-bold-400">{{$data['number_of_active']}}</p>
                                 </div>
                                 <div class="col-md-4 col-12 border-right-blue-grey border-right-lighten-5 text-center">
-                                    <p class="blue-grey lighten-2 mb-0">Numri i Bizneseve te shuara</p>
+                                    <p class="blue-grey lighten-2 mb-0">{{Lang::get('translation.num_dissolved_businesses')}}</p>
                                     <p class="font-medium-5 text-bold-400">{{$data['number_of_dissolved']}}</p>
                                 </div>
 
                             </div>
                             <hr>
-                            <span class="text-muted"><a href="http://biznesetehapura.com/en" class="danger darken-2">Statistika te pergjithshme</a></span>
+                            <span class="text-muted"><a href="http://biznesetehapura.com/en" class="danger darken-2">{{Lang::get('translation.general_stats')}}</a></span>
                         </div>
                     </div>
                 </div>
@@ -113,7 +112,7 @@
             <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="card card-transparent">
                     <div class="card-header bg-transparent pl-0">
-                        <h5 class="card-title text-bold-700">Krahasimi i komunave sipas aktiviteteve</h5>
+                        <h5 class="card-title text-bold-700">{{Lang::get('translation.municipality_activity_comparison')}}</h5>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     </div>
                     <div id="chartContainer2" style="width:100%; height:300px;"></div>
@@ -125,7 +124,7 @@
             <div class="col-md-12 col-lg-12 col-xl-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Numri i Bisneseve te regjistruar ne fushen TIK mrenda 10 viteve</h4>
+                        <h4 class="card-title">{{Lang::get('translation.num_registered_businesses_ict')}}</h4>
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>

@@ -50,20 +50,23 @@ class BusinessMapController extends Controller
             $default_cities  = ['Pristina', 'Prizren', 'Peja', 'Gjakova', 'Mitrovica', 'Gjilan'];
             $cities_imploded  = implode(',',$default_cities);
 
-            if(Cache::store('apc')->get('_business_result_'.$cities_imploded)){
-                $bussiness_result =   Cache::store('apc')->get('_business_result_'.$cities_imploded);
-            }else{
-                $bussiness_result = businesses_map::whereIn('municipality',$default_cities)->get();
-                Cache::store('apc')->put('_business_result_'.$cities_imploded, $bussiness_result, 10000);
-            }
+            $bussiness_result = businesses_map::whereIn('municipality',$default_cities)->get();
+//
+//            if(Cache::store('apc')->get('_business_result_'.$cities_imploded)){
+//                $bussiness_result =   Cache::store('apc')->get('_business_result_'.$cities_imploded);
+//            }else{
+//                $bussiness_result = businesses_map::whereIn('municipality',$default_cities)->get();
+//                Cache::store('apc')->put('_business_result_'.$cities_imploded, $bussiness_result, 10000);
+//            }
 
         }else{
-            if(Cache::store('apc')->get('_business_result_'.implode(',',$cities))){
-                $bussiness_result =   Cache::store('apc')->get('_business_result_'.implode(',',$cities));
-            }else{
-                $bussiness_result = businesses_map::whereIn('municipality',$cities)->get();
-                Cache::store('apc')->put('_business_result_'.implode(',',$cities), $bussiness_result, 10000);
-            }
+            $bussiness_result = businesses_map::whereIn('municipality',$cities)->get();
+//            if(Cache::store('apc')->get('_business_result_'.implode(',',$cities))){
+//                $bussiness_result =   Cache::store('apc')->get('_business_result_'.implode(',',$cities));
+//            }else{
+//                $bussiness_result = businesses_map::whereIn('municipality',$cities)->get();
+//                Cache::store('apc')->put('_business_result_'.implode(',',$cities), $bussiness_result, 10000);
+//            }
         }
 
 
@@ -73,20 +76,26 @@ class BusinessMapController extends Controller
 
         if($cities == null){
             $cities = [];
-            if(Cache::store('apc')->get('_cities')){
-                $cities =   Cache::store('apc')->get('_cities');
-            }else{
-                foreach ($bussiness_result as $business) {
-                    if(!in_array($business->municipality,$cities)){
-                        $cities[] = $business->municipality;
-                    }
+            foreach ($bussiness_result as $business) {
+                if(!in_array($business->municipality,$cities)){
+                    $cities[] = $business->municipality;
                 }
-                Cache::store('apc')->put('_cities', $cities, 10000);
             }
+
+//            if(Cache::store('apc')->get('_cities')){
+//                $cities =   Cache::store('apc')->get('_cities');
+//            }else{
+//                foreach ($bussiness_result as $business) {
+//                    if(!in_array($business->municipality,$cities)){
+//                        $cities[] = $business->municipality;
+//                    }
+//                }
+//                Cache::store('apc')->put('_cities', $cities, 10000);
+//            }
         }
 
 
-        if($activity == null  || $activity == 'Të gjitha'){
+        if($activity == null  || $activity == 'all'){
             foreach ($activities as $activity) {
                 $activities_array[] = $activity->activity_name;
             }
@@ -121,7 +130,7 @@ class BusinessMapController extends Controller
 
         $query = $query->select( DB::raw('COUNT(municipality) as count') , 'municipality');
 
-        if($activity != null && $activity != 'Të gjitha'){
+        if($activity != null && $activity != 'all'){
             $query = $query->where('activities', 'LIKE', '%' . $activity . '%');
         }
 
@@ -130,10 +139,10 @@ class BusinessMapController extends Controller
             $query = $query->whereIn('municipality', $cities);
         }
 
-        if($year != null &&  $year != 'Të gjitha'){
+        if($year != null &&  $year != 'all'){
             $query = $query->where('date_of_registration', 'LIKE', '%' . $year . '%');
         }
-        if($status != null &&  $status != 'Të gjitha'){
+        if($status != null &&  $status != 'all'){
             $query = $query->where('status', 'LIKE', '%' . $status . '%');
         }
 
