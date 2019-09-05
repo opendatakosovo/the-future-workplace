@@ -29,7 +29,7 @@ Route::get('blog', 'BlogController@index');
 
 Route::get('roadmap', 'RoadMapController@index');
 
-Route::get('skills-missmatch', 'SkillsMismatchController@index');
+Route::get('skills-mismatch', 'SkillsMismatchController@index');
 
 Route::get('company-data', 'BusinessMapController@index');
 

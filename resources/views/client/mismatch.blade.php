@@ -1,5 +1,14 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Dren
+ * Date: 9/5/2019
+ * Time: 4:32 PM
+ */
+?>
+@section('title', 'Skills Mismatch')
 @extends('layouts/main')
-@section('title', 'Home')
+
 @section('content')
     <div class="col-12 d-flex align-items-center justify-content-center">
         <div class="col-lg-4 col-md-6 col-10 box-shadow-2 p-0">
