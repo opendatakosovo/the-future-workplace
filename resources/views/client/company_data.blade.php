@@ -30,7 +30,7 @@
     <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
 
     <div class="content-header-left col-md-6 col-12 mb-2">
-        <h3 class="content-header-title">{{Lang::get('translation.company_data')}}</h3>
+        <h3 class="content-header-title">Company Data</h3>
     </div>
     <div class="content-body">
         <!-- Revenue, Hit Rate & Deals -->
@@ -122,11 +122,7 @@
             <div class="col-xl-8 col-lg-8 col-md-8">
                 <div class="card">
                     <div class="card-header">
-<<<<<<< HEAD
                         <h4 class="card-title">Krahasimi i kompanive TIK sipas Komunave</h4>
-=======
-                        <h4 class="card-title">{{Lang::get('translation.comparison_ict_businesses_municipality')}}</h4>
->>>>>>> staging
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>
@@ -154,15 +150,15 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="form-body">
-                                    <h6 class="form-section"><i class="la la-eye"></i>{{Lang::get('translation.filters')}}</h6>
+                                    <h6 class="form-section"><i class="la la-eye"></i> Filtrimet</h6>
                                     <div class="row">
                                         <div class="col-md-2">
                                             <div class="form-group">
-                                                <label class="col-md-12 label-control" for="userinput2"> {{Lang::get('translation.year')}}</label>
+                                                <label class="col-md-12 label-control" for="userinput2">Viti</label>
 
                                                 <select class="select2 form-control" id="year">
-                                                    <optgroup label="{{Lang::get('translation.choose_year')}}">
-                                                        <option name='year' selected value="all"><span>{{Lang::get('translation.all')}}</span></option>
+                                                    <optgroup label="Zgjedh Vitin">
+                                                        <option name='year' selected value="all">Të gjitha</option>
                                                         @for ($i = 2008; $i < 2019; $i++)
                                                             <option name='year' value="{{$i}}">{{ $i }}</option>
                                                         @endfor
@@ -173,11 +169,11 @@
                                         </div>
                                         <div class="col-md-2">
                                             <div class="form-group">
-                                                <label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.status')}}</label>
+                                                <label class="col-md-12 label-control" for="userinput2">Statusi</label>
 
                                                 <select class="select2 form-control" id="status">
-                                                    <optgroup label="{{Lang::get('translation.choose_status')}}">
-                                                        <option name='status' selected value="all">{{Lang::get('translation.all')}}</option>
+                                                    <optgroup label="Zgjedh Statusin">
+                                                        <option name='status' selected value="all">Të gjitha</option>
                                                         @foreach($data['statuses'] as $status)
                                                             <option name="status"
                                                                     value="{{$status}}">{{$status}}</option>
@@ -190,19 +186,11 @@
                                         <div class="col-md-2">
                                             <div class="form-group ">
                                                 <label class="col-md-12 label-control"
-<<<<<<< HEAD
                                                        for="userinput2">Aktiviteti</label>
 
                                                 <select class="select2 form-control" id="activity">
                                                     <optgroup label="Zgjedh Aktivitetin">
                                                         <option name='activity' selected value="all">Të gjitha</option>
-=======
-                                                       for="userinput2">{{Lang::get('translation.activity')}}</label>
-
-                                                <select class="select2 form-control" id="activity">
-                                                    <optgroup label="{{Lang::get('translation.choose_activity')}}">
-                                                        <option name='activity' selected value="all">{{Lang::get('translation.all')}}</option>
->>>>>>> staging
                                                         @foreach($data['activities'] as $activity)
                                                             <option name="activity"
                                                                     value="{{$activity}}">{{$activity}}</option>
@@ -214,7 +202,6 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group ">
-<<<<<<< HEAD
                                                 <label class="col-md-12 label-control" for="userinput2">Qytetet</label>
 
                                                 <select class="select2 form-control" name="city" multiple="multiple"
@@ -223,14 +210,6 @@
                                                         <option name='activity'  value="all" disabled>Të
                                                             gjitha
                                                         </option>
-=======
-                                                <label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.cities')}}</label>
-
-                                                <select class="select2 form-control" name="city" multiple="multiple"
-                                                        id="cities">
-                                                    <optgroup label="{{Lang::get('translation.choose_city')}}">
-                                                        <option name='activity'  value="all" disabled>{{Lang::get('translation.all')}}</option>
->>>>>>> staging
                                                         @foreach($data['cities'] as $city)
                                                             <option value="{{$city}}" @if(in_array($city,$data['def_cities'])) selected @endif>{{$city}}</option>
                                                         @endforeach
@@ -243,11 +222,7 @@
                                             <label class="col-md-12 label-control" for="userinput2"></label>
                                             <button type="button" onclick="get_filtered('clicked')"
                                                     class="btn btn-primary">
-<<<<<<< HEAD
                                                 <i class="la la-check-square-o"></i> Filtro
-=======
-                                                <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
->>>>>>> staging
                                             </button>
                                         </div>
                                     </div>
@@ -264,14 +239,15 @@
             <div class="col-lg-4 col-md-4">
                 <div class="card" style="    height: 97%;">
                     <div class="card-header">
-                        <h4 class="card-title">{{Lang::get('translation.business_map')}}</h4>
+                        <h4 class="card-title">Harta e Bizneseve</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     </div>
 
                     <div class="card-content collapse show">
                         <div class="card-body p-0 pb-0">
                             <p class="card-body">
-                                {{Lang::get('translation.business_map_desc')}}
+                                Me poshte eshte paraqitur harta e Kosoves me shumicen e komunave ku ne to paraqitet
+                                numri i bizneseve te regjistruara ne sektorin e TIK-ut.
                             </p>
                         </div>
                     </div>
@@ -290,7 +266,7 @@
             <div class="col-lg-12 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">{{Lang::get('translation.company_div_per_municipality')}}</h4>
+                        <h4 class="card-title">Ndarja e Kompanive TIK sipas Komunës</h4>
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>
@@ -318,7 +294,6 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="form-body" style="padding: 15px">
-<<<<<<< HEAD
                                     <h6 class="form-section"><i class="la la-eye"></i> Filtrimet</h6>
                                     <div class="row">
                                         <div class="col-md-2">
@@ -328,17 +303,6 @@
                                                 <select class="select2 form-control" id="year2">
                                                     <optgroup label="Zgjedh Vitin">
                                                         <option name='year' selected value="all">Të gjitha</option>
-=======
-                                    <h6 class="form-section"><i class="la la-eye"></i> {{Lang::get('translation.filters')}}</h6>
-                                    <div class="row">
-                                        <div class="col-md-2">
-                                            <div class="form-group">
-                                                <label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.year')}}</label>
-
-                                                <select class="select2 form-control" id="year2">
-                                                    <optgroup label="{{Lang::get('translation.choose_year')}}">
-                                                        <option name='year' selected value="all">{{Lang::get('translation.all')}}</option>
->>>>>>> staging
                                                         @for ($i = 2008; $i < 2019; $i++)
                                                             <option name='year' value="{{$i}}">{{ $i }}</option>
                                                         @endfor
@@ -349,19 +313,11 @@
                                         </div>
                                         <div class="col-md-2">
                                             <div class="form-group">
-<<<<<<< HEAD
                                                 <label class="col-md-12 label-control" for="userinput2">Statusi</label>
 
                                                 <select class="select2 form-control" id="status2">
                                                     <optgroup label="Zgjedh Statusin">
                                                         <option name='status' selected value="all">Të gjitha</option>
-=======
-                                                <label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.status')}}</label>
-
-                                                <select class="select2 form-control" id="status2">
-                                                    <optgroup label="{{Lang::get('translation.choose_status')}}">
-                                                        <option name='status' selected value="all">{{Lang::get('translation.all')}}</option>
->>>>>>> staging
                                                         @foreach($data['statuses'] as $status)
                                                             <option name="status"
                                                                     value="{{$status}}">{{$status}}</option>
@@ -374,11 +330,11 @@
                                         <div class="col-md-2">
                                             <div class="form-group ">
                                                 <label class="col-md-12 label-control"
-                                                       for="userinput2">{{Lang::get('translation.activity')}}</label>
+                                                       for="userinput2">Aktiviteti</label>
 
                                                 <select class="select2 form-control" id="activity2">
-                                                    <optgroup label="{{Lang::get('translation.choose_activity')}}">
-                                                        <option name='activity' selected value="all">{{Lang::get('translation.all')}}</option>
+                                                    <optgroup label="Zgjedh Aktivitetin">
+                                                        <option name='activity' selected value="all">Të gjitha</option>
                                                         @foreach($data['activities'] as $activity)
                                                             <option name="activity"
                                                                     value="{{$activity}}">{{$activity}}</option>
@@ -390,12 +346,14 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group ">
-                                                <label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.cities')}}</label>
+                                                <label class="col-md-12 label-control" for="userinput2">Qytetet</label>
 
                                                 <select class="select2 form-control" name="city" multiple="multiple"
                                                         id="cities2">
-                                                    <optgroup label="{{Lang::get('translation.choose_city')}}">
-                                                        <option name='activity'  value="all" disabled>{{Lang::get('translation.all')}}</option>
+                                                    <optgroup label="Zgjedh Qytetin">
+                                                        <option name='activity'  value="all" disabled>Të
+                                                            gjitha
+                                                        </option>
                                                         @foreach($data['cities'] as $city)
                                                             <option value="{{$city}}" @if(in_array($city,$data['def_cities'])) selected @endif>{{$city}}</option>
                                                         @endforeach
@@ -408,7 +366,7 @@
                                             <label class="col-md-12 label-control" for="userinput2"></label>
                                             <button type="button" onclick="get_filtered2('clicked')"
                                                     class="btn btn-primary">
-                                                <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
+                                                <i class="la la-check-square-o"></i> Filtro
                                             </button>
                                         </div>
                                     </div>
@@ -451,10 +409,10 @@
 
         function get_filtered(clicked = null) {
 
-            var year = $('#year').find(":selected").val();
-            var status = $('#status').find(":selected").val();
+            var year = $('#year').find(":selected").text();
+            var status = $('#status').find(":selected").text();
             var cities = $('#cities').val();
-            var activity = $('#activity').find(":selected").val();
+            var activity = $('#activity').find(":selected").text();
 
             $.ajax({
                 type: "GET",
@@ -570,10 +528,10 @@
 
 
         function get_filtered2(clicked = null) {
-            var year2 = $('#year2').find(":selected").val();
-            var status2 = $('#status2').find(":selected").val();
+            var year2 = $('#year2').find(":selected").text();
+            var status2 = $('#status2').find(":selected").text();
             var cities2 = $('#cities2').val();
-            var activity2 = $('#activity2').find(":selected").val();
+            var activity2 = $('#activity2').find(":selected").text();
 
 
 
