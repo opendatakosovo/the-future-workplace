@@ -81,6 +81,7 @@ class BusinessMapController extends Controller
                     $cities[] = $business->municipality;
                 }
             }
+
 //            if(Cache::store('apc')->get('_cities')){
 //                $cities =   Cache::store('apc')->get('_cities');
 //            }else{
@@ -94,7 +95,7 @@ class BusinessMapController extends Controller
         }
 
 
-        if($activity == null  || $activity == 'Të gjitha'){
+        if($activity == null  || $activity == 'all'){
             foreach ($activities as $activity) {
                 $activities_array[] = $activity->activity_name;
             }
@@ -129,7 +130,7 @@ class BusinessMapController extends Controller
 
         $query = $query->select( DB::raw('COUNT(municipality) as count') , 'municipality');
 
-        if($activity != null && $activity != 'Të gjitha'){
+        if($activity != null && $activity != 'all'){
             $query = $query->where('activities', 'LIKE', '%' . $activity . '%');
         }
 
@@ -138,10 +139,10 @@ class BusinessMapController extends Controller
             $query = $query->whereIn('municipality', $cities);
         }
 
-        if($year != null &&  $year != 'Të gjitha'){
+        if($year != null &&  $year != 'all'){
             $query = $query->where('date_of_registration', 'LIKE', '%' . $year . '%');
         }
-        if($status != null &&  $status != 'Të gjitha'){
+        if($status != null &&  $status != 'all'){
             $query = $query->where('status', 'LIKE', '%' . $status . '%');
         }
 

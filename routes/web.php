@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Route::get('home', 'HomeController@index');
 
+Route::get('stats', 'StatsController@index');
+
 Route::get('workforce-map', 'WorkForceMapController@index');
 
 Route::get('inst-map', 'InstMapController@index');
@@ -27,17 +29,19 @@ Route::get('blog', 'BlogController@index');
 
 Route::get('roadmap', 'RoadMapController@index');
 
-Route::get('stats', 'SkillsMismatchController@index');
+Route::get('skills-missmatch', 'SkillsMismatchController@index');
 
 Route::get('company-data', 'BusinessMapController@index');
 
 Route::get('employee-data', 'EmployeeDataController@index');
 
+Route::get('about', 'AboutController@index');
+
 //Route::get('apcu_stats', 'CacheController@index');
 
 
-Route::get('grads_ict', 'HomeController@grads_ict');
-Route::get('number_businnesses', 'HomeController@number_businnesses');
+Route::get('grads_ict', 'StatsController@grads_ict');
+Route::get('number_businnesses', 'StatsController@number_businnesses');
 
 Route::get('get_business_data', 'BusinessMapController@fetch_data');
 Route::get('get_workforce_data', 'WorkForceDataController@fetch_data');

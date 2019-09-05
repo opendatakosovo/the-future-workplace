@@ -11,7 +11,7 @@
 @section('content')
 
     <div class="content-header-left col-md-4 col-12 mb-2">
-        <h3 class="content-header-title">Blogu</h3>
+        <h3 class="content-header-title">{{Lang::get('translation.blog')}}</h3>
     </div>
 
     <div class="content-body">

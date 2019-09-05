@@ -7,7 +7,7 @@
         }
     </style>
     <div class="content-header-left col-md-6 col-12 mb-2">
-        <h3 class="content-header-title">Harta e Institucioneve Arsimore</h3>
+        <h3 class="content-header-title">{{Lang::get('translation.workforce_data')}}</h3>
     </div>
     <div class="content-body">
         <!-- Revenue, Hit Rate & Deals -->
@@ -15,7 +15,7 @@
             <div class="col-xl-8 col-lg-8 col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Graduating students per ICT department in each University</h4>
+                        <h4 class="card-title">{{Lang::get('translation.workforce_data_graph1_title')}}</h4>
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>
@@ -43,14 +43,14 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="form-body col-md-12">
-                                    <h6 class="form-section"><i class="la la-eye"></i> Filtrimet</h6>
+                                    <h6 class="form-section"><i class="la la-eye"></i> {{Lang::get('translation.filters')}}</h6>
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="col-md-12 label-control" for="userinput2">Year</label>
+                                                <label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.year')}}</label>
                                                 <select class="select2 form-control" id="year">
-                                                    <optgroup label="Choose Year">
-                                                        <option name='year' selected value="all">Të gjitha</option>
+                                                    <optgroup label="{{Lang::get('translation.choose_year')}}">
+                                                        <option name='year' selected value="all">{{Lang::get('translation.all')}}</option>
                                                         @for ($i = 2008; $i < 2019; $i++)
                                                             <option name='year' value="{{$i}}">{{ $i }}</option>
                                                         @endfor
@@ -61,9 +61,9 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="col-md-12 label-control" for="userinput2">Degree</label>
+                                                <label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.degree')}}</label>
                                                 <select class="select2 form-control" id="degree">
-                                                    <optgroup label="Choose Degree">
+                                                    <optgroup label="{{Lang::get('translation.choose_degree')}}">
                                                        @foreach($data['degrees'] as $degree)
                                                             <option name='degree' value="{{$degree['degree_id']}}">{{ $degree['degree_name'] }}</option>
                                                         @endforeach
@@ -74,10 +74,10 @@
                                         <div class="col-md-3">
                                             <div class="form-group ">
                                                 <label class="col-md-12 label-control"
-                                                       for="userinput2">University</label>
+                                                       for="userinput2">{{Lang::get('translation.university')}}</label>
                                                 <select class="select2 form-control" id="university">
-                                                    <optgroup label="Choose University">
-                                                        <option name='university' selected value="all">Të gjitha</option>
+                                                    <optgroup label="{{Lang::get('translation.choose_university')}}">
+                                                        <option name='university' selected value="all">{{Lang::get('translation.all')}}</option>
                                                         @foreach($data['universities'] as $university)
                                                             <option name="university"
                                                                     value="{{$university['uni_id']}}">{{$university['uni_name']}}</option>
@@ -109,7 +109,7 @@
                                             <label class="col-md-12 label-control" for="userinput2"></label>
                                             <button type="button" onclick="get_filtered('clicked')"
                                                     class="btn btn-primary">
-                                                <i class="la la-check-square-o"></i> Filtro
+                                                <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
                                             </button>
                                         </div>
                                     </div>
@@ -124,14 +124,13 @@
             <div class="col-lg-4 col-md-4">
                 <div class="card" style="height: 97%">
                     <div class="card-header">
-                        <h4 class="card-title">Harta e Fuqisë Punëtore</h4>
+                        <h4 class="card-title">{{Lang::get('translation.workforce_data_map_title')}}</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body p-0 pb-0">
                             <p class="card-body">
-                                Me poshte eshte paraqitur harta e Kosoves me shumicen e komunave ku ne to paraqitet
-                                numri varësisht nga sa studentë kanë diplomuar në fushen e TIK-ut në nivel universitar.
+                                {{Lang::get('translation.workforce_data_map_desc')}}
                             </p>
                         </div>
                     </div>
@@ -150,7 +149,7 @@
             <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="card" >
                     <div class="card-header">
-                        <h4 class="card-title">Graduating students per skills area </h4>
+                        <h4 class="card-title"> {{Lang::get('translation.workforce_data_graph2_title')}} </h4>
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>
@@ -177,13 +176,13 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="form-body col-md-12">
-                                <h6 class="form-section"><i class="la la-eye"></i> Filtrimet</h6>
+                                <h6 class="form-section"><i class="la la-eye"></i> {{Lang::get('translation.filters')}}</h6>
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label class="col-md-12 label-control" for="userinput2">Year</label>
+                                            <label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.year')}}</label>
                                             <select class="select2 form-control" id="year">
-                                                <optgroup label="Zgjedh Vitin">
+                                                <optgroup label="{{Lang::get('translation.choose_year')}}">
                                                     @for ($i = 2008; $i <= 2019; $i++)
                                                         <option name='year' @if($i == 2019) selected @endif value="{{$i}}">{{ $i }}</option>
                                                     @endfor
@@ -196,13 +195,11 @@
                                     <div class="col-md-4">
                                         <div class="form-group ">
                                             <label class="col-md-12 label-control"
-                                                   for="userinput2">Skills</label>
+                                                   for="userinput2">{{Lang::get('translation.skills')}}</label>
                                             <select class="select2 form-control" name="city" multiple="multiple"
                                                     id="skills">
-                                                <optgroup label="Choose Skills">
-                                                    <option name='city' value="all" disabled>Të
-                                                        gjitha
-                                                    </option>
+                                                <optgroup label="{{Lang::get('translation.choose_skills')}}">
+                                                    <option name='city' value="all" disabled>{{Lang::get('translation.all')}}</option>
                                                     @foreach($data['skills'] as $skill)
                                                         <option value="{{$skill['skill_id']}}">{{$skill['skill_name']}}</option>
                                                     @endforeach
@@ -215,7 +212,7 @@
                                         <label class="col-md-12 label-control" for="userinput2"></label>
                                         <button type="button" onclick="get_filtered('clicked')"
                                                 class="btn btn-primary">
-                                            <i class="la la-check-square-o"></i> Filtro
+                                            <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
                                         </button>
                                     </div>
                                 </div>
@@ -229,7 +226,7 @@
             <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Aggregate supply of ICT graduates broken down by skills Area</h4>
+                        <h4 class="card-title">{{Lang::get('translation.workforce_data_graph3_title')}}</h4>
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>
@@ -257,16 +254,16 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="form-body col-md-12">
-                                    <h6 class="form-section"><i class="la la-eye"></i> Filtrimet</h6>
+                                    <h6 class="form-section"><i class="la la-eye"></i> {{Lang::get('translation.filters')}}</h6>
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group">
-                                                <label class="col-md-12 label-control" for="userinput2">Gender</label>
+                                                <label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.gender')}}</label>
                                                 <select class="select2 form-control" id="gender3" name="gender3">
-                                                    <optgroup label="Zgjedh Vitin">
-                                                        <option selected value="all">Të gjitha</option>
-                                                        <option   value="Male">Male</option>
-                                                        <option   value="Female">Female</option>
+                                                    <optgroup label="{{Lang::get('translation.choose_gender')}}">
+                                                        <option selected value="all">{{Lang::get('translation.all')}}</option>
+                                                        <option   value="Male">{{Lang::get('translation.male')}}</option>
+                                                        <option   value="Female">{{Lang::get('translation.female')}}</option>
                                                     </optgroup>
                                                 </select>
 
@@ -277,13 +274,11 @@
                                         <div class="col-md-4">
                                             <div class="form-group ">
                                                 <label class="col-md-12 label-control"
-                                                       for="userinput2">Skills</label>
+                                                       for="userinput2">{{Lang::get('translation.skills')}}</label>
                                                 <select class="select2 form-control" name="skills3" multiple="multiple"
                                                         id="skills3">
-                                                    <optgroup label="Choose Skills">
-                                                        <option name='city' value="all" disabled>Të
-                                                            gjitha
-                                                        </option>
+                                                    <optgroup label="{{Lang::get('translation.choose_skills')}}">
+                                                        <option name='city' value="all" disabled>{{Lang::get('translation.all')}}</option>
                                                         @foreach($data['skills'] as $skill)
                                                             <option value="{{$skill['skill_id']}}">{{$skill['skill_name']}}</option>
                                                         @endforeach
@@ -296,7 +291,7 @@
                                             <label class="col-md-12 label-control" for="userinput2"></label>
                                             <button type="button" onclick="get_filtered('clicked')"
                                                     class="btn btn-primary">
-                                                <i class="la la-check-square-o"></i> Filtro
+                                                <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
                                             </button>
                                         </div>
                                     </div>
@@ -311,7 +306,7 @@
             <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="card" >
                     <div class="card-header">
-                        <h4 class="card-title">Breakdown of supply of ICT graduates by Skills Area</h4>
+                        <h4 class="card-title">{{Lang::get('translation.workforce_data_graph4_title')}}</h4>
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>
@@ -339,17 +334,17 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="form-body col-md-12">
-                                    <h6 class="form-section"><i class="la la-eye"></i> Filtrimet</h6>
+                                    <h6 class="form-section"><i class="la la-eye"></i> {{Lang::get('translation.filters')}}</h6>
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="form-group ">
                                                 <label class="col-md-12 label-control"
-                                                       for="userinput2">Gender</label>
+                                                       for="userinput2">{{Lang::get('translation.gender')}}</label>
                                                 <select class="select2 form-control" id="gender4">
-                                                    <optgroup label="Choose Degree/Program">
-                                                        <option  selected value="all">Të gjitha</option>
-                                                        <option  value="male">Male</option>
-                                                        <option  value="female">Female</option>
+                                                    <optgroup label="{{Lang::get('translation.choose_gender')}}">
+                                                        <option selected value="all">{{Lang::get('translation.all')}}</option>
+                                                        <option  value="male">{{Lang::get('translation.male')}}</option>
+                                                        <option  value="female">{{Lang::get('translation.female')}}</option>
                                                     </optgroup>
                                                 </select>
                                             </div>
@@ -376,7 +371,7 @@
                                             <label class="col-md-12 label-control" for="userinput2"></label>
                                             <button type="button" onclick="get_filtered('clicked')"
                                                     class="btn btn-primary">
-                                                <i class="la la-check-square-o"></i> Filtro
+                                                <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
                                             </button>
                                         </div>
                                     </div>
@@ -644,7 +639,7 @@
                             width: 0.01,
                         },
                         fill: {
-                            colors: [ '#266961','#093637','#449f8c','#358577']
+                            colors: [ '#3CB371','#093637','#449f8c','#358577']
                         },
                         series: data_sets3,
 
