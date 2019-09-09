@@ -107,6 +107,11 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('/admin/uni-settings/edit_graduate', 'Admin\UniSettingsController@edit_graduate');
     Route::post('/admin/uni-settings/destroy_graduate', 'Admin\UniSettingsController@destroy_graduate');
 
+
+    Route::post('/admin/business-data/fetch_data', 'Admin\BusinessDataController@fetch_data');
+    Route::post('/admin/business-data/import_businesses', 'Admin\BusinessDataController@import_businesses');
+    Route::post('/admin/business-data/destroy_business', 'Admin\BusinessDataController@destroy_business');
+
 });
 
 
