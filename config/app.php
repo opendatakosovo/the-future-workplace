@@ -166,7 +166,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Spatie\Analytics\AnalyticsServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -229,6 +229,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'Analytics' => Spatie\Analytics\AnalyticsFacade::class,
 
     ],
 

@@ -11,9 +11,13 @@
 |
 */
 
+use Spatie\Analytics\Analytics;
+use Spatie\Analytics\Period;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 
 Route::get('home', 'HomeController@index');
 
@@ -64,8 +68,11 @@ Route::get('/admin', 'AdminController@admin')
 
 Route::group(['middleware' => 'auth'], function(){
 
+
     Route::get('/admin/edit-profile', 'AdminController@update_user');
     Route::get('/admin/home', 'AdminController@index');
+
+    Route::get('/admin/test-data', 'AdminController@test_analytics');
 
     Route::get('logout', 'Auth\LoginController@logout');
 
