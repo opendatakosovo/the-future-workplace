@@ -72,6 +72,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/admin/edit-profile', 'AdminController@update_user');
     Route::get('/admin/home', 'AdminController@index');
 
+    Route::get('/admin/visitors_and_page_views', 'AdminController@visitors_and_page_views');
+
     Route::get('/admin/test-data', 'AdminController@test_analytics');
 
     Route::get('logout', 'Auth\LoginController@logout');

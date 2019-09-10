@@ -15,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/charts/chartist.css">
 <link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/charts/chartist-plugin-tooltip.css">
 <link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/file-uploaders/dropzone.min.css">
+<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/pages/advanced-cards.css">
 {{--<link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/forms/icheck/icheck.css">--}}
 {{--<link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/forms/icheck/custom.css">--}}
 <link rel="stylesheet" type="text/css" href="/admin/app-assets/vendors/css/timeline/vertical-timeline.css">

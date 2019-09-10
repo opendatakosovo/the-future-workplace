@@ -1,11 +1,12 @@
 <!-- BEGIN: Main Menu-->
-<div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true" data-img="app-assets/images/backgrounds/04.jpg">
-    <div class="navbar-header">
+<div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow expanded" data-scroll-to-active="true" data-img="app-assets/images/backgrounds/04.jpg">
+    <div class="navbar-header expanded">
         <ul class="nav navbar-nav flex-row position-relative">
-            <li class="nav-item mr-auto"><a class="navbar-brand" href="{{url('admin/home')}}"><img class="brand-logo" alt="Chameleon admin logo" src="/app-assets/images/logo/logo.png" />
-                    <h3 class="brand-text">TFW</h3>
+            <li class="nav-item mr-auto"><a class="navbar-brand" href="index.html"><img class="brand-logo" alt="Chameleon admin logo" src="app-assets/images/logo/logo.png">
+                    <h3 class="brand-text">Chameleon</h3>
                 </a></li>
-               <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
+            <li class="nav-item d-none d-md-block nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="toggle-icon font-medium-3 ft-disc" data-ticon="ft-disc"></i></a></li>
+            <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
         </ul>
     </div>
     <div class="navigation-background"></div>

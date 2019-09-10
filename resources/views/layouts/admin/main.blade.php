@@ -3,8 +3,7 @@
 <head>
     @include('partials.admin.head')
 </head>
-<body class="vertical-layout vertical-menu-modern 2-columns   fixed-navbar" data-open="click"
-      data-menu="vertical-menu-modern" data-color="bg-chartbg" data-col="2-columns">
+<body class="vertical-layout vertical-menu-modern 2-columns fixed-navbar  menu-expanded pace-done" data-menu="vertical-menu-modern" data-color="bg-chartbg" data-col="2-columns">
 @include('partials.admin.header')
 @include('partials.admin.navigation')
 <!-- BEGIN: Content-->
