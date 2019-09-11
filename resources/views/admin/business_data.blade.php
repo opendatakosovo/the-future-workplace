@@ -5,6 +5,36 @@
 
 
 @section('content')
+    <!-- DELETE -->
+    <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Delete</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/admin/uni-settings/destroy_business" method="post" id="delete_form">
+                    @CSRF
+                    <div class="modal-body">
+                        Are you sure you want to delete the item , it cannot be reverted!
+                    </div>
+                    <input type="hidden" name="id" id="del_hidden_id">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    @include('admin.businesses_crud.CSV.import_modal')
+
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -24,60 +54,34 @@
                 <div class="card-content collpase show">
                     <div class="card-body card-dashboard">
                         <div class="pull-right">
-                            <button type="button" class="btn btn-outline-primary btn-sm a-btn-slide-text"
-                                    data-toggle="modal" data-target="#createUniversity" onclick="createUniversity()">
-                                Add New
-                            </button>
+                            {{--<button type="button" class="btn btn-outline-primary btn-sm a-btn-slide-text"--}}
+                                    {{--data-toggle="modal" data-target="#createUniversity" onclick="createUniversity()">--}}
+                                {{--Add New--}}
+                            {{--</button>--}}
                         </div>
                         <div class="pull-right">
                             <button type="button" class="btn btn-outline-primary btn-sm a-btn-slide-text"
-                                    data-toggle="modal" data-target="#createUniversity" onclick="createUniversity()">
+                                    data-toggle="modal" data-target="#importCSV">
                                 Import
                             </button>
                         </div>
-                        <table id="example0" class="display" style="width:100%">
+                        <table id="example123" class="display" style="width:100%">
                             <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name of Business</th>
-                                <th>Status</th>
-                                <th>Fiscal Number</th>
-                                <th>Business Type</th>
-                                <th>Capital</th>
-                                <th>Number of Employees</th>
-                                <th>Date of Registration</th>
-                                <th>Registration Number</th>
-                                <th>Municipality</th>
-                                <th style="width: 100%;">Activities</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($data['business_data'] as $key=> $business)
                                 <tr>
-                                    <td>{{$business['id']}}</td>
-                                    <td>{{$business['name_of_business']}}</td>
-                                    <td>{{$business['status']}}</td>
-                                    <td>{{$business['fiscal_number']}}</td>
-                                    <td>{{$business['business_type']}}</td>
-                                    <td>{{$business['capital']}}</td>
-                                    <td>{{$business['number_of_employees']}}</td>
-                                    <td>{{$business['date_of_registration']}}</td>
-                                    <td>{{$business['registration_number']}}</td>
-                                    <td>{{$business['municipality']}}</td>
-                                    <td>
-                                        <button type="button" class="btn btn-info btn-sm a-btn-slide-text"
-                                                data-toggle="modal" data-target="#createUniversity"
-                                                onclick="editUniversity({{$business['id']}},'{{$business['name_of_business']}}')">
-                                            Edit
-                                        </button>
-                                        <button type="button" class="btn btn-danger btn-sm a-btn-slide-text"
-                                                data-toggle="modal" data-target="#DeleteModal"
-                                                onclick="deleteUniversity({{$business['id']}})">
-                                            Delete
-                                        </button>
-                                    </td>
+                                    <th>Name of Business</th>
+                                    <th>Status</th>
+                                    <th>Fiscal Number</th>
+                                    <th>Business Type</th>
+                                    <th>Capital</th>
+                                    <th>Number of Employees</th>
+                                    <th>Date of Registration</th>
+                                    <th>Registration Number</th>
+                                    <th>Municipality</th>
+                                    <th>Primary Activity</th>
+                                    <th>Secondary Activity</th>
+                                    <th>Actions</th>
                                 </tr>
-                            @endforeach
+                            </thead>
                         </table>
                     </div>
                 </div>
@@ -85,5 +89,49 @@
         </div>
     </div>
 
+    <script>
+        $(document).ready(function () {
+            $('#example123').DataTable({
+                "bProcessing": true,
+                "serverSide": true,
+                "searching": false,
+                "ajax": {
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: "/admin/business-data/fetch_data",
+                    type: "post",
+                    error: function () {
+                        $("#example123").css("display", "none");
+                    }
+                },
+                "aoColumns": [
+                    {data: 'name_of_business'},
+                    {data: 'status'},
+                    {data: 'fiscal_number'},
+                    {data: 'business_type'},
+                    {data: 'capital'},
+                    {data: 'number_of_employees'},
+                    // {data: 'owners'},
+                    // {data: 'owners_gender'},
+                    // {data: 'authorized_persons'},
+                    {data: 'date_of_registration'},
+                    // {data: 'link_of_arbk'},
+                    {data: 'registration_number'},
+                    {data: 'municipality'},
+                    {data: 'primary_activity'},
+                    {data: 'secondary_activity'},
+                    {data: 'actions'}
+                ]
 
+            });
+        });
+
+
+        function deletebusiness(id) {
+            var url = '/admin/business-data/destroy_business';
+            $('#delete_form').attr('action', url);
+            $('#del_hidden_id').val(id);
+        }
+    </script>
 @endsection

@@ -10,7 +10,7 @@ class businesses_map extends Model
     protected $table = 'businesses_map';
 
     protected $fillable = [
-        'municipality', 'publishing_of_computer_games', 'computer_programming_activities','computer_facilities_management_activities','computer_facilities_management_activities','wired_telecommunications_activities','wireless_telecommunication_activities','satellite_telecommunication_activities','other_telecommunication_activities','other_software_publishing','data_processing_hosting_and_related_activities','total'
+        'name_of_business', 'status', 'fiscal_number','business_type','capital','number_of_employees','owners','owners_gender','authorized_persons','date_of_registration','link_of_arbk','registration_number','municipality','activities'
     ];
 
 

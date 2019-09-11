@@ -12,7 +12,7 @@
     <div class="content-header-left col-md-4 col-12 mb-2">
         <h3 class="content-header-title">{{Lang::get('translation.statistics')}}</h3>
     </div>
-    <div class="content-body">
+    <div class="content-body" style="width: 100%">
         <!-- Revenue, Hit Rate & Deals -->
         <div class="row">
             <div class="col-lg-8 col-md-12">
@@ -105,9 +105,6 @@
         </div>
         <div class="row">
 
-            <div class="col-lg-12 col-md-12">
-
-            </div>
 
             <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="card card-transparent">

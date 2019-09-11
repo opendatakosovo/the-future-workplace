@@ -11,9 +11,13 @@
 |
 */
 
+use Spatie\Analytics\Analytics;
+use Spatie\Analytics\Period;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 
 Route::get('home', 'HomeController@index');
 
@@ -29,7 +33,7 @@ Route::get('blog', 'BlogController@index');
 
 Route::get('roadmap', 'RoadMapController@index');
 
-Route::get('skills-missmatch', 'SkillsMismatchController@index');
+Route::get('skills-mismatch', 'SkillsMismatchController@index');
 
 Route::get('company-data', 'BusinessMapController@index');
 
@@ -64,8 +68,13 @@ Route::get('/admin', 'AdminController@admin')
 
 Route::group(['middleware' => 'auth'], function(){
 
+
     Route::get('/admin/edit-profile', 'AdminController@update_user');
     Route::get('/admin/home', 'AdminController@index');
+
+    Route::get('/admin/visitors_and_page_views', 'AdminController@visitors_and_page_views');
+
+    Route::get('/admin/test-data', 'AdminController@test_analytics');
 
     Route::get('logout', 'Auth\LoginController@logout');
 
@@ -106,6 +115,11 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('/admin/uni-settings/store_graduate', 'Admin\UniSettingsController@store_graduate');
     Route::post('/admin/uni-settings/edit_graduate', 'Admin\UniSettingsController@edit_graduate');
     Route::post('/admin/uni-settings/destroy_graduate', 'Admin\UniSettingsController@destroy_graduate');
+
+
+    Route::post('/admin/business-data/fetch_data', 'Admin\BusinessDataController@fetch_data');
+    Route::post('/admin/business-data/import_businesses', 'Admin\BusinessDataController@import_businesses');
+    Route::post('/admin/business-data/destroy_business', 'Admin\BusinessDataController@destroy_business');
 
 });
 

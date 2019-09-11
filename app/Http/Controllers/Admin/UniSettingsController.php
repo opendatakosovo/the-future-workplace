@@ -292,7 +292,17 @@ class UniSettingsController extends Controller
 
 
         for ($i = 0; $i < count($customerArr); $i++) {
-            Graduates::firstOrCreate($customerArr[$i]);
+            Graduates::firstOrCreate(
+                [
+                    'uni_id' => $customerArr[$i]['uni_id'],
+                    'degree_id' => $customerArr[$i]['degree_id'],
+                    'number_of_graduates' => $customerArr[$i]['number_of_graduates'],
+                    'number_of_males' => $customerArr[$i]['number_of_males'],
+                    'number_of_females' => $customerArr[$i]['number_of_females'],
+                    'year'  => $customerArr[$i]['year']
+                ]
+
+            );
         }
 
         return redirect('admin/uni-settings');

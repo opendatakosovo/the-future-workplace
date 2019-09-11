@@ -2,6 +2,17 @@
 <html class="loading" lang="en" data-textdirection="ltr">
 <head>
 @include('partials.head')
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147417909-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-147417909-1');
+    </script>
+
 </head>
 <body class="horizontal-layout horizontal-menu 2-columns  " data-open="hover" data-menu="horizontal-menu" data-color="bg-gradient-x-orca" data-col="2-columns">
 @include('partials/top')
@@ -19,4 +30,6 @@
 </div>
 @include('partials.footer')
 @include('partials.scripts')
+
+
 </body>
