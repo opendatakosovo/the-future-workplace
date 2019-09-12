@@ -19,8 +19,7 @@ class AboutController extends Controller
     public function index(){
 
         $data = DB::table('about_us')->latest('created_at')->first();
-
-        return view('admin.about_us')->with("data",(isset($data)) ? $data : "");
+        return view('admin.about_us')->with("data",$data);
     }
 
     public function store(Request $request)

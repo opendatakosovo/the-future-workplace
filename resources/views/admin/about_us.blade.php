@@ -31,7 +31,7 @@
                 </div>
                 <div class="card-content collapse show">
                     <div class="card-body" style="height: 450px; overflow-y: auto;">
-                        <textarea class="form-control" name="first" id="editor">{{isset($data->content1) ? $data->content1 : "" }}</textarea>
+                        <textarea class="form-control" name="first" id="editor">{{$data->content1}}</textarea>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
                 </div>
                 <div class="card-content collapse show">
                     <div class="card-body" style="height: 450px; overflow-y: auto;">
-                        <textarea name="second" id="editor2">{{isset($data->content2) ? $data->content2 : ""}}</textarea>
+                        <textarea name="second" id="editor2">{{$data->content2}}</textarea>
                     </div>
                 </div>
             </div>
@@ -79,7 +79,7 @@
                 </div>
                 <div class="card-content collapse show">
                     <div class="card-body" style="height: 450px; overflow-y: auto;">
-                        <textarea name="thirdd" id="editor3">{{isset($data->content3) ? $data->content3 : ""}}</textarea>
+                        <textarea name="thirdd" id="editor3">{{$data->content3}}</textarea>
                     </div>
                 </div>
             </div>
