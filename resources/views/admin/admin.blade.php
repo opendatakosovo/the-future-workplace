@@ -185,7 +185,7 @@
                                                     <span class="list-group-item-heading">{{$browser['browser']}}</span>
                                                 </td>
                                                 <td class="text-truncate border-0">
-                                                    <span class="badge @if($browser['browser'] == 'Safari') badge-primary @elseif($browser['browser'] == 'Chrome' ) badge-warning @else badge-dander @endif">{{{$browser['sessions']}}}</span>
+                                                    <span class="badge @if($browser['browser'] == 'Safari') badge-primary @elseif($browser['browser'] == 'Chrome' ) badge-warning @else badge-danger @endif">{{{$browser['sessions']}}}</span>
                                                 </td>
 
                                             </tr>
@@ -245,7 +245,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Statistics -->
         </div>
         <!--/ Statistics -->

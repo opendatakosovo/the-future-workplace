@@ -121,6 +121,9 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('/admin/business-data/import_businesses', 'Admin\BusinessDataController@import_businesses');
     Route::post('/admin/business-data/destroy_business', 'Admin\BusinessDataController@destroy_business');
 
+    Route::get('/admin/about', 'Admin\AboutController@index');
+    Route::post('/admin/about_us/store', 'Admin\AboutController@store');
+
 });
 
 
