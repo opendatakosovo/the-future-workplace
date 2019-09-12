@@ -15,9 +15,9 @@ class CreateAboutUsTable extends Migration
     {
         Schema::create('about_us', function (Blueprint $table) {
             $table->increments('id');
-            $table->longText('first');
-            $table->longText('second');
-            $table->longText('third');
+            $table->longText('content1');
+            $table->longText('content2');
+            $table->longText('content3');
             $table->timestamps();
         });
     }
