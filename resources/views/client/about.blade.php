@@ -27,7 +27,7 @@
                                 <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
                             </div>
                             <h2 class="title"><a href="#">Our Mission</a></h2>
-                           {!!  $data->content1 !!}
+                           {!!  isset($data->content1) ? $data->content1 : ""  !!}
                         </div>
                     </div>
 
@@ -38,7 +38,7 @@
                                 <div class="icon"><i class="ion-ios-list-outline"></i></div>
                             </div>
                             <h2 class="title"><a href="#">Our Plan</a></h2>
-                            {!!  $data->content2 !!}
+                            {!!  isset($data->content2) ? $data->content2 : "" !!}
                         </div>
                     </div>
 
@@ -49,7 +49,7 @@
                                 <div class="icon"><i class="ion-ios-eye-outline"></i></div>
                             </div>
                             <h2 class="title"><a href="#">Our Vision</a></h2>
-                            {!!  $data->content3 !!}
+                            {!!  isset($data->content3) ? $data->content3 : "" !!}
                         </div>
                     </div>
 
