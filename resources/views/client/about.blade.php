@@ -27,7 +27,16 @@
                                 <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
                             </div>
                             <h2 class="title"><a href="#">Our Mission</a></h2>
-                           {!!  isset($data->content1) ? $data->content1 : ""  !!}
+                            <p>The overall objective of The Future Workplace project is to increase ICT market
+                                information
+                                in Kosovo in order to contribute to employment opportunities through among other
+                                identifying
+                                services offered in Kosovo and business opportunities.<br>
+                                The data presented in The Future Workplace platform has been obtained by Ministry of
+                                Education, Science and Technology, Ministry of Trade and Industry, and Tax
+                                Administration of
+                                Kosovo.
+                            </p>
                         </div>
                     </div>
 
@@ -38,7 +47,11 @@
                                 <div class="icon"><i class="ion-ios-list-outline"></i></div>
                             </div>
                             <h2 class="title"><a href="#">Our Plan</a></h2>
-                            {!!  isset($data->content2) ? $data->content2 : "" !!}
+                            <p>1.Create a mechanism/digital tool of interlinking data that can contribute to economic
+                                development;<br>
+                                2.Help understand ICT market potential in Kosovo;<br>
+                                3.Contribute to the growth of the industry.
+                            </p>
                         </div>
                     </div>
 
@@ -49,31 +62,34 @@
                                 <div class="icon"><i class="ion-ios-eye-outline"></i></div>
                             </div>
                             <h2 class="title"><a href="#">Our Vision</a></h2>
-                            {!!  isset($data->content3) ? $data->content3 : "" !!}
+                            <p>1.A basis for an overall understanding of the educational preparation of students and
+                                graduates in the ICT field and how their qualifications match ICT market demand;<br>
+                                2.An understanding on how the education system in Kosovo should be modified/improved in
+                                order
+                                to adapt the next generations for the current and future ICT market needs;<br>
+                                3.Valuable data to potential international companies on what human capacities currently
+                                exist
+                                in Kosovo, and insights on what investments can potentially be made;<br>
+                                4.Suggestions on practical methods of improvement in other sectors in order to reach
+                                their
+                                growth potential.
+                            </p>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </section><!-- #about -->
         <section id="clients" class="wow fadeInUp">
             <div class="container">
 
                 <header class="section-header">
-                    <h3>Our Clients</h3>
+                    <h3>Our Partners</h3>
                 </header>
 
-                <div class="owl-carousel clients-carousel">
-                    <img src="app-assets/css/about_us/img/clients/client-1.png" alt="">
-                    <img src="app-assets/css/about_us/img/clients/client-2.png" alt="">
-                    <img src="app-assets/css/about_us/img/clients/client-3.png" alt="">
-                    <img src="app-assets/css/about_us/img/clients/client-4.png" alt="">
-                    <img src="app-assets/css/about_us/img/clients/client-5.png" alt="">
-                    <img src="app-assets/css/about_us/img/clients/client-6.png" alt="">
-                    <img src="app-assets/css/about_us/img/clients/client-7.png" alt="">
-                    <img src="app-assets/css/about_us/img/clients/client-8.png" alt="">
-                </div>
+
+                    <img src="app-assets/css/about_us/img/clients/mcc.svg" style="width: 150px; margin-left: 34%;" alt="">
+                    <img src="app-assets/css/about_us/img/clients/oek.svg" style="width: 213px; margin-top: 22px;" alt="">
+
 
             </div>
         </section><!-- #clients -->
@@ -94,5 +110,5 @@
 
     <!-- Template Main Javascript File -->
     <script src="app-assets/css/about_us/js/main.js"></script>
-    
+
 @endsection
