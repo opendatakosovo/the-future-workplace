@@ -88,6 +88,7 @@
                 <img src="app-assets/css/about_us/img/clients/mcc-gov.svg" style="width: 313px;margin-left: 5%; margin-top: 22px;" alt="">
             </div>
         </section><!-- #clients -->
+        <hr style="width: 70%">
         <section id="clients" class="wow fadeInUp">
             <div class="container">
                 <header class="section-header">
