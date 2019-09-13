@@ -22,9 +22,9 @@
                     <i class="flag-icon "></i><span class="selected-language">EN</span></a>
                 <div class="dropdown-menu" aria-labelledby="dropdown-flag">
                     <div class="arrow_box">
+                        <a class="dropdown-item" href="#"> ALB</a>
                         <a class="dropdown-item" href="#"> EN</a>
-                        <a class="dropdown-item" href="#"> AL</a>
-                        <a class="dropdown-item" href="#"> SR</a>
+                        <a class="dropdown-item" href="#"> SRB</a>
                     </div>
                 </div>
             </li>
