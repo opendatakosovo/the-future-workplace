@@ -19,12 +19,12 @@
             <li class="dropdown dropdown-language nav-item">
                 <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
-                    <i class="flag-icon "></i><span class="selected-language">EN</span></a>
+                    <i class="flag-icon flag-icon-us"></i><span class="selected-language"></span></a>
                 <div class="dropdown-menu" aria-labelledby="dropdown-flag">
                     <div class="arrow_box">
-                        <a class="dropdown-item" href="#"> EN</a>
-                        <a class="dropdown-item" href="#"> AL</a>
-                        <a class="dropdown-item" href="#"> SR</a>
+                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-us"></i> English</a>
+                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-al"></i> Albanian</a>
+                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-rs"></i> Serbian</a>
                     </div>
                 </div>
             </li>

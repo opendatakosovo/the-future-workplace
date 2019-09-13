@@ -84,8 +84,8 @@
                 <header class="section-header">
                     <h3>Funded By</h3>
                 </header>
-                <img src="app-assets/css/about_us/img/clients/mcc.svg" style="width: 150px; margin-left: 32%;" alt="">
-                <img src="app-assets/css/about_us/img/clients/mcc-gov.svg" style="width: 313px;margin-left: 5%; margin-top: 22px;" alt="">
+                <img src="app-assets/css/about_us/img/clients/mcc.svg" style="width: 150px; margin-left: 35%;" alt="">
+                <img src="app-assets/css/about_us/img/clients/mcc-gov.svg" style="width: 213px; margin-top: 22px;" alt="">
             </div>
         </section><!-- #clients -->
         <section id="clients" class="wow fadeInUp">

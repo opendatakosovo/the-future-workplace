@@ -14,7 +14,7 @@
 use Spatie\Analytics\Analytics;
 use Spatie\Analytics\Period;
 Route::get('/', function () {
-    return view('stats');
+    return view('welcome');
 });
 
 
