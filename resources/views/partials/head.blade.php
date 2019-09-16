@@ -37,4 +37,5 @@
     <link rel="stylesheet" type="text/css" href="{{URL::asset('/assets/css/style.css')}}">
     <!-- END: Custom CSS-->
 
-
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/landing/main.css')}}">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
