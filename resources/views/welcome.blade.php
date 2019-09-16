@@ -4,18 +4,19 @@
     <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/landing/linearicons.css')}}">
     <!-- Start Banner Area -->
     <section class="home-banner-area relative" style="width: 100%">
+        <video style="width: 100%" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" >
+            <source src="app-assets/videos/Landingpagevideo.mp4" type="video/mp4">
+        </video>
         <div class="container">
             <div class="row fullscreen d-flex align-items-center justify-content-center">
-                <div class="banner-content col-lg-8 col-md-12" style="position: absolute; margin-top: -300px">
+                <div class="banner-content col-lg-8 col-md-12" style="position: absolute; margin-top: -35%">
                     <img class="brand-logo" alt="creaative admin logo" src="app-assets/images/logo/logo.svg" style="width: 7%;box-shadow: blue;">
                     <h1 class="wow fadeIn" data-wow-duration="4s">The Future Workplace</h1>
                     <p class="text-white">
                         Choose your Future Career wisely!
                     </p>
                 </div>
-                <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" >
-                    <source src="app-assets/videos/Landingpagevideo.mp4" type="video/mp4">
-                </video>
+
             </div>
         </div>
     </section>
@@ -27,7 +28,7 @@
                 <div class="col-lg-8">
                     <div class="section-title text-center">
                         <h1 style="margin-top: 3%">Features That Make Us Hero</h1>
-                        <p>
+                        <p style="font-size: 20px">
                             If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for
                             as low as $.17 each.
                         </p>
