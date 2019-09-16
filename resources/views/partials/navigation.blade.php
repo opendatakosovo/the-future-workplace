@@ -16,20 +16,19 @@
      role="navigation" data-menu="menu-wrapper" style="direction: rtl;">
     <div class="navbar-container main-menu-content" data-menu="menu-container">
         <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#" onclick="openFullscreen()"><i class="ficon ft-maximize"></i></a>
             <li class="dropdown dropdown-language nav-item">
                 <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
-                    <i class="flag-icon "></i><span class="selected-language">EN</span></a>
+                    <i class="flag-icon "></i><span class="selected-language">ENG</span></a>
                 <div class="dropdown-menu" aria-labelledby="dropdown-flag">
                     <div class="arrow_box">
-                        <a class="dropdown-item" href="#"> ALB</a>
-                        <a class="dropdown-item" href="#"> EN</a>
-                        <a class="dropdown-item" href="#"> SRB</a>
+                        <a class="dropdown-item" href="#"><i class="flag-icon "></i> English</a>
+                        <a class="dropdown-item" href="#"><i class="flag-icon "></i> Albanian</a>
+                        <a class="dropdown-item" href="#"><i class="flag-icon "></i> Serbian</a>
                     </div>
                 </div>
             </li>
-            <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"
-                                                      onclick="openFullscreen()"><i class="ficon ft-maximize"></i></a>
             </li>
             <li class="dropdown nav-item"><a class=" nav-link" href="{{ url('about') }}"><i
                             class="ft-info"></i><span>{{Lang::get('translation.about')}}</span></a>
@@ -53,12 +52,12 @@
                             class="ft-home"></i><span>{{Lang::get('translation.home')}}</span></a>
             </li>
             <div class="navbar-header"
-                 style="direction: ltr; left: 52% !important; margin: 1; width: 100% !important;">
+                 style="direction: ltr; width: 100% !important;">
                 <ul class=" navbar-nav flex-row">
                     <li class="nav-item mobile-menu d-md-none mr-auto"><a
                                 class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i
                                     class="ft-menu font-large-1"></i></a></li>
-                    <li class="nav-item"><a class="navbar-brand" href="/"><img class="brand-logo"
+                    <li class="nav-item"><a class="navbar-brand" style="margin-left: 10%;" href="/"><img class="brand-logo"
                                                                                alt="creaative admin logo"
                                                                                src="app-assets/images/logo/logo.svg">
                             <h3 class="brand-text">The Future Workplace</h3>
