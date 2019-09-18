@@ -41,9 +41,6 @@ Route::get('employee-data', 'EmployeeDataController@index');
 
 Route::get('about', 'AboutController@index');
 
-Route::get('downloads', 'DownloadsController@index');
-
-Route::get('download_content', 'DownloadsController@download_content');
 //Route::get('apcu_stats', 'CacheController@index');
 
 

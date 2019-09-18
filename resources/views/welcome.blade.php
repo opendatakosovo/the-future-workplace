@@ -1,25 +1,6 @@
 @extends('layouts/main')
 @section('title', 'Home')
 @section('content')
-    <style>
-        @media screen and (max-width: 480px) {
-            .home-banner-area {
-                height: auto !important;
-            }
-
-            .brand-logo {
-                width: 17% !important;
-                margin-bottom: 6%;
-            }
-
-            .content-wrapper-before {
-                display: none;
-            }
-            .navbar-brand{
-                left: 57% !important;
-            }
-        }
-    </style>
      <!-- Start Banner Area -->
     <section class="home-banner-area relative" style="width: 100%">
         <video style="width: 100%" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">

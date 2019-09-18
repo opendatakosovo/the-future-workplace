@@ -6,36 +6,14 @@
  * Time: 4:08 PM
  */ ?>
 
-
-<!-- BEGIN: Main Menu-->
 <style>
-    .navbar-mobile{
+    .navbar-static-top {
         display: none;
     }
-    @media screen and (max-width: 480px) {
-        .navbar-mobile {
-            display: block !important;
-        }
-        .navbar-normal{
-            display: none !important;
-        }
-        #dropdown-flag{
-            display: none;
-        }
-        .main-menu-content ul {
-            -moz-transform: rotate(180deg);
-            -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-        }
-        .main-menu-content ul > li {
-            -moz-transform: rotate(-180deg);
-            -webkit-transform: rotate(-180deg);
-            transform: rotate(-180deg);
-        }
-
-    }
 </style>
-<div class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-fixed navbar-dark navbar-without-dd-arrow navbar-shadow" role="navigation" data-menu="menu-wrapper" style="direction: rtl;">
+<!-- BEGIN: Main Menu-->
+<div class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-fixed navbar-dark navbar-without-dd-arrow navbar-shadow"
+     role="navigation" data-menu="menu-wrapper" style="direction: rtl;">
     <div class="navbar-container main-menu-content" data-menu="menu-container">
         <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
             <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#" onclick="openFullscreen()"><i class="ficon ft-maximize"></i></a>
@@ -51,9 +29,6 @@
                     </div>
                 </div>
             </li>
-            </li>
-            <li class="dropdown nav-item"><a class=" nav-link" href="{{ url('downloads') }}"><i
-                            class="ft-download"></i><span>{{Lang::get('translation.downloads')}}</span></a>
             </li>
             <li class="dropdown nav-item"><a class=" nav-link" href="{{ url('about') }}"><i
                             class="ft-info"></i><span>{{Lang::get('translation.about')}}</span></a>
@@ -76,7 +51,7 @@
             <li class="dropdown nav-item"><a class=" nav-link" href="{{ url('home') }}"><i
                             class="ft-home"></i><span>{{Lang::get('translation.home')}}</span></a>
             </li>
-            <div class="navbar-header navbar-normal"
+            <div class="navbar-header"
                  style="direction: ltr; width: 100% !important;">
                 <ul class=" navbar-nav flex-row">
                     <li class="nav-item mobile-menu d-md-none mr-auto"><a
@@ -99,33 +74,33 @@
 <!-- END: Main Menu-->
 
 
-{{--<script>--}}
-    {{--/* Get the documentElement (<html>) to display the page in fullscreen */--}}
-    {{--var elem = document.documentElement;--}}
+<script>
+    /* Get the documentElement (<html>) to display the page in fullscreen */
+    var elem = document.documentElement;
 
-    {{--/* View in fullscreen */--}}
-    {{--function openFullscreen() {--}}
-        {{--if (elem.requestFullscreen) {--}}
-            {{--elem.requestFullscreen();--}}
-        {{--} else if (elem.mozRequestFullScreen) { /* Firefox */--}}
-            {{--elem.mozRequestFullScreen();--}}
-        {{--} else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */--}}
-            {{--elem.webkitRequestFullscreen();--}}
-        {{--} else if (elem.msRequestFullscreen) { /* IE/Edge */--}}
-            {{--elem.msRequestFullscreen();--}}
-        {{--}--}}
-    {{--}--}}
+    /* View in fullscreen */
+    function openFullscreen() {
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) { /* Firefox */
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE/Edge */
+            elem.msRequestFullscreen();
+        }
+    }
 
-    {{--/* Close fullscreen */--}}
-    {{--function closeFullscreen() {--}}
-        {{--if (document.exitFullscreen) {--}}
-            {{--document.exitFullscreen();--}}
-        {{--} else if (document.mozCancelFullScreen) { /* Firefox */--}}
-            {{--document.mozCancelFullScreen();--}}
-        {{--} else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */--}}
-            {{--document.webkitExitFullscreen();--}}
-        {{--} else if (document.msExitFullscreen) { /* IE/Edge */--}}
-            {{--document.msExitFullscreen();--}}
-        {{--}--}}
-    {{--}--}}
-{{--</script>--}}
+    /* Close fullscreen */
+    function closeFullscreen() {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) { /* Firefox */
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE/Edge */
+            document.msExitFullscreen();
+        }
+    }
+</script>
