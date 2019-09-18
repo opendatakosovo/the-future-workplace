@@ -15,7 +15,6 @@
             <li class=" nav-item"><a href="{{url('admin/home')}}"><i class="ft-home"></i><span class="menu-title" data-i18n="">Ballina</span></a></li>
             <li class=" nav-item"><a href="{{url('admin/uni-settings')}}"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Universities</span></a></li>
             <li class=" nav-item"><a href="{{ url('admin/business_data') }}"><i class="ft-layers"></i><span class="menu-title" data-i18n="">Business Data</span></a>
-
             </li>
 
             {{--<li class=" nav-item"><a href="{{url('admin/workforce_data')}}"><i class="ft-layout"></i><span class="menu-title" data-i18n="">WorkForce Data</span></a>--}}

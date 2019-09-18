@@ -571,7 +571,7 @@ td, th {
   display: table; }
 
 .light {
-  color: #fff; }
+  color: #808080; }
 
 .dark {
   color: #000; }
@@ -1784,9 +1784,9 @@ body.mobile-nav-active #mobile-nav-toggle {
 .home-banner-area {
   background: url(../img/header-bg.png) no-repeat top center;
   background-size: cover; }
-  @media (max-width: 767.98px) {
-    .home-banner-area .fullscreen {
-      height: 900px !important; } }
+  /*@media (max-width: 767.98px) {*/
+    /*.home-banner-area .fullscreen {*/
+      /*height: 900px !important; } }*/
 
 .rocket-img {
   position: absolute;

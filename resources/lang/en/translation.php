@@ -60,8 +60,8 @@ return array(
     'choose_gender' => 'Choose Gender',
     'male' => 'Male',
     'female' => 'Female',
-
-
+    'downloads' => 'Downloads',
+    'download_text' => 'Downlaod The Public Data By Type'
 
 
 
