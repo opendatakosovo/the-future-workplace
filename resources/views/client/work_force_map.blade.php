@@ -1,10 +1,26 @@
 @extends('layouts/main')
 @section('title', 'Harta e Fuqise Punetore')
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="app-assets/js/scripts/highcharts/kv-all.js"></script>
 @section('content')
     <style>
         .btn-primary{
             background-color: #256960 !important;
         }
+        .highcharts-root{
+            width: 100%;
+            height: 560px;
+            margin-left: -150px;
+        }
+        .highcharts-container{
+            width: 150% !important;
+            height: 100% !important;
+        }
+        .highcharts-label text{
+            font-weight: normal !important;
+        }
+
     </style>
     <div class="content-header-left col-md-6 col-12 mb-2">
         <h3 class="content-header-title">{{Lang::get('translation.workforce_data')}}</h3>
@@ -134,12 +150,14 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-xl-9 col-lg-12">
+                    <div class="col-xl-12 col-lg-12">
                         <div class="card" style="height: auto;">
-                            <iframe src="https://datawrapper.dwcdn.net/fz5Xj/1/" scrolling="yes" class="center"
-                                    style="margin-left:6px; margin-right:6px;" height="500px" name="myiFrame"
-                                    frameborder="0" marginheight="0px"
-                                    style="width:0; min-width:100%!important; border:none;"></iframe>
+                            <div id="map" class="center" style="margin-left:6px; margin-right:6px;"></div>
+
+                            {{--<iframe src="https://datawrapper.dwcdn.net/fz5Xj/1/" scrolling="yes" class="center"--}}
+                                    {{--style="margin-left:6px; margin-right:6px;" height="500px" name="myiFrame"--}}
+                                    {{--frameborder="0" marginheight="0px"--}}
+                                    {{--style="width:0; min-width:100%!important; border:none;"></iframe>--}}
                         </div>
                     </div>
                 </div>
@@ -845,6 +863,86 @@
         });
 
 
+
+    </script>
+    <script>
+        // Prepare demo data
+        // Data is joined to map using value of 'hc-key' property by default.
+        // See API docs for 'joinBy' for more info on linking data and map.
+        var data = [
+            ['kv-841', 12339],
+            ['kv-7318', 8827],
+            ['kv-7319', 8256],
+            ['kv-7320', 8722],
+            ['kv-7321', 7189],
+            ['kv-7322', 10786],
+            ['kv-844', 7675],
+            ['kv-7302', 10760],
+            ['kv-7303', 10398],
+            ['kv-7304', 7488],
+            ['kv-7305', 7140],
+            ['kv-7306', 10334],
+            ['kv-845', 8360],
+            ['kv-7307', 8469],
+            ['kv-7308', 9118],
+            ['kv-7309', 8507],
+            ['kv-7310', 6432],
+            ['kv-7311', 9315],
+            ['kv-842', 8582],
+            ['kv-7312', 9735],
+            ['kv-7313', 20],
+            ['kv-7314', 21],
+            ['kv-843', 22],
+            ['kv-7315', 23],
+            ['kv-7316', 24],
+            ['kv-7317', 25],
+            ['kv-7323', 26],
+            ['kv-7324', 27],
+            ['kv-7325', 28],
+            ['kv-7326', 29]
+        ];
+
+        // Create the chart
+        Highcharts.mapChart('map', {
+            chart: {
+                map: 'countries/kv/kv-all'
+            },
+
+            title: {
+                text: ''
+                // null
+            },
+            //     subtitle: {
+            //     // text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/kv/kv-all.js">Kosovo</a>'
+            // },
+
+            mapNavigation: {
+                enabled: true,
+                buttonOptions: {
+                    verticalAlign: 'bottom'
+                }
+            },
+
+            colorAxis: {
+                min: 0
+            },
+
+            series: [{
+                data: data,
+                name: 'Total',
+                states: {
+                    hover: {
+                        color: '#0d3c3c'
+                    }
+                },
+                dataLabels: {
+                    fontSize:'15px',
+                    enabled: true,
+                    format: '{point.name}'
+                },
+
+            }]
+        });
 
     </script>
 @endsection

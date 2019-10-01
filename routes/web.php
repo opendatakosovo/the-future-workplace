@@ -36,6 +36,11 @@ Route::get('roadmap', 'RoadMapController@index');
 Route::get('skills-mismatch', 'SkillsMismatchController@index');
 
 Route::get('company-data', 'BusinessMapController@index');
+Route::get('atk-data', 'AtkDataController@index');
+Route::get('get_number_atk_categories', 'AtkDataController@fetch_data');
+
+Route::get('get_number_atk_employees', 'AtkDataController@fetch_data2');
+
 
 Route::get('employee-data', 'EmployeeDataController@index');
 
@@ -126,6 +131,20 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/admin/about', 'Admin\AboutController@index');
     Route::post('/admin/about_us/store', 'Admin\AboutController@store');
+
+    //ATK
+
+    Route::get('/admin/atk-data', 'Admin\AtkController@index');
+    Route::get('/admin/atk-data/fetch_data', 'Admin\AtkController@fetch_data');
+    Route::post('/admin/atk-data/destroy_data', 'Admin\AtkController@destroy_data');
+    Route::post('/admin/atk-data/import_data', 'Admin\AtkController@import_data');
+
+    //High School
+
+    Route::get('/admin/highschool-data', 'Admin\HighSchoolDataController@index');
+    Route::get('/admin/highschool-data/fetch_data', 'Admin\HighSchoolDataController@fetch_data');
+    Route::post('/admin/highschool-data/destroy_data', 'Admin\HighSchoolDataController@destroy_data');
+    Route::post('/admin/highschool-data/import_data', 'Admin\HighSchoolDataController@import_data');
 
 });
 
