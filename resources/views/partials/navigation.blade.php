@@ -80,7 +80,7 @@
                                             href="{{ url('workforce-map') }}">{{Lang::get('translation.university')}}</a>
                         </li>
                         <li data-menu=""><a class="dropdown-item"
-                                            href="{{ url('workforce-map') }}">{{Lang::get('translation.high_school')}}</a>
+                                            href="{{ url('highschool-data') }}">{{Lang::get('translation.high_school')}}</a>
                         </li>
                     </div>
                 </ul>

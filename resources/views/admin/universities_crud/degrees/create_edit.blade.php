@@ -27,10 +27,10 @@
                     </div>
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Select University:</label>
-                        <select class="select2 form-control" id="uni_id" name="uni_id">
+                        <select class="select2 form-control" id="uni_id" name="school_id">
                             <optgroup label="Choose University">
-                                @foreach($data['universities'] as $university)
-                                    <option name="university" value="{{$university['id']}}">{{$university['uni_name']}}</option>
+                                @foreach($data['universities_all'] as $university)
+                                    <option name="university" value="{{$university['id']}}">{{$university['school_name']}}</option>
                                 @endforeach
                             </optgroup>
                         </select>

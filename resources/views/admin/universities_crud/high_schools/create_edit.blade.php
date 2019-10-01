@@ -7,7 +7,7 @@
  */
 ?>
 <!-- Modal -->
-<div class="modal fade" id="createUniversity" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+<div class="modal fade" id="createHighSchool" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -17,12 +17,12 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="admin/uni-settings/store_university" method="post" id="uni_form">
+            <form action="/admin/uni-settings/store_university" method="post" id="uni_form">
                 @CSRF
                 <div class="modal-body">
                     <div class="form-group">
                         <input type="hidden" name="id" id="hidden_uni_id">
-                        <label for="recipient-name" class="col-form-label">University Name:</label>
+                        <label for="recipient-name" class="col-form-label">School Name:</label>
                         <input type="text" class="form-control" id="uni_name" name="uni_name">
                     </div>
                     <div class="form-group">
@@ -34,7 +34,9 @@
                             </optgroup>
                         </select>
                     </div>
+
                     <div class="form-group">
+                        <input type="hidden" name="high_school" id="hidden_uni_id" value="true">
                         <input type="hidden" name="id" id="hidden_uni_id">
                         <label for="recipient-name" class="col-form-label">Municipality:</label>
                         <input type="text" class="form-control" id="municipality" name="municipality">
@@ -43,7 +45,7 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" id="uni_modal_button" class="btn btn-primary">Add University</button>
+                    <button type="submit" id="uni_modal_button" class="btn btn-primary">Add School</button>
                 </div>
             </form>
         </div>

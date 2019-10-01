@@ -25,16 +25,31 @@ class UniSettingsController extends Controller
         $skill_results = [];
         $degree_results = [];
         $university_results = [];
-
+        $high_school_results = [];
+        $university_all_results = [];
         $skills = Skills::all();
 //        $degrees = Degrees::all();
 
         $degrees = DB::table('degrees')
-            ->select('degrees.id', 'degrees.degree_name', 'uni_id', 'skills', 'uni_name')
-            ->join('universities', 'universities.id', '=', 'degrees.uni_id')
+            ->select('degrees.id', 'degrees.degree_name', 'school_id', 'skills', 'school_name')
+            ->join('schools', 'schools.id', '=', 'degrees.school_id')
             ->get();
 
-        $universities = Universities::all();
+//        $universities = Universities::all();
+
+        $universities = DB::table('schools')
+            ->select('*')
+            ->where('is_high_school','!=' , '1')
+            ->get();
+
+        $universities_all = DB::table('schools')
+            ->select('*')
+            ->get();
+
+        $high_schools = DB::table('schools')
+            ->select('*')
+            ->where('is_high_school','=' , '1')
+            ->get();
 
         foreach ($skills as $skill) {
             $skill_results[] = array(
@@ -47,8 +62,8 @@ class UniSettingsController extends Controller
             $degree_results[] = array(
                 'id' => $degree->id,
                 'degree_name' => $degree->degree_name,
-                'uni_id' => $degree->uni_id,
-                'uni_name' => $degree->uni_name,
+                'school_id' => $degree->school_id,
+                'school_name' => $degree->school_name,
                 'skills' => $this->get_skill_names(unserialize($degree->skills)),
                 'skill_ids' => implode(',', unserialize($degree->skills))
             );
@@ -56,8 +71,26 @@ class UniSettingsController extends Controller
         foreach ($universities as $university) {
             $university_results[] = array(
                 'id' => $university->id,
-                'uni_name' => $university->uni_name,
-                'uni_type' => $university->uni_type
+                'school_name' => $university->school_name,
+                'school_type' => $university->school_type,
+                'municipality' => $university->municipality
+            );
+        }
+        foreach ($universities_all as $university) {
+            $university_all_results_results[] = array(
+                'id' => $university->id,
+                'school_name' => $university->school_name,
+                'school_type' => $university->school_type,
+                'is_high_school' => $university->is_high_school,
+                'municipality' => $university->municipality
+            );
+        }
+        foreach ($high_schools as $high_school) {
+            $high_school_results[] = array(
+                'id' => $high_school->id,
+                'school_name' => $high_school->school_name,
+                'school_type' => $high_school->school_type,
+                'municipality' => $high_school->municipality
             );
         }
 
@@ -65,7 +98,9 @@ class UniSettingsController extends Controller
         $data = array(
             'skills' => $skill_results,
             'degrees' => $degree_results,
-            'universities' => $university_results
+            'universities' => $university_results,
+            'universities_all' => $university_all_results_results,
+            'high_schools' => $high_school_results
         );
         return view('admin/uni_settings')->with('data', $data);
     }
@@ -75,9 +110,15 @@ class UniSettingsController extends Controller
     {
 
         $uni = new Universities();
-
-        $uni->uni_name = $request->uni_name;
-        $uni->uni_type = $request->uni_type;
+        if(isset($request->high_school) && $request->high_school == 'true'){
+            $is_high_school = 1;
+        }else{
+            $is_high_school = 0;
+        }
+        $uni->school_name = $request->school_name;
+        $uni->school_type = $request->school_type;
+        $uni->municipality = $request->municipality;
+        $uni->is_high_school = $is_high_school;
 
         $uni->save();
 
@@ -102,8 +143,8 @@ class UniSettingsController extends Controller
         $id = $request->id;
         $uni = Universities::find($id);
 
-        $uni->uni_name = $request->uni_name;
-        $uni->uni_type = $request->uni_type;
+        $uni->school_name = $request->school_name;
+        $uni->school_type = $request->school_type;
         $uni->save();
 
 
@@ -161,7 +202,7 @@ class UniSettingsController extends Controller
         $skill_ids = $request->skill_ids;
 
         $degree->degree_name = $request->degree_name;
-        $degree->uni_id = $request->uni_id;
+        $degree->school_id = $request->school_id;
 
         $skills = $request->skill_ids;
         $degree->skills = serialize($skills);
@@ -184,7 +225,11 @@ class UniSettingsController extends Controller
         $id = $request->id;
         $uni = new Degrees();
 
+        $skills_degrees = new SkillsDegrees();
+
         $uni->destroy($id);
+
+        $skills_degrees->where('degree_id', '=' ,$id)->delete();
 
 
         return redirect('admin/uni-settings');
@@ -196,7 +241,7 @@ class UniSettingsController extends Controller
         $id = $request->id;
         $degree = Degrees::find($id);
         $degree->degree_name = $request->degree_name;
-        $degree->uni_id = $request->uni_id;
+        $degree->school_id = $request->school_id;
 
         $skills = $request->skill_ids;
         $degree->skills = serialize($skills);
@@ -212,8 +257,10 @@ class UniSettingsController extends Controller
 
         $grad = new Graduates();
 
-        $grad->uni_id = $request->uni_id;
+        $grad->school_id = $request->school_id;
         $grad->degree_id = $request->degree_id;
+        $grad->grade = $request->grade;
+        $grad->year = $request->year;
         $grad->number_of_graduates = $request->no_graduates;
         $grad->number_of_males = $request->no_males;
         $grad->number_of_females = $request->no_females;
@@ -242,7 +289,7 @@ class UniSettingsController extends Controller
         $id = $request->id;
         $grad = Graduates::find($id);
 
-        $grad->uni_id = $request->uni_id;
+        $grad->uni_id = $request->school_id;
         $grad->degree_id = $request->degree_id;
         $grad->number_of_graduates = $request->no_graduates;
         $grad->number_of_males = $request->no_males;
@@ -294,7 +341,7 @@ class UniSettingsController extends Controller
         for ($i = 0; $i < count($customerArr); $i++) {
             Graduates::firstOrCreate(
                 [
-                    'uni_id' => $customerArr[$i]['uni_id'],
+                    'school_id' => $customerArr[$i]['school_id'],
                     'degree_id' => $customerArr[$i]['degree_id'],
                     'number_of_graduates' => $customerArr[$i]['number_of_graduates'],
                     'number_of_males' => $customerArr[$i]['number_of_males'],
@@ -345,16 +392,16 @@ class UniSettingsController extends Controller
 
         foreach ($data as $d) {
             $data_result[] = array(
-                'uni_id' => $this->get_name('university', $d->uni_id),
+                'school_id' => $this->get_name('university', $d->school_id),
                 'degree_id' => $this->get_name('degrees', $d->degree_id),
-                'instit_type' => $this->get_name('institution', $d->uni_id),
+                'instit_type' => $this->get_name('institution', $d->school_id),
                 'number_of_graduates' => $d->number_of_graduates,
                 'number_of_males' => $d->number_of_males,
                 'number_of_females' => $d->number_of_females,
                 'year' => $d->year,
                 'actions' => '
                                     <button type="button" class="btn btn-info btn-sm a-btn-slide-text"
-                                            data-toggle="modal" data-target="#createGrad"  onclick="editGrad(' . $d->id . ',' . $d->uni_id . ',' . $d->degree_id . ',' . $d->number_of_graduates . ',' . $d->number_of_males . ',' . $d->number_of_females . ',' . $d->year . ')">
+                                            data-toggle="modal" data-target="#createGrad"  onclick="editGrad(' . $d->id . ',' . $d->school_id . ',' . $d->degree_id . ',' . $d->number_of_graduates . ',' . $d->number_of_males . ',' . $d->number_of_females . ',' . $d->year . ')">
                                         Edit
                                     </button>
                                     <button type="button" class="btn btn-danger btn-sm a-btn-slide-text"
@@ -381,13 +428,13 @@ class UniSettingsController extends Controller
     {
 
         if ($type == 'university') {
-            $name = DB::table('universities')->where('id', $id)->value('uni_name');
+            $name = DB::table('schools')->where('id', $id)->value('school_name');
         }
         if ($type == 'degrees') {
             $name = DB::table('degrees')->where('id', $id)->value('degree_name');
         }
         if ($type == 'institution') {
-            $name = DB::table('universities')->where('id', $id)->value('uni_type');
+            $name = DB::table('schools')->where('id', $id)->value('school_type');
         }
         return $name;
     }

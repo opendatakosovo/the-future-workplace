@@ -52,6 +52,9 @@ Route::get('download_content', 'DownloadsController@download_content');
 //Route::get('apcu_stats', 'CacheController@index');
 
 
+Route::get('highschool-data', 'HighSchoolController@index');
+
+
 Route::get('grads_ict', 'StatsController@grads_ict');
 Route::get('number_businnesses', 'StatsController@number_businnesses');
 

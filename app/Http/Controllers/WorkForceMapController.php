@@ -22,7 +22,7 @@ class WorkForceMapController extends Controller
 
         foreach ($universities as $university) {
             $university_result[] = array(
-                'uni_name' => $university->uni_name,
+                'uni_name' => $university->school_name,
                 'uni_id' => $university->id
             );
         }
@@ -57,7 +57,7 @@ class WorkForceMapController extends Controller
         $universities = Universities::all();
 
         foreach ($universities as $university) {
-            $universities[] = $university->uni_name;
+            $universities[] = $university->school_name;
         }
 
         $data = [];
@@ -72,12 +72,18 @@ class WorkForceMapController extends Controller
         $degree_filter = $_GET['degree'] ?? null;
         $university_filter = $_GET['university'] ?? null;
 
-        $universities = Universities::all();
+        if(isset($_GET['highschool']) && $_GET['highschool'] == 'true'){
+            $is_high_school = 1;
+        }
+        else{
+            $is_high_school = 0;
+        }
+        $universities = Universities::where('is_high_school',$is_high_school)->get();
 
 
         foreach ($universities as $university) {
-            $universities_array[$university->id] = $university->uni_name;
-            $universities_result[] = $university->uni_name;
+            $universities_array[$university->id] = $university->school_name;
+            $universities_result[] = $university->school_name;
         }
 
         if ($university_filter != null && $university_filter != 'all') {
@@ -92,7 +98,7 @@ class WorkForceMapController extends Controller
         foreach ($genders as $gender) {
             $data[] = array(
                 'name' => $gender,
-                'data' => $this->get_per_ict_dep_data($universities_result, $gender, $year_filter, $degree_filter, $university_filter)
+                'data' => $this->get_per_ict_dep_data($universities_result, $gender, $year_filter, $degree_filter, $university_filter,$is_high_school)
             );
         }
 
@@ -107,6 +113,12 @@ class WorkForceMapController extends Controller
 
         $skills = Skills::all();
 
+        if(isset($_GET['highschool']) && $_GET['highschool'] == 'true'){
+            $is_high_school = 1;
+        }
+        else{
+            $is_high_school = 0;
+        }
 
         foreach ($skills as $skill) {
             $skills_array[$skill->id] = $skill->skill_name;
@@ -125,7 +137,7 @@ class WorkForceMapController extends Controller
         foreach ($genders as $gender) {
             $data[] = array(
                 'name' => $gender,
-                'data' => $this->get_per_skill_area($skills_result, $gender, $year_filter, $skills_filter)
+                'data' => $this->get_per_skill_area($skills_result, $gender, $year_filter, $skills_filter,$is_high_school)
             );
         }
 
@@ -274,7 +286,7 @@ class WorkForceMapController extends Controller
         return $final_res;
     }
 
-    function get_per_ict_dep_data($universities, $gender = null, $year_filter, $degree_filter, $university_filter)
+    function get_per_ict_dep_data($universities, $gender = null, $year_filter, $degree_filter, $university_filter,$is_high_school)
     {
         if ($degree_filter == null) {
             $degree_filter = '1';
@@ -282,13 +294,13 @@ class WorkForceMapController extends Controller
 
         $query = Graduates::query();
 
-        $query = $query->select(DB::raw('sum(number_of_females) as female_count,sum(number_of_males) as male_count'), 'uni_name', 'degree_id');
+        $query = $query->select(DB::raw('sum(number_of_females) as female_count,sum(number_of_males) as male_count'), 'school_name', 'degree_id');
 
         if ($degree_filter != null) {
             $query = $query->where('degree_id', '=', $degree_filter);
         }
         if ($university_filter != null && $university_filter != 'all') {
-            $query = $query->where('uni_id', '=', $university_filter);
+            $query = $query->where('school_id', '=', $university_filter);
         }
 //
 //        if($cities != null){
@@ -303,15 +315,19 @@ class WorkForceMapController extends Controller
 //            $query = $query->where('status', 'LIKE', '%' . $status . '%');
 //        }
 
-        $query = $query->join('universities', 'graduates.uni_id', '=', 'universities.id');
+        $query = $query->join('schools', 'graduates.school_id', '=', 'schools.id');
+        if($is_high_school == 1){
+            $query = $query->where('schools.is_high_school', '=', 1);
+            $query = $query->where('graduates.school_id', '!=', 0);
+        }
 
-        $query = $query->groupBy('uni_name');
+        $query = $query->groupBy('school_name');
         $query = $query->groupBy('graduates.degree_id');
 
         $results = $query->get();
 
         foreach ($results as $result) {
-            $data_converted[$result->uni_name] = array(
+            $data_converted[$result->school_name] = array(
                 'count_male' => $result->male_count,
                 'count_female' => $result->female_count
             );
@@ -342,7 +358,7 @@ class WorkForceMapController extends Controller
         return $final_res;
     }
 
-    function get_per_skill_area($skills, $gender = null, $year_filter, $skills_filter)
+    function get_per_skill_area($skills, $gender = null, $year_filter, $skills_filter,$is_high_school)
     {
 //        if($skills_filter == null){
 //            $skills_filter = '1';
@@ -357,11 +373,17 @@ class WorkForceMapController extends Controller
 
                     $query = $query->select(DB::raw('sum(number_of_females) as female_count,sum(number_of_males) as male_count'), 'graduates.degree_id','skill_id');
 
-//            $cities_imploded = implode(',',$cities);
+//                  $cities_imploded = implode(',',$cities);
 
                     $query = $query->join('degrees', 'graduates.degree_id', '=', 'degrees.id');
+                    $query = $query->join('schools', 'degrees.school_id', '=', 'schools.id');
                     $query = $query->join('skills_degrees', 'skills_degrees.degree_id', '=', 'degrees.id');
 
+                    if($is_high_school == 1){
+                        $query = $query->where('is_high_school', '=', 1);
+                    }else{
+                        $query = $query->where('is_high_school', '=', 0);
+                    }
                     $query = $query->whereIn('skill_id', $skill_ids);
 
 //
@@ -370,7 +392,7 @@ class WorkForceMapController extends Controller
                     }
 
                     $query = $query->groupBy('skill_id');
-                    $query = $query->groupBy('graduates.uni_id');
+                    $query = $query->groupBy('graduates.school_id');
                     $results = $query->get();
 
 

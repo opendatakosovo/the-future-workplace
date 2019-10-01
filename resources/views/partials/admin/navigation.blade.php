@@ -13,7 +13,7 @@
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
             <li class=" nav-item"><a href="{{url('admin/home')}}"><i class="ft-home"></i><span class="menu-title" data-i18n="">Ballina</span></a></li>
-            <li class=" nav-item"><a href="{{url('admin/uni-settings')}}"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Universities</span></a></li>
+            <li class=" nav-item"><a href="{{url('admin/uni-settings')}}"><i class="ft-layout"></i><span class="menu-title" data-i18n="">Schools</span></a></li>
             <li class=" nav-item"><a href="{{ url('admin/business_data') }}"><i class="ft-layers"></i><span class="menu-title" data-i18n="">Business Data</span></a></li>
             <li class=" nav-item"><a href="{{ url('admin/atk-data') }}"><i class="ft-layers"></i><span class="menu-title" data-i18n="">Atk Data</span></a></li>
             <li class=" nav-item"><a href="{{ url('admin/highschool-data') }}"><i class="ft-layers"></i><span class="menu-title" data-i18n="">High School Data</span></a></li>

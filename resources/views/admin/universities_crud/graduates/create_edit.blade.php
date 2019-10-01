@@ -33,12 +33,24 @@
                     </div>
                     <input type="hidden" name="id" id="hidden_id">
                     <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Select University:</label>
-                        <select class="select2 form-control" id="uni_id" name="uni_id">
+                        <label for="recipient-name" class="col-form-label">Select School:</label>
+                        <select class="select2 form-control graduate_school_select" id="uni_id" name="school_id"  onchange="changeFunc();">
                             <optgroup label="Choose University">
-                                @foreach($data['universities'] as $university)
-                                    <option name="university" value="{{$university['id']}}">{{$university['uni_name']}}</option>
+                                @foreach($data['universities_all'] as $university)
+                                    <option class="@if($university['is_high_school'] == 1)high_school @endif" name="university" value="{{$university['id']}}">{{$university['school_name']}}</option>
                                 @endforeach
+                            </optgroup>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="grade_input" style="display: none">
+                        <input type="hidden" name="id" id="hidden_degree_id">
+                        <label for="recipient-name" class="col-form-label">Select Grade:</label>
+                        <select class="select2 form-control" id="grade" name="grade">
+                            <optgroup label="Choose Grade">
+                                @for($i=10 ; $i <= 12; $i++)
+                                    <option value="{{$i}}">{{$i}}</option>
+                                @endfor
                             </optgroup>
                         </select>
                     </div>
@@ -76,3 +88,20 @@
         </div>
     </div>
 </div>
+
+<script>
+
+    function changeFunc() {
+        var selectBox = document.getElementById("uni_id");
+        var selectedValue = selectBox.options[selectBox.selectedIndex];
+        var attribute = $('select[class="select2 form-control graduate_school_select select2-hidden-accessible"] :selected').attr('class');
+
+        if (attribute == 'high_school '){
+            $('#grade_input').show();
+        }else{
+            $('#grade_input').hide();
+        }
+    }
+
+
+</script>

@@ -23,7 +23,7 @@
 
     </style>
     <div class="content-header-left col-md-6 col-12 mb-2">
-        <h3 class="content-header-title">{{Lang::get('translation.workforce_data')}}</h3>
+        <h3 class="content-header-title">{{Lang::get('translation.highschool_data')}}</h3>
     </div>
     <div class="content-body">
         <!-- Revenue, Hit Rate & Deals -->
@@ -67,9 +67,9 @@
                                                 <select class="select2 form-control" id="year">
                                                     <optgroup label="{{Lang::get('translation.choose_year')}}">
                                                         <option name='year' selected value="all">{{Lang::get('translation.all')}}</option>
-                                                        @for ($i = 2008; $i < 2019; $i++)
-                                                            <option name='year' value="{{$i}}">{{ $i }}</option>
-                                                        @endfor
+                                                        {{--@for ($i = 2008; $i < 2019; $i++)--}}
+                                                            {{--<option name='year' value="{{$i}}">{{ $i }}</option>--}}
+                                                        {{--@endfor--}}
                                                     </optgroup>
                                                 </select>
 
@@ -80,9 +80,9 @@
                                                 <label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.degree')}}</label>
                                                 <select class="select2 form-control" id="degree">
                                                     <optgroup label="{{Lang::get('translation.choose_degree')}}">
-                                                       @foreach($data['degrees'] as $degree)
-                                                            <option name='degree' value="{{$degree['degree_id']}}">{{ $degree['degree_name'] }}</option>
-                                                        @endforeach
+                                                        {{--@foreach($data['degrees'] as $degree)--}}
+                                                            {{--<option name='degree' value="{{$degree['degree_id']}}">{{ $degree['degree_name'] }}</option>--}}
+                                                        {{--@endforeach--}}
                                                     </optgroup>
                                                 </select>
                                             </div>
@@ -94,33 +94,15 @@
                                                 <select class="select2 form-control" id="university">
                                                     <optgroup label="{{Lang::get('translation.choose_university')}}">
                                                         <option name='university' selected value="all">{{Lang::get('translation.all')}}</option>
-                                                        @foreach($data['universities'] as $university)
-                                                            <option name="university"
-                                                                    value="{{$university['uni_id']}}">{{$university['uni_name']}}</option>
-                                                        @endforeach
+                                                        {{--@foreach($data['universities'] as $university)--}}
+                                                            {{--<option name="university"--}}
+                                                                    {{--value="{{$university['uni_id']}}">{{$university['uni_name']}}</option>--}}
+                                                        {{--@endforeach--}}
                                                     </optgroup>
                                                 </select>
                                             </div>
                                         </div>
-                                        {{--<div class="col-md-4">--}}
-                                            {{--<div class="form-group ">--}}
-                                                {{--<label class="col-md-12 label-control"--}}
-                                                       {{--for="userinput2">Gender</label>--}}
-                                                {{--<select class="select2 form-control" name="gender"--}}
-                                                        {{--id="gender">--}}
-                                                    {{--<optgroup label="Choose Gender">--}}
-                                                        {{--<option  value="all" disabled>Të--}}
-                                                            {{--gjitha--}}
-                                                        {{--</option>--}}
-                                                        {{--<option value="male" disabled>Male--}}
-                                                        {{--</option>--}}
-                                                        {{--<option  value="all" disabled>Female--}}
-                                                        {{--</option>--}}
-                                                    {{--</optgroup>--}}
-                                                {{--</select>--}}
 
-                                            {{--</div>--}}
-                                        {{--</div>--}}
                                         <div class="col-md-2" style="padding: 5px">
                                             <label class="col-md-12 label-control" for="userinput2"></label>
                                             <button type="button" onclick="get_filtered('clicked')"
@@ -154,10 +136,6 @@
                         <div class="card" style="height: auto;">
                             <div id="map" class="center" style="margin-left:6px; margin-right:6px;"></div>
 
-                            {{--<iframe src="https://datawrapper.dwcdn.net/fz5Xj/1/" scrolling="yes" class="center"--}}
-                                    {{--style="margin-left:6px; margin-right:6px;" height="500px" name="myiFrame"--}}
-                                    {{--frameborder="0" marginheight="0px"--}}
-                                    {{--style="width:0; min-width:100%!important; border:none;"></iframe>--}}
                         </div>
                     </div>
                 </div>
@@ -201,9 +179,9 @@
                                             <label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.year')}}</label>
                                             <select class="select2 form-control" id="year">
                                                 <optgroup label="{{Lang::get('translation.choose_year')}}">
-                                                    @for ($i = 2008; $i <= 2019; $i++)
-                                                        <option name='year' @if($i == 2019) selected @endif value="{{$i}}">{{ $i }}</option>
-                                                    @endfor
+                                                    {{--@for ($i = 2008; $i <= 2019; $i++)--}}
+                                                        {{--<option name='year' @if($i == 2019) selected @endif value="{{$i}}">{{ $i }}</option>--}}
+                                                    {{--@endfor--}}
                                                 </optgroup>
                                             </select>
 
@@ -218,9 +196,9 @@
                                                     id="skills">
                                                 <optgroup label="{{Lang::get('translation.choose_skills')}}">
                                                     <option name='city' value="all" disabled>{{Lang::get('translation.all')}}</option>
-                                                    @foreach($data['skills'] as $skill)
-                                                        <option value="{{$skill['skill_id']}}">{{$skill['skill_name']}}</option>
-                                                    @endforeach
+                                                    {{--@foreach($data['skills'] as $skill)--}}
+                                                        {{--<option value="{{$skill['skill_id']}}">{{$skill['skill_name']}}</option>--}}
+                                                    {{--@endforeach--}}
                                                 </optgroup>
                                             </select>
 
@@ -241,166 +219,7 @@
                     </div>
                 </div>
             </div>
-            {{--<div class="col-xl-12 col-lg-12 col-md-12">--}}
-                {{--<div class="card">--}}
-                    {{--<div class="card-header">--}}
-                        {{--<h4 class="card-title">{{Lang::get('translation.workforce_data_graph3_title')}}</h4>--}}
-                        {{--<a class="heading-elements-toggle">--}}
-                            {{--<i class="la la-ellipsis-v font-medium-3"></i>--}}
-                        {{--</a>--}}
-                        {{--<div class="heading-elements">--}}
-                            {{--<ul class="list-inline mb-0">--}}
-                                {{--<li>--}}
-                                    {{--<a data-action="collapse">--}}
-                                        {{--<i class="ft-minus"></i>--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-                                {{--<li>--}}
-                                    {{--<a data-action="reload">--}}
-                                        {{--<i class="ft-rotate-cw"></i>--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-                                {{--<li>--}}
-                                    {{--<a data-action="close">--}}
-                                        {{--<i class="ft-x"></i>--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-                            {{--</ul>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="card-content collapse show">--}}
-                        {{--<div class="card-body">--}}
-                            {{--<div class="row">--}}
-                                {{--<div class="form-body col-md-12">--}}
-                                    {{--<h6 class="form-section"><i class="la la-eye"></i> {{Lang::get('translation.filters')}}</h6>--}}
-                                    {{--<div class="row">--}}
-                                        {{--<div class="col-md-3">--}}
-                                            {{--<div class="form-group">--}}
-                                                {{--<label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.gender')}}</label>--}}
-                                                {{--<select class="select2 form-control" id="gender3" name="gender3">--}}
-                                                    {{--<optgroup label="{{Lang::get('translation.choose_gender')}}">--}}
-                                                        {{--<option selected value="all">{{Lang::get('translation.all')}}</option>--}}
-                                                        {{--<option   value="Male">{{Lang::get('translation.male')}}</option>--}}
-                                                        {{--<option   value="Female">{{Lang::get('translation.female')}}</option>--}}
-                                                    {{--</optgroup>--}}
-                                                {{--</select>--}}
 
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-
-
-                                        {{--<div class="col-md-4">--}}
-                                            {{--<div class="form-group ">--}}
-                                                {{--<label class="col-md-12 label-control"--}}
-                                                       {{--for="userinput2">{{Lang::get('translation.skills')}}</label>--}}
-                                                {{--<select class="select2 form-control" name="skills3" multiple="multiple"--}}
-                                                        {{--id="skills3">--}}
-                                                    {{--<optgroup label="{{Lang::get('translation.choose_skills')}}">--}}
-                                                        {{--<option name='city' value="all" disabled>{{Lang::get('translation.all')}}</option>--}}
-                                                        {{--@foreach($data['skills'] as $skill)--}}
-                                                            {{--<option value="{{$skill['skill_id']}}">{{$skill['skill_name']}}</option>--}}
-                                                        {{--@endforeach--}}
-                                                    {{--</optgroup>--}}
-                                                {{--</select>--}}
-
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="col-md-2" style="padding: 5px">--}}
-                                            {{--<label class="col-md-12 label-control" for="userinput2"></label>--}}
-                                            {{--<button type="button" onclick="get_filtered('clicked')"--}}
-                                                    {{--class="btn btn-primary">--}}
-                                                {{--<i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}--}}
-                                            {{--</button>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<hr>--}}
-                            {{--<div id="chartContainer3" style="width:100%; height:300px;"></div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="col-xl-12 col-lg-12 col-md-12">--}}
-                {{--<div class="card" >--}}
-                    {{--<div class="card-header">--}}
-                        {{--<h4 class="card-title">{{Lang::get('translation.workforce_data_graph4_title')}}</h4>--}}
-                        {{--<a class="heading-elements-toggle">--}}
-                            {{--<i class="la la-ellipsis-v font-medium-3"></i>--}}
-                        {{--</a>--}}
-                        {{--<div class="heading-elements">--}}
-                            {{--<ul class="list-inline mb-0">--}}
-                                {{--<li>--}}
-                                    {{--<a data-action="collapse">--}}
-                                        {{--<i class="ft-minus"></i>--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-                                {{--<li>--}}
-                                    {{--<a data-action="reload">--}}
-                                        {{--<i class="ft-rotate-cw"></i>--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-                                {{--<li>--}}
-                                    {{--<a data-action="close">--}}
-                                        {{--<i class="ft-x"></i>--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-                            {{--</ul>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="card-content collapse show">--}}
-                        {{--<div class="card-body">--}}
-                            {{--<div class="row">--}}
-                                {{--<div class="form-body col-md-12">--}}
-                                    {{--<h6 class="form-section"><i class="la la-eye"></i> {{Lang::get('translation.filters')}}</h6>--}}
-                                    {{--<div class="row">--}}
-                                        {{--<div class="col-md-3">--}}
-                                            {{--<div class="form-group ">--}}
-                                                {{--<label class="col-md-12 label-control"--}}
-                                                       {{--for="userinput2">{{Lang::get('translation.gender')}}</label>--}}
-                                                {{--<select class="select2 form-control" id="gender4">--}}
-                                                    {{--<optgroup label="{{Lang::get('translation.choose_gender')}}">--}}
-                                                        {{--<option selected value="all">{{Lang::get('translation.all')}}</option>--}}
-                                                        {{--<option  value="male">{{Lang::get('translation.male')}}</option>--}}
-                                                        {{--<option  value="female">{{Lang::get('translation.female')}}</option>--}}
-                                                    {{--</optgroup>--}}
-                                                {{--</select>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="col-md-4">--}}
-                                            {{--<div class="form-group ">--}}
-                                                {{--<label class="col-md-12 label-control"--}}
-                                                       {{--for="userinput2">Skills</label>--}}
-                                                {{--<select class="select2 form-control" name="skills4" multiple="multiple"--}}
-                                                        {{--id="skills4">--}}
-                                                    {{--<optgroup label="Choose Skills">--}}
-                                                        {{--<option name='city' value="all" disabled>Të--}}
-                                                            {{--gjitha--}}
-                                                        {{--</option>--}}
-                                                        {{--@foreach($data['skills'] as $skill)--}}
-                                                            {{--<option value="{{$skill['skill_id']}}">{{$skill['skill_name']}}</option>--}}
-                                                        {{--@endforeach--}}
-                                                    {{--</optgroup>--}}
-                                                {{--</select>--}}
-
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-                                        {{--<div class="col-md-2" style="padding: 5px">--}}
-                                            {{--<label class="col-md-12 label-control" for="userinput2"></label>--}}
-                                            {{--<button type="button" onclick="get_filtered('clicked')"--}}
-                                                    {{--class="btn btn-primary">--}}
-                                                {{--<i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}--}}
-                                            {{--</button>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<hr>--}}
-                            {{--<div id="chartContainer4" style="width:100%; height:300px;"></div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
         </div>
 
     </div>
@@ -427,7 +246,7 @@
             $.ajax({
                 type: "GET",
                 url: "graduating_per_ict_dep_each_university",
-                data: {"year": year,"university": university, "degree": degree},
+                data: {"year": year,"university": university, "degree": degree,"highschool":true},
                 beforeSend: function() {
                     reload_data();
                 },
@@ -507,7 +326,7 @@
             $.ajax({
                 type: "GET",
                 url: "grad_students_per_skill_area",
-                data: {"year": year2,"degree": degree2, "cities": cities2},
+                data: {"year": year2,"degree": degree2, "cities": cities2,"highschool":true},
                 beforeSend: function() {
                     reload_data();
                 },
