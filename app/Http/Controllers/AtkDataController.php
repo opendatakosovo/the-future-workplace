@@ -29,7 +29,7 @@ class AtkDataController extends Controller
 
          $query  = Atk::query();
 
-        $query = $query->select( DB::raw('distinct kategoria , count(*) as num_count'));
+        $query = $query->select( DB::raw('distinct kategoria , sum(nr_kompanive) as num_count'));
 
 
         $query = $query->groupBy('kategoria');
@@ -43,17 +43,21 @@ class AtkDataController extends Controller
 
 
 
-        foreach($atk_data as $counti){
-            $final_res[] = $counti;
-        }
+//        foreach($atk_data as $counti){
+//            $final_res[] = $counti;
+//        }
 
 
         foreach($atk_data as $category => $count){
-            $data[] = array(
-                'name' => $category,
-                'data' =>  $count
-            );
+            $categoriess[] = $category;
+            $final_res[] = $count;
         }
+
+
+            $data[] = array(
+                'name' => $categoriess,
+                'data' =>  $final_res
+            );
 
 
         echo json_encode(array($categories,$data));
@@ -83,17 +87,18 @@ class AtkDataController extends Controller
 
 
 
-        foreach($atk_data as $counti){
-            $final_res[] = $counti;
-        }
-
-
         foreach($atk_data as $category => $count){
-            $data[] = array(
-                'name' => $category,
-                'data' =>  $count
-            );
+            $categoriess[] = $category;
+            $final_res[] = round($count);
         }
+
+
+
+            $data[] = array(
+                'name' => $categoriess,
+                'data' =>  $final_res
+            );
+
 
         echo json_encode(array($categories,$data));
 

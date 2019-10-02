@@ -148,7 +148,6 @@
                             offsetX: 10,
                             style: {
                                 fontSize: '12px',
-
                             }
                         },
                         stroke: {
@@ -159,7 +158,7 @@
                         fill: {
                             colors: [ '#266961','#093637','#449f8c','#358577']
                         },
-                        series: [],
+                        series: data_sets,
 
                         xaxis: {
                             categories: categories,
@@ -172,9 +171,7 @@
                             horizontalAlign: 'left',
                             offsetX: 40
                         },
-                        breakpoint: 1000,
                         responsive: [{
-                            breakpoint: 1000,
                             options: {
                                 chart: {
                                     height: 900,
@@ -277,7 +274,7 @@
                         fill: {
                             colors: [ '#266961','#093637','#449f8c','#358577']
                         },
-                        series: [],
+                        series: data_sets,
 
                         xaxis: {
                             categories: categories,
