@@ -56,3 +56,14 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
     bottom: 0;
     right: 20px;
 }
+
+@media (min-width: 400px) and (max-width: 890px) {
+
+    #rtb{
+        width: 61% !important;
+    }
+.read-more{
+    bottom: -17px !important;
+}
+}
+

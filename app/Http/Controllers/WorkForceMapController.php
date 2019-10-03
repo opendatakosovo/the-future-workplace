@@ -41,8 +41,10 @@ class WorkForceMapController extends Controller
                 'skill_id' => $skill->id
             );
         }
+
+
         $data = array(
-            'cities' => $municipality_result,
+            'cities' => (isset($municipality_result)) ? $municipality_result : null,
             'universities' => $university_result,
             'degrees' => $degrees_result,
             'skills' => $skills_result
