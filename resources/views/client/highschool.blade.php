@@ -67,9 +67,9 @@
                                                 <select class="select2 form-control" id="year">
                                                     <optgroup label="{{Lang::get('translation.choose_year')}}">
                                                         <option name='year' selected value="all">{{Lang::get('translation.all')}}</option>
-                                                        {{--@for ($i = 2008; $i < 2019; $i++)--}}
-                                                            {{--<option name='year' value="{{$i}}">{{ $i }}</option>--}}
-                                                        {{--@endfor--}}
+                                                        @for ($i = 2008; $i < 2019; $i++)
+                                                            <option name='year' value="{{$i}}">{{ $i }}</option>
+                                                        @endfor
                                                     </optgroup>
                                                 </select>
 
@@ -80,9 +80,9 @@
                                                 <label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.degree')}}</label>
                                                 <select class="select2 form-control" id="degree">
                                                     <optgroup label="{{Lang::get('translation.choose_degree')}}">
-                                                        {{--@foreach($data['degrees'] as $degree)--}}
-                                                            {{--<option name='degree' value="{{$degree['degree_id']}}">{{ $degree['degree_name'] }}</option>--}}
-                                                        {{--@endforeach--}}
+                                                        @foreach($data['degrees'] as $degree)
+                                                            <option name='degree' value="{{$degree['degree_id']}}">{{ $degree['degree_name'] }}</option>
+                                                        @endforeach
                                                     </optgroup>
                                                 </select>
                                             </div>
@@ -90,14 +90,14 @@
                                         <div class="col-md-3">
                                             <div class="form-group ">
                                                 <label class="col-md-12 label-control"
-                                                       for="userinput2">{{Lang::get('translation.university')}}</label>
+                                                       for="userinput2">{{Lang::get('translation.school')}}</label>
                                                 <select class="select2 form-control" id="university">
-                                                    <optgroup label="{{Lang::get('translation.choose_university')}}">
+                                                    <optgroup label="{{Lang::get('translation.choose_school')}}">
                                                         <option name='university' selected value="all">{{Lang::get('translation.all')}}</option>
-                                                        {{--@foreach($data['universities'] as $university)--}}
-                                                            {{--<option name="university"--}}
-                                                                    {{--value="{{$university['uni_id']}}">{{$university['uni_name']}}</option>--}}
-                                                        {{--@endforeach--}}
+                                                        @foreach($data['universities'] as $university)
+                                                            <option name="university"
+                                                                    value="{{$university['uni_id']}}">{{$university['uni_name']}}</option>
+                                                        @endforeach
                                                     </optgroup>
                                                 </select>
                                             </div>
@@ -177,11 +177,12 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.year')}}</label>
-                                            <select class="select2 form-control" id="year">
+                                            <select class="select2 form-control" id="year2" name="year2">
+                                                <option selected value="all">All</option>
                                                 <optgroup label="{{Lang::get('translation.choose_year')}}">
-                                                    {{--@for ($i = 2008; $i <= 2019; $i++)--}}
-                                                        {{--<option name='year' @if($i == 2019) selected @endif value="{{$i}}">{{ $i }}</option>--}}
-                                                    {{--@endfor--}}
+                                                    @for ($i = 2008; $i <= 2019; $i++)
+                                                        <option  value="{{$i}}">{{ $i }}</option>
+                                                    @endfor
                                                 </optgroup>
                                             </select>
 
@@ -192,13 +193,13 @@
                                         <div class="form-group ">
                                             <label class="col-md-12 label-control"
                                                    for="userinput2">{{Lang::get('translation.skills')}}</label>
-                                            <select class="select2 form-control" name="city" multiple="multiple"
+                                            <select class="select2 form-control" name="skills[]" multiple="multiple"
                                                     id="skills">
                                                 <optgroup label="{{Lang::get('translation.choose_skills')}}">
                                                     <option name='city' value="all" disabled>{{Lang::get('translation.all')}}</option>
-                                                    {{--@foreach($data['skills'] as $skill)--}}
-                                                        {{--<option value="{{$skill['skill_id']}}">{{$skill['skill_name']}}</option>--}}
-                                                    {{--@endforeach--}}
+                                                    @foreach($data['skills'] as $skill)
+                                                        <option value="{{$skill['skill_name']}}">{{$skill['skill_name']}}</option>
+                                                    @endforeach
                                                 </optgroup>
                                             </select>
 
@@ -206,7 +207,7 @@
                                     </div>
                                     <div class="col-md-2" style="padding: 5px">
                                         <label class="col-md-12 label-control" for="userinput2"></label>
-                                        <button type="button" onclick="get_filtered('clicked')"
+                                        <button type="button" onclick="get_filtered2('clicked')"
                                                 class="btn btn-primary">
                                             <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
                                         </button>
@@ -320,13 +321,12 @@
         function get_filtered2(clicked = null) {
 
             var year2 = $('#year2').find(":selected").text();
-            var cities2 = $('#cities2').val();
-            var degree2 = $('#degree2').find(":selected").text();
+            var skills = $('#skills').val();
 
             $.ajax({
                 type: "GET",
                 url: "grad_students_per_skill_area",
-                data: {"year": year2,"degree": degree2, "cities": cities2,"highschool":true},
+                data: {"year": year2,"skills": skills,"highschool":true},
                 beforeSend: function() {
                     reload_data();
                 },
@@ -412,7 +412,7 @@
 
                     function update() {
                         chart2.updateOptions({
-                            series: data_set2,
+                            series: data_sets2,
                         })
 
                     }
@@ -643,7 +643,7 @@
 
                     function update() {
                         chart4.updateOptions({
-                            series: data_set4,
+                            series: data_sets4,
                         })
 
                     }

@@ -34,6 +34,7 @@ Route::get('blog', 'BlogController@index');
 Route::get('roadmap', 'RoadMapController@index');
 
 Route::get('skills-mismatch', 'SkillsMismatchController@index');
+Route::get('get_mismatch_data', 'SkillsMismatchController@fetch_data');
 
 Route::get('company-data', 'BusinessMapController@index');
 Route::get('atk-data', 'AtkDataController@index');
@@ -129,9 +130,11 @@ Route::group(['middleware' => 'auth'], function(){
 
 
     Route::post('/admin/business-data/fetch_data', 'Admin\BusinessDataController@fetch_data');
+    Route::post('/admin/business-data/fetch_data2', 'Admin\BusinessDataController@fetch_data2');
+    Route::post('/admin/business-data/add_survey', 'Admin\BusinessDataController@add_survey');
     Route::post('/admin/business-data/import_businesses', 'Admin\BusinessDataController@import_businesses');
     Route::post('/admin/business-data/destroy_business', 'Admin\BusinessDataController@destroy_business');
-
+    Route::post('/admin/business-data/destroy_survey', 'Admin\BusinessDataController@destroy_survey');
     Route::get('/admin/about', 'Admin\AboutController@index');
     Route::post('/admin/about_us/store', 'Admin\AboutController@store');
 

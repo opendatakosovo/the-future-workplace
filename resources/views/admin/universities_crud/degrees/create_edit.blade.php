@@ -7,6 +7,7 @@
  */
 ?>
 <!-- Modal -->
+
 <div class="modal fade" id="createDegree" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -40,7 +41,7 @@
                         <select class="select2 form-control" id="skill_id" name="skill_ids[]"  multiple="multiple">
                             <optgroup label="Choose Skills">
                                 @foreach($data['skills'] as $skill)
-                                    <option value="{{$skill['id']}}">{{$skill['skill_name']}}</option>
+                                    <option value="{{$skill['skill_name']}}">{{$skill['skill_name']}}</option>
                                 @endforeach
                             </optgroup>
                         </select>

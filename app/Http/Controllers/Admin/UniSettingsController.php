@@ -64,7 +64,7 @@ class UniSettingsController extends Controller
                 'degree_name' => $degree->degree_name,
                 'school_id' => $degree->school_id,
                 'school_name' => $degree->school_name,
-                'skills' => $this->get_skill_names(unserialize($degree->skills)),
+                'skills' => implode(",",unserialize($degree->skills)),
                 'skill_ids' => implode(',', unserialize($degree->skills))
             );
         }
@@ -209,12 +209,12 @@ class UniSettingsController extends Controller
 
         $degree->save();
 
-        foreach ($skill_ids as $skill_id) {
-            $skills_degrees = new SkillsDegrees();
-            $skills_degrees->skill_id = $skill_id;
-            $skills_degrees->degree_id = $degree->id;
-            $skills_degrees->save();
-        }
+//        foreach ($skill_ids as $skill_id) {
+//            $skills_degrees = new SkillsDegrees();
+//            $skills_degrees->skill_id = $skill_id;
+//            $skills_degrees->degree_id = $degree->id;
+//            $skills_degrees->save();
+//        }
 
         return redirect('admin/uni-settings');
     }
@@ -246,6 +246,17 @@ class UniSettingsController extends Controller
         $skills = $request->skill_ids;
         $degree->skills = serialize($skills);
         $degree->save();
+
+
+
+//        foreach($skills as $skill){
+//            $skills_degrees = SkillsDegrees::where('degree_id', $id)->where('skill_id', $skill)->first();
+//            if($skills_degrees != null){
+//                $skills_degrees->skill_id = $skill;
+//                $skills_degrees->save();
+//            }
+//
+//        }
 
 
         return redirect('admin/uni-settings');
