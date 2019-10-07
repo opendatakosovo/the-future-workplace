@@ -43,8 +43,8 @@ return array(
     'business_map' => 'Business Map',
     'business_map_desc' => 'Below is a map of Kosovo with the majority of municipalities showing the number of businesses registered in the ICT sector.',
     'company_div_per_municipality' => 'ICT Businesses Divided by Municipality ',
-    'workforce_data_graph1_title' => 'Graduating students per ICT department in each University',
-    'workforce_data_graph2_title' => 'Graduating students per Skill Area',
+    'workforce_data_graph1_title' => 'Graduated students per ICT department in each University',
+    'workforce_data_graph2_title' => 'Graduated students per Skill Area',
     'workforce_data_map_title' => ' Workforce Map',
     'workforce_data_map_desc' => ' Below is a map of Kosovo with the majority of municipalities showing the number depending on how many students have graduated in ICT at the university level.',
     'workforce_data_graph3_title' => 'Aggregate supply of ICT graduates broken down by skills Area',
@@ -53,6 +53,7 @@ return array(
     'degree' => 'Degree',
     'university' => 'University',
     'choose_degree' => 'Choose Degree',
+    'high_school' => 'High School',
     'choose_university' => 'Choose University',
     'skills' => 'Skills',
     'choose_skills' => 'Choose Skills',
@@ -61,10 +62,9 @@ return array(
     'male' => 'Male',
     'female' => 'Female',
     'downloads' => 'Downloads',
-    'download_text' => 'Downlaod The Public Data By Type'
-
-
-
+    'download_text' => 'Downlaod The Public Data By Type',
+    'businesses_data' => 'Business Data',
+    'atk_data' => 'ATK Data'
 
 
 );
