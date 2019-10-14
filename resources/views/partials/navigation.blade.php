@@ -49,26 +49,26 @@
             <li class="dropdown dropdown-language nav-item">
                 <a class="dropdown-toggle nav-link" id="dropdown-flag" href="#" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
-                    <i class="flag-icon "></i><span class="selected-language">ENG</span></a>
+                    <i class="flag-icon "></i><span class="selected-language">{{strtoupper(app()->getLocale())}}</span></a>
                 <div class="dropdown-menu" aria-labelledby="dropdown-flag">
                     <div class="arrow_box">
-                        <a class="dropdown-item" href="#"><i class="flag-icon "></i> English</a>
-                        <a class="dropdown-item" href="#"><i class="flag-icon "></i> Albanian</a>
-                        <a class="dropdown-item" href="#"><i class="flag-icon "></i> Serbian</a>
+                        <a class="dropdown-item" href="/en/{{get_current_url()}}"><i class="flag-icon "></i> English</a>
+                        <a class="dropdown-item" href="/al/{{get_current_url()}}"><i class="flag-icon "></i> Albanian</a>
+                        <a class="dropdown-item" href="/sr/{{get_current_url()}}"><i class="flag-icon "></i> Serbian</a>
                     </div>
                 </div>
             </li>
             </li>
-            <li class="dropdown nav-item"><a class=" nav-link" href="{{ url('downloads') }}"><i
+            <li class="dropdown nav-item"><a class=" nav-link" href="{{ url(app()->getLocale().'/downloads') }}"><i
                             class="ft-download"></i><span>{{Lang::get('translation.downloads')}}</span></a>
             </li>
-            <li class="dropdown nav-item"><a class=" nav-link" href="{{ url('about') }}"><i
+            <li class="dropdown nav-item"><a class=" nav-link" href="{{ url( app()->getLocale().'/about') }}"><i
                             class="ft-info"></i><span>{{Lang::get('translation.about')}}</span></a>
             </li>
-            <li class="dropdown nav-item"><a class=" nav-link" href="{{ url('blog') }}"><i
+            <li class="dropdown nav-item"><a class=" nav-link" href="{{ url(app()->getLocale().'/blog') }}"><i
                             class="ft-aperture"></i><span>{{Lang::get('translation.blog')}}</span></a>
             </li>
-            <li class="dropdown nav-item"><a class=" nav-link" href="{{ url('skills-mismatch') }}"><i
+            <li class="dropdown nav-item"><a class=" nav-link" href="{{ url(app()->getLocale().'/skills-mismatch') }}"><i
                             class="ft-grid"></i><span>{{Lang::get('translation.skills_mismatch')}}</span></a>
             </li>
             <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="index.html"
@@ -77,10 +77,10 @@
                 <ul class="dropdown-menu">
                     <div class="arrow_box">
                         <li data-menu=""><a class="dropdown-item"
-                                            href="{{ url('workforce-map') }}">{{Lang::get('translation.university')}}</a>
+                                            href="{{ url(app()->getLocale().'/workforce-map') }}">{{Lang::get('translation.university')}}</a>
                         </li>
                         <li data-menu=""><a class="dropdown-item"
-                                            href="{{ url('highschool-data') }}">{{Lang::get('translation.high_school')}}</a>
+                                            href="{{ url(app()->getLocale().'/highschool-data') }}">{{Lang::get('translation.high_school')}}</a>
                         </li>
                     </div>
                 </ul>
@@ -92,10 +92,10 @@
                 <ul class="dropdown-menu">
                     <div class="arrow_box">
                         <li data-menu=""><a class="dropdown-item"
-                                            href="{{ url('company-data') }}">{{Lang::get('translation.businesses_data')}}</a>
+                                            href="{{ url(app()->getLocale().'/company-data') }}">{{Lang::get('translation.businesses_data')}}</a>
                         </li>
                         <li data-menu=""><a class="dropdown-item"
-                                            href="{{ url('atk-data') }}">{{Lang::get('translation.atk_data')}}</a>
+                                            href="{{ url(app()->getLocale().'/atk-data') }}">{{Lang::get('translation.atk_data')}}</a>
                         </li>
                     </div>
                 </ul>
@@ -105,10 +105,10 @@
             {{--<li class="dropdown nav-item"><a class="nav-link" href="{{ url('company-data') }}"><i--}}
                             {{--class="ft-activity"></i><span>{{Lang::get('translation.company_data')}}</span></a>--}}
             {{--</li>--}}
-            <li class="dropdown nav-item"><a class=" nav-link" href="{{ url('stats') }}"><i
+            <li class="dropdown nav-item"><a class=" nav-link" href="{{ url(app()->getLocale().'/stats') }}"><i
                             class="ft-bar-chart-2"></i><span>{{Lang::get('translation.statistics')}}</span></a>
             </li>
-            <li class="dropdown nav-item"><a class=" nav-link" href="{{ url('home') }}"><i
+            <li class="dropdown nav-item"><a class=" nav-link" href="{{ url(app()->getLocale().'/home') }}"><i
                             class="ft-home"></i><span>{{Lang::get('translation.home')}}</span></a>
             </li>
             <div class="navbar-header navbar-normal"
@@ -120,7 +120,7 @@
                     <li class="nav-item"><a class="navbar-brand" style="margin-left: 10%;" href="/"><img
                                     class="brand-logo"
                                     alt="creaative admin logo"
-                                    src="app-assets/images/logo/logo.svg">
+                                    src="/app-assets/images/logo/logo.svg">
                             <h3 class="brand-text">The Future Workplace</h3>
                         </a>
                     </li>

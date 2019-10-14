@@ -39,7 +39,28 @@
                                 <div class="card-title-wrap bar-primary">
                                     <div class="card-title">User Details</div>
                                     <hr>
+                                    <form action="/admin/users/edit_current_user" method="post" id="users_form">
+                                        @CSRF
+                                        <div class="modal-body">
+                                            <div class="form-group">
+                                                <input type="hidden" name="id" value="{{$user->id}}" id="hidden_uni_edit_id">
+                                                <label for="recipient-name" class="col-form-label">User Name:</label>
+                                                <input type="text" class="form-control" id="name" value="{{$user->name}}" name="name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="col-form-label">User Email:</label>
+                                                <input type="email" class="form-control" id="email" name="email" value="{{$user->email}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="col-form-label">User Password:</label>
+                                                <input type="password" class="form-control" id="password" name="password" value="{{ substr($user->password, 0, 8)}}">
+                                            </div>
+                                        </div>
 
+                                        <div class="modal-footer">
+                                            <button type="submit" id="users_modal_button" class="btn btn-primary">Edit User</button>
+                                        </div>
+                                    </form>
 
                                 </div>
                             </div>

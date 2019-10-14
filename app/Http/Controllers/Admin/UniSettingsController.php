@@ -115,8 +115,8 @@ class UniSettingsController extends Controller
         }else{
             $is_high_school = 0;
         }
-        $uni->school_name = $request->school_name;
-        $uni->school_type = $request->school_type;
+        $uni->school_name = $request->uni_name;
+        $uni->school_type = $request->uni_type;
         $uni->municipality = $request->municipality;
         $uni->is_high_school = $is_high_school;
 
@@ -143,8 +143,9 @@ class UniSettingsController extends Controller
         $id = $request->id;
         $uni = Universities::find($id);
 
-        $uni->school_name = $request->school_name;
-        $uni->school_type = $request->school_type;
+        $uni->school_name = $request->uni_name;
+        $uni->school_type = $request->uni_type;
+        $uni->municipality = $request->municipality;
         $uni->save();
 
 

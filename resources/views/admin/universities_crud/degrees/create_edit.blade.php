@@ -13,7 +13,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <h5 class="modal-title-degree" id="exampleModalLongTitle">Modal title</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Select Skills:</label>
-                        <select class="select2 form-control" id="skill_id" name="skill_ids[]"  multiple="multiple">
+                        <select class="select2 form-control" id="skill_ids" name="skill_ids[]"  multiple="multiple">
                             <optgroup label="Choose Skills">
                                 @foreach($data['skills'] as $skill)
                                     <option value="{{$skill['skill_name']}}">{{$skill['skill_name']}}</option>

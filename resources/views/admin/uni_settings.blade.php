@@ -78,6 +78,7 @@
                                 <th>#</th>
                                 <th>University Name</th>
                                 <th>University Type</th>
+                                <th>Municipality</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -87,10 +88,11 @@
                                     <td>{{$key+1}}</td>
                                     <td>{{$university['school_name']}}</td>
                                     <td>{{$university['school_type']}}</td>
+                                    <td>{{$university['municipality']}}</td>
                                     <td>
                                         <button type="button" class="btn btn-info btn-sm a-btn-slide-text"
                                                 data-toggle="modal" data-target="#createUniversity"
-                                                onclick="editUniversity({{$university['id']}},'{{$university['school_name']}}','{{$university['school_type']}}')">
+                                                onclick="editUniversity({{$university['id']}},'{{$university['school_name']}}','{{$university['school_type']}}','{{$university['municipality']}}')">
                                             Edit
                                         </button>
                                         <button type="button" class="btn btn-danger btn-sm a-btn-slide-text"
@@ -137,6 +139,7 @@
                                 <th>#</th>
                                 <th>School Name</th>
                                 <th>School Type</th>
+                                <th>Municipality</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -146,10 +149,11 @@
                                     <td>{{$key+1}}</td>
                                     <td>{{$university['school_name']}}</td>
                                     <td>{{$university['school_type']}}</td>
+                                    <td>{{$university['municipality']}}</td>
                                     <td>
                                         <button type="button" class="btn btn-info btn-sm a-btn-slide-text"
                                                 data-toggle="modal" data-target="#createUniversity"
-                                                onclick="editUniversity('{{$university['id']}}','{{$university['school_name']}}','{{$university['school_type']}}','{{$university['municipality']}}')">
+                                                onclick="editUniversity('{{$university['id']}}','{{$university['school_name']}}','{{$university['school_type']}}','{{$university['municipality']}}','true')">
                                             Edit
                                         </button>
                                         <button type="button" class="btn btn-danger btn-sm a-btn-slide-text"
@@ -270,10 +274,12 @@
                                             <span class="badge badge-info">{{$skill}}</span>
                                         @endforeach
                                     </td>
+
+
                                     <td>
                                         <button type="button" class="btn btn-info btn-sm a-btn-slide-text"
                                                 data-toggle="modal" data-target="#createDegree"
-                                                onclick="editDegree({{$degree['id']}},'{{$degree['degree_name']}}',{{$degree['school_id']}},'{{$degree['skill_ids']}}')">
+                                                onclick="editDegree({{$degree['id']}},'{{$degree['degree_name']}}',{{$degree['school_id']}},'{{$degree['skills']}}')">
                                             Edit
                                         </button>
                                         <button type="button" class="btn btn-danger btn-sm a-btn-slide-text"
@@ -361,6 +367,7 @@
             $('#skill_name').val('');
             $('#skill_form').attr('action', url);
             $('#skill_modal_button').text('Add Skill');
+            $('.modal-title-skill').text('Add Skill');
         }
 
 
@@ -371,6 +378,7 @@
             $('#skill_id').val('');
             $('#degree_form').attr('action', url);
             $('#degree_modal_button').text('Add Degree');
+            $('.modal-title-degree').text('Add Degree');
         }
 
         function editDegree(id, degree_name, uni_id, skills) {
@@ -381,9 +389,10 @@
             $('#degree_name').val(degree_name);
             $('#uni_id').val(uni_id);
             $('#uni_id').trigger('change');
-            $('#skill_id').select2('val', [skills_array]);
+            $('#skill_ids').select2('val', [skills_array]);
             $('#degree_form').attr('action', url);
             $('#degree_modal_button').text('Edit Degree');
+            $('.modal-title-degree').text('Edit Degree');
         }
 
         function deleteDegree(id) {
@@ -400,29 +409,40 @@
             $('#uni_type').val('Public');
             $('#uni_type').trigger('change');
             $('#uni_form').attr('action', url);
-            $('#uni_modal_button').text('Add Degree');
+            $('#uni_modal_button').text('Add University');
+            $('.modal-title-uni').text('Add University');
         }
 
         function createHighSchool() {
+
             var url = '/admin/uni-settings/store_university';
             $('#uni_name').val('');
             // $('#uni_type').val('');
             $('#uni_type').val('Public');
             $('#uni_type').trigger('change');
             $('#uni_form').attr('action', url);
-            $('#uni_modal_button').text('Add School');
+            $('#uni_modal_button').text('Add High School');
+            $('.modal-title-high').text('Add High School');
         }
 
-        function editUniversity(id, uni_name, uni_type,municipality) {
+        function editUniversity(id, uni_name, uni_type,municipality,is_high_school) {
             var url = '/admin/uni-settings/edit_university';
-            $('#hidden_uni_id').val(id);
+
+            $('#hidden_uni_edit_id').val(id);
             $('#uni_name').val(uni_name);
             $('#uni_type').val(uni_type);
-            $('#municipality').val(municipality);
+            $('#uni_municipality').val(municipality);
             $('#uni_type').trigger('change');
             // $("#uni_type select").val(uni_type);
             $('#uni_form').attr('action', url);
-            $('#uni_modal_button').text('Edit University');
+            if(is_high_school == 'true'){
+                $('#uni_modal_button').text('Edit High School');
+                $('.modal-title-uni').text('Edit High School');
+            }else{
+                $('#uni_modal_button').text('Edit University');
+                $('.modal-title-uni').text('Edit University');
+            }
+
         }
 
         function deleteUniversity(id) {

@@ -19,7 +19,7 @@
                 </button>
             </div>
 
-            <form action="/admin/atk-data/import_data" method="POST" enctype="multipart/form-data">
+            <form name="atk_data" action="/admin/atk-data/import_data" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
                 <div class="modal-body">
                     @CSRF
                     <input type="file" name="csv_file"  accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
@@ -34,3 +34,21 @@
     </div>
 </div>
 
+<script>
+    function validateForm() {
+        var x = document.forms["atk_data"]["csv_file"].value;
+        var file_format = x.split('.')[1];
+        console.log(file_format);
+        if (x == "") {
+            alert("Please choose a file");
+            return false;
+        }
+        if (file_format != "csv"){
+            alert("Please choose a csv file");
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+</script>

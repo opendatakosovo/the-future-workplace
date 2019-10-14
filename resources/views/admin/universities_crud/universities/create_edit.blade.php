@@ -12,7 +12,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <h5 class="modal-title-uni" id="exampleModalLongTitle">Modal title</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -21,7 +21,7 @@
                 @CSRF
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="hidden" name="id" id="hidden_uni_id">
+                        <input type="hidden" name="id" id="hidden_uni_edit_id">
                         <label for="recipient-name" class="col-form-label">University Name:</label>
                         <input type="text" class="form-control" id="uni_name" name="uni_name">
                     </div>
@@ -35,9 +35,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="hidden" name="id" id="hidden_uni_id">
                         <label for="recipient-name" class="col-form-label">Municipality:</label>
-                        <input type="text" class="form-control" id="municipality" name="municipality">
+                        <input type="text" class="form-control" id="uni_municipality" name="municipality">
                     </div>
                 </div>
 

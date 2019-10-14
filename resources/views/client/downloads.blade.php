@@ -26,7 +26,7 @@
         <div class="card">
             {{--<img class="card-img-top" src="app-assets/videos/Landingpagevideo.mp4" alt="Card image cap">--}}
             <video class="card-img-top" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-                <source src="app-assets/videos/DownloadSample.mp4" type="video/mp4">
+                <source src="/app-assets/videos/DownloadSample.mp4" type="video/mp4">
             </video>
                 <div class="card-body">
                     <h5 class="card-title">Donwload</h5>
