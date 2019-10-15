@@ -25,6 +25,8 @@
 
 <script src="app-assets/vendors/js/forms/select/select2.full.min.js" type="text/javascript"></script>
 <script src="app-assets/js/scripts/forms/select/form-select2.js" type="text/javascript"></script>
+
+<link rel="stylesheet" type="text/css" href="/app-assets/js/scripts/tables/datatables/datatable-basic.js">
 {{--<link rel="stylesheet" type="text/css" href="app-assets/js/scripts/extensions/dropzone.js">--}}
 
 <!-- END: Page JS-->

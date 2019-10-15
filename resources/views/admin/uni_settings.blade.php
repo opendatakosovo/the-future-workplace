@@ -12,6 +12,16 @@
     .select2-container {
         width: 100% !important;
     }
+    .page-link {
+        position: relative;
+        display: block;
+        padding: 0.5rem 0.75rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        color: #5654c8;
+        background-color: #fff;
+        border: 1px solid #626E82;
+    }
 </style>
 @section('content')
     @include('admin.universities_crud.universities.create_edit')
@@ -72,7 +82,7 @@
                                 Add New
                             </button>
                         </div>
-                        <table id="example0" class="display" style="width:100%">
+                        <table id="example0" class="display table table-striped table-bordered" style="width:100%">
                             <thead>
                             <tr>
                                 <th>#</th>
@@ -133,7 +143,7 @@
                                 Add New
                             </button>
                         </div>
-                        <table id="example0" class="display" style="width:100%">
+                        <table id="example0" class="display table table-striped table-bordered" style="width:100%">
                             <thead>
                             <tr>
                                 <th>#</th>
@@ -196,7 +206,7 @@
                                 Add New
                             </button>
                         </div>
-                        <table id="example" class="display" style="width:100%">
+                        <table id="example" class="display table table-striped table-bordered" style="width:100%">
                             <thead>
                             <tr>
                                 <th>#</th>
@@ -253,7 +263,7 @@
                                 Add New
                             </button>
                         </div>
-                        <table id="example2" class="display" style="width:100%">
+                        <table id="example2" class="display table table-striped table-bordered zero-configuration dataTable" style="width:100%">
                             <thead>
                             <tr>
                                 <th>#</th>
@@ -327,7 +337,7 @@
                                 Import CSV
                             </button>
                         </div>
-                        <table id="example3" class="display" style="width:100%">
+                        <table id="example3" class="display table table-striped table-bordered" style="width:100%">
                             <thead>
                             <tr>
                                 <th>University</th>

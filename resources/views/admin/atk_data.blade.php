@@ -71,7 +71,7 @@
                                 Import
                             </button>
                         </div>
-                        <table id="example123" class="display" style="width:100%">
+                        <table id="example123" class="display table table-striped table-bordered table-responsive" style="width:100%">
                             <thead>
                             <tr>
                                 <th>Region</th>
