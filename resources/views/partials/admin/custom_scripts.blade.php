@@ -10,8 +10,9 @@
 
 <script>
     $(document).ready(function() {
-        $('#example0').DataTable();
         $('#example').DataTable();
+        $('#example0').DataTable();
+        $('#example1').DataTable();
         $('#example2').DataTable();
         $('#example3').DataTable();
     } );

@@ -143,7 +143,7 @@
                                 Add New
                             </button>
                         </div>
-                        <table id="example0" class="display table table-striped table-bordered" style="width:100%">
+                        <table id="example1" class="display table table-striped table-bordered" style="width:100%">
                             <thead>
                             <tr>
                                 <th>#</th>
