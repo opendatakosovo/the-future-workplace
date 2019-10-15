@@ -64,8 +64,8 @@ class UniSettingsController extends Controller
                 'degree_name' => $degree->degree_name,
                 'school_id' => $degree->school_id,
                 'school_name' => $degree->school_name,
-                'skills' => implode(",",unserialize($degree->skills)),
-                'skill_ids' => implode(',', unserialize($degree->skills))
+                'skills' => ($degree->skills != 'N;') ? implode(",",unserialize($degree->skills)) : '' ,
+                'skill_ids' => ($degree->skills != 'N;') ? implode(",",unserialize($degree->skills)) : ''
             );
         }
         foreach ($universities as $university) {
