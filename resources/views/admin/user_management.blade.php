@@ -130,7 +130,7 @@
         function editUser(id,name, email, password) {
 
             var url = '/admin/users/edit_user';
-            $('#hidden_user_id').val(id);
+            $('#hidden_uni_edit_id').val(id);
             $('#name').val(name);
             $('#email').val(email);
             $('#password').val(password.substr(0, 8));
