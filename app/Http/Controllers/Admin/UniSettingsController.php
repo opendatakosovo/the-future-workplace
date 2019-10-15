@@ -26,7 +26,7 @@ class UniSettingsController extends Controller
         $degree_results = [];
         $university_results = [];
         $high_school_results = [];
-        $university_all_results = [];
+        $university_all_results_results = [];
         $skills = Skills::all();
 //        $degrees = Degrees::all();
 
@@ -390,7 +390,7 @@ class UniSettingsController extends Controller
 
     public function fetch_graduates(Request $request)
     {
-
+        $data_result = [];
         $params = $request->all();
 
         $totalRecords = Graduates::count();
@@ -403,7 +403,7 @@ class UniSettingsController extends Controller
 
 
         foreach ($data as $d) {
-            $data_result[] = array(
+            $data_result = array(
                 'school_id' => $this->get_name('university', $d->school_id),
                 'degree_id' => $this->get_name('degrees', $d->degree_id),
                 'instit_type' => $this->get_name('institution', $d->school_id),
@@ -431,6 +431,7 @@ class UniSettingsController extends Controller
             "recordsFiltered" => intval($totalRecords),
             "data" => $data_result   // total data array
         );
+
 
         echo json_encode($json_data);
     }
