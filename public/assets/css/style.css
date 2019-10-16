@@ -43,9 +43,11 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
     -webkit-filter: drop-shadow(0px -4px 4px rgba(51, 102, 51, 0.9));
     filter: drop-shadow(0px -4px 4px rgba(51, 102, 51, 0.9));
 }
-.content-wrapper .content-header{
+
+.content-wrapper .content-header {
     display: unset;
 }
+
 .excerpt {
     height: 200px;
     overflow-y: auto !important;
@@ -62,9 +64,11 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
     bottom: 0;
     right: 20px;
 }
-.navbar-horizontal{
+
+.navbar-horizontal {
     direction: rtl;
 }
+
 @media (min-width: 400px) and (max-width: 890px) {
 
     #rtb {
@@ -84,20 +88,24 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
 }
 
 @media screen and (max-width: 480px) {
-    .navbar-horizontal{
+    .navbar-horizontal {
         direction: initial;
     }
+
     .btn-outline-success {
         color: rgb(255, 255, 255);
         border-color: #338275;
         background-color: #338275;
     }
-    .comparison{
+
+    .comparison {
         display: none;
     }
-    .comparison-text{
+
+    .comparison-text {
         margin-left: 5%;
     }
+
     .odk-footer-text {
         font-size: 13px;
     }
@@ -172,4 +180,47 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
     .horizontal-menu .navbar-horizontal .nav-item a span {
         display: none !important;
     }
+}
+
+/*about*/
+#about {
+    padding-bottom: 111px;
+}
+
+#about center {
+    width: 1000px;
+    padding-left: 129px;
+    text-align: center;
+    font-family: Comfortaa, cursive, Times New Roman, Times, serif;
+}
+
+.btn-primary {
+    width: 385px !important;
+    height: 71px !important;
+    margin-left: -9px !important;
+    background-color: #047d65;
+    border-color: #047d65;
+
+}
+
+.btn-primary:hover {
+    background-color: #004D40 !important;
+    border-color: #004D40 !important;
+}
+
+.card-columns {
+
+@include media-breakpoint-only(lg) {
+    column-count: 4;
+}
+@include media-breakpoint-only(xl) {
+    column-count: 5;
+}
+}
+.card-columns {
+    display: inline-block;
+}
+
+.border-success {
+    border: 1px solid mediumseagreen !important;
 }
