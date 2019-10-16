@@ -74,7 +74,7 @@ class WorkForceMapController extends Controller
 
     public function grad_per_ict_dep_each_university()
     {
-
+        $universities_result = [];
         $year_filter = $_GET['year'] ?? null;
         $degree_filter = $_GET['degree'] ?? null;
         $university_filter = $_GET['university'] ?? null;
@@ -84,7 +84,7 @@ class WorkForceMapController extends Controller
         } else {
             $is_high_school = 0;
         }
-        $universities = Universities::where('is_high_school', $is_high_school)->get();
+        $universities = Universities::where('is_high_school', $is_high_school)->limit(15)->get();
 
 
         foreach ($universities as $university) {
@@ -292,6 +292,9 @@ class WorkForceMapController extends Controller
 
     function get_per_ict_dep_data($universities, $gender = null, $year_filter, $degree_filter, $university_filter, $is_high_school)
     {
+        $universities_converted =[];
+        $res = [];
+        $final_res = [];
         if ($degree_filter == null) {
             $degree_filter = '1';
         }

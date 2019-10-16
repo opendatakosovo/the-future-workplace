@@ -10,8 +10,8 @@
         }
         .highcharts-root{
             width: 100%;
-            height: 560px;
-            margin-left: -150px;
+            height: 110%;
+            margin-left: -40px;
         }
         .highcharts-container{
             width: 150% ;
@@ -124,7 +124,7 @@
                                         <div class="col-md-2" style="padding: 5px">
                                             <label class="col-md-12 label-control" for="userinput2"></label>
                                             <button type="button" onclick="get_filtered('clicked')"
-                                                    class="btn btn-primary">
+                                                    class="btn btn-primary filter-button">
                                                 <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
                                             </button>
                                         </div>
@@ -230,7 +230,7 @@
                                     <div class="col-md-2" style="padding: 5px">
                                         <label class="col-md-12 label-control" for="userinput2"></label>
                                         <button type="button" onclick="get_filtered2('clicked')"
-                                                class="btn btn-primary">
+                                                class="btn btn-primary filter-button">
                                             <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
                                         </button>
                                     </div>
