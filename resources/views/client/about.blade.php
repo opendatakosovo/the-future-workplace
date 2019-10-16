@@ -2,12 +2,12 @@
 ?>
 @section('title', 'About')
 @extends('layouts/main')
-<link href="app-assets/css/about_us/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-<link href="app-assets/css/about_us/animate/animate.min.css" rel="stylesheet">
-<link href="app-assets/css/about_us/ionicons/css/ionicons.min.css" rel="stylesheet">
-<link href="app-assets/css/about_us/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-<link href="app-assets/css/about_us/lightbox/css/lightbox.min.css" rel="stylesheet">
-<link href="app-assets/css/about_us/css/style.css" rel="stylesheet">
+{{--<link href="/app-assets/css/about_us/font-awesome/css/font-awesome.min.css" rel="stylesheet">--}}
+{{--<link href="/app-assets/css/about_us/animate/animate.min.css" rel="stylesheet">--}}
+{{--<link href="/app-assets/css/about_us/ionicons/css/ionicons.min.css" rel="stylesheet">--}}
+{{--<link href="/app-assets/css/about_us/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">--}}
+{{--<link href="/app-assets/css/about_us/lightbox/css/lightbox.min.css" rel="stylesheet">--}}
+<link href="/app-assets/css/about_us/css/style.css" rel="stylesheet">
 @section('content')
     <main id="main" style="width: 100%; margin-top: 2%">
 
@@ -173,19 +173,20 @@
     </main>
 
 
-    <!-- JavaScript Libraries -->
-    <script src="app-assets/css/about_us/jquery/jquery.min.js"></script>
-    <script src="app-assets/css/about_us/superfish/hoverIntent.js"></script>
-    <script src="app-assets/css/about_us/superfish/superfish.min.js"></script>
-    <script src="app-assets/css/about_us/wow/wow.min.js"></script>
-    <script src="app-assets/css/about_us/waypoints/waypoints.min.js"></script>
-    <script src="app-assets/css/about_us/counterup/counterup.min.js"></script>
-    <script src="app-assets/css/about_us/owlcarousel/owl.carousel.min.js"></script>
-    <script src="app-assets/css/about_us/isotope/isotope.pkgd.min.js"></script>
-    <script src="app-assets/css/about_us/lightbox/js/lightbox.min.js"></script>
-    <script src="app-assets/css/about_us/touchSwipe/jquery.touchSwipe.min.js"></script>
+{{--    <!-- JavaScript Libraries -->--}}
+{{--    <script src="/app-assets/css/about_us/jquery/jquery.min.js"></script>--}}
+{{--    <script src="/app-assets/css/about_us/superfish/hoverIntent.js"></script>--}}
+{{--    <script src="/app-assets/css/about_us/superfish/superfish.min.js"></script>--}}
+{{--    <script src="/app-assets/css/about_us/wow/wow.min.js"></script>--}}
+{{--    <script src="/app-assets/css/about_us/waypoints/waypoints.min.js"></script>--}}
+{{--    <script src="/app-assets/css/about_us/counterup/counterup.min.js"></script>--}}
+{{--    <script src="/app-assets/css/about_us/owlcarousel/owl.carousel.min.js"></script>--}}
+{{--    <script src="/app-assets/css/about_us/isotope/isotope.pkgd.min.js"></script>--}}
+{{--    <script src="/app-assets/css/about_us/lightbox/js/lightbox.min.js"></script>--}}
+{{--    <script src="/app-assets/css/about_us/touchSwipe/jquery.touchSwipe.min.js"></script>--}}
 
-    <!-- Template Main Javascript File -->
-    <script src="app-assets/css/about_us/js/main.js"></script>
+{{--    <!-- Template Main Javascript File -->--}}
+{{--    <script src="/app-assets/css/about_us/js/main.js"></script>--}}
+
 
 @endsection
