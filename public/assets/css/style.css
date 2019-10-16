@@ -123,11 +123,11 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
     }
 
     .highcharts-container {
-        margin-left: 50%;
+        margin-left: 15%;
         overflow: initial !important;
-        margin-top: -30%;
-        width: 280px !important;
-        height: 400px !important;
+        margin-top: -20%;
+        width: 330px !important;
+        height: 500px !important
     }
 
     .highcharts-exporting-group {
@@ -194,14 +194,14 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
     font-family: Comfortaa, cursive, Times New Roman, Times, serif;
 }
 
-.btn-primary {
-    width: 385px !important;
-    height: 71px !important;
-    margin-left: -9px !important;
-    background-color: #047d65;
-    border-color: #047d65;
+/*.btn-primary {*/
+    /*width: 385px !important;*/
+    /*height: 71px !important;*/
+    /*margin-left: -9px !important;*/
+    /*background-color: #047d65;*/
+    /*border-color: #047d65;*/
 
-}
+/*}*/
 
 .btn-primary:hover {
     background-color: #004D40 !important;
