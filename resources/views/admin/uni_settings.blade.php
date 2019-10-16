@@ -12,6 +12,16 @@
     .select2-container {
         width: 100% !important;
     }
+    .page-link {
+        position: relative;
+        display: block;
+        padding: 0.5rem 0.75rem;
+        margin-left: -1px;
+        line-height: 1.25;
+        color: #5654c8;
+        background-color: #fff;
+        border: 1px solid #626E82;
+    }
 </style>
 @section('content')
     @include('admin.universities_crud.universities.create_edit')
@@ -19,6 +29,7 @@
     @include('admin.universities_crud.degrees.create_edit')
     @include('admin.universities_crud.graduates.CSV.import_modal')
     @include('admin.universities_crud.graduates.create_edit')
+    @include('admin.universities_crud.high_schools.create_edit')
 
     <!-- DELETE -->
     <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -71,12 +82,13 @@
                                 Add New
                             </button>
                         </div>
-                        <table id="example0" class="display" style="width:100%">
+                        <table id="example0" class="display table table-striped table-bordered" style="width:100%">
                             <thead>
                             <tr>
                                 <th>#</th>
                                 <th>University Name</th>
                                 <th>University Type</th>
+                                <th>Municipality</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
@@ -84,12 +96,13 @@
                             @foreach($data['universities'] as $key=> $university)
                                 <tr>
                                     <td>{{$key+1}}</td>
-                                    <td>{{$university['uni_name']}}</td>
-                                    <td>{{$university['uni_type']}}</td>
+                                    <td>{{$university['school_name']}}</td>
+                                    <td>{{$university['school_type']}}</td>
+                                    <td>{{$university['municipality']}}</td>
                                     <td>
                                         <button type="button" class="btn btn-info btn-sm a-btn-slide-text"
                                                 data-toggle="modal" data-target="#createUniversity"
-                                                onclick="editUniversity({{$university['id']}},'{{$university['uni_name']}}','{{$university['uni_type']}}')">
+                                                onclick="editUniversity({{$university['id']}},'{{$university['school_name']}}','{{$university['school_type']}}','{{$university['municipality']}}')">
                                             Edit
                                         </button>
                                         <button type="button" class="btn btn-danger btn-sm a-btn-slide-text"
@@ -100,6 +113,68 @@
                                     </td>
                                 </tr>
                             @endforeach
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">High School</h4>
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-content collpase show">
+                    <div class="card-body card-dashboard">
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-outline-primary btn-sm a-btn-slide-text"
+                                    data-toggle="modal" data-target="#createHighSchool" onclick="createHighSchool()">
+                                Add New
+                            </button>
+                        </div>
+                        <table id="example1" class="display table table-striped table-bordered" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>School Name</th>
+                                <th>School Type</th>
+                                <th>Municipality</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($data['high_schools'] as $key=> $university)
+                                <tr>
+                                    <td>{{$key+1}}</td>
+                                    <td>{{$university['school_name']}}</td>
+                                    <td>{{$university['school_type']}}</td>
+                                    <td>{{$university['municipality']}}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-info btn-sm a-btn-slide-text"
+                                                data-toggle="modal" data-target="#createUniversity"
+                                                onclick="editUniversity('{{$university['id']}}','{{$university['school_name']}}','{{$university['school_type']}}','{{$university['municipality']}}','true')">
+                                            Edit
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-sm a-btn-slide-text"
+                                                data-toggle="modal" data-target="#DeleteModal"
+                                                onclick="deleteUniversity({{$university['id']}})">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -131,7 +206,7 @@
                                 Add New
                             </button>
                         </div>
-                        <table id="example" class="display" style="width:100%">
+                        <table id="example" class="display table table-striped table-bordered" style="width:100%">
                             <thead>
                             <tr>
                                 <th>#</th>
@@ -188,7 +263,7 @@
                                 Add New
                             </button>
                         </div>
-                        <table id="example2" class="display" style="width:100%">
+                        <table id="example2" class="display table table-striped table-bordered zero-configuration dataTable" style="width:100%">
                             <thead>
                             <tr>
                                 <th>#</th>
@@ -203,16 +278,18 @@
                                 <tr>
                                     <td>{{$key+1}}</td>
                                     <td>{{$degree['degree_name']}}</td>
-                                    <td>{{$degree['uni_name']}}</td>
+                                    <td>{{$degree['school_name']}}</td>
                                     <td>
                                         @foreach(explode(',',$degree['skills']) as $skill)
                                             <span class="badge badge-info">{{$skill}}</span>
                                         @endforeach
                                     </td>
+
+
                                     <td>
                                         <button type="button" class="btn btn-info btn-sm a-btn-slide-text"
                                                 data-toggle="modal" data-target="#createDegree"
-                                                onclick="editDegree({{$degree['id']}},'{{$degree['degree_name']}}',{{$degree['uni_id']}},'{{$degree['skill_ids']}}')">
+                                                onclick="editDegree({{$degree['id']}},'{{$degree['degree_name']}}',{{$degree['school_id']}},'{{$degree['skills']}}')">
                                             Edit
                                         </button>
                                         <button type="button" class="btn btn-danger btn-sm a-btn-slide-text"
@@ -260,7 +337,7 @@
                                 Import CSV
                             </button>
                         </div>
-                        <table id="example3" class="display" style="width:100%">
+                        <table id="example3" class="display table table-striped table-bordered" style="width:100%">
                             <thead>
                             <tr>
                                 <th>University</th>
@@ -300,6 +377,7 @@
             $('#skill_name').val('');
             $('#skill_form').attr('action', url);
             $('#skill_modal_button').text('Add Skill');
+            $('.modal-title-skill').text('Add Skill');
         }
 
 
@@ -310,6 +388,7 @@
             $('#skill_id').val('');
             $('#degree_form').attr('action', url);
             $('#degree_modal_button').text('Add Degree');
+            $('.modal-title-degree').text('Add Degree');
         }
 
         function editDegree(id, degree_name, uni_id, skills) {
@@ -320,9 +399,10 @@
             $('#degree_name').val(degree_name);
             $('#uni_id').val(uni_id);
             $('#uni_id').trigger('change');
-            $('#skill_id').select2('val', [skills_array]);
+            $('#skill_ids').select2('val', [skills_array]);
             $('#degree_form').attr('action', url);
             $('#degree_modal_button').text('Edit Degree');
+            $('.modal-title-degree').text('Edit Degree');
         }
 
         function deleteDegree(id) {
@@ -339,18 +419,40 @@
             $('#uni_type').val('Public');
             $('#uni_type').trigger('change');
             $('#uni_form').attr('action', url);
-            $('#uni_modal_button').text('Add Degree');
+            $('#uni_modal_button').text('Add University');
+            $('.modal-title-uni').text('Add University');
         }
 
-        function editUniversity(id, uni_name, uni_type) {
+        function createHighSchool() {
+
+            var url = '/admin/uni-settings/store_university';
+            $('#uni_name').val('');
+            // $('#uni_type').val('');
+            $('#uni_type').val('Public');
+            $('#uni_type').trigger('change');
+            $('#uni_form').attr('action', url);
+            $('#uni_modal_button').text('Add High School');
+            $('.modal-title-high').text('Add High School');
+        }
+
+        function editUniversity(id, uni_name, uni_type,municipality,is_high_school) {
             var url = '/admin/uni-settings/edit_university';
-            $('#hidden_uni_id').val(id);
+
+            $('#hidden_uni_edit_id').val(id);
             $('#uni_name').val(uni_name);
             $('#uni_type').val(uni_type);
+            $('#uni_municipality').val(municipality);
             $('#uni_type').trigger('change');
             // $("#uni_type select").val(uni_type);
             $('#uni_form').attr('action', url);
-            $('#uni_modal_button').text('Edit University');
+            if(is_high_school == 'true'){
+                $('#uni_modal_button').text('Edit High School');
+                $('.modal-title-uni').text('Edit High School');
+            }else{
+                $('#uni_modal_button').text('Edit University');
+                $('.modal-title-uni').text('Edit University');
+            }
+
         }
 
         function deleteUniversity(id) {
@@ -420,7 +522,7 @@
                     }
                 },
                 "aoColumns": [
-                    {data: 'uni_id'},
+                    {data: 'school_id'},
                     {data: 'degree_id'},
                     {data: 'instit_type'},
                     {data: 'number_of_graduates'},

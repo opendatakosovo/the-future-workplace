@@ -277,7 +277,7 @@
                     console.log(data_sets);
                     var options2 = {
                         chart: {
-                            
+
                             height: 600,
                             type: 'bar',
                             stacked: true,

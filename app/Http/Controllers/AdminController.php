@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Analytics;
+use Illuminate\Support\Facades\Hash;
 use Spatie\Analytics\Period;
 
 class AdminController extends Controller
@@ -53,12 +55,7 @@ class AdminController extends Controller
         return view('admin');
     }
 
-    public function update_user()
-    {
 
-//        var_dump(Auth::user()->password);
-        return view('admin.edit_profile');
-    }
 
     public function test_analytics()
     {
@@ -98,5 +95,29 @@ class AdminController extends Controller
         $days = $days_res;
 
         echo json_encode(array($days,$data_set));
+    }
+
+    public function profile()
+    {
+        $user = auth()->user();
+        return view('admin.edit_profile')->with('user',$user);
+    }
+
+    public function edit_current_user(Request $request){
+
+        $id = $request->id;
+        $name = $request->name;
+        $email = $request->email;
+        $password = $request->password;
+
+        $user = User::findOrFail($id);
+
+        $user->name = $name;
+        $user->email = $email;
+        $user->password = Hash::make($password);
+
+        $user->save();
+
+        return redirect('/admin/edit-profile');
     }
 }

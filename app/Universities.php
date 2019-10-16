@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Universities extends Model
 {
-    protected $table = 'universities';
+    protected $table = 'schools';
 
     protected $fillable = [
-        'uni_name', 'uni_type'
+        'school_name', 'school_type','is_high_school','municipality'
     ];
 }

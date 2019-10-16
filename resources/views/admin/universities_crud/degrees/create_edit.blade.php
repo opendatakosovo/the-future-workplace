@@ -7,12 +7,13 @@
  */
 ?>
 <!-- Modal -->
+
 <div class="modal fade" id="createDegree" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <h5 class="modal-title-degree" id="exampleModalLongTitle">Modal title</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -27,20 +28,20 @@
                     </div>
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Select University:</label>
-                        <select class="select2 form-control" id="uni_id" name="uni_id">
+                        <select class="select2 form-control" id="uni_id" name="school_id">
                             <optgroup label="Choose University">
-                                @foreach($data['universities'] as $university)
-                                    <option name="university" value="{{$university['id']}}">{{$university['uni_name']}}</option>
+                                @foreach($data['universities_all'] as $university)
+                                    <option name="university" value="{{$university['id']}}">{{$university['school_name']}}</option>
                                 @endforeach
                             </optgroup>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Select Skills:</label>
-                        <select class="select2 form-control" id="skill_id" name="skill_ids[]"  multiple="multiple">
+                        <select class="select2 form-control" id="skill_ids" name="skill_ids[]"  multiple="multiple">
                             <optgroup label="Choose Skills">
                                 @foreach($data['skills'] as $skill)
-                                    <option value="{{$skill['id']}}">{{$skill['skill_name']}}</option>
+                                    <option value="{{$skill['skill_name']}}">{{$skill['skill_name']}}</option>
                                 @endforeach
                             </optgroup>
                         </select>

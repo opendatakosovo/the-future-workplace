@@ -8,9 +8,10 @@
 ?>
 @section('title', 'Company Data')
 @extends('layouts/main')
-
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="/app-assets/js/scripts/highcharts/kv-all.js"></script>
 @section('content')
-
     <style>
         .select2-container--classic .select2-selection--multiple .select2-selection__choice, .select2-container--default .select2-selection--multiple .select2-selection__choice {
 
@@ -24,6 +25,19 @@
         .btn-primary:hover {
             border-color: #00e6b0;
             background-color: #29ac8c;
+        }
+
+        .highcharts-root{
+            width: 100%;
+            height: 560px;
+            margin-left: -150px;
+        }
+        .highcharts-container{
+            width: 150% ;
+            height: 100% ;
+        }
+        .highcharts-label text{
+            font-weight: normal !important;
         }
     </style>
     <script type="text/javascript" src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
@@ -219,7 +233,7 @@
                                         <div class="col-md-2" style="padding: 5px">
                                             <label class="col-md-12 label-control" for="userinput2"></label>
                                             <button type="button" onclick="get_filtered('clicked')"
-                                                    class="btn btn-primary">
+                                                    class="btn btn-primary filter-button">
                                                 <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
                                             </button>
                                         </div>
@@ -248,12 +262,16 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-xl-9 col-lg-12">
+                    <div class="col-xl-12 col-lg-12">
                         <div class="card" style="height: auto;">
-                            <iframe src="https://datawrapper.dwcdn.net/C0Dcf/3/" scrolling="yes" class="center"
-                                    style="margin-left:6px; margin-right:6px;" height="500px" name="myiFrame"
-                                    frameborder="0" marginheight="0px"
-                                    style="width:0; min-width:100%!important; border:none;"></iframe>
+
+                            <div id="map" class="center" style="margin-left:6px; margin-right:6px;"></div>
+
+
+                            {{--<iframe src="https://datawrapper.dwcdn.net/C0Dcf/3/" scrolling="yes" class="center"--}}
+                                    {{--style="margin-left:6px; margin-right:6px;" height="500px" name="myiFrame"--}}
+                                    {{--frameborder="0" marginheight="0px"--}}
+                                    {{--style="width:0; min-width:100%!important; border:none;"></iframe>--}}
                         </div>
                     </div>
                 </div>
@@ -360,7 +378,7 @@
                                         <div class="col-md-2" style="padding: 5px">
                                             <label class="col-md-12 label-control" for="userinput2"></label>
                                             <button type="button" onclick="get_filtered2('clicked')"
-                                                    class="btn btn-primary">
+                                                    class="btn btn-primary filter-button">
                                                 <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
                                             </button>
                                         </div>
@@ -372,9 +390,7 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
     </div>
     </div>
@@ -394,9 +410,9 @@
 
 
 
-    <script src="app-assets/vendors/js/forms/select/select2.full.min.js" type="text/javascript"></script>
+    <script src="/app-assets/vendors/js/forms/select/select2.full.min.js" type="text/javascript"></script>
 
-    <script src="app-assets/js/scripts/forms/select/form-select2.js" type="text/javascript"></script>
+    <script src="/app-assets/js/scripts/forms/select/form-select2.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.8.3/apexcharts.js" type="text/javascript"></script>
 
 
@@ -664,5 +680,86 @@
                 });
 
         }
+    </script>
+
+    <script>
+        // Prepare demo data
+        // Data is joined to map using value of 'hc-key' property by default.
+        // See API docs for 'joinBy' for more info on linking data and map.
+        var data = [
+            ['kv-841', 12339],
+            ['kv-7318', 8827],
+            ['kv-7319', 8256],
+            ['kv-7320', 8722],
+            ['kv-7321', 7189],
+            ['kv-7322', 10786],
+            ['kv-844', 7675],
+            ['kv-7302', 10760],
+            ['kv-7303', 10398],
+            ['kv-7304', 7488],
+            ['kv-7305', 7140],
+            ['kv-7306', 10334],
+            ['kv-845', 8360],
+            ['kv-7307', 8469],
+            ['kv-7308', 9118],
+            ['kv-7309', 8507],
+            ['kv-7310', 6432],
+            ['kv-7311', 9315],
+            ['kv-842', 8582],
+            ['kv-7312', 9735],
+            ['kv-7313', 8450],
+            ['kv-7314', 5053],
+            ['kv-843', 5554],
+            ['kv-7315', 10531],
+            ['kv-7316', 7776],
+            ['kv-7317', 9551],
+            ['kv-7323', 7109],
+            ['kv-7324', 8569],
+            ['kv-7325', 10310],
+            ['kv-7326', 8976]
+        ];
+
+        // Create the chart
+        Highcharts.mapChart('map', {
+            chart: {
+                map: 'countries/kv/kv-all'
+            },
+
+            title: {
+                text: ''
+                // null
+            },
+        //     subtitle: {
+        //     // text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/kv/kv-all.js">Kosovo</a>'
+        // },
+
+        mapNavigation: {
+            enabled: true,
+                buttonOptions: {
+                verticalAlign: 'bottom'
+            }
+        },
+
+        colorAxis: {
+            min: 0
+        },
+
+        series: [{
+            data: data,
+            name: 'Total',
+            states: {
+                hover: {
+                    color: '#0d3c3c'
+                }
+            },
+            dataLabels: {
+                fontSize:'15px',
+                enabled: true,
+                format: '{point.name}'
+            },
+
+        }]
+        });
+
     </script>
 @endsection

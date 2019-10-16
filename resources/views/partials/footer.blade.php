@@ -1,13 +1,15 @@
 <!-- BEGIN: Footer-->
 <footer class="footer footer-static footer-light navbar-shadow">
     <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
-        <span class="float-md-left d-block d-md-inline-block" style="margin-top: 1%;">{{ now()->year }} &copy; Copyright <a
-                    class="text-bold-800 grey darken-2"
+        <span class="float-md-left d-block d-md-inline-block" style="margin-top: 1%;"><span class="copytirght-text">{{ now()->year }} &copy; Copyright </span><a
+                    class="text-bold-800 grey darken-2 odk-footer-text"
                     href="https://opendatakosovo.org"
                     target="_blank">Open Data Kosovo</a></span>
-        <span class="float-md-left d-block  d-md-inline-block" style="float: right !important;">{{ now()->year }} &copy; Funded By
-                <img src="app-assets/css/about_us/img/clients/mcc.svg" style="width: 80px; padding-left: 5%;" alt="">
-                <img src="app-assets/css/about_us/img/clients/mcc-gov.svg" style="width: 140px; " alt="">
+        <span class="float-md-right d-block footer-funded-text d-md-inline-block" style="float: right ">{{ now()->year }} &copy;  {{Lang::get('translation.funded_by')}}
+            <div class="funded-logos">
+                <img src="/app-assets/css/about_us/img/clients/mcc.svg" style="width: 80px; padding-left: 5%;" alt="">
+                <img src="/app-assets/css/about_us/img/clients/mcc-gov.svg" style="width: 140px; " alt="">
+            </div>
         </span>
 
     </div>

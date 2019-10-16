@@ -19,10 +19,10 @@
                 </button>
             </div>
 
-            <form action="/admin/uni-settings/import-graduates" method="POST" enctype="multipart/form-data">
+            <form  name="graduates"  action="/admin/uni-settings/import-graduates" method="POST" onsubmit="return validateForm()"  enctype="multipart/form-data">
                 <div class="modal-body">
                     @CSRF
-                    <input type="file" name="csv_file"  accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+                    <input type="file" name="csv_file"  accept=".csv">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -34,6 +34,24 @@
     </div>
 </div>
 
+<script>
+    function validateForm() {
+        var x = document.forms["graduates"]["csv_file"].value;
+        var file_format = x.split('.')[1];
+        console.log(file_format);
+        if (x == "") {
+            alert("Please choose a file");
+            return false;
+        }
+        if (file_format != "csv"){
+            alert("Please choose a csv file");
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+</script>
 
 {{--<script>--}}
 {{--var dropzone = new Dropzone('#graduates-dropzone', {--}}

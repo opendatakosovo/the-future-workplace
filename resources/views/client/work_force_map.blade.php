@@ -1,10 +1,26 @@
 @extends('layouts/main')
 @section('title', 'Harta e Fuqise Punetore')
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+<script src="/app-assets/js/scripts/highcharts/kv-all.js"></script>
 @section('content')
     <style>
         .btn-primary{
             background-color: #256960 !important;
         }
+        .highcharts-root{
+            width: 100%;
+            height: 560px;
+            margin-left: -150px;
+        }
+        .highcharts-container{
+            width: 150% ;
+            height: 100% ;
+        }
+        .highcharts-label text{
+            font-weight: normal !important;
+        }
+
     </style>
     <div class="content-header-left col-md-6 col-12 mb-2">
         <h3 class="content-header-title">{{Lang::get('translation.workforce_data')}}</h3>
@@ -134,12 +150,14 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-xl-9 col-lg-12">
+                    <div class="col-xl-12 col-lg-12">
                         <div class="card" style="height: auto;">
-                            <iframe src="https://datawrapper.dwcdn.net/fz5Xj/1/" scrolling="yes" class="center"
-                                    style="margin-left:6px; margin-right:6px;" height="500px" name="myiFrame"
-                                    frameborder="0" marginheight="0px"
-                                    style="width:0; min-width:100%!important; border:none;"></iframe>
+                            <div id="map" class="center" style="margin-left:6px; margin-right:6px;"></div>
+
+                            {{--<iframe src="https://datawrapper.dwcdn.net/fz5Xj/1/" scrolling="yes" class="center"--}}
+                                    {{--style="margin-left:6px; margin-right:6px;" height="500px" name="myiFrame"--}}
+                                    {{--frameborder="0" marginheight="0px"--}}
+                                    {{--style="width:0; min-width:100%!important; border:none;"></iframe>--}}
                         </div>
                     </div>
                 </div>
@@ -181,10 +199,11 @@
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.year')}}</label>
-                                            <select class="select2 form-control" id="year">
+                                            <select class="select2 form-control" id="year2">
+                                                <option name='year' value="all" selected >All</option>
                                                 <optgroup label="{{Lang::get('translation.choose_year')}}">
                                                     @for ($i = 2008; $i <= 2019; $i++)
-                                                        <option name='year' @if($i == 2019) selected @endif value="{{$i}}">{{ $i }}</option>
+                                                        <option name='year'  value="{{$i}}">{{ $i }}</option>
                                                     @endfor
                                                 </optgroup>
                                             </select>
@@ -196,12 +215,12 @@
                                         <div class="form-group ">
                                             <label class="col-md-12 label-control"
                                                    for="userinput2">{{Lang::get('translation.skills')}}</label>
-                                            <select class="select2 form-control" name="city" multiple="multiple"
+                                            <select class="select2 form-control" name="skills[]" multiple="multiple"
                                                     id="skills">
                                                 <optgroup label="{{Lang::get('translation.choose_skills')}}">
                                                     <option name='city' value="all" disabled>{{Lang::get('translation.all')}}</option>
                                                     @foreach($data['skills'] as $skill)
-                                                        <option value="{{$skill['skill_id']}}">{{$skill['skill_name']}}</option>
+                                                        <option value="{{$skill['skill_name']}}">{{$skill['skill_name']}}</option>
                                                     @endforeach
                                                 </optgroup>
                                             </select>
@@ -210,7 +229,7 @@
                                     </div>
                                     <div class="col-md-2" style="padding: 5px">
                                         <label class="col-md-12 label-control" for="userinput2"></label>
-                                        <button type="button" onclick="get_filtered('clicked')"
+                                        <button type="button" onclick="get_filtered2('clicked')"
                                                 class="btn btn-primary">
                                             <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
                                         </button>
@@ -223,132 +242,132 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-12 col-lg-12 col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">{{Lang::get('translation.workforce_data_graph3_title')}}</h4>
-                        <a class="heading-elements-toggle">
-                            <i class="la la-ellipsis-v font-medium-3"></i>
-                        </a>
-                        <div class="heading-elements">
-                            <ul class="list-inline mb-0">
-                                <li>
-                                    <a data-action="collapse">
-                                        <i class="ft-minus"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-action="reload">
-                                        <i class="ft-rotate-cw"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-action="close">
-                                        <i class="ft-x"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-content collapse show">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="form-body col-md-12">
-                                    <h6 class="form-section"><i class="la la-eye"></i> {{Lang::get('translation.filters')}}</h6>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.gender')}}</label>
-                                                <select class="select2 form-control" id="gender3" name="gender3">
-                                                    <optgroup label="{{Lang::get('translation.choose_gender')}}">
-                                                        <option selected value="all">{{Lang::get('translation.all')}}</option>
-                                                        <option   value="Male">{{Lang::get('translation.male')}}</option>
-                                                        <option   value="Female">{{Lang::get('translation.female')}}</option>
-                                                    </optgroup>
-                                                </select>
+            {{--<div class="col-xl-12 col-lg-12 col-md-12">--}}
+                {{--<div class="card">--}}
+                    {{--<div class="card-header">--}}
+                        {{--<h4 class="card-title">{{Lang::get('translation.workforce_data_graph3_title')}}</h4>--}}
+                        {{--<a class="heading-elements-toggle">--}}
+                            {{--<i class="la la-ellipsis-v font-medium-3"></i>--}}
+                        {{--</a>--}}
+                        {{--<div class="heading-elements">--}}
+                            {{--<ul class="list-inline mb-0">--}}
+                                {{--<li>--}}
+                                    {{--<a data-action="collapse">--}}
+                                        {{--<i class="ft-minus"></i>--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                    {{--<a data-action="reload">--}}
+                                        {{--<i class="ft-rotate-cw"></i>--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                    {{--<a data-action="close">--}}
+                                        {{--<i class="ft-x"></i>--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="card-content collapse show">--}}
+                        {{--<div class="card-body">--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="form-body col-md-12">--}}
+                                    {{--<h6 class="form-section"><i class="la la-eye"></i> {{Lang::get('translation.filters')}}</h6>--}}
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col-md-3">--}}
+                                            {{--<div class="form-group">--}}
+                                                {{--<label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.gender')}}</label>--}}
+                                                {{--<select class="select2 form-control" id="gender3" name="gender3">--}}
+                                                    {{--<optgroup label="{{Lang::get('translation.choose_gender')}}">--}}
+                                                        {{--<option selected value="all">{{Lang::get('translation.all')}}</option>--}}
+                                                        {{--<option   value="Male">{{Lang::get('translation.male')}}</option>--}}
+                                                        {{--<option   value="Female">{{Lang::get('translation.female')}}</option>--}}
+                                                    {{--</optgroup>--}}
+                                                {{--</select>--}}
 
-                                            </div>
-                                        </div>
+                                            {{--</div>--}}
+                                        {{--</div>--}}
 
 
-                                        <div class="col-md-4">
-                                            <div class="form-group ">
-                                                <label class="col-md-12 label-control"
-                                                       for="userinput2">{{Lang::get('translation.skills')}}</label>
-                                                <select class="select2 form-control" name="skills3" multiple="multiple"
-                                                        id="skills3">
-                                                    <optgroup label="{{Lang::get('translation.choose_skills')}}">
-                                                        <option name='city' value="all" disabled>{{Lang::get('translation.all')}}</option>
-                                                        @foreach($data['skills'] as $skill)
-                                                            <option value="{{$skill['skill_id']}}">{{$skill['skill_name']}}</option>
-                                                        @endforeach
-                                                    </optgroup>
-                                                </select>
+                                        {{--<div class="col-md-4">--}}
+                                            {{--<div class="form-group ">--}}
+                                                {{--<label class="col-md-12 label-control"--}}
+                                                       {{--for="userinput2">{{Lang::get('translation.skills')}}</label>--}}
+                                                {{--<select class="select2 form-control" name="skills3" multiple="multiple"--}}
+                                                        {{--id="skills3">--}}
+                                                    {{--<optgroup label="{{Lang::get('translation.choose_skills')}}">--}}
+                                                        {{--<option name='city' value="all" disabled>{{Lang::get('translation.all')}}</option>--}}
+                                                        {{--@foreach($data['skills'] as $skill)--}}
+                                                            {{--<option value="{{$skill['skill_id']}}">{{$skill['skill_name']}}</option>--}}
+                                                        {{--@endforeach--}}
+                                                    {{--</optgroup>--}}
+                                                {{--</select>--}}
 
-                                            </div>
-                                        </div>
-                                        <div class="col-md-2" style="padding: 5px">
-                                            <label class="col-md-12 label-control" for="userinput2"></label>
-                                            <button type="button" onclick="get_filtered('clicked')"
-                                                    class="btn btn-primary">
-                                                <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div id="chartContainer3" style="width:100%; height:300px;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-12 col-lg-12 col-md-12">
-                <div class="card" >
-                    <div class="card-header">
-                        <h4 class="card-title">{{Lang::get('translation.workforce_data_graph4_title')}}</h4>
-                        <a class="heading-elements-toggle">
-                            <i class="la la-ellipsis-v font-medium-3"></i>
-                        </a>
-                        <div class="heading-elements">
-                            <ul class="list-inline mb-0">
-                                <li>
-                                    <a data-action="collapse">
-                                        <i class="ft-minus"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-action="reload">
-                                        <i class="ft-rotate-cw"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-action="close">
-                                        <i class="ft-x"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-content collapse show">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="form-body col-md-12">
-                                    <h6 class="form-section"><i class="la la-eye"></i> {{Lang::get('translation.filters')}}</h6>
-                                    <div class="row">
-                                        <div class="col-md-3">
-                                            <div class="form-group ">
-                                                <label class="col-md-12 label-control"
-                                                       for="userinput2">{{Lang::get('translation.gender')}}</label>
-                                                <select class="select2 form-control" id="gender4">
-                                                    <optgroup label="{{Lang::get('translation.choose_gender')}}">
-                                                        <option selected value="all">{{Lang::get('translation.all')}}</option>
-                                                        <option  value="male">{{Lang::get('translation.male')}}</option>
-                                                        <option  value="female">{{Lang::get('translation.female')}}</option>
-                                                    </optgroup>
-                                                </select>
-                                            </div>
-                                        </div>
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="col-md-2" style="padding: 5px">--}}
+                                            {{--<label class="col-md-12 label-control" for="userinput2"></label>--}}
+                                            {{--<button type="button" onclick="get_filtered('clicked')"--}}
+                                                    {{--class="btn btn-primary">--}}
+                                                {{--<i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}--}}
+                                            {{--</button>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<hr>--}}
+                            {{--<div id="chartContainer3" style="width:100%; height:300px;"></div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="col-xl-12 col-lg-12 col-md-12">--}}
+                {{--<div class="card" >--}}
+                    {{--<div class="card-header">--}}
+                        {{--<h4 class="card-title">{{Lang::get('translation.workforce_data_graph4_title')}}</h4>--}}
+                        {{--<a class="heading-elements-toggle">--}}
+                            {{--<i class="la la-ellipsis-v font-medium-3"></i>--}}
+                        {{--</a>--}}
+                        {{--<div class="heading-elements">--}}
+                            {{--<ul class="list-inline mb-0">--}}
+                                {{--<li>--}}
+                                    {{--<a data-action="collapse">--}}
+                                        {{--<i class="ft-minus"></i>--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                    {{--<a data-action="reload">--}}
+                                        {{--<i class="ft-rotate-cw"></i>--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                    {{--<a data-action="close">--}}
+                                        {{--<i class="ft-x"></i>--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
+                            {{--</ul>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                    {{--<div class="card-content collapse show">--}}
+                        {{--<div class="card-body">--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="form-body col-md-12">--}}
+                                    {{--<h6 class="form-section"><i class="la la-eye"></i> {{Lang::get('translation.filters')}}</h6>--}}
+                                    {{--<div class="row">--}}
+                                        {{--<div class="col-md-3">--}}
+                                            {{--<div class="form-group ">--}}
+                                                {{--<label class="col-md-12 label-control"--}}
+                                                       {{--for="userinput2">{{Lang::get('translation.gender')}}</label>--}}
+                                                {{--<select class="select2 form-control" id="gender4">--}}
+                                                    {{--<optgroup label="{{Lang::get('translation.choose_gender')}}">--}}
+                                                        {{--<option selected value="all">{{Lang::get('translation.all')}}</option>--}}
+                                                        {{--<option  value="male">{{Lang::get('translation.male')}}</option>--}}
+                                                        {{--<option  value="female">{{Lang::get('translation.female')}}</option>--}}
+                                                    {{--</optgroup>--}}
+                                                {{--</select>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
                                         {{--<div class="col-md-4">--}}
                                             {{--<div class="form-group ">--}}
                                                 {{--<label class="col-md-12 label-control"--}}
@@ -367,22 +386,22 @@
 
                                             {{--</div>--}}
                                         {{--</div>--}}
-                                        <div class="col-md-2" style="padding: 5px">
-                                            <label class="col-md-12 label-control" for="userinput2"></label>
-                                            <button type="button" onclick="get_filtered('clicked')"
-                                                    class="btn btn-primary">
-                                                <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div id="chartContainer4" style="width:100%; height:300px;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                                        {{--<div class="col-md-2" style="padding: 5px">--}}
+                                            {{--<label class="col-md-12 label-control" for="userinput2"></label>--}}
+                                            {{--<button type="button" onclick="get_filtered('clicked')"--}}
+                                                    {{--class="btn btn-primary">--}}
+                                                {{--<i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}--}}
+                                            {{--</button>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<hr>--}}
+                            {{--<div id="chartContainer4" style="width:100%; height:300px;"></div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
         </div>
 
     </div>
@@ -391,8 +410,8 @@
     <!-- BEGIN: Page JS-->
     <script src="{{URL::asset('/app-assets/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
 
-    <script src="app-assets/vendors/js/forms/select/select2.full.min.js" type="text/javascript"></script>
-    <script src="app-assets/js/scripts/forms/select/form-select2.js" type="text/javascript"></script>
+    <script src="/app-assets/vendors/js/forms/select/select2.full.min.js" type="text/javascript"></script>
+    <script src="/app-assets/js/scripts/forms/select/form-select2.js" type="text/javascript"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.8.3/apexcharts.js" type="text/javascript"></script>
 
@@ -437,6 +456,8 @@
                                 horizontal: true,
                                 dataLabels: {
                                     position: 'top',
+                                    columnWidth: '55%',
+                                    endingShape: 'rounded'
                                 },
                             }
                         },
@@ -483,13 +504,12 @@
         function get_filtered2(clicked = null) {
 
             var year2 = $('#year2').find(":selected").text();
-            var cities2 = $('#cities2').val();
-            var degree2 = $('#degree2').find(":selected").text();
+            var skills = $('#skills').val();
 
             $.ajax({
                 type: "GET",
                 url: "grad_students_per_skill_area",
-                data: {"year": year2,"degree": degree2, "cities": cities2},
+                data: {"year": year2,"skills": skills},
                 beforeSend: function() {
                     reload_data();
                 },
@@ -575,7 +595,7 @@
 
                     function update() {
                         chart2.updateOptions({
-                            series: data_set2,
+                            series: data_sets2,
                         })
 
                     }
@@ -845,6 +865,86 @@
         });
 
 
+
+    </script>
+    <script>
+        // Prepare demo data
+        // Data is joined to map using value of 'hc-key' property by default.
+        // See API docs for 'joinBy' for more info on linking data and map.
+        var data = [
+            ['kv-841', 12339],
+            ['kv-7318', 8827],
+            ['kv-7319', 8256],
+            ['kv-7320', 8722],
+            ['kv-7321', 7189],
+            ['kv-7322', 10786],
+            ['kv-844', 7675],
+            ['kv-7302', 10760],
+            ['kv-7303', 10398],
+            ['kv-7304', 7488],
+            ['kv-7305', 7140],
+            ['kv-7306', 10334],
+            ['kv-845', 8360],
+            ['kv-7307', 8469],
+            ['kv-7308', 9118],
+            ['kv-7309', 8507],
+            ['kv-7310', 6432],
+            ['kv-7311', 9315],
+            ['kv-842', 8582],
+            ['kv-7312', 9735],
+            ['kv-7313', 20],
+            ['kv-7314', 21],
+            ['kv-843', 22],
+            ['kv-7315', 23],
+            ['kv-7316', 24],
+            ['kv-7317', 25],
+            ['kv-7323', 26],
+            ['kv-7324', 27],
+            ['kv-7325', 28],
+            ['kv-7326', 29]
+        ];
+
+        // Create the chart
+        Highcharts.mapChart('map', {
+            chart: {
+                map: 'countries/kv/kv-all'
+            },
+
+            title: {
+                text: ''
+                // null
+            },
+            //     subtitle: {
+            //     // text: 'Source map: <a href="http://code.highcharts.com/mapdata/countries/kv/kv-all.js">Kosovo</a>'
+            // },
+
+            mapNavigation: {
+                enabled: true,
+                buttonOptions: {
+                    verticalAlign: 'bottom'
+                }
+            },
+
+            colorAxis: {
+                min: 0
+            },
+
+            series: [{
+                data: data,
+                name: 'Total',
+                states: {
+                    hover: {
+                        color: '#0d3c3c'
+                    }
+                },
+                dataLabels: {
+                    fontSize:'15px',
+                    enabled: true,
+                    format: '{point.name}'
+                },
+
+            }]
+        });
 
     </script>
 @endsection

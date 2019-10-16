@@ -162,10 +162,15 @@ class StatsController extends Controller
         $min_year_grads = $this->get_grads('min');
         $max_year_grads = $this->get_grads('max');
 
-        $result = ($max_year_grads - $min_year_grads) / $min_year_grads;
+        if($min_year_grads >0){
+            $result = ($max_year_grads - $min_year_grads) / $min_year_grads;
 
 
-        $result = round((float)$result * 100);
+            $result = round((float)$result * 100);
+        }else{
+            $result = 0;
+        }
+
 
         return $result;
     }
