@@ -29,8 +29,8 @@
 
         .highcharts-root{
             width: 100%;
-            height: 560px;
-            margin-left: -150px;
+            height: 110%;
+            margin-left: -40px;
         }
         .highcharts-container{
             width: 150% ;
