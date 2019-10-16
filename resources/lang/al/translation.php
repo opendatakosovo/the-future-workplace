@@ -14,6 +14,7 @@ return array(
     'skills_mismatch' => 'Skills Mismatch',
     'blog' => 'Blogu',
     'about' => 'Rreth Nesh',
+    'funded_by' => 'Financuar Nga',
     'num_grads_ict' => 'Numri i të Diplomuarve në TIK',
     'total_num_ict_grads' => 'Numri Total i të Diplomuarve në TIK',
     'total_num_ict_business' => 'Numri Total i Bizneseve të TIK',
@@ -63,7 +64,20 @@ return array(
     'downloads' => 'Shkarkimet',
     'download_text' => 'Shkarko Të Dhënat Publike nga Lloji',
     'businesses_data' => 'Të dhëna për biznes',
-    'atk_data' => 'Të dhëna nga ATK'
+    'atk_data' => 'Të dhëna nga ATK',
+    'highschool_data' => 'Të Dhënat e Gjimnazeve',
+    'welcome_slogan' => 'Zgjidh Karrieren Tuaj me Mençuri',
+    'welcome_content_title' => 'Të Dhënat e The Future Workplace',
+    'welcome_content_slogan' => 'Nëse jeni duke kërkuar se cilën rrugë të karrierës duhet të merrni në TIK, ky është vendi më i mirë për ta zbuluar',
+    'welcome_statistics' => 'Statistikat e përgjithshme për të diplomuarit në shkollë të mesme dhe universitare, ndërmarrjet e biznesit dhe numri e fuqisë punëtore.',
+    'welcome_company_data' => 'Data and graphs about companies in ICT divided by municipalities and field of expertise and their skills demand.',
+    'welcome_workforce_data' => 'Të dhëna dhe grafikë për kompanitë në TIK të ndara sipas komunave dhe fushës së ekspertizës dhe kërkesës së tyre të aftësive.',
+    'welcome_skills_mismatch' => 'Shikoni nëse shkalla dhe aftësitë tuaja pershtaten mirë me kërkesat e kompanive dhe ekspertëve që ata po kërkojnë.',
+    'welcome_blog' => 'Rrini gjithmonë të informuar me punën tonë dhe të rejat e TIK-ut.',
+    'welcome_downloads' => 'Shkarkoni të gjitha të dhënat që shihni dhe keni nevojë nga kjo faqe.',
+    'comparison_ict_atk_category' => 'Numri i Kompanive të TIK Sipas Kategorive',
+    'comparison_worker_atk_category' => 'Numri i Punetoreve Sipas Kategorive'
+
 
 
 );

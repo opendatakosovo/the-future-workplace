@@ -5,7 +5,7 @@
                     class="text-bold-800 grey darken-2"
                     href="https://opendatakosovo.org"
                     target="_blank">Open Data Kosovo</a></span>
-        <span class="float-md-left d-block  d-md-inline-block" style="float: right !important;">{{ now()->year }} &copy; Funded By
+        <span class="float-md-left d-block  d-md-inline-block" style="float: right !important;">{{ now()->year }} &copy; {{Lang::get('translation.funded_by')}}
                 <img src="app-assets/css/about_us/img/clients/mcc.svg" style="width: 80px; padding-left: 5%;" alt="">
                 <img src="app-assets/css/about_us/img/clients/mcc-gov.svg" style="width: 140px; " alt="">
         </span>

@@ -20,19 +20,19 @@
             }
         }
     </style>
-     <!-- Start Banner Area -->
+    <!-- Start Banner Area -->
     <section class="home-banner-area relative" style="width: 100%">
         <video style="width: 100%" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="/app-assets/videos/Landingpagevideo.mp4" type="video/mp4">
+            <source src="app-assets/videos/Landingpagevideo.mp4" type="video/mp4">
         </video>
         <div class="container">
             <div class="row fullscreen d-flex align-items-center justify-content-center">
                 <div class="banner-content col-lg-8 col-md-12" style="position: absolute; margin-top: -35%">
-                    <img class="brand-logo" alt="creaative admin logo" src="/app-assets/images/logo/logo.svg"
+                    <img class="brand-logo" alt="creaative admin logo" src="app-assets/images/logo/logo.svg"
                          style="width: 7%;box-shadow: blue;">
                     <h1 class="wow fadeIn" data-wow-duration="4s">The Future Workplace</h1>
                     <p class="text-white">
-                        Choose your Future Career wisely!
+                        {{Lang::get('translation.welcome_slogan')}}
                     </p>
                 </div>
 
@@ -46,10 +46,9 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-title text-center">
-                        <h1 style="margin-top: 3%">The Future Workplace Data</h1>
+                        <h1 style="margin-top: 3%">{{Lang::get('translation.welcome_content_title')}}</h1>
                         <p style="font-size: 20px">
-                            If you are looking to see what career path you should take in ICT, this is the best place to
-                            be
+                            {{Lang::get('translation.welcome_content_slogan')}}
                         </p>
                     </div>
                 </div>
@@ -58,12 +57,11 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-item">
                         <i class="ft-bar-chart-2"></i>
-                        <h4>Statistics</h4>
+                        <h4> {{Lang::get('translation.statistics')}}</h4>
                         <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s"
                              style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeIn;">
                             <p>
-                                General statistics about high school and university graduates, business companies and
-                                workforce numbers.
+                                {{Lang::get('translation.welcome_statistics')}}
                             </p>
                         </div>
                     </div>
@@ -71,12 +69,11 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-item">
                         <i class="ft-activity"></i>
-                        <h4>Company Data</h4>
+                        <h4>{{Lang::get('translation.company_data')}}</h4>
                         <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s"
                              style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeIn;">
                             <p>
-                                Data and graphs about companies in ICT divided by municipalities and field of expertise
-                                and their skills demand.
+                                {{Lang::get('translation.welcome_company_data')}}
                             </p>
                         </div>
                     </div>
@@ -84,12 +81,11 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-item">
                         <i class="ft-trending-up"></i>
-                        <h4>Workforce Data</h4>
+                        <h4>{{Lang::get('translation.workforce_data')}}</h4>
                         <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s"
                              style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeIn;">
                             <p>
-                                Data and graphs about students graduated in ICT Universities divided by municipalities
-                                and skills.
+                                {{Lang::get('translation.welcome_workforce_data')}}
                             </p>
                         </div>
                     </div>
@@ -97,12 +93,11 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-item">
                         <i class="ft-shuffle"></i>
-                        <h4>Skills Mismatch</h4>
+                        <h4>{{Lang::get('translation.skills_mismatch')}}</h4>
                         <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".1s"
                              style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeIn;">
                             <p>
-                                See if your degree and skills are a good match with companies demands and experts
-                                they're seeking for.
+                                {{Lang::get('translation.welcome_skills_mismatch')}}
                             </p>
                         </div>
                     </div>
@@ -110,11 +105,11 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-item">
                         <i class="ft-target"></i>
-                        <h4>Blog</h4>
+                        <h4> {{Lang::get('translation.blog')}}</h4>
                         <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".3s"
                              style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeIn;">
                             <p>
-                               Always be updated with our work and ICT information.
+                                {{Lang::get('translation.welcome_blog')}}
                             </p>
                         </div>
                     </div>
@@ -122,11 +117,11 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="feature-item">
                         <i class="ft-download"></i>
-                        <h4>Downloads</h4>
+                        <h4> {{Lang::get('translation.downloads')}}</h4>
                         <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay=".5s"
                              style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeIn;">
                             <p>
-                                Download all the data you see and need from this site.
+                                {{Lang::get('translation.welcome_downloads')}}
                             </p>
                         </div>
                     </div>

@@ -12,7 +12,7 @@
 
 @section('content')
     <div class="content-header-left col-md-6 col-12 mb-2">
-        <h3 class="content-header-title">ATK Data</h3>
+        <h3 class="content-header-title">{{Lang::get('translation.atk_data')}}</h3>
     </div>
     <div class="content-body" style="width: 100%;">
         <!-- Revenue, Hit Rate & Deals -->
@@ -20,7 +20,7 @@
             <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Numri i kompanive të TIK sipas Kategorive</h4>
+                        <h4 class="card-title">{{Lang::get('translation.comparison_ict_atk_category')}}</h4>
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>
@@ -56,7 +56,7 @@
             <div class="col-lg-12 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Numri i Punetoreve sipas kategorive</h4>
+                        <h4 class="card-title">{{Lang::get('translation.comparison_worker_atk_category')}}</h4>
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>

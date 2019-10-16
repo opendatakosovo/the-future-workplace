@@ -15,6 +15,7 @@ return array(
     'skills_mismatch' => 'Skills Mismatch',
     'blog' => 'Blog',
     'about' => 'About',
+    'funded_by' => 'Funded By',
     'num_grads_ict' => 'Number of Graduates in ICT',
     'total_num_ict_grads' => 'Total Number of ICT Graduates',
     'total_num_ict_business' => 'Total Number of ICT Businesses',
@@ -62,9 +63,22 @@ return array(
     'male' => 'Male',
     'female' => 'Female',
     'downloads' => 'Downloads',
-    'download_text' => 'Downlaod The Public Data By Type',
+    'download_text' => 'Download The Public Data By Type',
     'businesses_data' => 'Business Data',
-    'atk_data' => 'ATK Data'
+    'atk_data' => 'ATK Data',
+    'highschool_data' => 'High School Data',
+    'welcome_slogan' => 'Choose Your Career Wisely',
+    'welcome_content_title' => 'The Future Workplace Data',
+    'welcome_content_slogan' => 'If you are looking to see what career path you should take in ICT, this is the best place to be',
+    'welcome_statistics' => 'General statistics about high school and university graduates, business companies and workforce numbers.',
+    'welcome_company_data' => 'Data and graphs about companies in ICT divided by municipalities and field of expertise and their skills demand.',
+    'welcome_workforce_data' => 'Data and graphs about students graduated in ICT Universities divided by municipalities and skills.',
+    'welcome_skills_mismatch' => 'See if your degree and skills are a good match with companies demands and experts they\'re seeking for.',
+    'welcome_blog' => 'Always be updated with our work and ICT information.',
+    'welcome_downloads' => 'Download all the data you see and need from this site.',
+    'comparison_ict_atk_category' => 'Number of ICT Businesses Divided by Category',
+    'comparison_worker_atk_category' => 'Number of Workers Divided by Category'
+
 
 
 );
