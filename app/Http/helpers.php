@@ -42,7 +42,7 @@ function get_skills(){
 }
 
 function get_current_url(){
-    $link = $_SERVER['PHP_SELF'];
+    $link = $_SERVER['REQUEST_URI'];
     $link_array = explode('/',$link);
     return $page = end($link_array);
 }
