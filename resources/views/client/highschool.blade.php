@@ -2,7 +2,7 @@
 @section('title', 'Harta e Fuqise Punetore')
 <script src="https://code.highcharts.com/maps/highmaps.js"></script>
 <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
-<script src="app-assets/js/scripts/highcharts/kv-all.js"></script>
+<script src="/app-assets/js/scripts/highcharts/kv-all.js"></script>
 @section('content')
     <style>
         .btn-primary{
@@ -14,8 +14,8 @@
             margin-left: -150px;
         }
         .highcharts-container{
-            width: 150% !important;
-            height: 100% !important;
+            width: 150% ;
+            height: 100% ;
         }
         .highcharts-label text{
             font-weight: normal !important;
@@ -106,7 +106,7 @@
                                         <div class="col-md-2" style="padding: 5px">
                                             <label class="col-md-12 label-control" for="userinput2"></label>
                                             <button type="button" onclick="get_filtered('clicked')"
-                                                    class="btn btn-primary">
+                                                    class="btn btn-primary filter-button">
                                                 <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
                                             </button>
                                         </div>
@@ -208,7 +208,7 @@
                                     <div class="col-md-2" style="padding: 5px">
                                         <label class="col-md-12 label-control" for="userinput2"></label>
                                         <button type="button" onclick="get_filtered2('clicked')"
-                                                class="btn btn-primary">
+                                                class="btn btn-primary filter-button">
                                             <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
                                         </button>
                                     </div>
@@ -229,8 +229,8 @@
     <!-- BEGIN: Page JS-->
     <script src="{{URL::asset('/app-assets/vendors/js/vendors.min.js')}}" type="text/javascript"></script>
 
-    <script src="app-assets/vendors/js/forms/select/select2.full.min.js" type="text/javascript"></script>
-    <script src="app-assets/js/scripts/forms/select/form-select2.js" type="text/javascript"></script>
+    <script src="/app-assets/vendors/js/forms/select/select2.full.min.js" type="text/javascript"></script>
+    <script src="/app-assets/js/scripts/forms/select/form-select2.js" type="text/javascript"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.8.3/apexcharts.js" type="text/javascript"></script>
 

@@ -23,6 +23,10 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
     background-repeat: repeat-x;
 }
 
+.select2-container--classic .select2-results__options .select2-results__option[aria-selected=true], .select2-container--default .select2-results__options .select2-results__option[aria-selected=true] {
+    background-color: #2f7a6f !important;
+}
+
 #project-stats .ct-series-a .ct-point-circle {
     fill: #44a08d;
     stroke-width: 7;
@@ -39,8 +43,10 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
     -webkit-filter: drop-shadow(0px -4px 4px rgba(51, 102, 51, 0.9));
     filter: drop-shadow(0px -4px 4px rgba(51, 102, 51, 0.9));
 }
-
-.excerpt{
+.content-wrapper .content-header{
+    display: unset;
+}
+.excerpt {
     height: 200px;
     overflow-y: auto !important;
 }
@@ -56,14 +62,114 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
     bottom: 0;
     right: 20px;
 }
-
+.navbar-horizontal{
+    direction: rtl;
+}
 @media (min-width: 400px) and (max-width: 890px) {
 
-    #rtb{
-        width: 61% !important;
+    #rtb {
+        width: 100% !important;
     }
-.read-more{
-    bottom: -17px !important;
-}
+
+    .read-more {
+        bottom: -17px !important;
+    }
 }
 
+@media (max-width: 576px) {
+    .banner-content h1 {
+        font-size: 16px !important;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    .navbar-horizontal{
+        direction: initial;
+    }
+    .btn-outline-success {
+        color: rgb(255, 255, 255);
+        border-color: #338275;
+        background-color: #338275;
+    }
+    .comparison{
+        display: none;
+    }
+    .comparison-text{
+        margin-left: 5%;
+    }
+    .odk-footer-text {
+        font-size: 13px;
+    }
+
+    .copytirght-text {
+        display: block !important;
+    }
+
+    .footer-funded-text {
+        float: initial !important;
+    }
+
+    .apexcharts-legend {
+        left: 0px !important;
+    }
+
+    .highcharts-container {
+        margin-left: 50%;
+        overflow: initial !important;
+        margin-top: -30%;
+        width: 280px !important;
+        height: 400px !important;
+    }
+
+    .highcharts-exporting-group {
+        display: none;
+    }
+
+    .filter-button {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .brand-logo {
+        width: 15% !important;
+        margin-bottom: 6% !important;
+    }
+
+    .banner-content p {
+        max-width: 610px;
+        margin: auto;
+        font-size: 11px;
+    }
+
+    .main-menu.menu-light .navigation > li ul li > a {
+        transform: rotate(-180deg) !important;
+
+        /* Legacy vendor prefixes that you probably don't need... */
+
+        /* Safari */
+        -webkit-transform: rotate(-180deg) !important;
+
+        /* Firefox */
+        -moz-transform: rotate(-180deg) !important;
+
+        /* IE */
+        -ms-transform: rotate(-180deg) !important;
+
+        /* Opera */
+        -o-transform: rotate(-180deg) !important;
+
+        /* Internet Explorer */
+        filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=4) !important;
+    }
+
+    .section-title p {
+        font-size: 15px !important;
+    }
+}
+
+@media screen and (max-width: 1460px) {
+    .horizontal-menu .navbar-horizontal .nav-item a span {
+        display: none !important;
+    }
+}

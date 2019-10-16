@@ -8,7 +8,11 @@
 ?>
 @section('title', 'Skills Mismatch')
 @extends('layouts/main')
-
+<style>
+    .btn-primary {
+        background-color: #256960 !important;
+    }
+</style>
 @section('content')
     <div class="content-body" style="width: 100%;">
         <!-- Revenue, Hit Rate & Deals -->
@@ -65,8 +69,8 @@
                                         </div>
                                         <div class="col-md-2" style="padding: 5px">
                                             <label class="col-md-12 label-control" for="userinput2"></label>
-                                            <button type="button" onclick="get_filtered('clicked')"
-                                                    class="btn btn-primary">
+                                            <button disabled type="button" onclick="get_filtered('clicked')"
+                                                    class="btn btn-primary filter-button">
                                                 <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
                                             </button>
                                         </div>

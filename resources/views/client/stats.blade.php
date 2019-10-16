@@ -103,12 +103,12 @@
 
 
         </div>
-        <div class="row">
+        <div class="row comparison">
 
 
             <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="card card-transparent">
-                    <div class="card-header bg-transparent pl-0">
+                    <div class="card-header bg-transparent pl-0 comparison-text">
                         <h5 class="card-title text-bold-700">{{Lang::get('translation.municipality_activity_comparison')}}</h5>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     </div>

@@ -16,7 +16,8 @@ class HighSchoolController extends Controller
 {
 
     public function index(){
-
+        $university_result = [];
+        $degrees_result = [];
         $municipalities = Municipalities::all();
         $degrees =  Degrees::join('schools', function ($join) {
             $join->on('schools.id', '=', 'degrees.school_id')

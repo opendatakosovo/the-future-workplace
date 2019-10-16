@@ -32,64 +32,7 @@ class SkillsMismatchController extends Controller
         $activity = $_GET['activity'] ?? null;
 
         $activities_array = [];
-
-//        if($cities == null){
-//            $default_cities  = ['Pristina', 'Prizren', 'Peja', 'Gjakova', 'Mitrovica', 'Gjilan'];
-//            $cities_imploded  = implode(',',$default_cities);
-//
-//            $bussiness_result = businesses_map::whereIn('municipality',$default_cities)->get();
-////
-////            if(Cache::store('apc')->get('_business_result_'.$cities_imploded)){
-////                $bussiness_result =   Cache::store('apc')->get('_business_result_'.$cities_imploded);
-////            }else{
-////                $bussiness_result = businesses_map::whereIn('municipality',$default_cities)->get();
-////                Cache::store('apc')->put('_business_result_'.$cities_imploded, $bussiness_result, 10000);
-////            }
-//
-//        }else{
-//            $bussiness_result = businesses_map::whereIn('municipality',$cities)->get();
-////            if(Cache::store('apc')->get('_business_result_'.implode(',',$cities))){
-////                $bussiness_result =   Cache::store('apc')->get('_business_result_'.implode(',',$cities));
-////            }else{
-////                $bussiness_result = businesses_map::whereIn('municipality',$cities)->get();
-////                Cache::store('apc')->put('_business_result_'.implode(',',$cities), $bussiness_result, 10000);
-////            }
-//        }
-
-
         $skills = Skills::all();
-
-
-//
-//        if($cities == null){
-//            $cities = [];
-//            foreach ($bussiness_result as $business) {
-//                if(!in_array($business->municipality,$cities)){
-//                    $cities[] = $business->municipality;
-//                }
-//            }
-
-//            if(Cache::store('apc')->get('_cities')){
-//                $cities =   Cache::store('apc')->get('_cities');
-//            }else{
-//                foreach ($bussiness_result as $business) {
-//                    if(!in_array($business->municipality,$cities)){
-//                        $cities[] = $business->municipality;
-//                    }
-//                }
-//                Cache::store('apc')->put('_cities', $cities, 10000);
-//            }
-//        }
-
-//
-//        if($activity == null  || $activity == 'all'){
-//            foreach ($activities as $activity) {
-//                $activities_array[] = $activity->activity_name;
-//            }
-//        }else{
-//            $activities_array[] = $activity;
-//        }
-
         foreach ($skills as $skill) {
             $skills_array[] = $skill->skill_name;
 
@@ -101,8 +44,6 @@ class SkillsMismatchController extends Controller
                 'data' =>  $this->get_col_data($skills,$category)
             );
         }
-
-
         echo json_encode(array($skills_array,$data));
 
     }
