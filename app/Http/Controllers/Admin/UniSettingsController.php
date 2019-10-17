@@ -355,6 +355,7 @@ class UniSettingsController extends Controller
                 [
                     'school_id' => $customerArr[$i]['school_id'],
                     'degree_id' => $customerArr[$i]['degree_id'],
+                    'grade' => $customerArr[$i]['grade'],
                     'number_of_graduates' => $customerArr[$i]['number_of_graduates'],
                     'number_of_males' => $customerArr[$i]['number_of_males'],
                     'number_of_females' => $customerArr[$i]['number_of_females'],
@@ -403,9 +404,13 @@ class UniSettingsController extends Controller
 
 
         foreach ($data as $d) {
-            $data_result = array(
+            $number_of_graduates = ($d->number_of_graduates != '') ? $d->number_of_graduates : 0 ;
+            $number_of_males = ($d->number_of_males != '') ? $d->number_of_males : 0;
+            $number_of_females = ($d->number_of_females != '') ? $d->number_of_females : 0;
+            $data_result[] = array(
                 'school_id' => $this->get_name('university', $d->school_id),
                 'degree_id' => $this->get_name('degrees', $d->degree_id),
+                'grade' => $d->grade,
                 'instit_type' => $this->get_name('institution', $d->school_id),
                 'number_of_graduates' => $d->number_of_graduates,
                 'number_of_males' => $d->number_of_males,
@@ -413,7 +418,7 @@ class UniSettingsController extends Controller
                 'year' => $d->year,
                 'actions' => '
                                     <button type="button" class="btn btn-info btn-sm a-btn-slide-text"
-                                            data-toggle="modal" data-target="#createGrad"  onclick="editGrad(' . $d->id . ',' . $d->school_id . ',' . $d->degree_id . ',' . $d->number_of_graduates . ',' . $d->number_of_males . ',' . $d->number_of_females . ',' . $d->year . ')">
+                                            data-toggle="modal" data-target="#createGrad"  onclick="editGrad(' . $d->id . ',' . $d->school_id . ',' . $d->degree_id . ',' . $d->grade . ',' . $number_of_graduates. ',' . $number_of_males . ',' .$number_of_females . ',' . $d->year . ')">
                                         Edit
                                     </button>
                                     <button type="button" class="btn btn-danger btn-sm a-btn-slide-text"

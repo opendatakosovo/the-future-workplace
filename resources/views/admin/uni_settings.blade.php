@@ -340,8 +340,9 @@
                         <table id="example3" class="display table table-striped table-bordered" style="width:100%">
                             <thead>
                             <tr>
-                                <th>University</th>
+                                <th>School</th>
                                 <th>Degree</th>
+                                <th>Grade</th>
                                 <th>Intitution Type</th>
                                 <th>Number of Graduates</th>
                                 <th>Number of Males</th>
@@ -470,15 +471,37 @@
             $('#grad_modal_button').text('Add Degree');
         }
 
-        function editGrad(id, uni_id, degree_id, no_graduates,no_males,no_females,year) {
+        function editGrad(id, uni_id, degree_id,grade, no_graduates,no_males,no_females,year) {
             var url = '/admin/uni-settings/edit_graduate';
             $('#hidden_uni_id').val(id);
             $('#uni_id').val(uni_id);
             $('#degree_id').val(degree_id);
-            $('#no_graduates').val(no_graduates);
-            $('#no_males').val(no_males);
-            $('#no_females').val(no_females);
+            if(grade != 0){
+                $('#grade_input').show();
+                $('#grade').val(grade);
+                $('#grade').trigger('change');
+            }
+
+            console.log(no_graduates);
+            if(no_graduates){
+                $('#no_graduates').val(no_graduates);
+            }else{
+                $('#no_graduates').val('');
+            }
+            if(no_males){
+                $('#no_males').val(no_males);
+            }else{
+                $('#no_males').val('');
+            }
+            if(no_females){
+                $('#no_females').val(no_females);
+            }else{
+                $('#no_females').val('');
+            }
+
+
             $('#year').val(year);
+            $('#year').trigger('change');
             $('#uni_id').trigger('change');
             $('#degree_id').trigger('change');
             // $("#uni_type select").val(uni_type);
@@ -516,7 +539,7 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                     url: "/admin/uni-settings/fetch_graduates",
-                    type: "post",
+                    type: "get",
                     error: function () {
                         $("#example3").css("display", "none");
                     }
@@ -524,6 +547,7 @@
                 "aoColumns": [
                     {data: 'school_id'},
                     {data: 'degree_id'},
+                    {data: 'grade'},
                     {data: 'instit_type'},
                     {data: 'number_of_graduates'},
                     {data: 'number_of_males'},

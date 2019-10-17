@@ -94,7 +94,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
     Route::post('/admin/uni-settings/import-graduates', 'Admin\UniSettingsController@import_graduates');
-    Route::post('/admin/uni-settings/fetch_graduates', 'Admin\UniSettingsController@fetch_graduates');
+    Route::get('/admin/uni-settings/fetch_graduates', 'Admin\UniSettingsController@fetch_graduates');
 
 
     Route::post('/admin/uni-settings/store_graduate', 'Admin\UniSettingsController@store_graduate');
