@@ -127,12 +127,9 @@ class UniSettingsController extends Controller
 
     public function destroy_university(Request $request)
     {
-
         $id = $request->id;
         $uni = new Universities();
-
         $uni->destroy($id);
-
 
         return redirect('admin/uni-settings');
     }
@@ -347,7 +344,7 @@ class UniSettingsController extends Controller
 
         $request->csv_file->storeAs('csvs', '1.csv');
 
-        $file = storage_path('app\csvs\1.csv');
+        $file = storage_path('\app\csvs\1.csv');
 
         $customerArr = $this->csvToArray($file);
 
