@@ -344,7 +344,7 @@ class UniSettingsController extends Controller
 
         $request->csv_file->storeAs('csvs', '1.csv');
 
-        $file = storage_path('\app\csvs\1.csv');
+        $file = storage_path('app/csvs/1.csv');
 
         $customerArr = $this->csvToArray($file);
 
