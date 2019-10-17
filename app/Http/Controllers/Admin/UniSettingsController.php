@@ -287,6 +287,7 @@ class UniSettingsController extends Controller
     {
 
         $id = $request->id;
+
         $grad = new Graduates();
 
         $grad->destroy($id);
@@ -301,8 +302,9 @@ class UniSettingsController extends Controller
         $id = $request->id;
         $grad = Graduates::find($id);
 
-        $grad->uni_id = $request->school_id;
+        $grad->school_id = $request->school_id;
         $grad->degree_id = $request->degree_id;
+        $grad->grade = $request->grade;
         $grad->number_of_graduates = $request->no_graduates;
         $grad->number_of_males = $request->no_males;
         $grad->number_of_females = $request->no_females;

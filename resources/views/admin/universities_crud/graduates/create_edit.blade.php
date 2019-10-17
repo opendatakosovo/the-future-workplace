@@ -23,6 +23,7 @@
 
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Select Degree:</label>
+                        <input type="hidden" name="id_degree" id="hidden_degree_id">
                         <select class="select2 form-control" id="degree_id" name="degree_id">
                             <optgroup label="Choose Degree">
                                 @foreach($data['degrees'] as $degree)
@@ -31,7 +32,7 @@
                             </optgroup>
                         </select>
                     </div>
-                    <input type="hidden" name="id" id="hidden_id">
+                    <input type="hidden" name="id" id="hidden_uni_id">
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Select School:</label>
                         <select class="select2 form-control graduate_school_select" id="uni_id" name="school_id"  onchange="changeFunc();">
@@ -44,7 +45,6 @@
                     </div>
 
                     <div class="form-group" id="grade_input" style="display: none">
-                        <input type="hidden" name="id" id="hidden_degree_id">
                         <label for="recipient-name" class="col-form-label">Select Grade:</label>
                         <select class="select2 form-control" id="grade" name="grade">
                             <optgroup label="Choose Grade">
@@ -55,17 +55,15 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <input type="hidden" name="id" id="hidden_degree_id">
                         <label for="recipient-name" class="col-form-label">Number of Graduates:</label>
                         <input type="number" class="form-control" id="no_graduates" name="no_graduates">
                     </div>
                     <div class="form-group">
-                        <input type="hidden" name="id" id="hidden_degree_id">
                         <label for="recipient-name" class="col-form-label">Number of Males:</label>
                         <input type="number" class="form-control" id="no_males" name="no_males">
                     </div>
                     <div class="form-group">
-                        <input type="hidden" name="id" id="hidden_degree_id">
+
                         <label for="recipient-name" class="col-form-label">Number of Females:</label>
                         <input type="number" class="form-control" id="no_females" name="no_females">
                     </div>

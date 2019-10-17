@@ -227,7 +227,7 @@
                                         </button>
                                         <button type="button" class="btn btn-danger btn-sm a-btn-slide-text"
                                                 data-toggle="modal" data-target="#DeleteModal"
-                                                onclick="deleteData({{$skill['id']}})">
+                                                onclick="deleteSkill({{$skill['id']}})">
                                             Delete
                                         </button>
                                     </td>
@@ -348,7 +348,7 @@
                                 <th>Number of Males</th>
                                 <th>Number of Females</th>
                                 <th>Year</th>
-                                <th>Action</th>
+                                <th style="width: 100%;">Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -461,6 +461,13 @@
         }
 
 
+        function deleteSkill(id) {
+            $('#del_hidden_id').val(id);
+            var url = '/admin/uni-settings/destroy_skill';
+            $('#delete_form').attr('action', url);
+        }
+
+
         function createGrad() {
             var url = '/admin/uni-settings/store_graduate';
             $('#uni_name').val('');
@@ -510,7 +517,9 @@
         }
 
         function deleteGrad(id) {
+            var url = '/admin/uni-settings/destroy_graduate';
             $('#del_hidden_id').val(id);
+            $('#delete_form').attr('action', url);
         }
 
     </script>
