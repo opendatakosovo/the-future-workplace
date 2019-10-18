@@ -34,15 +34,15 @@
                     <p class="card-text">You can Download the data you need here</p>
 
                     <div class="col-md-12">
-                        <form class="form form-horizontal" action="/download_content" method="GET">
+                        <form class="form form-horizontal" action="/{{app()->getLocale()}}/download_content" method="GET">
                             <div class="form-body">
                                 <div class="form-group row">
                                     <label class="col-md-3 label-control" for="projectinput6">Select Document</label>
                                     <div class="col-md-9">
                                         <select id="projectinput6" name="document" class="form-control">
                                             <option value="companies_data">Companies Data</option>
-                                            <option value="workforce_data">Workforce Data</option>
-                                            <option value="high_school_data">High School Data</option>
+                                            <option value="workforce_data">University Graduates Data</option>
+                                            <option value="high_school_data">High School Graduates Data</option>
                                             <option value="atk_data">ATK Data</option>
                                         </select>
                                     </div>

@@ -42,6 +42,7 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'],'mi
 
     Route::get('highschool-data', 'HighSchoolController@index');
     Route::get('grads_ict', 'StatsController@grads_ict');
+    Route::get('grads_ict_uni', 'StatsController@grads_ict_uni');
     Route::get('number_businnesses', 'StatsController@number_businnesses');
     Route::get('get_business_data', 'BusinessMapController@fetch_data');
     Route::get('get_workforce_data', 'WorkForceDataController@fetch_data');

@@ -30,10 +30,11 @@ class StatsController extends Controller
     {
 
         $total_graduated = $this->get_total_grads();
+        $total_graduated_uni = $this->get_total_grads_uni();
         $total_biz = $this->get_total_biz();
         $growth = $this->get_growth_ict();
+        $growth_uni = $this->get_growth_ict('uni');
         $growth_biz = $this->get_growth_biz();
-
         $number_of_bussinesses = $this->get_no_bussiness();
         $number_of_active = $this->get_no_bussiness('active');
         $number_of_disolved = $this->get_no_bussiness('dissolved');
@@ -41,8 +42,10 @@ class StatsController extends Controller
 
         $data = array(
             'total_graduated' => $total_graduated,
+            'total_graduated_uni' => $total_graduated_uni,
             'total_biz' => $total_biz,
             'growth' => $growth,
+            'growth_uni' => $growth_uni,
             'number_of_bussinesses' => $number_of_bussinesses,
             'number_of_active' => $number_of_active,
             'number_of_dissolved' => $number_of_disolved,
@@ -55,7 +58,7 @@ class StatsController extends Controller
     public function grads_ict()
     {
 
-        for ($i = 2008; $i < 2019; $i++) {
+        for ($i = 2015; $i < 2019; $i++) {
             $years_result[] = $i;
         }
 
@@ -65,6 +68,26 @@ class StatsController extends Controller
             $data[] = array(
                 'name' => $gender,
                 'data' => $this->get_grads_ict($gender, $years_result)
+            );
+        }
+
+
+        echo json_encode(array($years_result, $data));
+    }
+
+    public function grads_ict_uni()
+    {
+
+        for ($i = 2008; $i < 2019; $i++) {
+            $years_result[] = $i;
+        }
+
+        $data = [];
+        $genders = ['Male', 'Female'];
+        foreach ($genders as $gender) {
+            $data[] = array(
+                'name' => $gender,
+                'data' => $this->get_grads_ict_uni($gender, $years_result)
             );
         }
 
@@ -156,22 +179,62 @@ class StatsController extends Controller
         return $final_res;
     }
 
-    function get_growth_ict()
+    function get_grads_ict_uni($gender, $years)
     {
 
-        $min_year_grads = $this->get_grads('min');
-        $max_year_grads = $this->get_grads('max');
+        $query = Graduates::query();
+
+        $query = $query->select(DB::raw(' sum(number_of_males) male_count,sum(number_of_females)as female_count'), 'year');
+        $query = $query->join('schools', 'schools.id', '=', 'graduates.school_id');
+        $query = $query->where('is_high_school', '=', '0');
+        $query = $query->groupBy('graduates.year');
+        $results = $query->get();
+
+
+        foreach ($results as $result) {
+
+            $data_converted[$result->year] = array(
+                'count_male' => $result->male_count,
+                'count_female' => $result->female_count
+            );
+        }
+
+        foreach ($years as $year) {
+            $years_converted[$year] = $year;
+        }
+
+        foreach ($years_converted as $year) {
+            if (isset($data_converted[$year])) {
+                if ($gender == 'Male') {
+                    $res[$year] = $data_converted[$year]['count_male'];
+                } elseif ($gender == 'Female') {
+                    $res[$year] = $data_converted[$year]['count_female'];
+                }
+
+            } else {
+                $res[$year] = 0;
+            }
+        }
+
+
+        foreach ($res as $r) {
+            $final_res[] = $r;
+        }
+
+        return $final_res;
+    }
+
+    function get_growth_ict($type = null)
+    {
+        $min_year_grads = $this->get_grads('min',$type);
+        $max_year_grads = $this->get_grads('max',$type);
 
         if($min_year_grads >0){
             $result = ($max_year_grads - $min_year_grads) / $min_year_grads;
-
-
             $result = round((float)$result * 100);
         }else{
             $result = 0;
         }
-
-
         return $result;
     }
 
@@ -198,6 +261,7 @@ class StatsController extends Controller
             $query = $query->select(DB::raw(' count(id) as total'));
 
             $query = $query->where('date_of_registration', 'like', '%2008%');
+
             $results = $query->get();
         } else {
             $query = businesses_map::query();
@@ -214,20 +278,32 @@ class StatsController extends Controller
         return $number;
     }
 
-    function get_grads($type)
+    function get_grads($type,$school_type)
     {
         if ($type == 'min') {
             $query = Graduates::query();
 
             $query = $query->select(DB::raw(' sum(number_of_graduates) total'));
-
+            if($school_type == 'uni'){
+                $query = $query->join('schools','schools.id','=','graduates.school_id');
+                $query = $query->where('is_high_school', '=', 0);
+            }else{
+                $query = $query->join('schools','schools.id','=','graduates.school_id');
+                $query = $query->where('is_high_school', '=', 1);
+            }
             $query = $query->where('year', '=', 2008);
             $results = $query->get();
         } else {
             $query = Graduates::query();
 
             $query = $query->select(DB::raw(' sum(number_of_graduates) total'));
-
+            if($school_type == 'uni'){
+                $query = $query->join('schools','schools.id','=','graduates.school_id');
+                $query = $query->where('is_high_school', '=', 0);
+            }else{
+                $query = $query->join('schools','schools.id','=','graduates.school_id');
+                $query = $query->where('is_high_school', '=', 1);
+            }
             $query = $query->where('year', '=', 2018);
             $results = $query->get();
         }
@@ -285,6 +361,20 @@ class StatsController extends Controller
     {
         $query = Graduates::query();
         $query = $query->select(DB::raw(' sum(number_of_graduates) as total'));
+        $results = $query->get();
+
+        foreach ($results as $result) {
+            $total_graduated = $result->total;
+        }
+        return $total_graduated;
+    }
+
+    function get_total_grads_uni()
+    {
+        $query = Graduates::query();
+        $query = $query->select(DB::raw(' sum(number_of_graduates) as total'));
+        $query = $query->join('schools','schools.id','=','graduates.school_id');
+        $query = $query->where('is_high_school','=','0');
         $results = $query->get();
 
         foreach ($results as $result) {
