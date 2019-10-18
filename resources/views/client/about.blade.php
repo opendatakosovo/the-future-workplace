@@ -15,17 +15,13 @@
             <div class="container">
 
                 <header class="section-header">
-                    <h3>About</h3> <br><br>
+                    <h3> {{Lang::get('translation.about')}}</h3> <br><br>
 
                 </header>
 
-                <center>The Future Workplace is a data-driven digital tool developed to declutter the ICT market in Kosovo.
-                    It has everything. What ICT students are learning in high school and university, how many ICT
-                    graduates are there, ,what activities are ICT businesses engaged in, how much do ICT businesses
-                    earn, what ICT skills are being demanded, and much, much more.</center> <br><br>
-                <center>The Future Workplace provides an overall basis for understanding of the ICT market (supply and demand
-                    side), insights on how the education system should be modified to match the market demand, and a
-                    great pathway to explore the human capacities in Kosovo.</center>
+                <center>  {{Lang::get('translation.about_text1')}}</center> <br><br>
+                <center>  {{Lang::get('translation.about_text2')}}</center><br><br>
+                <center> {{Lang::get('translation.about_text3')}}</center>
             </div>
         </section><!-- #about -->
         <div class="card-columns">
@@ -42,9 +38,8 @@
             </div>
             <div class="card p-3">
                 <blockquote class="blockquote mb-0 card-body">
-                    <h3>Ministry of Education, Science and Technology </h3><br>
-                    <p>The Ministry has provided us with crucial data about the number of ICT graduates, curricula of
-                        ICT education, amongst others.</p>
+                    <h3>{{Lang::get('translation.about_title')}}</h3><br>
+                    <p>{{Lang::get('translation.about_card')}}</p>
                     <footer class="blockquote-footer">
                         <small class="text-muted">
                             Someone famous in <cite title="Source Title">Source Title</cite>
@@ -67,9 +62,8 @@
             <div class="card bg-primary text-white text-center p-3"
                  style="background-color: mediumseagreen !important;">
                 <blockquote class="blockquote mb-0">
-                    <h3>LET’S TALK DATA</h3> <br>
-                    <p>The Future Workplace is wholly based on the data provided by the institutions we collaborated
-                        during the project, for whom we are very grateful for.</p>
+                    <h3>{{Lang::get('translation.about_first_title')}}</h3> <br>
+                    <p>{{Lang::get('translation.about_first_card')}}.</p>
                     <footer class="blockquote-footer text-white">
                         <small>
                             Someone famous in <cite title="Source Title">Source Title</cite>
@@ -79,9 +73,8 @@
             </div>
             <div class="card text-center">
                 <div class="card-body">
-                    <h3>BUSINESSES</h3><br>
-                    <p class="card-text">XX ICT businesses in Kosovo have responded to a questionnaire in regards to the
-                        skills required for the ICT workplace.</p>
+                    <h3>{{Lang::get('translation.about_second_title')}}</h3><br>
+                    <p class="card-text">{{Lang::get('translation.about_second_card')}}</p>
                     <p class="card-text">
                         <small class="text-muted">Last updated 3 mins ago</small>
                     </p>
@@ -93,9 +86,8 @@
             </div>
             <div class="card p-3 text-right">
                 <blockquote class="blockquote mb-0">
-                    <h3>Ministry of Trade and Industry</h3><br>
-                    <p>The Ministry has provided us with crucial data about ICT businesses in Kosovo through the Open
-                        Businesses platform. </p>
+                    <h3>{{Lang::get('translation.about_third_title')}}</h3><br>
+                    <p>{{Lang::get('translation.about_third_card')}}</p>
                     <footer class="blockquote-footer">
                         <small class="text-muted">
                             Someone famous in <cite title="Source Title">Source Title</cite>
@@ -105,10 +97,9 @@
             </div>
             <div class="card">
                 <div class="card-body">
-                    <h3>Tax Administration of Kosovo</h3><br>
+                    <h3>{{Lang::get('translation.about_fourth_title')}}</h3><br>
                     <p class="card-text">
-                        The agency has provided us with crucial data about the earning of ICT businesses, number of
-                        people employed in such businesses, amongst others.</p>
+                        {{Lang::get('translation.about_fourth_card')}}.</p>
                     <p class="card-text">
                         <small class="text-muted">Last updated 3 mins ago</small>
                     </p>
@@ -119,18 +110,15 @@
         <div class="card border-success mb-3 text-center" style="margin-top:57px;">
             <div class="card-body">
                 <blockquote class="card-blockquote">
-                    <h3>PLAY WITH THE DATA</h3><br>
+                    <h3>{{Lang::get('translation.about_fifth_title')}}</h3><br>
                     <strong>
-                        We know that the charts look all fancy and stuff, but you are more than welcome to play with the
-                        data.</strong><br><br>
+                        {{Lang::get('translation.about_fifth_card')}}</strong><br><br>
 
                     <ul style="list-style-type: square; list-style-position: inside;">
-                        <li>Use the various filters at the charts to compare data from one category to the other</li>
-                        <li>When you filter the data, you can download the result as picture by clicking on the three
-                            bars on the right-upper corner of the chart
+                        <li> {{Lang::get('translation.about_first_list')}}</li>
+                        <li> {{Lang::get('translation.about_second_list')}}
                         </li>
-                        <li>You can download the datasets since we believe that such data should be open and easily
-                            re-used for other purposes
+                        <li> {{Lang::get('translation.about_third_list')}}
                         </li>
                     </ul>
                 </blockquote>
@@ -140,18 +128,16 @@
              style="background-color: mediumseagreen !important;border: 1.5px solid; margin-top: 70px;">
             <blockquote class="blockquote mb-0">
                 <h3>TWF</h3> <br>
-                <p>This platform has been developed by the amazing Open Data Kosovo team which at first struggled to get
-                    all the data fit in a few charts, but managed to deliver this platform in a user-friendly and
-                    innovative manner.</p><br>
-                <p>This has been made possible by the help of the great partner Kosovo Chamber of Commerce.</p><br>
-                <i>Feel free to contact us for anything at info@opendatakosovo.org or info@oek-kcc.org</i>
+                <p>{{Lang::get('translation.about_sixth_card')}}</p><br>
+                <p>{{Lang::get('translation.about_seventh_card')}}</p><br>
+                <i>{{Lang::get('translation.about_eighth_card')}}</i>
             </blockquote>
         </div>
 
         <section id="clients" class="wow fadeInUp">
             <div class="container">
                 <header class="section-header">
-                    <h3>Funded By</h3>
+                    <h3>{{Lang::get('translation.funded_by')}}</h3>
                 </header>
                 <img src="/app-assets/css/about_us/img/clients/mcc.svg" style="width: 150px; margin-left: 32%;" alt="">
                 <img src="/app-assets/css/about_us/img/clients/mcc-gov.svg"
@@ -162,7 +148,7 @@
         <section id="clients" class="wow fadeInUp">
             <div class="container">
                 <header class="section-header">
-                    <h3>Our Partner</h3>
+                    <h3>{{Lang::get('translation.our_partner')}}</h3>
                 </header>
                 {{--<img src="app-assets/css/about_us/img/clients/mcc.svg" style="width: 150px; margin-left: 35%;" alt="">--}}
                 <img class="center" src="/app-assets/css/about_us/img/clients/oek.svg"
@@ -173,20 +159,20 @@
     </main>
 
 
-{{--    <!-- JavaScript Libraries -->--}}
-{{--    <script src="/app-assets/css/about_us/jquery/jquery.min.js"></script>--}}
-{{--    <script src="/app-assets/css/about_us/superfish/hoverIntent.js"></script>--}}
-{{--    <script src="/app-assets/css/about_us/superfish/superfish.min.js"></script>--}}
-{{--    <script src="/app-assets/css/about_us/wow/wow.min.js"></script>--}}
-{{--    <script src="/app-assets/css/about_us/waypoints/waypoints.min.js"></script>--}}
-{{--    <script src="/app-assets/css/about_us/counterup/counterup.min.js"></script>--}}
-{{--    <script src="/app-assets/css/about_us/owlcarousel/owl.carousel.min.js"></script>--}}
-{{--    <script src="/app-assets/css/about_us/isotope/isotope.pkgd.min.js"></script>--}}
-{{--    <script src="/app-assets/css/about_us/lightbox/js/lightbox.min.js"></script>--}}
-{{--    <script src="/app-assets/css/about_us/touchSwipe/jquery.touchSwipe.min.js"></script>--}}
+    {{--    <!-- JavaScript Libraries -->--}}
+    {{--    <script src="/app-assets/css/about_us/jquery/jquery.min.js"></script>--}}
+    {{--    <script src="/app-assets/css/about_us/superfish/hoverIntent.js"></script>--}}
+    {{--    <script src="/app-assets/css/about_us/superfish/superfish.min.js"></script>--}}
+    {{--    <script src="/app-assets/css/about_us/wow/wow.min.js"></script>--}}
+    {{--    <script src="/app-assets/css/about_us/waypoints/waypoints.min.js"></script>--}}
+    {{--    <script src="/app-assets/css/about_us/counterup/counterup.min.js"></script>--}}
+    {{--    <script src="/app-assets/css/about_us/owlcarousel/owl.carousel.min.js"></script>--}}
+    {{--    <script src="/app-assets/css/about_us/isotope/isotope.pkgd.min.js"></script>--}}
+    {{--    <script src="/app-assets/css/about_us/lightbox/js/lightbox.min.js"></script>--}}
+    {{--    <script src="/app-assets/css/about_us/touchSwipe/jquery.touchSwipe.min.js"></script>--}}
 
-{{--    <!-- Template Main Javascript File -->--}}
-{{--    <script src="/app-assets/css/about_us/js/main.js"></script>--}}
+    {{--    <!-- Template Main Javascript File -->--}}
+    {{--    <script src="/app-assets/css/about_us/js/main.js"></script>--}}
 
 
 @endsection
