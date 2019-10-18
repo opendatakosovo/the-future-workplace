@@ -47,11 +47,9 @@ class DownloadsController extends Controller
 
         } elseif ($document == 'high_school_data') {
             if ($type == 'csv') {
-
-                return Excel::download(new BusinessesExport($year), 'high_school_data.csv');
+                return Excel::download(new WorkforceExport($year,'high_school'), 'high_school_data.csv');
 
             } elseif ($type == 'json') {
-
                 $data = $this->export_company_data_json($year);
                 $fileName = time() . '_datafile_high_school_data.json';
                 File::put(public_path($fileName), $data);
@@ -60,7 +58,7 @@ class DownloadsController extends Controller
 
         } elseif ($document == 'workforce_data') {
             if ($type == 'csv') {
-                return Excel::download(new WorkforceExport($year), 'workforce_data.csv');
+                return Excel::download(new WorkforceExport($year,'uni'), 'university_graduates_data.csv');
 
             } elseif ($type == 'json') {
 

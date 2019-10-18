@@ -18,7 +18,7 @@
             <div class="col-lg-8 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">{{Lang::get('translation.num_ict_grads')}}</h4>
+                        <h4 class="card-title">{{Lang::get('translation.num_ict_grads_uni')}}</h4>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
@@ -29,15 +29,47 @@
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body p-0 pb-0">
+                            <div id="chartContainer-uni" style="width:100%; height:300px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">{{Lang::get('translation.num_ict_grads')}}</h4>
+                        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                        <div class="heading-elements">
+                            <ul class="list-inline mb-0">
+                                <li>
+                                    <a class="btn btn-glow btn-round btn-bg-gradient-x-green-pink" href="{{ url('highschool-data') }}">{{Lang::get('translation.more')}}</a>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-content collapse show">
+                        <div class="card-body p-0 pb-0">
                             <div id="chartContainer3" style="width:100%; height:300px;"></div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
             <div class="col-lg-4 col-md-12">
-
                 <div class="row">
-
+                    <div class="col-12">
+                        <div class="card pull-up border-top-info border-top-3 rounded-0">
+                            <div class="card-header">
+                                <h4 class="card-title">{{Lang::get('translation.total_num_ict_grads_uni')}}</h4>
+                            </div>
+                            <div class="card-content collapse show">
+                                <div class="card-body p-1">
+                                    <h4 class="font-large-1 text-bold-400">{{$data['total_graduated_uni']}} <i class="ft-users float-right"></i></h4>
+                                </div>
+                                <div class="card-footer p-1">
+                                    <span class="text-muted"><i class="la @if($data['growth_uni'] < 0 )la-arrow-circle-o-down @else la-arrow-circle-o-up @endif  info"></i> {{$data['growth']}}% @if($data['growth'] < 0 ){{Lang::get('translation.drop')}} @else {{Lang::get('translation.growth')}}  @endif {{Lang::get('translation.within_10_years')}} </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-12">
                         <div class="card pull-up border-top-info border-top-3 rounded-0">
                             <div class="card-header">
@@ -214,6 +246,78 @@
 
                     var chart3 = new ApexCharts(
                         document.querySelector("#chartContainer3"),
+                        options1
+                    );
+
+                    chart3.render();
+
+
+                    if (clicked != null) {
+                        update();
+                    }
+
+                    function update() {
+                        chart3.updateOptions({
+                            series: data_sets,
+                        })
+
+                    }
+                }
+            });
+        }
+
+        function number_of_ict_grads_uni(clicked = null) {
+            var year = $('#year').find(":selected").val();
+            var degree =$('#degree').find(":selected").val();
+            var university = $('#university').find(":selected").val();
+
+            $.ajax({
+                type: "GET",
+                url: "grads_ict_uni",
+                data: {"year": year,"university": university, "degree": degree},
+                success: function (result) {
+                    var years = [];
+                    var data_sets = [];
+                    data = JSON.parse(result);
+
+                    $.each(data[0], function (key, value) {
+                        years.push(value);
+                    });
+
+                    $.each(data[1], function (key, value) {
+                        data_sets.push(value);
+                    });
+                    console.log(data_sets);
+
+                    var options1 = {
+                        chart: {
+                            height: 350,
+                            type: 'area',
+                        },
+                        dataLabels: {
+                            enabled: false
+                        },
+                        stroke: {
+                            curve: 'smooth'
+                        },
+                        fill: {
+                            colors: ['#093637', '#266961','#358577','#449f8c']
+                        },
+                        series: data_sets,
+
+                        xaxis: {
+                            categories: years,
+                        },
+                        tooltip: {
+                            x: {
+                                format: 'yy'
+                            },
+                        }
+                    }
+
+
+                    var chart3 = new ApexCharts(
+                        document.querySelector("#chartContainer-uni"),
                         options1
                     );
 
@@ -445,6 +549,7 @@
 
         $(document).ready(function () {
             number_of_ict_grads();
+            number_of_ict_grads_uni();
             get_filtered2();
             number_of_bussiness_years();
         });
