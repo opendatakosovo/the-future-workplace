@@ -40,7 +40,7 @@ class DownloadsController extends Controller
 
                 $data = $this->export_company_data_json($year);
                 $fileName = time() . '_datafile_businesess.json';
-                File::put(public_path($fileName), $data);
+                File::put(storage_path($fileName), $data);
                 return Response::download(public_path($fileName))->deleteFileAfterSend(true);
             }
 
@@ -52,7 +52,7 @@ class DownloadsController extends Controller
             } elseif ($type == 'json') {
                 $data = $this->export_company_data_json($year);
                 $fileName = time() . '_datafile_high_school_data.json';
-                File::put(public_path($fileName), $data);
+                File::put(storage_path($fileName), $data);
                 return Response::download(public_path($fileName))->deleteFileAfterSend(true);
             }
 
@@ -64,7 +64,7 @@ class DownloadsController extends Controller
 
                 $data = $this->export_workforce_data_json($year);
                 $fileName = time() . '_datafile_workforce_data.json';
-                File::put(public_path($fileName), $data);
+                File::put(storage_path($fileName), $data);
                 return Response::download(public_path($fileName))->deleteFileAfterSend(true);
             }
 
@@ -75,7 +75,7 @@ class DownloadsController extends Controller
 
                 $data = $this->export_company_data_json($year);
                 $fileName = time() . '_datafile_atk_data.json';
-                File::put(public_path($fileName), $data);
+                File::put(storage_path($fileName), $data);
                 return Response::download(public_path($fileName))->deleteFileAfterSend(true);
             }
         }
