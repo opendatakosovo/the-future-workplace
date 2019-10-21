@@ -15,6 +15,7 @@ return array(
     'blog' => 'Blogu',
     'about' => 'Rreth Nesh',
     'funded_by' => 'Financuar Nga',
+    'implemented_by' => 'Implementuar nga',
     'num_grads_ict' => 'Numri i të Diplomuarve në TIK',
     'total_num_ict_grads' => 'Numri Total i të Diplomuarve në Shkolla të Mesme TIK',
     'total_num_ict_grads_uni' => 'Numri Total i të Diplomuarve në Univesitete TIK',
