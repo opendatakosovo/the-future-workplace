@@ -26,7 +26,7 @@
         </section><!-- #about -->
         <div class="card-columns">
             <div class="card">
-                <img src="https://www.telegraph.co.uk/content/dam/opinion/2019/08/04/TELEMMGLPICT000003366104_trans_NvBQzQNjv4BqpVlberWd9EgFPZtcLiMQfyf2A9a6I9YchsjMeADBa08.jpeg?imwidth=450"
+                <img src="https://mir-s3-cdn-cf.behance.net/projects/404/10566199.54802c52ac99e.png"
                      class="card-img-top" alt="...">
 
             </div>
@@ -42,7 +42,7 @@
                 </blockquote>
             </div>
             <div class="card">
-                <img src="https://www.telegraph.co.uk/content/dam/opinion/2019/08/04/TELEMMGLPICT000003366104_trans_NvBQzQNjv4BqpVlberWd9EgFPZtcLiMQfyf2A9a6I9YchsjMeADBa08.jpeg?imwidth=450"
+                <img src="https://opendatakosovo.org/assets/img/about_page/cover-image.jpg"
                      class="card-img-top" alt="...">
 
             </div>
@@ -69,7 +69,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="https://s3.treasury.qld.gov.au/files/Programs-and-Policies-Business-Development-Fund-1.jpg"
+                <img src="https://telegrafi.com/wp-content/uploads/2019/10/ministra-e-arsimit-780x439.jpg"
                      class="card-img-top" alt="...">
             </div>
             <div class="card p-3 text-right">
@@ -85,7 +85,7 @@
             </div>
 
             <div class="card">
-                <img src="https://s3.treasury.qld.gov.au/files/Programs-and-Policies-Business-Development-Fund-1.jpg"
+                <img src="https://i.ibb.co/jhQbJRt/atk.jpg"
                      class="card-img-top" alt="...">
             </div>
             <div class="card">
