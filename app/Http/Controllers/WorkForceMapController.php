@@ -84,6 +84,7 @@ class WorkForceMapController extends Controller
         } else {
             $is_high_school = 0;
         }
+
         $universities = Universities::where('is_high_school', $is_high_school)->limit(15)->get();
 
 
@@ -323,6 +324,7 @@ class WorkForceMapController extends Controller
 //        }
 
         $query = $query->join('schools', 'graduates.school_id', '=', 'schools.id');
+
         if ($is_high_school == 1) {
             $query = $query->where('schools.is_high_school', '=', 1);
             $query = $query->where('graduates.school_id', '!=', 0);

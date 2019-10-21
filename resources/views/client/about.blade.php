@@ -16,7 +16,6 @@
 
                 <header class="section-header">
                     <h3> {{Lang::get('translation.about')}}</h3> <br><br>
-
                 </header>
 
                 <center>  {{Lang::get('translation.about_text1')}}</center> <br><br>
@@ -132,9 +131,8 @@
                 <header class="section-header">
                     <h3>{{Lang::get('translation.funded_by')}}</h3>
                 </header>
-                <img src="/app-assets/css/about_us/img/clients/mcc.svg" style="width: 150px; margin-left: 32%;" alt="">
-                <img src="/app-assets/css/about_us/img/clients/mcc-gov.svg"
-                     style="width: 313px;margin-left: 5%; margin-top: 22px;" alt="">
+                <img src="/app-assets/css/about_us/img/clients/MFK.png" style="width: 243px; margin-left: 25%; margin-top: 22px;" alt="">
+                <img src="/app-assets/css/about_us/img/clients/MCC.png" style="width: 400px;  margin-left: 2%;" alt="">
             </div>
         </section><!-- #clients -->
         <hr style="width: 70%">
