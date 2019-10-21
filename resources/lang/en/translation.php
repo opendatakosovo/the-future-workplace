@@ -16,6 +16,7 @@ return array(
     'blog' => 'Blog',
     'about' => 'About',
     'funded_by' => 'Funded By',
+    'implemented_by' => 'Implemented By',
     'our_partner' => 'Our Partner',
     'num_grads_ict' => 'Number of Graduates in ICT',
     'total_num_ict_grads' => 'Total Number of ICT Graduates in High Schools',

@@ -16,7 +16,6 @@
 
                 <header class="section-header">
                     <h3> {{Lang::get('translation.about')}}</h3> <br><br>
-
                 </header>
 
                 <center>  {{Lang::get('translation.about_text1')}}</center> <br><br>
@@ -28,13 +27,7 @@
             <div class="card">
                 <img src="https://www.telegraph.co.uk/content/dam/opinion/2019/08/04/TELEMMGLPICT000003366104_trans_NvBQzQNjv4BqpVlberWd9EgFPZtcLiMQfyf2A9a6I9YchsjMeADBa08.jpeg?imwidth=450"
                      class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title that wraps to a new line</h5>
-                    <p class="card-text">It is a long established fact that a reader will be distracted by the readable
-                        content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                        more-or-less normal distribution of letters, as opposed to using 'Content here, content here',
-                        making it look like readable English.</p>
-                </div>
+
             </div>
             <div class="card p-3">
                 <blockquote class="blockquote mb-0 card-body">
@@ -48,17 +41,11 @@
                 </blockquote>
             </div>
             <div class="card">
-                <img src="https://cdn.hipwallpaper.com/i/33/24/eTatqO.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                        printer took a galley of type and scrambled it to make a type specimen book</p>
-                    <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
-                </div>
+                <img src="https://www.telegraph.co.uk/content/dam/opinion/2019/08/04/TELEMMGLPICT000003366104_trans_NvBQzQNjv4BqpVlberWd9EgFPZtcLiMQfyf2A9a6I9YchsjMeADBa08.jpeg?imwidth=450"
+                     class="card-img-top" alt="...">
+
             </div>
+
             <div class="card bg-primary text-white text-center p-3"
                  style="background-color: mediumseagreen !important;">
                 <blockquote class="blockquote mb-0">
@@ -94,6 +81,11 @@
                         </small>
                     </footer>
                 </blockquote>
+            </div>
+
+            <div class="card">
+                <img src="https://s3.treasury.qld.gov.au/files/Programs-and-Policies-Business-Development-Fund-1.jpg"
+                     class="card-img-top" alt="...">
             </div>
             <div class="card">
                 <div class="card-body">
@@ -139,9 +131,8 @@
                 <header class="section-header">
                     <h3>{{Lang::get('translation.funded_by')}}</h3>
                 </header>
-                <img src="/app-assets/css/about_us/img/clients/mcc.svg" style="width: 150px; margin-left: 32%;" alt="">
-                <img src="/app-assets/css/about_us/img/clients/mcc-gov.svg"
-                     style="width: 313px;margin-left: 5%; margin-top: 22px;" alt="">
+                <img src="/app-assets/css/about_us/img/clients/MFK.png" style="width: 243px; margin-left: 25%; margin-top: 22px;" alt="">
+                <img src="/app-assets/css/about_us/img/clients/MCC.png" style="width: 400px;  margin-left: 2%;" alt="">
             </div>
         </section><!-- #clients -->
         <hr style="width: 70%">
