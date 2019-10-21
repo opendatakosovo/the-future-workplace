@@ -25,10 +25,10 @@
         </section><!-- #about -->
         <div class="card-columns">
             <div class="card">
-                <img src="https://mir-s3-cdn-cf.behance.net/projects/404/10566199.54802c52ac99e.png"
-                     class="card-img-top" alt="...">
+            <img src="https://mir-s3-cdn-cf.behance.net/projects/404/10566199.54802c52ac99e.png"
+                 class="card-img-top" alt="...">
 
-            </div>
+        </div>
             <div class="card p-3">
                 <blockquote class="blockquote mb-0 card-body">
                     <h3>{{Lang::get('translation.about_title')}}</h3><br>
@@ -41,9 +41,8 @@
                 </blockquote>
             </div>
             <div class="card">
-                <img src="https://opendatakosovo.org/assets/img/about_page/cover-image.jpg"
+                <img src="https://i.ibb.co/JFnJpX8/ads.jpg"
                      class="card-img-top" alt="...">
-
             </div>
 
             <div class="card bg-primary text-white text-center p-3"
@@ -58,6 +57,11 @@
                     </footer>
                 </blockquote>
             </div>
+
+            <div class="card">
+                <img src="https://tli.umn.edu/sites/tli.umn.edu/files/styles/hero_1200x550/public/blog/02-what-is-a-technological-business-1200x550.jpg?itok=lDkZCroZ"
+                     class="card-img-top" alt="...">
+            </div>
             <div class="card text-center">
                 <div class="card-body">
                     <h3>{{Lang::get('translation.about_second_title')}}</h3><br>
@@ -68,7 +72,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="https://telegrafi.com/wp-content/uploads/2019/10/ministra-e-arsimit-780x439.jpg"
+                <img src="https://zeri.info/uploads/zeri.info/images/2019/July/18/auto_auto_auto_auto_auto_MASHT15233705121525012636153189711215529446651563456995.jpg"
                      class="card-img-top" alt="...">
             </div>
             <div class="card p-3 text-right">
