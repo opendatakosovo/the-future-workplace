@@ -47,6 +47,7 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'],'mi
     Route::get('get_business_data', 'BusinessMapController@fetch_data');
     Route::get('get_workforce_data', 'WorkForceDataController@fetch_data');
     Route::get('graduating_per_ict_dep_each_university', 'WorkForceMapController@grad_per_ict_dep_each_university');
+
     Route::get('grad_students_per_skill_area', 'WorkForceMapController@grad_students_per_skill_area');
     Route::get('get_ict_per_year', 'WorkForceMapController@get_ict_per_year');
     Route::get('get_aggregate_supply', 'WorkForceMapController@get_aggregate_supply');
@@ -125,6 +126,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/admin/highschool-data/fetch_data', 'Admin\HighSchoolDataController@fetch_data');
     Route::post('/admin/highschool-data/destroy_data', 'Admin\HighSchoolDataController@destroy_data');
     Route::post('/admin/highschool-data/import_data', 'Admin\HighSchoolDataController@import_data');
+
+    Route::get('get_uni_degrees_assoc', 'WorkForceMapController@get_uni_degrees_assoc');
 
 });
 

@@ -20,6 +20,16 @@
             <form action="/admin/uni-settings/store_graduate" method="post" id="grad_form">
                 @CSRF
                 <div class="modal-body">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Select School:</label>
+                        <select class="select2 form-control graduate_school_select" id="uni_id" name="school_id"  onchange="changeFunc(this);">
+                            <optgroup label="Choose University">
+                                @foreach($data['universities_all'] as $university)
+                                    <option class="@if($university['is_high_school'] == 1)high_school @endif" name="university" value="{{$university['id']}}">{{$university['school_name']}}</option>
+                                @endforeach
+                            </optgroup>
+                        </select>
+                    </div>
 
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">Select Degree:</label>
@@ -33,16 +43,7 @@
                         </select>
                     </div>
                     <input type="hidden" name="id" id="hidden_uni_id">
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Select School:</label>
-                        <select class="select2 form-control graduate_school_select" id="uni_id" name="school_id"  onchange="changeFunc();">
-                            <optgroup label="Choose University">
-                                @foreach($data['universities_all'] as $university)
-                                    <option class="@if($university['is_high_school'] == 1)high_school @endif" name="university" value="{{$university['id']}}">{{$university['school_name']}}</option>
-                                @endforeach
-                            </optgroup>
-                        </select>
-                    </div>
+
 
                     <div class="form-group" id="grade_input" style="display: none">
                         <label for="recipient-name" class="col-form-label">Select Grade:</label>
@@ -94,12 +95,41 @@
         var selectedValue = selectBox.options[selectBox.selectedIndex];
         var attribute = $('select[class="select2 form-control graduate_school_select select2-hidden-accessible"] :selected').attr('class');
 
+        $('#degree_id').empty();
+        var dropDown = document.getElementById("uni_id");
+        var uniId = $('select[class="select2 form-control graduate_school_select select2-hidden-accessible"] :selected').val();
+        $.ajax({
+            type: "GET",
+            url: "/get_uni_degrees_assoc",
+            data: { 'uni_id': uniId  },
+            success: function(data){
+
+                // Parse the returned json data
+                var opts = $.parseJSON(data);
+                console.log(opts);
+                // Use jQuery's each to iterate over the opts value
+                $.each(opts, function(i, d) {
+                    // You will need to alter the below to get the right values from your json object.  Guessing that d.id / d.modelName are columns in your carModels data
+                    $('#degree_id').append('<option value="' + d.degree_id + '">' + d.degree_name + '</option>');
+                });
+            }
+        });
+
+
+
+
         if (attribute == 'high_school '){
+
             $('#grade_input').show();
         }else{
             $('#grade_input').hide();
         }
     }
+
+
+    $( document ).ready(function() {
+        changeFunc();
+    });
 
 
 </script>

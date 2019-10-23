@@ -51,22 +51,11 @@ class BusinessMapController extends Controller
             $cities_imploded  = implode(',',$default_cities);
 
             $bussiness_result = businesses_map::whereIn('municipality',$default_cities)->get();
-//
-//            if(Cache::store('apc')->get('_business_result_'.$cities_imploded)){
-//                $bussiness_result =   Cache::store('apc')->get('_business_result_'.$cities_imploded);
-//            }else{
-//                $bussiness_result = businesses_map::whereIn('municipality',$default_cities)->get();
-//                Cache::store('apc')->put('_business_result_'.$cities_imploded, $bussiness_result, 10000);
-//            }
+
 
         }else{
             $bussiness_result = businesses_map::whereIn('municipality',$cities)->get();
-//            if(Cache::store('apc')->get('_business_result_'.implode(',',$cities))){
-//                $bussiness_result =   Cache::store('apc')->get('_business_result_'.implode(',',$cities));
-//            }else{
-//                $bussiness_result = businesses_map::whereIn('municipality',$cities)->get();
-//                Cache::store('apc')->put('_business_result_'.implode(',',$cities), $bussiness_result, 10000);
-//            }
+
         }
 
 
