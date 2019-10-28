@@ -42,3 +42,7 @@
 
 <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/landing/main.css')}}">
 <link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/landing/font-awesome.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/pages/timeline.css')}}">
+<link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/css/pages/users.css')}}">
+
+<link rel="stylesheet" type="text/css" href="{{URL::asset('/app-assets/vendors/css/timeline/vertical-timeline.css')}}">

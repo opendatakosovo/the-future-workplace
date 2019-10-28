@@ -10,6 +10,8 @@
 return array(
     'home' => 'Home',
     'statistics' => 'Statistics',
+    'roadmap' => 'Roadmap',
+    'roadmap_desc' => 'Here is the advanced example of how vertical timeline can be used to display information about company',
     'company_data' => 'Company Data',
     'workforce_data' => 'University Graduates',
     'skills_mismatch' => 'Skills Mismatch',

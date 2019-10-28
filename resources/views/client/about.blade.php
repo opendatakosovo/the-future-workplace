@@ -25,7 +25,7 @@
         </section><!-- #about -->
         <div class="card-columns">
             <div class="card">
-            <img src="https://mir-s3-cdn-cf.behance.net/projects/404/10566199.54802c52ac99e.png"
+            <img src="https://i.ibb.co/bbFL7W8/10566199-54802c52ac99e.png"
                  class="card-img-top" alt="...">
 
         </div>
@@ -59,7 +59,7 @@
             </div>
 
             <div class="card">
-                <img src="https://tli.umn.edu/sites/tli.umn.edu/files/styles/hero_1200x550/public/blog/02-what-is-a-technological-business-1200x550.jpg?itok=lDkZCroZ"
+                <img src="https://www.binarytides.com/blog/wp-content/uploads/2018/08/laptop-keyboard.jpg"
                      class="card-img-top" alt="...">
             </div>
             <div class="card text-center">

@@ -3,8 +3,14 @@
 <script src="https://code.highcharts.com/maps/highmaps.js"></script>
 <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
 <script src="/app-assets/js/scripts/highcharts/kv-all.js"></script>
+
 @section('content')
     <style>
+        .select2-container--classic .select2-selection--multiple .select2-selection__choice, .select2-container--default .select2-selection--multiple .select2-selection__choice {
+
+            border-color: #256960 !important;
+            background-color: #256960 !important;
+        }
         .btn-primary{
             background-color: #256960 !important;
         }
@@ -78,10 +84,10 @@
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label class="col-md-12 label-control" for="userinput2">{{Lang::get('translation.degree')}}</label>
-                                                <select class="select2 form-control" id="degree">
+                                                <select class="select2 form-control" id="degree" name="degree[]" multiple="multiple">
                                                     <optgroup label="{{Lang::get('translation.choose_degree')}}">
                                                        @foreach($data['degrees'] as $degree)
-                                                            <option name='degree' value="{{$degree['degree_id']}}">{{ $degree['degree_name'] }}</option>
+                                                            <option name='degree' value="{{$degree['degree_name']}}" @if(in_array($degree['degree_name'],$data['def_degrees'])) selected @endif>{{ $degree['degree_name'] }}</option>
                                                         @endforeach
                                                     </optgroup>
                                                 </select>
@@ -91,12 +97,11 @@
                                             <div class="form-group ">
                                                 <label class="col-md-12 label-control"
                                                        for="userinput2">{{Lang::get('translation.university')}}</label>
-                                                <select class="select2 form-control" id="university">
+                                                <select class="select2 form-control" id="university" name="university[]" multiple="multiple">
                                                     <optgroup label="{{Lang::get('translation.choose_university')}}">
-                                                        <option name='university' selected value="all">{{Lang::get('translation.all')}}</option>
+                                                        <option  value="all">{{Lang::get('translation.all')}}</option>
                                                         @foreach($data['universities'] as $university)
-                                                            <option name="university"
-                                                                    value="{{$university['uni_id']}}">{{$university['uni_name']}}</option>
+                                                            <option  value="{{$university['uni_id']}}" @if(in_array($university['uni_id'],$data['def_schools'])) selected @endif>{{$university['uni_name']}}</option>
                                                         @endforeach
                                                     </optgroup>
                                                 </select>
@@ -422,8 +427,8 @@
         function get_filtered(clicked = null) {
 
             var year = $('#year').find(":selected").val();
-            var degree =$('#degree').find(":selected").val();
-            var university = $('#university').find(":selected").val();
+            var degree =$('#degree').val();
+            var university = $('#university').val();
 
             $.ajax({
                 type: "GET",

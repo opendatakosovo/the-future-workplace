@@ -15,7 +15,7 @@ class Degrees extends Model
     protected $table = 'degrees';
 
     protected $fillable = [
-        'degree_name','uni_id','skills'
+        'degree_name','school_id','skills'
     ];
 
 }

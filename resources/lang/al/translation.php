@@ -10,6 +10,8 @@ return array(
     'home' => 'Balina',
     'statistics' => 'Statistikat',
     'company_data' => 'Bizneset',
+    'roadmap' => 'Udhërrëfyesi',
+    'roadmap_desc' => 'Here is the advanced example of how vertical timeline can be used to display information about company',
     'workforce_data' => 'Te Diplomuarit e Universiteve',
     'skills_mismatch' => 'Skills Mismatch',
     'blog' => 'Blogu',

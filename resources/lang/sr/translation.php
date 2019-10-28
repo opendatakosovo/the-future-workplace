@@ -10,6 +10,8 @@ return array (
 
     'home' => 'Početna strana (Kući)',
     'statistics' => 'Statistika',
+    'roadmap' => 'Udhërrëfyesi',
+    'roadmap_desc' => 'Here is the advanced example of how vertical timeline can be used to display information about company',
     'company_data' => 'Podaci o kompaniji',
     'workforce_data' => 'Podaci o radnoj snazi',
     'skills_mismatch' => 'Veštine neusklađenosti',

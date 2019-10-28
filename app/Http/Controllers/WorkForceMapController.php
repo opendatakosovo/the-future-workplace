@@ -8,20 +8,25 @@ use App\Municipalities;
 use App\Degrees;
 use App\Universities;
 use App\Skills;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class WorkForceMapController extends Controller
 {
     public function index()
     {
+        $default_schools = ['131', '132', '133'];
+        $default_degrees = ['Computer Science', 'Mekatronike','Software Engineering'];
+
         $university_result = [];
         $degrees_result = [];
         $skills_result = [];
         $municipalities = Municipalities::all();
-        $degrees =  Degrees::join('schools', function ($join) {
-            $join->on('schools.id', '=', 'degrees.school_id')
-                ->where('schools.is_high_school', '=', 0);
-        })->get();
+        $degrees =   Degrees::join('schools','schools.id','=','degrees.school_id')
+            ->where('is_high_school',0)
+            ->groupBy('degree_name')
+            ->get();
+
         $universities = Universities::where('is_high_school','=',0)->get();
         $skills = Skills::all();
 
@@ -52,7 +57,9 @@ class WorkForceMapController extends Controller
             'cities' => (isset($municipality_result)) ? $municipality_result : null,
             'universities' => $university_result,
             'degrees' => $degrees_result,
-            'skills' => $skills_result
+            'skills' => $skills_result,
+            'def_schools' => $default_schools,
+            'def_degrees' => $default_degrees
         );
         return view('client.work_force_map')->with('data', $data);
     }
@@ -85,7 +92,10 @@ class WorkForceMapController extends Controller
             $is_high_school = 0;
         }
 
-        $universities = Universities::where('is_high_school', $is_high_school)->limit(15)->get();
+        if($university_filter != null){
+            $universities = Universities::whereIn('id', $university_filter)->get();
+        }
+
 
 
         foreach ($universities as $university) {
@@ -93,11 +103,11 @@ class WorkForceMapController extends Controller
             $universities_result[] = $university->school_name;
         }
 
-        if ($university_filter != null && $university_filter != 'all') {
-            $universities_array[] = $universities_array[$university_filter];
-            $universities_result = array();
-            $universities_result[] = $universities_array[$university_filter];
-        }
+//        if ($university_filter != null && $university_filter != 'all') {
+//            $universities_array[] = $universities_array[$university_filter];
+//            $universities_result = array();
+//            $universities_result[] = $universities_array[$university_filter];
+//        }
 
 
         $genders = ['Male', 'Female'];
@@ -296,42 +306,33 @@ class WorkForceMapController extends Controller
         $universities_converted =[];
         $res = [];
         $final_res = [];
-        if ($degree_filter == null) {
-            $degree_filter = '1';
-        }
 
         $query = Graduates::query();
 
         $query = $query->select(DB::raw('sum(number_of_females) as female_count,sum(number_of_males) as male_count'), 'school_name', 'degree_id');
 
         if ($degree_filter != null) {
-            $query = $query->where('degree_id', '=', $degree_filter);
+            $query = $query->whereIn('degree_name',  $degree_filter);
         }
-        if ($university_filter != null && $university_filter != 'all') {
-            $query = $query->where('school_id', '=', $university_filter);
+        if ($universities != null && $universities != 'all') {
+            $query = $query->whereIn('graduates.school_id',  $university_filter);
         }
-//
-//        if($cities != null){
-//            $cities_imploded = implode(',',$cities);
-//            $query = $query->whereIn('municipality', $cities);
-//        }
-//
+
         if ($year_filter != null && $year_filter != 'all') {
             $query = $query->where('year', '=', $year_filter);
         }
-//        if($status != null &&  $status != 'Të gjitha'){
-//            $query = $query->where('status', 'LIKE', '%' . $status . '%');
-//        }
+
 
         $query = $query->join('schools', 'graduates.school_id', '=', 'schools.id');
+        $query = $query->join('degrees', 'degrees.id', '=', 'graduates.degree_id');
 
-        if ($is_high_school == 1) {
-            $query = $query->where('schools.is_high_school', '=', 1);
-            $query = $query->where('graduates.school_id', '!=', 0);
-        }
+//        if ($is_high_school == 1) {
+//            $query = $query->where('schools.is_high_school', '=', 1);
+//            $query = $query->where('graduates.school_id', '!=', 0);
+//        }
 
         $query = $query->groupBy('school_name');
-        $query = $query->groupBy('graduates.degree_id');
+//        $query = $query->groupBy('graduates.degree_id');
 
         $results = $query->get();
 
@@ -572,6 +573,21 @@ class WorkForceMapController extends Controller
         }
 
         return $final_res;
+    }
+
+    public function get_uni_degrees_assoc(Request $request){
+        $uni_id = $request->uni_id;
+        $degrees = Degrees::where('school_id',$uni_id)->get();
+        foreach($degrees as $degree){
+            $degree_result[] = array(
+                'degree_id' => $degree->id,
+                'degree_name' => $degree->degree_name
+            );
+
+        }
+
+        return json_encode($degree_result);
+
     }
 
 }

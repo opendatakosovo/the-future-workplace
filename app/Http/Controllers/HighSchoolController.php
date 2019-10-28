@@ -16,13 +16,22 @@ class HighSchoolController extends Controller
 {
 
     public function index(){
+
+        $default_schools = ['33', '66', '85'];
+        $default_degrees = ['Matematikë-Informatikë'];
+
         $university_result = [];
         $degrees_result = [];
         $municipalities = Municipalities::all();
-        $degrees =  Degrees::join('schools', function ($join) {
-            $join->on('schools.id', '=', 'degrees.school_id')
-                ->where('schools.is_high_school', '=', 1);
-        })->get();
+//        $degrees =  Degrees::join('schools', function ($join) {
+//            $join->on('schools.id', '=', 'degrees.school_id')
+//                ->where('schools.is_high_school', '=', 1);
+//        })->get();
+
+        $degrees  = Degrees::join('schools','schools.id','=','degrees.school_id')
+            ->where('is_high_school',1)
+            ->groupBy('degree_name')
+            ->get();
         $universities = Universities::where('is_high_school','=',1)->get();
         $skills = Skills::all();
 
@@ -51,7 +60,9 @@ class HighSchoolController extends Controller
             'cities' => $municipality_result,
             'universities' => $university_result,
             'degrees' => $degrees_result,
-            'skills' => $skills_result
+            'skills' => $skills_result,
+            'def_schools' => $default_schools,
+            'def_degrees' => $default_degrees
         );
 
         return view('client.highschool')->with('data',$data);
