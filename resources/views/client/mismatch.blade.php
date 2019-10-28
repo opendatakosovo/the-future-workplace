@@ -12,6 +12,15 @@
     .btn-primary {
         background-color: #256960 !important;
     }
+    .custom-button{
+        background-color: #14cea4 !important;
+    }
+    .card-title a{
+        color:#222222 !important;
+    }
+    .base-timeline-info a {
+        color: #2d5650!important;
+    }
 </style>
 @section('content')
     <div class="content-body" style="width: 100%;">
@@ -83,47 +92,504 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"> {{Lang::get('translation.roadmap')}}</div>
+                    </div>
+                    <div class="card-body pt-0">
+                        <p>Here is the advanced example of how vertical timeline can be used to display information
+                            about company</p>
+                    </div>
+                </div>
+
+                <div class="col-md-8" style="margin-top: 1%;margin: auto;">
+                    <section id="timeline" class="timeline-center timeline-wrapper">
+                        <h3 class="page-title text-center">{{Lang::get('translation.roadmap')}}</h3>
+                        <ul class="timeline">
+                            <li class="timeline-line"></li>
+                            <li class="timeline-group">
+                                <a href="#" class="btn btn-primary round">
+                                    <i class="ft-calendar"></i> Viti i 1</a>
+                            </li>
+                        </ul>
+                        <ul class="timeline">
+                            <li class="timeline-line"></li>
+                            <li class="timeline-item">
+                                <div class="timeline-badge custom-badge">
+                                <span class="custom-button bg-glow bg-darken-1" data-toggle="tooltip" data-placement="left"
+                                      title="Universiteti i Prishtines (FSHMN-Shkenca kompjuterike)">
+                                    <i class="la la-graduation-cap"></i>
+                                </span>
+                                </div>
+                                <div class="timeline-card card border-grey border-lighten-2">
+                                    <div class="card-header">
+                                        <h4 class="card-title">
+                                            <a href="#">Universiteti i Prishtines (FSHMN-Shkenca kompjuterike)</a>
+                                        </h4>
+                                        <p class="card-subtitle text-muted mb-0 pt-1">
+                                            <span class="font-small-3">2019</span>
+                                        </p>
+
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <ul class="list-unstyled base-timeline activity-timeline mt-3"
+                                                style="margin-top: 1rem !important;">
+                                                @foreach($data['up_fshmn_shk_year1_result'] as $up_fshmn_year1)
+                                                    <li>
+                                                        <div class="timeline-icon bg-{{$up_fshmn_year1['logo']}}">
+                                                            <i class="ft-monitor font-medium-1"></i>
+                                                        </div>
+                                                        <div class="act-time">Public 2019</div>
+                                                        <div class="base-timeline-info">
+                                                            <a href="javascript:void(0)"
+                                                               class="text-primary  line-height-2">{{$up_fshmn_year1['name']}}</a>
+                                                            {{--<span class="d-block">Design for dashboard, login page and user profile page completed.</span>--}}
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-item mt-3">
+                                <div class="timeline-badge custom-badge">
+                                    <span class="custom-button bg-glow bg-darken-1" data-toggle="tooltip" data-placement="right"
+                                          title="Universiteti i Prishtines (Teknik-Inxhinieri Kompjuterike)">
+                                        <i class="la la-graduation-cap"></i>
+                                    </span>
+                                </div>
+                                <div class="timeline-card card border-grey border-lighten-2">
+                                    <div class="card-header">
+                                        <h4 class="card-title black">
+                                            <a href="#">Universiteti i Prishtines (Teknik-Inxhinieri Kompjuterike)</a>
+                                        </h4>
+                                        <p class="card-subtitle text-muted mb-0 pt-1">
+                                            <span class="font-small-3">2019</span>
+                                        </p>
+                                        <a class="heading-elements-toggle">
+                                            <i class="la la-ellipsis-v font-medium-3"></i>
+                                        </a>
+                                        <div class="heading-elements">
+                                            <ul class="list-inline mb-0">
+                                                <li>
+                                                    <a data-action="reload">
+                                                        <i class="ft-rotate-cw"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a data-action="expand">
+                                                        <i class="ft-maximize"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <ul class="list-unstyled base-timeline activity-timeline mt-3"
+                                                style="margin-top: 1rem !important;">
+                                                @foreach($data['up_teknik_inxh_year1_result'] as $up_fshmn_tek_inxh_year1)
+                                                    <li>
+                                                        <div class="timeline-icon bg-{{$up_fshmn_tek_inxh_year1['logo']}}">
+                                                            <i class="ft-monitor font-medium-1"></i>
+                                                        </div>
+                                                        <div class="act-time">Public 2019</div>
+                                                        <div class="base-timeline-info">
+                                                            <a href="javascript:void(0)"
+                                                               class="text-primary  line-height-2">{{$up_fshmn_tek_inxh_year1['name']}}</a>
+                                                            {{--<span class="d-block">Design for dashboard, login page and user profile page completed.</span>--}}
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="timeline-item block">
+                                <div class="timeline-badge custom-badge" style="z-index: 10;">
+                                   <span class="custom-button bg-glow bg-darken-1" data-toggle="tooltip" data-placement="right"
+                                         title="Universiteti i Prishtines (Teknik-Telekomunikacion)">
+                                        <i class="la la-graduation-cap"></i>
+                                    </span>
+                                </div>
+                                <div class="timeline-card card border-grey border-lighten-2" style="width: 60%; margin: auto;">
+                                    <div class="card-header">
+                                        <div class="text-center">
+                                            <h4 style="margin: 2%">Universiteti i Prishtines (Teknik-Telekomunikacion)</h4>
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <ul class="list-unstyled base-timeline activity-timeline mt-3"
+                                                style="margin-top: 1rem !important;">
+                                                @foreach($data['up_teknik_telekomunikacion_year1_result'] as $up_fshmn_tek_tel_year1)
+                                                    <li>
+                                                        <div class="timeline-icon bg-{{$up_fshmn_tek_tel_year1['logo']}}">
+                                                            <i class="ft-monitor font-medium-1"></i>
+                                                        </div>
+                                                        <div class="act-time">Public 2019</div>
+                                                        <div class="base-timeline-info">
+                                                            <a href="javascript:void(0)"
+                                                               class="text-primary  line-height-2">{{$up_fshmn_tek_tel_year1['name']}}</a>
+                                                            {{--<span class="d-block">Design for dashboard, login page and user profile page completed.</span>--}}
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+
+                        <!-- 2016 -->
+                        <ul class="timeline">
+                            <li class="timeline-line"></li>
+                            <li class="timeline-group">
+                                <a href="#" class="btn btn-primary round">
+                                    <i class="ft-calendar"></i> Viti 2</a>
+                            </li>
+                        </ul>
+                        <ul class="timeline">
+                            <li class="timeline-line"></li>
+                            <!-- /.timeline-line -->
+
+                            <li class="timeline-item">
+                                <div class="timeline-badge custom-badge">
+                                <span class="custom-button bg-glow bg-darken-1" data-toggle="tooltip" data-placement="left"
+                                      title="Universiteti i Prishtines (FSHMN-Shkenca kompjuterike)">
+                                    <i class="la la-graduation-cap"></i>
+                                </span>
+                                </div>
+                                <div class="timeline-card card border-grey border-lighten-2">
+                                    <div class="card-header">
+                                        <h4 class="card-title">
+                                            <a href="#">Universiteti i Prishtines (FSHMN-Shkenca kompjuterike)</a>
+                                        </h4>
+                                        <p class="card-subtitle text-muted mb-0 pt-1">
+                                            <span class="font-small-3">2019</span>
+                                        </p>
+
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <ul class="list-unstyled base-timeline activity-timeline mt-3"
+                                                style="margin-top: 1rem !important;">
+                                                @foreach($data['up_fshmn_shk_year2_result'] as $up_fshmn_year2)
+                                                    <li>
+                                                        <div class="timeline-icon bg-{{$up_fshmn_year2['logo']}}">
+                                                            <i class="ft-monitor font-medium-1"></i>
+                                                        </div>
+                                                        <div class="act-time">Public 2019</div>
+                                                        <div class="base-timeline-info">
+                                                            <a href="javascript:void(0)"
+                                                               class="text-primary  line-height-2">{{$up_fshmn_year2['name']}}</a>
+                                                            {{--<span class="d-block">Design for dashboard, login page and user profile page completed.</span>--}}
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-item mt-3">
+                                <div class="timeline-badge custom-badge">
+                                    <span class="custom-button bg-glow bg-darken-1" data-toggle="tooltip" data-placement="right"
+                                          title="Universiteti i Prishtines (Teknik-Inxhinieri Kompjuterike)">
+                                        <i class="la la-graduation-cap"></i>
+                                    </span>
+                                </div>
+                                <div class="timeline-card card border-grey border-lighten-2">
+                                    <div class="card-header">
+                                        <h4 class="card-title black">
+                                            <a href="#">Universiteti i Prishtines (Teknik-Inxhinieri Kompjuterike)</a>
+                                        </h4>
+                                        <p class="card-subtitle text-muted mb-0 pt-1">
+                                            <span class="font-small-3">2019</span>
+                                        </p>
+                                        <a class="heading-elements-toggle">
+                                            <i class="la la-ellipsis-v font-medium-3"></i>
+                                        </a>
+                                        <div class="heading-elements">
+                                            <ul class="list-inline mb-0">
+                                                <li>
+                                                    <a data-action="reload">
+                                                        <i class="ft-rotate-cw"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a data-action="expand">
+                                                        <i class="ft-maximize"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <ul class="list-unstyled base-timeline activity-timeline mt-3"
+                                                style="margin-top: 1rem !important;">
+                                                @foreach($data['up_teknik_inxh_year2_result'] as $up_fshmn_tek_inxh_year2)
+                                                    <li>
+                                                        <div class="timeline-icon bg-{{$up_fshmn_tek_inxh_year2['logo']}}">
+                                                            <i class="ft-monitor font-medium-1"></i>
+                                                        </div>
+                                                        <div class="act-time">Public 2019</div>
+                                                        <div class="base-timeline-info">
+                                                            <a href="javascript:void(0)"
+                                                               class="text-primary  line-height-2">{{$up_fshmn_tek_inxh_year2['name']}}</a>
+                                                            {{--<span class="d-block">Design for dashboard, login page and user profile page completed.</span>--}}
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-item block">
+                                <div class="timeline-badge custom-badge" style="z-index: 10;">
+                                   <span class="custom-button bg-glow bg-darken-1" data-toggle="tooltip" data-placement="right"
+                                         title="Universiteti i Prishtines (Teknik-Telekomunikacion)">
+                                        <i class="la la-graduation-cap"></i>
+                                    </span>
+                                </div>
+                                <div class="timeline-card card border-grey border-lighten-2" style="width: 60%; margin: auto;">
+                                    {{--<div class="gif-image"></div>--}}
+                                    {{--<img class="overlay" src="/app-assets/videos/background.gif"  style="position: absolute; width: 100%;height: 100%">--}}
+                                    {{--<div class="overlay"></div>--}}
+                                    <div class="card-header">
+                                        <div class="text-center">
+                                            <h4 style="margin: 2%">Universiteti i Prishtines (Teknik-Telekomunikacion)</h4>
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <ul class="list-unstyled base-timeline activity-timeline mt-3"
+                                                style="margin-top: 1rem !important;">
+                                                @foreach($data['up_teknik_telekomunikacion_year2_result'] as $up_fshmn_tek_tel_year2)
+                                                    <li>
+                                                        <div class="timeline-icon bg-{{$up_fshmn_tek_tel_year2['logo']}}">
+                                                            <i class="ft-monitor font-medium-1"></i>
+                                                        </div>
+                                                        <div class="act-time">Public 2019</div>
+                                                        <div class="base-timeline-info">
+                                                            <a href="javascript:void(0)"
+                                                               class="text-primary  line-height-2">{{$up_fshmn_tek_tel_year2['name']}}</a>
+                                                            {{--<span class="d-block">Design for dashboard, login page and user profile page completed.</span>--}}
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <!-- 2015 -->
+                        <ul class="timeline">
+                            <li class="timeline-line"></li>
+                            <li class="timeline-group">
+                                <a href="#" class="btn btn-primary round">
+                                    <i class="ft-calendar"></i> Viti 3</a>
+                            </li>
+                        </ul>
+                        <!-- 2015 -->
+                        <ul class="timeline">
+                            <li class="timeline-line"></li>
+                            <li class="timeline-item">
+                                <div class="timeline-badge custom-badge">
+                                <span class="custom-button bg-glow bg-darken-1" data-toggle="tooltip" data-placement="left"
+                                      title="Universiteti i Prishtines (FSHMN-Shkenca kompjuterike)">
+                                    <i class="la la-graduation-cap"></i>
+                                </span>
+                                </div>
+                                <div class="timeline-card card border-grey border-lighten-2">
+                                    <div class="card-header">
+                                        <h4 class="card-title">
+                                            <a href="#">Universiteti i Prishtines (FSHMN-Shkenca kompjuterike)</a>
+                                        </h4>
+                                        <p class="card-subtitle text-muted mb-0 pt-1">
+                                            <span class="font-small-3">2019</span>
+                                        </p>
+
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <ul class="list-unstyled base-timeline activity-timeline mt-3"
+                                                style="margin-top: 1rem !important;">
+                                                @foreach($data['up_fshmn_shk_year3_result'] as $up_fshmn_year3)
+                                                    <li>
+                                                        <div class="timeline-icon bg-{{$up_fshmn_year3['logo']}}">
+                                                            <i class="ft-monitor font-medium-1"></i>
+                                                        </div>
+                                                        <div class="act-time">Public 2019</div>
+                                                        <div class="base-timeline-info">
+                                                            <a href="javascript:void(0)"
+                                                               class="text-primary  line-height-2">{{$up_fshmn_year3['name']}}</a>
+                                                            {{--<span class="d-block">Design for dashboard, login page and user profile page completed.</span>--}}
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-item mt-3">
+                                <div class="timeline-badge custom-badge">
+                                    <span class="custom-button bg-glow bg-darken-1" data-toggle="tooltip" data-placement="right"
+                                          title="Universiteti i Prishtines (Teknik-Inxhinieri Kompjuterike">
+                                        <i class="la la-graduation-cap"></i>
+                                    </span>
+                                </div>
+                                <div class="timeline-card card border-grey border-lighten-2">
+                                    <div class="card-header">
+                                        <h4 class="card-title black">
+                                            <a href="#">Universiteti i Prishtines (Teknik-Inxhinieri Kompjuterike</a>
+                                        </h4>
+                                        <p class="card-subtitle text-muted mb-0 pt-1">
+                                            <span class="font-small-3">2019</span>
+                                        </p>
+                                        <a class="heading-elements-toggle">
+                                            <i class="la la-ellipsis-v font-medium-3"></i>
+                                        </a>
+                                        <div class="heading-elements">
+                                            <ul class="list-inline mb-0">
+                                                <li>
+                                                    <a data-action="reload">
+                                                        <i class="ft-rotate-cw"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a data-action="expand">
+                                                        <i class="ft-maximize"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <ul class="list-unstyled base-timeline activity-timeline mt-3"
+                                                style="margin-top: 1rem !important;">
+                                                @foreach($data['up_teknik_inxh_year3_result'] as $up_fshmn_tek_inxh_year3)
+                                                    <li>
+                                                        <div class="timeline-icon bg-{{$up_fshmn_tek_inxh_year3['logo']}}">
+                                                            <i class="ft-monitor font-medium-1"></i>
+                                                        </div>
+                                                        <div class="act-time">Public 2019</div>
+                                                        <div class="base-timeline-info">
+                                                            <a href="javascript:void(0)"
+                                                               class="text-primary  line-height-2">{{$up_fshmn_tek_inxh_year3['name']}}</a>
+                                                            {{--<span class="d-block">Design for dashboard, login page and user profile page completed.</span>--}}
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="timeline-item block">
+                                <div class="timeline-badge custom-badge" style="z-index: 10;">
+                                   <span class="custom-button bg-darken-1" data-toggle="tooltip" data-placement="right"
+                                         title="Universiteti i Prishtines (Teknik-Telekomunikacion)">
+                                        <i class="la la-graduation-cap"></i>
+                                    </span>
+                                </div>
+                                <div class="timeline-card card border-grey border-lighten-2" style="width: 60%; margin: auto;">
+                                    {{--<div class="gif-image"></div>--}}
+                                    {{--<img class="overlay" src="/app-assets/videos/background.gif"  style="position: absolute; width: 100%;height: 100%">--}}
+                                    {{--<div class="overlay"></div>--}}
+                                    <div class="card-header">
+                                        <div class="text-center">
+                                            <h4 style="margin: 2%">Universiteti i Prishtines (Teknik-Telekomunikacion)</h4>
+                                        </div>
+                                    </div>
+                                    <div class="card-content">
+                                        <div class="card-body">
+                                            <ul class="list-unstyled base-timeline activity-timeline mt-3"
+                                                style="margin-top: 1rem !important;">
+                                                @foreach($data['up_teknik_telekomunikacion_year3_result'] as $up_fshmn_tek_tel_year3)
+                                                    <li>
+                                                        <div class="timeline-icon bg-{{$up_fshmn_tek_tel_year3['logo']}}">
+                                                            <i class="ft-monitor font-medium-1"></i>
+                                                        </div>
+                                                        <div class="act-time">Public 2019</div>
+                                                        <div class="base-timeline-info">
+                                                            <a href="javascript:void(0)"
+                                                               class="text-primary  line-height-2">{{$up_fshmn_tek_tel_year3['name']}}</a>
+                                                            {{--<span class="d-block">Design for dashboard, login page and user profile page completed.</span>--}}
+                                                        </div>
+                                                    </li>
+                                                @endforeach
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
             {{--<div class="col-xl-4 col-lg-4 col-md-4">--}}
-                {{--<div class="card" style="height: 100%">--}}
-                    {{--<div class="card-header">--}}
-                        {{--<h4 class="card-title"> {{Lang::get('translation.skills_mismatch_data_graph2_title')}} </h4>--}}
-                        {{--<a class="heading-elements-toggle">--}}
-                            {{--<i class="la la-ellipsis-v font-medium-3"></i>--}}
-                        {{--</a>--}}
-                        {{--<div class="heading-elements">--}}
-                            {{--<ul class="list-inline mb-0">--}}
-                                {{--<li>--}}
-                                    {{--<a data-action="collapse">--}}
-                                        {{--<i class="ft-minus"></i>--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-                                {{--<li>--}}
-                                    {{--<a data-action="reload">--}}
-                                        {{--<i class="ft-rotate-cw"></i>--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-                                {{--<li>--}}
-                                    {{--<a data-action="close">--}}
-                                        {{--<i class="ft-x"></i>--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-                            {{--</ul>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="card-body">--}}
-                        {{--<div class="card-content collapse show">--}}
-                            {{--<div class="card-body p-0 pb-0">--}}
-                                {{--<p class="card-body">--}}
-                                    {{--{{Lang::get('translation.workforce_data_map_desc')}}--}}
-                                {{--</p>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div id="chartContainer2" style="width:100%; height:300px;"></div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
+            {{--<div class="card" style="height: 100%">--}}
+            {{--<div class="card-header">--}}
+            {{--<h4 class="card-title"> {{Lang::get('translation.skills_mismatch_data_graph2_title')}} </h4>--}}
+            {{--<a class="heading-elements-toggle">--}}
+            {{--<i class="la la-ellipsis-v font-medium-3"></i>--}}
+            {{--</a>--}}
+            {{--<div class="heading-elements">--}}
+            {{--<ul class="list-inline mb-0">--}}
+            {{--<li>--}}
+            {{--<a data-action="collapse">--}}
+            {{--<i class="ft-minus"></i>--}}
+            {{--</a>--}}
+            {{--</li>--}}
+            {{--<li>--}}
+            {{--<a data-action="reload">--}}
+            {{--<i class="ft-rotate-cw"></i>--}}
+            {{--</a>--}}
+            {{--</li>--}}
+            {{--<li>--}}
+            {{--<a data-action="close">--}}
+            {{--<i class="ft-x"></i>--}}
+            {{--</a>--}}
+            {{--</li>--}}
+            {{--</ul>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="card-body">--}}
+            {{--<div class="card-content collapse show">--}}
+            {{--<div class="card-body p-0 pb-0">--}}
+            {{--<p class="card-body">--}}
+            {{--{{Lang::get('translation.workforce_data_map_desc')}}--}}
+            {{--</p>--}}
+            {{--</div>--}}
+            {{--</div>--}}
+            {{--<div id="chartContainer2" style="width:100%; height:300px;"></div>--}}
+            {{--</div>--}}
+            {{--</div>--}}
             {{--</div>--}}
         </div>
-
 
 
     </div>
@@ -187,7 +653,7 @@
                         },
                         fill: {
                             opacity: 1,
-                            colors: [ '#215048','#42a695']
+                            colors: ['#215048', '#42a695']
 
                         },
                         tooltip: {
