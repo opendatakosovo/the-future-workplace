@@ -55,7 +55,7 @@ class AtkDataController extends Controller
 
 
             $data[] = array(
-                'name' => $categoriess,
+                'name' => 'Total',
                 'data' =>  $final_res
             );
 
@@ -95,7 +95,7 @@ class AtkDataController extends Controller
 
 
             $data[] = array(
-                'name' => $categoriess,
+                'name' => 'Total',
                 'data' =>  $final_res
             );
 
