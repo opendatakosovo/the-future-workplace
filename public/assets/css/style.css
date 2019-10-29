@@ -296,12 +296,17 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
 }
 
 
-@media screen and (min-width:1300px) and (max-width:1700px) {
+@media screen and (min-width:1000px) and (max-width:1700px) {
     .navbar-header .navbar-brand .brand-text {
         font-size: 1.0rem !important;
     }
     .horizontal-menu .navbar-horizontal ul#main-menu-navigation>li>a {
         padding: 1.85rem 0.2rem !important;
+    }
+
+    .horizontal-menu .navbar-horizontal .nav-item a span {
+        display: contents !important;
+        font-size: 11px !important;
     }
 
 }
