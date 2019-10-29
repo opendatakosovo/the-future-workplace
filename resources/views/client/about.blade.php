@@ -27,8 +27,8 @@
                 <div class="card">
                     <img src="https://i.ibb.co/bbFL7W8/10566199-54802c52ac99e.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">{{Lang::get('translation.about_title')}}</h5>
-                        <p class="card-text">{{Lang::get('translation.about_card')}}</p>
+                        <h3>{{Lang::get('translation.about_title')}}</h3> <br>
+                        <p>{{Lang::get('translation.about_card')}}</p>
                     </div>
                 </div>
 
@@ -37,14 +37,6 @@
                      class="card-img-top" alt="...">
             </div>
 
-            <div class="card bg-primary text-white text-center p-3"
-                 style="background-color: mediumseagreen !important;">
-
-                <blockquote class="blockquote mb-0">
-                    <h3>{{Lang::get('translation.about_first_title')}}</h3> <br>
-                    <p>{{Lang::get('translation.about_first_card')}}.</p>
-                </blockquote>
-            </div>
             <div class="card text-center">
                 <img src="https://www.binarytides.com/blog/wp-content/uploads/2018/08/laptop-keyboard.jpg"
                      class="card-img-top" alt="...">
@@ -53,9 +45,17 @@
                     <p class="card-text">{{Lang::get('translation.about_second_card')}}</p>
                 </div>
             </div>
+                <div class="card bg-primary text-white text-center p-3"
+                     style="background-color: mediumseagreen !important;">
+
+                    <blockquote class="blockquote mb-0">
+                        <h3>{{Lang::get('translation.about_first_title')}}</h3> <br>
+                        <p>{{Lang::get('translation.about_first_card')}}.</p>
+                    </blockquote>
+                </div>
 
             <div class="card p-3 text-left">
-                <img src="https://zeri.info/uploads/zeri.info/images/2019/July/18/auto_auto_auto_auto_auto_MASHT15233705121525012636153189711215529446651563456995.jpg"
+                <img src="https://www.portalpune.com/Files/L012123.png"
                      class="card-img-top" alt="...">
                 <blockquote class="blockquote mb-0">
                     <h3>{{Lang::get('translation.about_third_title')}}</h3><br>
@@ -64,7 +64,7 @@
             </div>
 
             <div class="card">
-                <img src="https://i.ibb.co/jhQbJRt/atk.jpg"
+                <img src="http://www.atk-ks.org/wp-content/uploads/2017/09/logo_qeveria_atk11.png"
                      class="card-img-top" alt="...">
                 <div class="card-body">
                     <h3>{{Lang::get('translation.about_fourth_title')}}</h3><br>
