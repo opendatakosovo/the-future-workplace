@@ -17,7 +17,7 @@ return array(
     'skills_mismatch' => 'Skills Mismatch',
     'blog' => 'Blog',
     'about' => 'About',
-    'funded_by' => 'Funded By',
+    'funded_by' => 'Powered By',
     'implemented_by' => 'Implemented By',
     'our_partner' => 'Our Partner',
     'num_grads_ict' => 'Number of Graduates in ICT',

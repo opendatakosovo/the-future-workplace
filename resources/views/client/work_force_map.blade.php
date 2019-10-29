@@ -456,6 +456,7 @@
                             height: 430,
                             type: 'bar',
                         },
+                        colors: [ '#266961','#093637'],
                         plotOptions: {
                             bar: {
                                 horizontal: true,
@@ -538,6 +539,7 @@
                             type: 'bar',
                             stacked: true,
                         },
+                        colors: [ '#266961','#358577'],
                         plotOptions: {
                             bar: {
                                 horizontal: false,

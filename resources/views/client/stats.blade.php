@@ -373,9 +373,11 @@
                             stackType: '100%',
                             width: '100%'
                         },
+                        colors: [ '#266961','#093637','#449f8c','#358577'],
                         plotOptions: {
                             bar: {
                                 horizontal: false,
+                                columnWidth: '30%',
                             },
 
                         },
@@ -417,6 +419,7 @@
                                 plotOptions: {
                                     bar: {
                                         horizontal: true,
+                                        barHeight: '40%',
                                     },
 
                                 }
