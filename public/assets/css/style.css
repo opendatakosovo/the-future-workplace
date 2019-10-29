@@ -296,7 +296,7 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
 }
 
 
-@media screen and (max-width: 1700px) {
+@media screen and (min-width:1450px) and (max-width:1700px) {
     .navbar-header .navbar-brand .brand-text {
         font-size: 1.0rem !important;
     }
