@@ -100,7 +100,7 @@ return array(
     'welcome_statistics' => 'General statistics about high school and university graduates, business companies and workforce numbers.',
     'welcome_company_data' => 'Data and graphs about companies in ICT divided by municipalities and field of expertise and their skills demand.',
     'welcome_workforce_data' => 'Data and graphs about students graduated in ICT Universities divided by municipalities and skills.',
-    'welcome_skills_mismatch' => 'See if your degree and skills are a good match with companies demands and experts they\'re seeking for.',
+    'welcome_skills_mismatch' => 'Skills Mismatch as a gap between an individual\'s job skills. and the demands of the job market has become a central challenge, affecting all layers of society, from the productivity and efficiency of businesses.',
     'welcome_blog' => 'Always be updated with our work and ICT information.',
     'welcome_downloads' => 'Download all the data you see and need from this site.',
     'comparison_ict_atk_category' => 'Number of ICT Businesses Divided by Category',
