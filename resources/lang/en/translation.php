@@ -32,6 +32,16 @@ return array(
     'num_registered_businesses_ict' => 'Number of Businesses Registered in the ICT Sector Within 10 years ',
     'num_ict_grads' => 'Number of High School Graduates in ICT',
     'num_ict_grads_uni' => 'Number of University Graduates in ICT',
+
+    'statistics_graph1' => 'This graph shows the number of university graduates in ICT-related fields in Kosovo from 2008 to 2018.',
+    'statistics_graph2' => 'This graph shows the number of high school graduates in ICT-related field in Kosovo from 2008 to 2018.',
+    'statistics_graph3' => 'This graph shows the percentage of ICT businesses that are engaged in different activities categorized by Municipalities. One block represents the percentage of businesses that are engaged in one specific activity in a specific Municipality. ',
+    'statistics_graph4' => 'This graph shows the number of businesses registered within the ICT sector within the last 10 years. For example, it shows the number of businesses in the ICT sector registered per year i.e. 1086 ICT businesses have been registered in 2017.',
+    'company_graph1' => 'This graph enables the comparison of ICT businesses in Kosovo Municipalities by the activities the businesses are engaged in. For example, you can compare the ICT businesses in Pristina and the ICT businesses in Gjilan, while gaining insight on the specific activities that businesses in the respective Municipality are engaged in. You can use the various filters such as: year, status, activity, and city.',
+    'company_graph2' => 'This graph shows the percentage of ICT businesses that are engaged in different activities categorized by Municipalities. One block represents the percentage of businesses that are engaged in one specific activity in a specific Municipality. You can use the various filters such as: year, status, activity, and city. ',
+    'atk_graph1' => 'This graph shows the number of ICT businesses categorized by the amount of annual earnings in 6 distinct categories as shown.',
+    'atk_graph2' => 'This graph shows the number of workers of ICT businesses divided based on the amount of annual earnings of these businesses.',
+
     'drop' => 'Drop',
     'growth' => 'Growth',
     'within_10_years' => 'Within 10 Years',

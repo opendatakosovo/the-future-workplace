@@ -18,7 +18,8 @@
             <div class="col-lg-8 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">{{Lang::get('translation.num_ict_grads_uni')}}</h4>
+                        <h4 class="card-title">{{Lang::get('translation.num_ict_grads_uni')}}</h4><br>
+                        <p class="content-graph">{{Lang::get('translation.statistics_graph1')}}</p>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
@@ -35,7 +36,8 @@
                 </div>
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">{{Lang::get('translation.num_ict_grads')}}</h4>
+                        <h4 class="card-title">{{Lang::get('translation.num_ict_grads')}}</h4><br>
+                        <p class="content-graph">{{Lang::get('translation.statistics_graph2')}}</p>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
@@ -141,7 +143,8 @@
             <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="card card-transparent">
                     <div class="card-header bg-transparent pl-0 comparison-text">
-                        <h5 class="card-title text-bold-700">{{Lang::get('translation.municipality_activity_comparison')}}</h5>
+                        <h5 class="card-title text-bold-700">{{Lang::get('translation.municipality_activity_comparison')}}</h5><br>
+                        <p class="content-graph"> {{Lang::get('translation.statistics_graph3')}}</p>
                         <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     </div>
                     <div id="chartContainer2" style="width:100%; height:300px;"></div>
@@ -153,7 +156,8 @@
             <div class="col-md-12 col-lg-12 col-xl-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">{{Lang::get('translation.num_registered_businesses_ict')}}</h4>
+                        <h4 class="card-title">{{Lang::get('translation.num_registered_businesses_ict')}}</h4><br>
+                        <p class="content-graph">{{Lang::get('translation.statistics_graph4')}}</p>
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>

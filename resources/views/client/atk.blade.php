@@ -20,7 +20,8 @@
             <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">{{Lang::get('translation.comparison_ict_atk_category')}}</h4>
+                        <h4 class="card-title">{{Lang::get('translation.comparison_ict_atk_category')}}</h4><br>
+                        <p class="content-graph">{{Lang::get('translation.atk_graph1')}}</p>
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>
@@ -56,7 +57,8 @@
             <div class="col-lg-12 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">{{Lang::get('translation.comparison_worker_atk_category')}}</h4>
+                        <h4 class="card-title">{{Lang::get('translation.comparison_worker_atk_category')}}</h4><br>
+                        <p class="content-graph">{{Lang::get('translation.atk_graph2')}}</p>
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>
