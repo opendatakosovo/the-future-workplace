@@ -173,6 +173,13 @@
                             horizontalAlign: 'left',
                             offsetX: 40
                         },
+                        tooltip: {
+                            y: {
+                                formatter: function (val) {
+                                    return val + "K"
+                                }
+                            }
+                        },
                         responsive: [{
                             options: {
                                 chart: {
@@ -288,6 +295,13 @@
                             position: 'top',
                             horizontalAlign: 'left',
                             offsetX: 40
+                        },
+                        tooltip: {
+                            y: {
+                                formatter: function (val) {
+                                    return val + "K"
+                                }
+                            }
                         },
                         breakpoint: 1000,
                         responsive: [{

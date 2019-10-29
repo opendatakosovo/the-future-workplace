@@ -50,7 +50,7 @@ class AtkDataController extends Controller
 
         foreach($atk_data as $category => $count){
             $categoriess[] = $category;
-            $final_res[] = $count;
+            $final_res[] = $this->nice_number($count);
         }
 
 
@@ -114,6 +114,27 @@ class AtkDataController extends Controller
         }
 
 
+        foreach ($categoriess as $c){
+            if($c == 'DERI 50000'){
+                $categories_renamed[] = '0 - 50K';
+            }
+            elseif ($c == 'MBI 10000000'){
+                $categories_renamed[] = '1M<';
+            }
+            elseif ($c == 'MES 100000 - 250000'){
+                $categories_renamed[] = '100K - 250K';
+            }
+            elseif ($c == 'MES 250000 - 500000'){
+                $categories_renamed[] = '250K - 500K';
+            }
+            elseif ($c == 'MES 50000 - 100000'){
+                $categories_renamed[] = '50K - 100K';
+            }
+            elseif ($c == 'MES 500000 - 1000000'){
+                $categories_renamed[] = '500K - 1M';
+            }
+        }
+
 
             $data[] = array(
                 'name' => 'Total',
@@ -121,7 +142,7 @@ class AtkDataController extends Controller
             );
 
 
-        echo json_encode(array($categories,$data));
+        echo json_encode(array($categories_renamed,$data));
 
     }
 
@@ -193,6 +214,23 @@ class AtkDataController extends Controller
         return $final_res;
 
     }
+
+    function nice_number($n) {
+        // first strip any formatting;
+        $n = (0+str_replace(",", "", $n));
+
+        // is this a number?
+        if (!is_numeric($n)) return false;
+
+        // now filter it;
+        if ($n > 1000000000000) return round(($n/1000000000000), 2).' trillion';
+        elseif ($n > 1000000000) return round(($n/1000000000), 2).' billion';
+        elseif ($n > 1000000) return round(($n/1000000), 2).'M';
+        elseif ($n > 1000) return round(($n/1000), 2).'K';
+
+        return number_format($n);
+    }
+
 
 
 }
