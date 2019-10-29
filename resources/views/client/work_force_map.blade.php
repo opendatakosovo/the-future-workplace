@@ -37,7 +37,8 @@
             <div class="col-xl-8 col-lg-8 col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">{{Lang::get('translation.workforce_data_graph1_title')}}</h4>
+                        <h4 class="card-title">{{Lang::get('translation.workforce_data_graph1_title')}}</h4><br>
+                        <p class="content-graph">{{Lang::get('translation.workforce_graph1')}}</p>
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>
@@ -172,7 +173,8 @@
             <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="card" >
                     <div class="card-header">
-                        <h4 class="card-title"> {{Lang::get('translation.workforce_data_graph2_title')}} </h4>
+                        <h4 class="card-title"> {{Lang::get('translation.workforce_data_graph2_title')}} </h4><br>
+                        <p class="content-graph">{{Lang::get('translation.workforce_graph2')}}</p>
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>
@@ -456,6 +458,7 @@
                             height: 430,
                             type: 'bar',
                         },
+                        colors: [ '#266961','#093637'],
                         plotOptions: {
                             bar: {
                                 horizontal: true,
@@ -538,6 +541,7 @@
                             type: 'bar',
                             stacked: true,
                         },
+                        colors: [ '#266961','#358577'],
                         plotOptions: {
                             bar: {
                                 horizontal: false,

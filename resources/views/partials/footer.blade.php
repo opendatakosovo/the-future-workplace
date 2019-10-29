@@ -1,16 +1,17 @@
 <!-- BEGIN: Footer-->
 <footer class="footer footer-static footer-light navbar-shadow">
     <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
-          <span class="float-md-left d-block footer-funded-text d-md-inline-block" style="float: right ">{{ Lang::get('translation.funded_by')}}
+          <span class="float-md-left d-block footer-funded-text d-md-inline-block" style="font-size: 13px; text-align: left;float: right ">{{ Lang::get('translation.powered_by')}}
               <div class="funded-logos">
-                <img src="/app-assets/css/about_us/img/clients/MFK.png" style="width: 80px; padding-left: 5%;" alt="">
-                <img src="/app-assets/css/about_us/img/clients/MCC.png" style="width: 140px; " alt="">
+                <img src="/app-assets/css/about_us/img/clients/digdata.png" style="width: 70px; " alt="">
+                <img src="/app-assets/css/about_us/img/clients/MFK.png" style="width: 70px; padding-left: 0%;" alt="">
+                <img src="/app-assets/css/about_us/img/clients/MCC.png" style="width: 130px; " alt="">
             </div>
         </span>
-        <span class="float-md-right d-block footer-funded-text d-md-inline-block" style="float: right ">{{ now()->year }} &copy;  {{Lang::get('translation.implemented_by')}}
+        <span class="float-md-right d-block footer-funded-text d-md-inline-block" style="font-size: 13px; text-align: left;float: right ">{{ now()->year }} &copy;  {{Lang::get('translation.implemented_by')}}
             <div class="funded-logos">
-                <img src="/app-assets/css/about_us/img/clients/ODK.png" style="width: 120px; padding-left: 5%;" alt="">
-                <img src="/app-assets/css/about_us/img/clients/oek.svg" style="width: 80px; " alt="">
+                <img src="/app-assets/css/about_us/img/clients/ODK.png" style="margin-top:10%; width: 80px; padding-left: 5%;" alt="">
+                <img src="/app-assets/css/about_us/img/clients/oek.svg" style="margin-top:0%; width: 70px; " alt="">
             </div>
         </span>
         {{--<span class="float-md-left d-block d-md-inline-block" style="margin-top: 1%;"><span class="copytirght-text">{{ now()->year }} &copy; Copyright </span><a--}}

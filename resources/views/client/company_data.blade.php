@@ -136,7 +136,8 @@
             <div class="col-xl-8 col-lg-8 col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">{{Lang::get('translation.comparison_ict_businesses_municipality')}}</h4>
+                        <h4 class="card-title">{{Lang::get('translation.comparison_ict_businesses_municipality')}}</h4><br>
+                        <p class="content-graph">{{Lang::get('translation.company_graph1')}}</p>
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>
@@ -281,7 +282,8 @@
             <div class="col-lg-12 col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">{{Lang::get('translation.company_div_per_municipality')}}</h4>
+                        <h4 class="card-title">{{Lang::get('translation.company_div_per_municipality')}}</h4><br>
+                        <p class="content-graph">{{Lang::get('translation.company_graph2')}}</p>
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>
@@ -451,6 +453,7 @@
                             height: 700,
                             type: 'bar',
                         },
+                        colors: [ '#266961','#093637','#449f8c','#358577'],
                         plotOptions: {
                             bar: {
                                 horizontal: false,
@@ -576,6 +579,7 @@
                             stackType: '100%',
                             width: '100%'
                         },
+                        colors: [ '#266961','#093637','#449f8c','#358577'],
                         plotOptions: {
                             bar: {
                                 horizontal: false,
@@ -622,6 +626,7 @@
                                 plotOptions: {
                                     bar: {
                                         horizontal: true,
+                                        barHeight: '40%',
                                     },
 
                                 }

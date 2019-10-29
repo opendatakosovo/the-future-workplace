@@ -17,8 +17,8 @@ return array (
     'skills_mismatch' => 'Veštine neusklađenosti',
     'blog' => 'Blog',
     'about' => 'O tome',
-    'funded_by' => 'Osnovano od strane',
-    'our_partner' => 'Naš Partner',
+    'funded_by' => 'Pokreće Ga',
+    'implementing_partner' => 'Implementacioni Partneri',
     'num_grads_ict' => 'Broj diplomiranih u oblasti ICT-a',
     'total_num_ict_grads' => 'Ukupan broj diplomiranih u oblasti ICT-a',
     'total_num_ict_grads_uni' => 'Ukupan broj diplomanata na ICT-ima na univerzitetima',
@@ -112,5 +112,17 @@ return array (
     'about_eighth_card' => 'Slobodno nas kontaktirajte za bilo šta na info@opendatakosovo.org ili info@oek-kcc.org',
 
 
-
+    'statistics_graph1' => '',
+    'statistics_graph2' => '',
+    'statistics_graph3' => '',
+    'statistics_graph4' => '',
+    'company_graph1' => '',
+    'company_graph2' => '',
+    'atk_graph1'  => '',
+    'atk_graph2' => '',
+    'workforce_graph1' => '',
+    'workforce_graph2' => '',
+    'highschool_graph1' => '',
+    'highschool_graph2' => '',
+    'mismatch_graph1' => '',
 );
