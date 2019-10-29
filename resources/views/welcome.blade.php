@@ -23,7 +23,7 @@
     <!-- Start Banner Area -->
     <section class="home-banner-area relative" style="width: 100%">
         <video style="width: 100%" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="/app-assets/videos/home-video.mov" type="video/mp4">
+            <source src="/app-assets/videos/home-video-compressed.mp4" type="video/mp4">
         </video>
         <div class="container">
             <div class="row fullscreen d-flex align-items-center justify-content-center">
