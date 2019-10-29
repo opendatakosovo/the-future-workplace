@@ -59,7 +59,7 @@
                 </div>
             </li>
             </li>
-            <li class="dropdown nav-item"><a class=" nav-link" href="{{ url(app()->getLocale().'/downloads') }}"><i
+            <li style="margin-right: 1%;" class="dropdown nav-item"><a class=" nav-link" href="{{ url(app()->getLocale().'/downloads') }}"><i
                             class="ft-download"></i><span>{{Lang::get('translation.downloads')}}</span></a>
             </li>
             <li class="dropdown nav-item"><a class=" nav-link" href="{{ url( app()->getLocale().'/about') }}"><i
