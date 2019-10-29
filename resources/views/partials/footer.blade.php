@@ -1,7 +1,7 @@
 <!-- BEGIN: Footer-->
 <footer class="footer footer-static footer-light navbar-shadow">
     <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
-          <span class="float-md-left d-block footer-funded-text d-md-inline-block" style="text-align: left;float: right ">{{ Lang::get('translation.funded_by')}}
+          <span class="float-md-left d-block footer-funded-text d-md-inline-block" style="text-align: left;float: right ">{{ Lang::get('translation.powered_by')}}
               <div class="funded-logos">
                 <img src="/app-assets/css/about_us/img/clients/digdata.png" style="width: 100px; " alt="">
                 <img src="/app-assets/css/about_us/img/clients/MFK.png" style="width: 100px; padding-left: 5%;" alt="">
