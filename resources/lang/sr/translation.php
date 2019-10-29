@@ -112,5 +112,17 @@ return array (
     'about_eighth_card' => 'Slobodno nas kontaktirajte za bilo šta na info@opendatakosovo.org ili info@oek-kcc.org',
 
 
-
+    'statistics_graph1' => '',
+    'statistics_graph2' => '',
+    'statistics_graph3' => '',
+    'statistics_graph4' => '',
+    'company_graph1' => '',
+    'company_graph2' => '',
+    'atk_graph1'  => '',
+    'atk_graph2' => '',
+    'workforce_graph1' => '',
+    'workforce_graph2' => '',
+    'highschool_graph1' => '',
+    'highschool_graph2' => '',
+    'mismatch_graph1' => '',
 );

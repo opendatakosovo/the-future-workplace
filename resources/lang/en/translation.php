@@ -41,6 +41,11 @@ return array(
     'company_graph2' => 'This graph shows the percentage of ICT businesses that are engaged in different activities categorized by Municipalities. One block represents the percentage of businesses that are engaged in one specific activity in a specific Municipality. You can use the various filters such as: year, status, activity, and city. ',
     'atk_graph1' => 'This graph shows the number of ICT businesses categorized by the amount of annual earnings in 6 distinct categories as shown.',
     'atk_graph2' => 'This graph shows the number of workers of ICT businesses divided based on the amount of annual earnings of these businesses.',
+    'workforce_graph1' => 'This graph shows the number of graduates in the ICT field divided by each ICT-related university.',
+    'workforce_graph2' => 'This graph shows the number of graduates that possess a certain skill which is related to the skills in the ICT sector such as: programming languages, database technologies, web framework technologies, frontend javascript frameworks, and frontend frameworks. ',
+    'highschool_graph1' => 'This graph shows the number of graduates in the ICT field divided by each ICT-related high schools.',
+    'highschool_graph2' => 'This graph shows the number of graduates that possess a certain skill which is related to the skills in the ICT sector such as: programming languages, database technologies, web framework technologies, frontend javascript frameworks, and frontend frameworks. ',
+    'mismatch_graph1' => 'This graph shows the relationship between the skills that are being demanded by ICT businesses in Kosovo  in comparison to the skills that ICT graduates posses based on the curricula of their studies.',
 
     'drop' => 'Drop',
     'growth' => 'Growth',

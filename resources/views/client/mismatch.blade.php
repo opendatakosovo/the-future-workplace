@@ -29,7 +29,8 @@
             <div class="col-xl-12 col-lg-12 col-md-12">
                 <div class="card" style="height: 100%">
                     <div class="card-header">
-                        <h4 class="card-title">{{Lang::get('translation.skills_mismatch')}}</h4>
+                        <h4 class="card-title">{{Lang::get('translation.skills_mismatch')}}</h4><br>
+                        <p class="content-graph">{{Lang::get('translation.mismatch_graph1')}}</p>
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>
