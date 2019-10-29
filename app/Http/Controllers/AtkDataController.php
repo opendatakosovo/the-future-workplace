@@ -54,13 +54,34 @@ class AtkDataController extends Controller
         }
 
 
+        foreach ($categoriess as $c){
+            if($c == 'DERI 50000'){
+                $categories_renamed[] = '0 - 50K';
+            }
+            elseif ($c == 'MBI 10000000'){
+                $categories_renamed[] = '1M<';
+            }
+            elseif ($c == 'MES 100000 - 250000'){
+                $categories_renamed[] = '100K - 250K';
+            }
+            elseif ($c == 'MES 250000 - 500000'){
+                $categories_renamed[] = '250K - 500K';
+            }
+            elseif ($c == 'MES 50000 - 100000'){
+                $categories_renamed[] = '50K - 100K';
+            }
+            elseif ($c == 'MES 500000 - 1000000'){
+                $categories_renamed[] = '500K - 1M';
+            }
+        }
+
             $data[] = array(
                 'name' => 'Total',
                 'data' =>  $final_res
             );
 
 
-        echo json_encode(array($categories,$data));
+        echo json_encode(array($categories_renamed,$data));
 
     }
 
