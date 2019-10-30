@@ -78,7 +78,7 @@ class StatsController extends Controller
     public function grads_ict_uni()
     {
 
-        for ($i = 20011; $i < 2016; $i++) {
+        for ($i = 2011; $i < 2016; $i++) {
             $years_result[] = $i;
         }
 
@@ -97,7 +97,7 @@ class StatsController extends Controller
 
     public function number_businnesses()
     {
-        for ($i = 2008; $i < 2019; $i++) {
+        for ($i = 2015; $i < 2019; $i++) {
             $years_result[] = $i;
         }
 
