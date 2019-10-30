@@ -85,7 +85,7 @@
                         <table id="example0" class="display table table-striped table-bordered" style="width:100%">
                             <thead>
                             <tr>
-                                <th>#</th>
+                                <th>ID</th>
                                 <th>University Name</th>
                                 <th>University Type</th>
                                 <th>Municipality</th>
@@ -95,7 +95,7 @@
                             <tbody>
                             @foreach($data['universities'] as $key=> $university)
                                 <tr>
-                                    <td>{{$key+1}}</td>
+                                    <td>{{$university['id']}}</td>
                                     <td>{{$university['school_name']}}</td>
                                     <td>{{$university['school_type']}}</td>
                                     <td>{{$university['municipality']}}</td>
@@ -146,7 +146,7 @@
                         <table id="example1" class="display table table-striped table-bordered" style="width:100%">
                             <thead>
                             <tr>
-                                <th>#</th>
+                                <th>ID</th>
                                 <th>School Name</th>
                                 <th>School Type</th>
                                 <th>Municipality</th>
@@ -156,7 +156,7 @@
                             <tbody>
                             @foreach($data['high_schools'] as $key=> $university)
                                 <tr>
-                                    <td>{{$key+1}}</td>
+                                    <td>{{$university['id']}}</td>
                                     <td>{{$university['school_name']}}</td>
                                     <td>{{$university['school_type']}}</td>
                                     <td>{{$university['municipality']}}</td>
@@ -217,7 +217,7 @@
                             <tbody>
                             @foreach($data['skills'] as $key=> $skill)
                                 <tr>
-                                    <td>{{$key+1}}</td>
+                                    <td>{{$skill['id']}}</td>
                                     <td>{{$skill['skill_name']}}</td>
                                     <td>
                                         <button type="button" class="btn btn-info btn-sm a-btn-slide-text"
@@ -276,7 +276,7 @@
                             <tbody>
                             @foreach($data['degrees'] as $key=> $degree)
                                 <tr>
-                                    <td>{{$key+1}}</td>
+                                    <td>{{$degree['id']}}</td>
                                     <td>{{$degree['degree_name']}}</td>
                                     <td>{{$degree['school_name']}}</td>
                                     <td>
