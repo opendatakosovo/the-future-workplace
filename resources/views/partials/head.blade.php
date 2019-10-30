@@ -5,6 +5,9 @@
       content="The Future Workplace is a project to help increase ICT market information in Kosovo in order to contribute to employment opportunities through among other identifying services offered in Kosovo and business opportunities.">
 <meta name="keywords" content="Home,Statistics,Company Data,Workforce Data,Skills Mismatch,Blog,About,Download">
 <meta name="author" content="Open Data Kosovo">
+
+<meta property="og:image" content="{{URL::asset('/app-assets/images/meta-picture.png')}}" />
+<meta property="og:url"content="https://thefutureworkplace.org" />
 <title>@yield('title', 'The Future Workplace')</title>
 <link rel="apple-touch-icon" href="{{URL::asset('/app-assets/images/logo/logo.png')}}">
 <link rel="shortcut icon" type="image/x-icon" href="{{URL::asset('/app-assets/images/logo/logo.png')}}">
