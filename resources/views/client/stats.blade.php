@@ -376,13 +376,31 @@
                             type: 'bar',
                             stacked: true,
                             stackType: '100%',
-                            width: '100%'
+                            width: '100%',
+                            height: '80%',
+                            zoom: {
+                                enabled: true,
+                                type: 'x',
+                                autoScaleYaxis: false,
+                                zoomedArea: {
+                                    fill: {
+                                        color: '#90CAF9',
+                                        opacity: 0.4
+                                    },
+                                    stroke: {
+                                        color: '#0D47A1',
+                                        opacity: 0.4,
+                                        width: 1
+                                    }
+                                }
+                            }
                         },
                         colors: [ '#266961','#093637','#449f8c','#358577'],
                         plotOptions: {
                             bar: {
                                 horizontal: false,
-                                columnWidth: '30%',
+                                columnWidth: '5%',
+
                             },
 
                         },
@@ -416,15 +434,16 @@
                         },
 
                         responsive: [{
-                            breakpoint: 2000,
+                            breakpoint: 3000,
                             options: {
                                 chart: {
-                                    height: 900,
+                                    height: 600,
                                 },
                                 plotOptions: {
                                     bar: {
                                         horizontal: true,
                                         barHeight: '40%',
+                                        columnWidth: '5%',
                                     },
 
                                 }

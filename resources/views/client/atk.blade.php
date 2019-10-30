@@ -135,10 +135,12 @@
                         chart: {
                             height: 700,
                             type: 'bar',
+
                         },
                         plotOptions: {
                             bar: {
                                 horizontal: false,
+                                columnWidth: '20%',
                                 dataLabels: {
                                     position: 'top',
 
@@ -261,6 +263,7 @@
                         plotOptions: {
                             bar: {
                                 horizontal: false,
+                                columnWidth: '20%',
                                 dataLabels: {
                                     position: 'top',
 
@@ -299,7 +302,7 @@
                         tooltip: {
                             y: {
                                 formatter: function (val) {
-                                    return val + "K"
+                                    return val + ""
                                 }
                             }
                         },
