@@ -34,7 +34,6 @@ return array(
     'num_registered_businesses_ict' => 'Number of Businesses Registered in the ICT Sector Within 10 years ',
     'num_ict_grads' => 'Number of High School Graduates in ICT',
     'num_ict_grads_uni' => 'Number of University Graduates in ICT',
-
     'statistics_graph1' => 'This graph shows the number of university graduates in ICT-related fields in Kosovo from 20011 to 2015.',
     'statistics_graph2' => 'This graph shows the number of high school graduates in ICT-related field in Kosovo from 2015 to 2018.',
     'statistics_graph3' => 'This graph shows the percentage of ICT businesses that are engaged in different activities categorized by Municipalities. One block represents the percentage of businesses that are engaged in one specific activity in a specific Municipality. ',
@@ -94,7 +93,7 @@ return array(
     'downloads' => 'Downloads',
     'download_text' => 'Download The Public Data By Type',
     'businesses_data' => 'Business Data',
-    'atk_data' => 'ATK Data',
+    'atk_data' => 'TAK Data',
     'download' => 'Download',
     'download_title' => 'Downloads Section provides the user with the opportunity to download all the datasets which are portrayed in The Future Workplace platform. Thus, enabling an open data approach to the platform. This open data approach has been integrated into The Future Workplace platform in order to enable a wider use of the data for various purposes by different individuals. Since we believe when data such as this is open and accessible enables the creation of data-based work approach.',
     'select_document' => 'Select Document',
