@@ -92,11 +92,12 @@
                 </blockquote>
             </div>
         </div>
+
         <div class="card bg-primary text-white text-center p-3"
              style="background-color: mediumseagreen !important;border: 1.5px solid; margin-top: 70px;">
 
             <blockquote class="blockquote mb-0">
-                <h3>TWF</h3> <br>
+                <h3>TFW</h3> <br>
                 <p>{{Lang::get('translation.about_sixth_card')}}</p><br>
                 <p>{{Lang::get('translation.about_seventh_card')}}</p><br>
                 <i>{{Lang::get('translation.about_eighth_card')}}</i>
@@ -108,8 +109,9 @@
                 <header class="section-header">
                     <h3>{{Lang::get('translation.powered_by')}}</h3>
                 </header>
-                <img src="/app-assets/css/about_us/img/clients/MFK.png" style="width: 243px; margin-left: 25%; margin-top: 22px;" alt="">
-                <img src="/app-assets/css/about_us/img/clients/MCC.png" style="width: 400px;  margin-left: 2%;" alt="">
+                <a href="https://digdata.millenniumkosovo.org/" target="_blank"><img href="" src="/app-assets/css/about_us/img/clients/digdata.png" style="width: 175px;  margin-left:7%;margin-top: 49px" alt=""></a>
+                <a href="https://millenniumkosovo.org/" target="_blank"><img src="/app-assets/css/about_us/img/clients/MFK.png" style="width: 243px; margin-left: 9%; margin-top: 22px;" alt=""><a/>
+                <a href="https://www.mcc.gov/" target="_blank"><img src="/app-assets/css/about_us/img/clients/MCC.png" style="width: 400px;  margin-left: 7%;" alt=""></a>
             </div>
         </section><!-- #clients -->
         <hr style="width: 70%">
@@ -119,10 +121,10 @@
                     <h3>{{Lang::get('translation.implementing_partners')}}</h3>
                 </header>
                 {{--<img src="app-assets/css/about_us/img/clients/mcc.svg" style="width: 150px; margin-left: 35%;" alt="">--}}
-                <img class="center" src="/app-assets/css/about_us/img/clients/oek.svg"
-                     style="width: 213px; display: block; margin-left: 243px; margin-right: auto;" alt="">
-                <img class="center" src="/app-assets/css/about_us/img/clients/ODK.png"
-                     style="width: 213px; display: block;margin-left: 656px;margin-top: -166px; margin-right: auto;" alt="">
+               <a href="https://www.oek-kcc.org/" target="_blank"><img class="center" src="/app-assets/css/about_us/img/clients/oek.svg"
+                style="width: 213px; display: block; margin-left: 243px; margin-right: auto;" alt=""></a>
+                <a href="https://opendatakosovo.org/" target="_blank"><img class="center" src="/app-assets/css/about_us/img/clients/ODK.png"
+                style="width: 213px; display: block;margin-left: 656px;margin-top: -166px; margin-right: auto;" alt=""></a>
             </div>
         </section><!-- #clients -->
 
