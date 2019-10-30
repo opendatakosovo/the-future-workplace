@@ -56,6 +56,7 @@ function get_short_uni_name(){
         "Universiteti i Prishtines - Fakulteti i Shkencave te Aplikuara" => "",
         'Universiteti i Mitrovices "Isa Boletini" - Fakulteti i Teknologjise Ushqimore' => "",
         'Universiteti i Mitrovices "Isa Boletini" - Fakulteti i Inxhinierise Mekanike dhe Kompjuterike' => "",
+        'Universiteti i Mitrovices "Ukshin Hoti" - Fakulteti i Shkencave Kompjuterike' => ""
 
     );
 }
