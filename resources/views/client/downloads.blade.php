@@ -39,7 +39,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-3 label-control" for="projectinput6">{{Lang::get('translation.select_document')}}</label>
                                     <div class="col-md-9">
-                                        <select id="projectinput6" name="document" class="form-control">
+                                        <select id="projectinput6" name="document" class="form-control" onchange="set_years(this)">
                                             <option value="companies_data">{{Lang::get('translation.company_data')}}</option>
                                             <option value="workforce_data">{{Lang::get('translation.workforce_data')}}</option>
                                             <option value="high_school_data">{{Lang::get('translation.highschool_data')}}</option>
@@ -59,7 +59,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-3 label-control" for="projectinput6">{{Lang::get('translation.select_year')}}</label>
                                     <div class="col-md-9">
-                                        <select id="projectinput6" name="year" class="form-control">
+                                        <select id="year_select" name="year" class="form-control">
                                             <option value="all">{{Lang::get('translation.all')}}</option>
                                             @for($i = 2008; $i < 2019; $i++)
                                                 <option value="{{$i}}">{{$i}}</option>
@@ -79,4 +79,36 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function set_years(data) {
+            if(data.value == 'workforce_data'){
+                opts = ['2011','2012','2013','2014','2015'];
+                $('#year_select')
+                    .find('option')
+                    .remove()
+                $.each(opts, function(i, d) {
+                    $('#year_select').append('<option value="' + d + '">' + d+ '</option>');
+                });
+            }if(data.value == 'high_school_data'){
+
+                opts = ['2015','2016','2017','2018'];
+                $('#year_select')
+                    .find('option')
+                    .remove()
+                $.each(opts, function(i, d) {
+                    $('#year_select').append('<option value="' + d + '">' + d+ '</option>');
+                });
+            }
+            else{
+                opts = ['2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018'];
+                $('#year_select')
+                    .find('option')
+                    .remove()
+                $.each(opts, function(i, d) {
+                    $('#year_select').append('<option value="' + d + '">' + d+ '</option>');
+                });
+            }
+        }
+    </script>
 @endsection

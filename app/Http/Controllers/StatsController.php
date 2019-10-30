@@ -78,7 +78,8 @@ class StatsController extends Controller
     public function grads_ict_uni()
     {
 
-        for ($i = 2008; $i < 2019; $i++) {
+
+        for ($i = 2011; $i < 2016; $i++) {
             $years_result[] = $i;
         }
 
@@ -97,7 +98,7 @@ class StatsController extends Controller
 
     public function number_businnesses()
     {
-        for ($i = 2008; $i < 2019; $i++) {
+        for ($i = 2015; $i < 2019; $i++) {
             $years_result[] = $i;
         }
 
@@ -291,7 +292,7 @@ class StatsController extends Controller
                 $query = $query->join('schools','schools.id','=','graduates.school_id');
                 $query = $query->where('is_high_school', '=', 1);
             }
-            $query = $query->where('year', '=', 2008);
+            $query = $query->where('year', '=', 2011);
             $results = $query->get();
         } else {
             $query = Graduates::query();
@@ -304,7 +305,7 @@ class StatsController extends Controller
                 $query = $query->join('schools','schools.id','=','graduates.school_id');
                 $query = $query->where('is_high_school', '=', 1);
             }
-            $query = $query->where('year', '=', 2018);
+            $query = $query->where('year', '=', 2015);
             $results = $query->get();
         }
 
