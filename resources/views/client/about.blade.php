@@ -15,39 +15,54 @@
             <div class="container">
 
                 <header class="section-header">
-                    <h3> {{Lang::get('translation.about')}}</h3> <br><br>
+                    <h3> {{Lang::get('translation.about_title')}}</h3> <br><br>
                 </header>
+                <div class="content-about">
 
-                <center>  {{Lang::get('translation.about_text1')}}</center> <br><br>
-                <center>  {{Lang::get('translation.about_text2')}}</center><br><br>
-                <center> {{Lang::get('translation.about_text3')}}</center>
+                <center> <strong> &nbsp{{Lang::get('translation.what')}}&nbsp</strong> :  {{Lang::get('translation.about_text1')}}</center><br>
+                <center> <strong> &nbsp{{Lang::get('translation.data')}}&nbsp</strong> :  {{Lang::get('translation.about_text2')}}</center><br>
+                <center> <strong>&nbsp{{Lang::get('translation.why')}}&nbsp</strong> :  {{Lang::get('translation.about_text3')}}</center><br><br>
+                <center>{{Lang::get('translation.about_text4')}}</center>
+                </div>
             </div>
         </section><!-- #about -->
-
-
-        <section id="clients" class="wow fadeInUp">
-            <div class="container">
-                <header class="section-header">
-                    <h3>{{Lang::get('translation.powered_by')}}</h3>
-                </header>
-                <a href="https://digdata.millenniumkosovo.org/" target="_blank"><img href="" src="/app-assets/css/about_us/img/clients/digdata.png" style="width: 175px;  margin-left:7%;margin-top: 49px" alt=""></a>
-                <a href="https://millenniumkosovo.org/" target="_blank"><img src="/app-assets/css/about_us/img/clients/MFK.png" style="width: 243px; margin-left: 9%; margin-top: 22px;" alt=""><a/>
-                <a href="https://www.mcc.gov/" target="_blank"><img src="/app-assets/css/about_us/img/clients/MCC.png" style="width: 400px;  margin-left: 7%;" alt=""></a>
-            </div>
-        </section><!-- #clients -->
-        <hr style="width: 70%">
         <section id="clients" class="wow fadeInUp">
             <div class="container">
                 <header class="section-header">
                     <h3>{{Lang::get('translation.implementing_partners')}}</h3>
                 </header>
                 {{--<img src="app-assets/css/about_us/img/clients/mcc.svg" style="width: 150px; margin-left: 35%;" alt="">--}}
-               <a href="https://www.oek-kcc.org/" target="_blank"><img class="center" src="/app-assets/css/about_us/img/clients/oek.svg"
-                style="width: 213px; display: block; margin-left: 243px; margin-right: auto;" alt=""></a>
+                <a href="https://www.oek-kcc.org/" target="_blank"><img class="center" src="/app-assets/css/about_us/img/clients/oek.svg"
+                                                                        style="width: 123px; display: block; margin-left: 638px; margin-right: auto;" alt=""></a>
                 <a href="https://opendatakosovo.org/" target="_blank"><img class="center" src="/app-assets/css/about_us/img/clients/ODK.png"
-                style="width: 213px; display: block;margin-left: 656px;margin-top: -166px; margin-right: auto;" alt=""></a>
+                                                                           style="width: 123px; display: block;margin-left: 356px;margin-top: -111px; margin-right: auto;" alt=""></a>
             </div>
         </section><!-- #clients -->
+        <hr style="width: 70%">
+        <section id="clients" class="wow fadeInUp">
+            <div class="container">
+                <header class="section-header">
+                    <h3>{{Lang::get('translation.supporting_partners')}}</h3>
+                </header>
+                <a href="https://digdata.millenniumkosovo.org/" target="_blank"><img href="" src="/app-assets/css/about_us/img/clients/digdata.png" style="width: 90px; margin-left: 23%;margin-top: 49px" alt=""></a>
+                <a href="https://millenniumkosovo.org/" target="_blank"><img src="/app-assets/css/about_us/img/clients/MFK.png" style="width: 131px;margin-left: 11%; margin-top: 22px;" alt=""><a/>
+                <a href="https://www.mcc.gov/" target="_blank"><img src="/app-assets/css/about_us/img/clients/MCC.png" style="width: 247px;margin-left: 11%;" alt=""></a>
+            </div>
+        </section><!-- #clients -->
+        <hr style="width: 70%">
+        <section id="clients" class="wow fadeInUp">
+            <div class="container">
+                <header class="section-header">
+                    <h3>{{Lang::get('translation.powered_by')}}</h3>
+                </header>
+                <a href="https://digdata.millenniumkosovo.org/" target="_blank"><img href="" src="/app-assets/css/about_us/img/clients/digdata.png" style="width: 90px; margin-left: 23%;margin-top: 49px" alt=""></a>
+                <a href="https://millenniumkosovo.org/" target="_blank"><img src="/app-assets/css/about_us/img/clients/MFK.png" style="width: 131px;margin-left: 11%; margin-top: 22px;" alt=""><a/>
+                    <a href="https://www.mcc.gov/" target="_blank"><img src="/app-assets/css/about_us/img/clients/MCC.png" style="width: 247px;margin-left: 11%;" alt=""></a>
+            </div>
+        </section>
+
+
+
 
     </main>
 

@@ -92,6 +92,8 @@ return array(
     'about_text1' => '‘Emri i platformës’ është platformë digjitale e bazuar në të dhëna e zhvilluar që të kuptojmë më sektorin e TIK në Kosovë. Kjo platformë ka çdo gjë. Çka studentët e TIK janë janë duke mësuar në shkollë të mesme dhe universitet, sa janë të diplomuar në fushën e TIK, çfarë aktivitete performojnë biznese në fushën e TIK, sa fitojnë bizneset në TIK, çfarë aftësi po kërkohen në fushën e TIK, e shumë më shumë.',
     'about_text2' => '‘Emri i platformes’ ofron mundëson të kuptuatin e tregut të TIK (kërkesa dhe oferta), njohuri se si sistemi i edukimit ne Kosovë duhet të ndryshojë që të përshtatet me kërkesën e tregut, dhe ofron një udhëzim drejt ekplorimit të kapaciteteve të Kosovës.',
     'about_text3' => 'Projekti ‘The Future Workplace’ është pjesë e ‘Dig Data Challenge’ e mundësuar nga Millenium Foundation Kosovo (MFK) dhe Millenium Challenge Corporation (MCC). The Dig Data Challenge për të dhënat e fuqisë punëtore ka qenë Sfida e Parë e të Dhënave të Hapura të MFK. Sfida ka për qëllim të i informoj qytetarët e Kosovës mbi edukimin dhe mundësitë ekonomike që të ndjeken në mënyrë që të përshtaten me nevojat e tregur duke stimuluar bashkëpunim ndër-institucional dhe promovimi i vendim-marrjes të bazuar në të dhëna dhe transparencën qeveritare.',
+    'about_text4' =>'',
+    'about_text5' => '',
     'about_title' => 'Ministria e Tregtisë dhe Industrisë',
     'about_card' => 'Ministria na ka siguruar të dhëna thelbësore për bizneset e TIK-ut në Kosovë përmes platformës së Biznesit të Hapur.',
     'about_first_title' => 'LE TË FLASIM PËR TË DHËNAT',

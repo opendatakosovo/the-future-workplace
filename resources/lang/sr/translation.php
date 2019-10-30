@@ -92,6 +92,8 @@ return array (
     'about_text1' => 'The Future Workplace je digitalni alat vođen podacima, koji je razvijen kako bi smanjio tržište ICT-a na Kosovu. Ima sve. Šta ICT studenti uče u srednjoj školi i na univerzitetu, koliko ima onih kojim su diplomirali na ICT-u, kojim se aktivnostima bave u okviru ICT biznisa, koliko zarađuju ICT preduzeća, koje se ICT veštine traže i još mnogo, mnogo toga.',
     'about_text2' => 'The Future Workplace pruža sveobuhvatnu osnovu za razumevanje ICT tržišta (strana ponude i potražnje), uvid u to kako obrazovni sistem treba da se modifikuje tako da odgovara tržišnoj potražnji i sjajan put za istraživanje ljudskih kapaciteta na Kosovu.',
     'about_text3' => 'The Future Workplace je deo „Dig Data Challenge-a“ koji pokreću foundacija Milenijum Kosovo (MFK) i korporacija Milenijum izazov (MCC). „Dig Data Challenge“ o podacima o radnoj snazi bio je prvi otvoreni izazov MFK-a. Izazov je imao za cilj da informiše građane Kosova o obrazovanju i ekonomskim mogućnostima koje treba ostvariti da bi se zadovoljile potrebe tržišta uz istovremeno podsticanje međuinstitucionalnih korporacija i promovisanje odlučivanja na osnovu podataka i transparentnosti Vlade.',
+    'about_text4' =>'',
+    'about_text5' => '',
     'about_title' => 'Ministarstvo trgovine i industrije',
     'about_card' => 'Ministarstvo nam je pružilo ključne podatke o ICT poslovima na Kosovu kroz platformu otvorenog poslovanja.',
     'about_first_title' => 'RAZGOVARAJMO O PODACIMA',
