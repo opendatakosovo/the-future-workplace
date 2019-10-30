@@ -178,7 +178,7 @@
                         tooltip: {
                             y: {
                                 formatter: function (val) {
-                                    return val + "K"
+                                    return val
                                 }
                             }
                         },
@@ -302,7 +302,7 @@
                         tooltip: {
                             y: {
                                 formatter: function (val) {
-                                    return val + ""
+                                    return val + "K"
                                 }
                             }
                         },
