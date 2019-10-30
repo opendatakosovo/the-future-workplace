@@ -73,7 +73,7 @@
             </li>
             <li class="dropdown nav-item" data-menu="dropdown"><a class="dropdown-toggle nav-link" href="index.html"
                                                                   data-toggle="dropdown"><i
-                            class="ft-home"></i><span>{{Lang::get('translation.workforce_data')}}</span></a>
+                            class="ft-book"></i><span>{{Lang::get('translation.workforce_data')}}</span></a>
                 <ul class="dropdown-menu">
                     <div class="arrow_box">
                         <li data-menu=""><a class="dropdown-item"
