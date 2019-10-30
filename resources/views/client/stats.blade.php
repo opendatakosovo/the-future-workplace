@@ -67,7 +67,7 @@
                                     <h4 class="font-large-1 text-bold-400">{{$data['total_graduated_uni']}} <i class="ft-users float-right"></i></h4>
                                 </div>
                                 <div class="card-footer p-1">
-                                    <span class="text-muted"><i class="la @if($data['growth_uni'] < 0 )la-arrow-circle-o-down @else la-arrow-circle-o-up @endif  info"></i> {{$data['growth']}}% @if($data['growth'] < 0 ){{Lang::get('translation.drop')}} @else {{Lang::get('translation.growth')}}  @endif {{Lang::get('translation.within_10_years')}} </span>
+                                    <span class="text-muted"><i class="la @if($data['growth_uni'] < 0 )la-arrow-circle-o-down @else la-arrow-circle-o-up @endif  info"></i> {{$data['growth_uni']}}% @if($data['growth_uni'] < 0 ){{Lang::get('translation.drop')}} @else {{Lang::get('translation.growth')}}  @endif {{Lang::get('translation.within_10_years')}} </span>
                                 </div>
                             </div>
                         </div>
