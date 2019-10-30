@@ -8,9 +8,9 @@
                 <img src="/app-assets/css/about_us/img/clients/MCC.png" style="width: 130px; " alt="">
             </div>
         </span>
-        <span class="float-md-right d-block footer-funded-text d-md-inline-block" style="font-size: 13px; text-align: left;float: right ">{{ now()->year }} &copy;  {{Lang::get('translation.implemented_by')}}
+        <span class="float-md-right d-block footer-funded-text d-md-inline-block" style="font-size: 13px; text-align: left;float: right ">{{Lang::get('translation.implemented_by')}}
             <div class="funded-logos">
-                <img src="/app-assets/css/about_us/img/clients/ODK.png" style="margin-top:10%; width: 80px; padding-left: 5%;" alt="">
+                <img src="/app-assets/css/about_us/img/clients/ODK.png" style="margin-top:3%; width: 79px; padding-right: 14px" alt="">
                 <img src="/app-assets/css/about_us/img/clients/oek.svg" style="margin-top:0%; width: 70px; " alt="">
             </div>
         </span>

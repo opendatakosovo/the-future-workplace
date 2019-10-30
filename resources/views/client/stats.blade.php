@@ -105,38 +105,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 col-lg-12">
-                <div class="card">
-                    <div class="card-header p-1">
-                        <h4 class="card-title float-left" >{{Lang::get('translation.general_stats')}} - <span class="blue-grey lighten-2 font-small-3 mb-0">2018</span></h4>
-                    </div>
-                    <div class="card-content collapse show">
-                        <div class="card-footer text-center p-1">
-                            <div class="row">
-                                <div class="col-md-4 col-12 border-right-blue-grey border-right-lighten-5 text-center">
-                                    <p class="blue-grey lighten-2 mb-0">{{Lang::get('translation.num_businesses')}}</p>
-                                    <p class="font-medium-5 text-bold-400">{{$data['number_of_bussinesses']}}</p>
-                                </div>
-                                <div class="col-md-4 col-12 border-right-blue-grey border-right-lighten-5 text-center">
-                                    <p class="blue-grey lighten-2 mb-0">{{Lang::get('translation.num_active_businesses')}}</p>
-                                    <p class="font-medium-5 text-bold-400">{{$data['number_of_active']}}</p>
-                                </div>
-                                <div class="col-md-4 col-12 border-right-blue-grey border-right-lighten-5 text-center">
-                                    <p class="blue-grey lighten-2 mb-0">{{Lang::get('translation.num_dissolved_businesses')}}</p>
-                                    <p class="font-medium-5 text-bold-400">{{$data['number_of_dissolved']}}</p>
-                                </div>
 
-                            </div>
-                            <hr>
-                            <span class="text-muted"><a href="http://biznesetehapura.com/en" class="danger darken-2">{{Lang::get('translation.general_stats')}}</a></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
         <div class="row comparison">
 
 
@@ -173,6 +142,38 @@
                     </div>
                     <div class="card-content mt-1">
                         <div id="chartContainer4" style="width:100%; height:300px;"></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="card">
+                    <div class="card-header p-1">
+                        <h4 class="card-title float-left" >{{Lang::get('translation.general_stats')}} - <span class="blue-grey lighten-2 font-small-3 mb-0">2018</span></h4>
+                    </div>
+                    <div class="card-content collapse show">
+                        <div class="card-footer text-center p-1">
+                            <div class="row">
+                                <div class="col-md-4 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                                    <p class="blue-grey lighten-2 mb-0">{{Lang::get('translation.num_businesses')}}</p>
+                                    <p class="font-medium-5 text-bold-400">{{$data['number_of_bussinesses']}}</p>
+                                </div>
+                                <div class="col-md-4 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                                    <p class="blue-grey lighten-2 mb-0">{{Lang::get('translation.num_active_businesses')}}</p>
+                                    <p class="font-medium-5 text-bold-400">{{$data['number_of_active']}}</p>
+                                </div>
+                                <div class="col-md-4 col-12 border-right-blue-grey border-right-lighten-5 text-center">
+                                    <p class="blue-grey lighten-2 mb-0">{{Lang::get('translation.num_dissolved_businesses')}}</p>
+                                    <p class="font-medium-5 text-bold-400">{{$data['number_of_dissolved']}}</p>
+                                </div>
+
+                            </div>
+                            <hr>
+                            <span class="text-muted"><a href="http://biznesetehapura.com/en" target="_blank" class="danger darken-2" style="color: #004D40 !important;">{{Lang::get('translation.explore_further')}}</a></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -375,13 +376,31 @@
                             type: 'bar',
                             stacked: true,
                             stackType: '100%',
-                            width: '100%'
+                            width: '100%',
+                            height: '80%',
+                            zoom: {
+                                enabled: true,
+                                type: 'x',
+                                autoScaleYaxis: false,
+                                zoomedArea: {
+                                    fill: {
+                                        color: '#90CAF9',
+                                        opacity: 0.4
+                                    },
+                                    stroke: {
+                                        color: '#0D47A1',
+                                        opacity: 0.4,
+                                        width: 1
+                                    }
+                                }
+                            }
                         },
                         colors: [ '#266961','#093637','#449f8c','#358577'],
                         plotOptions: {
                             bar: {
                                 horizontal: false,
-                                columnWidth: '30%',
+                                columnWidth: '5%',
+
                             },
 
                         },
@@ -415,15 +434,16 @@
                         },
 
                         responsive: [{
-                            breakpoint: 2000,
+                            breakpoint: 3000,
                             options: {
                                 chart: {
-                                    height: 900,
+                                    height: 600,
                                 },
                                 plotOptions: {
                                     bar: {
                                         horizontal: true,
                                         barHeight: '40%',
+                                        columnWidth: '5%',
                                     },
 
                                 }

@@ -663,7 +663,20 @@
                                     return val + " %"
                                 }
                             }
-                        }
+                        },
+                        responsive: [{
+                            breakpoint: 1000,
+                            options: {
+                                chart: {
+                                    height: 900,
+                                },
+                                plotOptions: {
+                                    bar: {
+                                        horizontal: true,
+                                    },
+                                }
+                            },
+                        }]
                     }
 
                     var chart = new ApexCharts(
