@@ -82,6 +82,7 @@
 
     <script>
         function set_years(data) {
+            console.log(data.value);
             if(data.value == 'workforce_data'){
                 opts = ['2011','2012','2013','2014','2015'];
                 $('#year_select')
