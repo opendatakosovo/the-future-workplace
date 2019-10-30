@@ -46,3 +46,16 @@ function get_current_url(){
     $link_array = explode('/',$link);
     return $page = end($link_array);
 }
+
+function get_short_uni_name(){
+    $names = array(
+        "Universiteti i Prishtines - Fakulteti i Shkencave Matematiko-Natyrore" => "Up-FSHMN",
+        "Universiteti i Prishtines - Fakulteti Ekonomik" => "Up-FE",
+        "Universiteti i Prishtines - Fakulteti i Inxhinierise Elektrike dhe Kompjuterike" => "Up-FIEK",
+        "Universiteti i Prishtines - Fakulteti i Edukimit" => "Up-",
+        "Universiteti i Prishtines - Fakulteti i Shkencave te Aplikuara" => "",
+        'Universiteti i Mitrovices "Isa Boletini" - Fakulteti i Teknologjise Ushqimore' => "",
+        'Universiteti i Mitrovices "Isa Boletini" - Fakulteti i Inxhinierise Mekanike dhe Kompjuterike' => "",
+
+    );
+}
