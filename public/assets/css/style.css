@@ -270,12 +270,19 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
 /*about*/
 #about {
     padding-bottom: 111px;
+    background-color: #FFF;
 }
 
 #about center {
     width: 100%;
-    text-align: center;
+    text-align: left;
     font-family: Comfortaa, cursive, Times New Roman, Times, serif;
+}
+
+#about strong{
+    font-weight: bolder;
+    background-color: #18d26e;
+    color: #fff;
 }
 
 /*.btn-primary {*/

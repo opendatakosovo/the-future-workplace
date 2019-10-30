@@ -10,7 +10,7 @@
 --------------------------------------------------------------*/
 
 body {
-  background: #fff;
+  background: #FFFFFF;
   color: #666666;
   font-family: "Open Sans", sans-serif;
 }
@@ -644,7 +644,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 
 #about {
-  background: url("../img/ict-bg.jpg") center top no-repeat fixed;
   background-size: cover;
   padding: 60px 0 40px 0;
   position: relative;
@@ -1056,7 +1055,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 
 #clients {
-  padding: 60px 0;
+  padding: 16px 0;
 }
 
 #clients img {
