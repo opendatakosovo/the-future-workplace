@@ -280,7 +280,16 @@ class StatsController extends Controller
 
     function get_grads($type,$school_type)
     {
+        if($school_type == 'uni'){
+            $year_min = 2011;
+            $year_max = 2015;
+        }else{
+            $year_min = 2015;
+            $year_max = 2018;
+        }
         if ($type == 'min') {
+
+
             $query = Graduates::query();
 
             $query = $query->select(DB::raw(' sum(number_of_graduates) total'));
@@ -291,7 +300,7 @@ class StatsController extends Controller
                 $query = $query->join('schools','schools.id','=','graduates.school_id');
                 $query = $query->where('is_high_school', '=', 1);
             }
-            $query = $query->where('year', '=', 2011);
+            $query = $query->where('year', '=', $year_min);
             $results = $query->get();
         } else {
             $query = Graduates::query();
@@ -304,7 +313,7 @@ class StatsController extends Controller
                 $query = $query->join('schools','schools.id','=','graduates.school_id');
                 $query = $query->where('is_high_school', '=', 1);
             }
-            $query = $query->where('year', '=', 2015);
+            $query = $query->where('year', '=', $year_max);
             $results = $query->get();
         }
 
