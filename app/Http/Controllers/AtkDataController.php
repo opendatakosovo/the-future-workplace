@@ -31,7 +31,42 @@ class AtkDataController extends Controller
 
         $query = $query->select( DB::raw('distinct kategoria , sum(nr_kompanive) as num_count'));
 
+        $activities = array(
+            "Publikimi i softuereve te tjere",
+            "Prodhimi i produkteve elektronike per konsumatore",
+            "Prodhimi i pjeseve elektrike dhe elektronike per mjetet motorike (te transportit)",
+            "Prodhimi i pajisjeve te tjera elektrike",
+            "Prodhimi i pajisjeve te komunikimit",
+            "Prodhimi i kompjutereve dhe pajisjeve periferike",
+            "Prodhimi I pajisjeve elektrike shtepiake",
+            "PROGRAMUES KOMPJUTERI",
+            "Instalime elektrike",
+            "IT TECHNICIAN",
+            "IT",
+            "INXHINIER TEKNIK",
+            "INXHINIER",
+            "Aktivitetet e tjera te telekomunikimit",
+            "Aktivitetet e tjera profesionale, shkencore dhe teknike p.k.t.",
+            "Aktivitetet e telekomunikimit kabllor",
+            "Aktivitetet e programimit kompjuterik",
+            "Aktivitetet e keshillimeve kompjuterike",
+            "Aktivitetet e inxhinierise dhe keshillimit teknik",
+            "Aktivitete te menaxhimit te instalimeve kompjuterike",
+            "ANALIST SISTEMESH",
+            "Web portalet",
+            "Transmetimi i programeve radiofonike",
+            "Testimi teknik dhe analizat",
+            "Teknologjia tjeter informative dhe aktivitetet sherbyese kompjuterike",
+            "TEKNIK KOMPJUTERI",
+            "Sherbimet e tjera te informacionit p.k.t",
+            "Riparimi i pajisjeve te komunikimit",
+            "Riparimi i pajisjeve elektronike te konsumit",
+            "Riparimi i pajisjeve elektrike",
+            "Riparimi i kompjutereve dhe pajisjeve periferike",
+            "Publikimi i lojerave kompjuterike"
+        );
 
+        $query = $query->whereIn('aktiviteti',$activities);
         $query = $query->groupBy('kategoria');
 
         $atk_counted_categories = $query->get();
@@ -50,7 +85,7 @@ class AtkDataController extends Controller
 
         foreach($atk_data as $category => $count){
             $categoriess[] = $category;
-            $final_res[] = $this->nice_number($count);
+            $final_res[] = $count;
         }
 
 
@@ -95,8 +130,43 @@ class AtkDataController extends Controller
 
         $query  = Atk::query();
 
-        $query = $query->select( DB::raw('distinct kategoria , sum(nr_puntoreve_ne_kompani) as emp_count'));
+        $query = $query->select( DB::raw('kategoria , sum(nr_puntoreve_ne_kompani) as emp_count'));
+        $activities = array(
+            "Publikimi i softuereve te tjere",
+            "Prodhimi i produkteve elektronike per konsumatore",
+            "Prodhimi i pjeseve elektrike dhe elektronike per mjetet motorike (te transportit)",
+            "Prodhimi i pajisjeve te tjera elektrike",
+            "Prodhimi i pajisjeve te komunikimit",
+            "Prodhimi i kompjutereve dhe pajisjeve periferike",
+            "Prodhimi I pajisjeve elektrike shtepiake",
+            "PROGRAMUES KOMPJUTERI",
+            "Instalime elektrike",
+            "IT TECHNICIAN",
+            "IT",
+            "INXHINIER TEKNIK",
+            "INXHINIER",
+            "Aktivitetet e tjera te telekomunikimit",
+            "Aktivitetet e tjera profesionale, shkencore dhe teknike p.k.t.",
+            "Aktivitetet e telekomunikimit kabllor",
+            "Aktivitetet e programimit kompjuterik",
+            "Aktivitetet e keshillimeve kompjuterike",
+            "Aktivitetet e inxhinierise dhe keshillimit teknik",
+            "Aktivitete te menaxhimit te instalimeve kompjuterike",
+            "ANALIST SISTEMESH",
+            "Web portalet",
+            "Transmetimi i programeve radiofonike",
+            "Testimi teknik dhe analizat",
+            "Teknologjia tjeter informative dhe aktivitetet sherbyese kompjuterike",
+            "TEKNIK KOMPJUTERI",
+            "Sherbimet e tjera te informacionit p.k.t",
+            "Riparimi i pajisjeve te komunikimit",
+            "Riparimi i pajisjeve elektronike te konsumit",
+            "Riparimi i pajisjeve elektrike",
+            "Riparimi i kompjutereve dhe pajisjeve periferike",
+            "Publikimi i lojerave kompjuterike"
+        );
 
+        $query = $query->whereIn('aktiviteti',$activities);
         $query = $query->groupBy('kategoria');
 
         $atk_counted_categories = $query->get();
@@ -110,7 +180,7 @@ class AtkDataController extends Controller
 
         foreach($atk_data as $category => $count){
             $categoriess[] = $category;
-            $final_res[] = round($count);
+            $final_res[] = $this->nice_number($count);
         }
 
 
