@@ -276,6 +276,7 @@
                             height: 430,
                             type: 'bar',
                         },
+                        colors: [ '#266961','#093637'],
                         plotOptions: {
                             bar: {
                                 horizontal: true,
@@ -348,6 +349,7 @@
                     $.each(data[1], function (key, value) {
                         data_sets2.push(value);
                     });
+
                     console.log(data_sets2);
 
                     var options2 = {
@@ -356,6 +358,7 @@
                             type: 'bar',
                             stacked: true,
                         },
+                        colors: [ '#266961','#358577'],
                         plotOptions: {
                             bar: {
                                 horizontal: false,
@@ -578,6 +581,7 @@
                             width: '100%'
 
                         },
+
                         plotOptions: {
                             bar: {
                                 horizontal: false,
