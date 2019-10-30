@@ -749,13 +749,20 @@
             },
 
             colorAxis: {
+                stops: [
+                    [0, '#EFEFFF'],
+                    [0.67, '#44a08d'],
+                    [1, '#0a3737'],
+                ],
                 min: 0
             },
 
             series: [{
                 data: data,
                 name: 'Total',
+
                 states: {
+                    color: '#d89b60',
                     hover: {
                         color: '#0d3c3c'
                     }
