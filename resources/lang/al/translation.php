@@ -113,7 +113,7 @@ return array(
     'about_seventh_card' => 'Kjo është bërë e mundur me ndihmën e partnerit tonë Oda Ekonomike e Kosovës.',
     'about_eighth_card' => 'Ndjehuni të lirë të na kontaktoni për cdo gjë në info@opendatakosovo.org ose info@oek-kcc.org',
     'explore_further' => 'Explore Further',
-    'statistics_graph1' => 'Ky grafikon tregon numrin e të diplomuarëve në fakultete në fusha të TIK në Kosovë prej 2008 deri në 2018.',
+    'statistics_graph1' => 'Ky grafikon tregon numrin e të diplomuarëve në fakultete në fusha të TIK në Kosovë prej 20011 deri në 2015.',
     'statistics_graph2' => 'Ky grafikon tregon numrin e të diplomuarëve në shkolla të mesme në fusha të TIK në Kosovë prej 2015 deri në 2018.',
     'statistics_graph3' => 'Ky grafikon tregon përqindjen e bizneseve në TIK që janë të angazhur në aktivitete të ndryshme të kategorizuara në bazë të komunave. Një bllok paraqet përqindjen e bizneece që janë angazhuar në një aktivitet specifik në një komunë specifike.',
     'statistics_graph4' => 'Ky grafikon tregon numrin e bizneseve të regjistruara në sektorin e TIK përgjatë 10 viteve të fundit. Për shembull, ky grafikon tregon numrin e bizneseve në fushën e TIK të regjistruara për vit p.sh. 1086 biznese në sektorin e TIK janë regjistruar në 2017.',
