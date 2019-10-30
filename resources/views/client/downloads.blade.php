@@ -91,7 +91,7 @@
                 $.each(opts, function(i, d) {
                     $('#year_select').append('<option value="' + d + '">' + d+ '</option>');
                 });
-            }if(data.value == 'high_school_data'){
+            }else if(data.value == 'high_school_data'){
 
                 opts = ['2015','2016','2017','2018'];
                 $('#year_select')
