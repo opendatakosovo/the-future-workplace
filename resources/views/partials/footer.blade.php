@@ -3,15 +3,15 @@
     <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
           <span class="float-md-left d-block footer-funded-text d-md-inline-block" style="font-size: 13px; text-align: left;float: right ">{{ Lang::get('translation.powered_by')}}
               <div class="funded-logos">
-                <img src="/app-assets/css/about_us/img/clients/digdata.png" style="width: 70px; " alt="">
-                <img src="/app-assets/css/about_us/img/clients/MFK.png" style="width: 70px; padding-left: 0%;" alt="">
-                <img src="/app-assets/css/about_us/img/clients/MCC.png" style="width: 130px; " alt="">
+              <a href="https://millenniumkosovo.org/" target="_blank"><img src="/app-assets/css/about_us/img/clients/digdata.png" style="width: 70px; " alt=""></a>
+              <a href="https://millenniumkosovo.org/" target="_blank"><img src="/app-assets/css/about_us/img/clients/MFK.png" style="width: 70px; padding-left: 0%;" alt=""></a>
+                  <a href="https://www.mcc.gov/" target="_blank"><img src="/app-assets/css/about_us/img/clients/MCC.png" style="width: 130px; " alt=""></a>
             </div>
         </span>
         <span class="float-md-right d-block footer-funded-text d-md-inline-block" style="font-size: 13px; text-align: left;float: right ">{{Lang::get('translation.implemented_by')}}
             <div class="funded-logos">
-                <img src="/app-assets/css/about_us/img/clients/ODK.png" style="margin-top:3%; width: 79px; padding-right: 14px" alt="">
-                <img src="/app-assets/css/about_us/img/clients/oek.svg" style="margin-top:0%; width: 70px; " alt="">
+               <a href="https://opendatakosovo.org" target="_blank"><img src="/app-assets/css/about_us/img/clients/ODK.png" style="margin-top:3%; width: 79px; padding-right: 14px" alt=""></a>
+               <a href="https://www.oek-kcc.org/" target="_blank"><img src="/app-assets/css/about_us/img/clients/oek.svg" style="margin-top:0%; width: 70px; " alt=""></a>
             </div>
         </span>
         {{--<span class="float-md-left d-block d-md-inline-block" style="margin-top: 1%;"><span class="copytirght-text">{{ now()->year }} &copy; Copyright </span><a--}}

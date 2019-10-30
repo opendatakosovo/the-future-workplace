@@ -38,18 +38,18 @@
                                                                            style="width: 123px; display: block;margin-left: 356px;margin-top: -111px; margin-right: auto;" alt=""></a>
             </div>
         </section><!-- #clients -->
-        <hr style="width: 70%">
+        <hr style="width: 50%">
         <section id="clients" class="wow fadeInUp">
             <div class="container">
                 <header class="section-header">
                     <h3>{{Lang::get('translation.supporting_partners')}}</h3>
                 </header>
-                <a href="https://digdata.millenniumkosovo.org/" target="_blank"><img href="" src="/app-assets/css/about_us/img/clients/digdata.png" style="width: 90px; margin-left: 23%;margin-top: 49px" alt=""></a>
-                <a href="https://millenniumkosovo.org/" target="_blank"><img src="/app-assets/css/about_us/img/clients/MFK.png" style="width: 131px;margin-left: 11%; margin-top: 22px;" alt=""><a/>
-                <a href="https://www.mcc.gov/" target="_blank"><img src="/app-assets/css/about_us/img/clients/MCC.png" style="width: 247px;margin-left: 11%;" alt=""></a>
+                <a href="https://masht.rks-gov.net/" target="_blank"><img href="" src="/app-assets/css/about_us/img/clients/masht.png" style="width: 147px; margin-left: 21%;margin-top: 10px" alt=""></a>
+                <a href="https://mti.rks-gov.net/" target="_blank"><img src="/app-assets/css/about_us/img/clients/mti.png" style="width: 178px;margin-left: 11%; margin-top: 18px;" alt=""><a/>
+                <a href="http://www.atk-ks.org/" target="_blank"><img src="/app-assets/css/about_us/img/clients/atklogo.png" style="width: 244px;margin-left: 10%; margin-top: 9px" alt=""></a>
             </div>
         </section><!-- #clients -->
-        <hr style="width: 70%">
+        <hr style="width: 50%">
         <section id="clients" class="wow fadeInUp">
             <div class="container">
                 <header class="section-header">
