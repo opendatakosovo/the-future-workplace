@@ -13,7 +13,7 @@ return array (
     'roadmap' => 'Udhërrëfyesi',
     'roadmap_desc' => 'Here is the advanced example of how vertical timeline can be used to display information about company',
     'company_data' => 'Podaci o kompaniji',
-    'workforce_data' => 'Podaci o radnoj snazi',
+    'workforce_data' => 'Diplomirani',
     'skills_mismatch' => 'Veštine neusklađenosti',
     'blog' => 'Blog',
     'about' => 'O tome',
@@ -110,7 +110,7 @@ return array (
     'about_sixth_card' => 'Ovu platformu je razvio neverovatan tim za otvorene podatke o Kosovu koji se isprva borio da svi podaci stanu u nekoliko tačaka, ali je uspeo da ovu platformu isporuči na prijatan i inovativan način.',
     'about_seventh_card' => 'Ovo je omogućeno uz pomoć velikog partnera privredne komore Kosova.',
     'about_eighth_card' => 'Slobodno nas kontaktirajte za bilo šta na info@opendatakosovo.org ili info@oek-kcc.org',
-
+    'explore_further' => 'Explore Further',
 
     'statistics_graph1' => '',
     'statistics_graph2' => '',
