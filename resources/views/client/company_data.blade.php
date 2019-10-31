@@ -689,7 +689,7 @@
                 // Block Element
                 block_ele.block({
                     message: '<div class="ft-refresh-cw icon-spin font-medium-2"></div>',
-                    timeout: 3000, //unblock after 2 seconds
+                    timeout: 1000, //unblock after 2 seconds
                     overlayCSS: {
                         backgroundColor: '#FFF',
                         cursor: 'wait',
