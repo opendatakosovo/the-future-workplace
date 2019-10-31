@@ -102,7 +102,7 @@
                                                     <optgroup label="{{Lang::get('translation.choose_university')}}">
                                                         <option  value="all">{{Lang::get('translation.all')}}</option>
                                                         @foreach($data['universities'] as $university)
-                                                            <option  value="{{$university['uni_id']}}" @if(in_array($university['uni_id'],$data['def_schools'])) selected @endif>{{$university['uni_name']}}</option>
+                                                            <option  value="{{$university['uni_id']}}" @if(in_array($university['uni_id'],$data['def_schools'])) selected @endif>{{get_short_uni_name($university['uni_name'])}}</option>
                                                         @endforeach
                                                     </optgroup>
                                                 </select>
