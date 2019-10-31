@@ -9,7 +9,20 @@ class AtkDataController extends Controller
 {
     public function index(){
 
-        return view('client.atk');
+        $municipalities = DB::table('atk_data')
+            ->select('komuna')
+            ->groupBy('komuna')
+            ->get();
+
+       foreach($municipalities as $mun){
+           $muni_data[] = $mun->komuna;
+       }
+
+
+       $data = array(
+           'municipalities' => $muni_data
+       );
+        return view('client.atk')->with('data',$data);
     }
 
     public function get_number_atk_categories(){
@@ -25,7 +38,7 @@ class AtkDataController extends Controller
         $year = $_GET['year'] ?? null;
         $cities = $_GET['cities'] ?? null;
         $status = $_GET['status'] ?? null;
-        $activity = $_GET['activity'] ?? null;
+        $municipality = $_GET['municipality'] ?? null;
 
          $query  = Atk::query();
 
@@ -66,6 +79,9 @@ class AtkDataController extends Controller
             "Publikimi i lojerave kompjuterike"
         );
 
+        if(isset($municipality) && $municipality != null && $municipality != 'all'){
+            $query = $query->where('komuna',$municipality);
+        }
         $query = $query->whereIn('aktiviteti',$activities);
         $query = $query->groupBy('kategoria');
 
@@ -127,6 +143,7 @@ class AtkDataController extends Controller
         $cities = $_GET['cities'] ?? null;
         $status = $_GET['status'] ?? null;
         $activity = $_GET['activity'] ?? null;
+        $municipality = $_GET['municipality'] ?? null;
 
         $query  = Atk::query();
 
@@ -165,7 +182,9 @@ class AtkDataController extends Controller
             "Riparimi i kompjutereve dhe pajisjeve periferike",
             "Publikimi i lojerave kompjuterike"
         );
-
+        if(isset($municipality) && $municipality != null && $municipality != 'all'){
+            $query = $query->where('komuna',$municipality);
+        }
         $query = $query->whereIn('aktiviteti',$activities);
         $query = $query->groupBy('kategoria');
 
