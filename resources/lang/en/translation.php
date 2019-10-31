@@ -67,7 +67,7 @@ return array(
     'choose_city' => 'Choose City',
     'filter_button' => 'Filter',
     'business_map' => 'Business Map',
-    'business_map_desc' => 'Below is a map of Kosovo with the majority of municipalities showing the number of businesses registered in the ICT sector.',
+    'business_map_desc' => 'Below is a map of Kosovo with the majority of municipalities showing the number of business activities in the ICT sector',
     'company_div_per_municipality' => 'ICT Businesses Divided by Municipality ',
     'workforce_data_graph1_title' => 'Graduated students per ICT department in each University',
     'workforce_data_graph2_title' => 'Graduated students per Skill Area',
