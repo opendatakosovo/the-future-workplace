@@ -88,7 +88,7 @@ return array(
     'choose_gender' => 'Choose Gender',
     'male' => 'Male',
     'female' => 'Female',
-    'data' => 'Data',
+    'data' => 'DATA',
     'what' => 'WHAT',
     'why' => 'WHY',
     'who' => 'WHO',
