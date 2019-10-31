@@ -72,7 +72,7 @@ return array(
     'workforce_data_graph1_title' => 'Graduated students per ICT department in each University',
     'workforce_data_graph2_title' => 'Graduated students per Skill Area',
     'workforce_data_map_title' => ' Workforce Map',
-    'workforce_data_map_desc' => ' Below is a map of Kosovo with the majority of municipalities showing the number depending on how many students have graduated in ICT at the university level.',
+    'workforce_data_map_desc' => ' Below is a map of Kosovo with the majority of municipalities showing the number depending on how many students have graduated in ICT at the university level for the years 2011-2015.',
     'workforce_data_graph3_title' => 'Aggregate supply of ICT graduates broken down by skills Area',
     'workforce_data_graph4_title' => 'Breakdown of supply of ICT graduates by Skills Area',
     'more' => 'More',

@@ -62,7 +62,7 @@ return array (
     'workforce_data_graph1_title' => 'Diplomirani studenti po ICT odeljenju na svakom univerzitetu',
     'workforce_data_graph2_title' => 'Diplomirani studenti po području veština',
     'workforce_data_map_title' => ' Mapa radne snage',
-    'workforce_data_map_desc' => 'Ispod je mapa Kosova sa većinom opština koja pokazuje broj u zavisnosti od broja studenata koji su diplomirali u oblasti ICT-a na univerzitetskom nivou.',
+    'workforce_data_map_desc' => 'Ispod je mapa Kosova sa većinom opština koja pokazuje broj u zavisnosti od broja studenata koji su diplomirali u oblasti ICT-a na univerzitetskom nivou za 2011-2015.',
     'workforce_data_graph3_title' => 'Ukupna ponuda diplomiranih iz ICT-a podeljeno po područijima vestima',
     'workforce_data_graph4_title' => 'Raskid snabdevanja diplomiranih iz oblasti ICT-a po oblastima veština ',
     'more' => 'Više',
