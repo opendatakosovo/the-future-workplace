@@ -101,6 +101,7 @@ return array(
     'select_type' => 'Select Type',
     'select_year' => 'Select Year',
     'supporting_partners' => 'Supporting Partners',
+    'highschool_data_map_desc'=> 'Below is a map of Kosovo with the majority of municipalities showing the number depending on how many students have graduated in ICT at the high school level for the years 2015-2018',
     'highschool_data' => 'High School Graduates',
     'welcome_slogan' => 'CHOOSE YOUR CAREER WISELY',
     'welcome_content_title' => 'The Future Workplace Data',
