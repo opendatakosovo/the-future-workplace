@@ -134,7 +134,9 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
     .read-more {
         bottom: -17px !important;
     }
+
 }
+
 
 @media (max-width: 576px) {
     .banner-content h1 {
@@ -155,9 +157,9 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
         opacity: 0.5 !important;
         transition: 0.3s;
         padding: 15px 0;
-        width: 200px !important;
-        margin-left: 26% !important;
-        margin-top: 22px !IMPORTANT;
+        width: 97px !important;
+        margin-left: 35% !important;
+        margin-top: 19px !IMPORTANT;
     }
     .timeline-card{
         width: 100% !important;
