@@ -77,6 +77,7 @@ return array(
     'implementing_partners' => 'Partnerët Zbatues',
     'downloads' => 'Shkarkimet',
     'school' => 'Shkolla',
+    'municipality' => 'Zgjidh Qytetin',
     'download' => 'Shkarko',
     'download_title' => 'Seksioni i Shkarkimeve i jep përdoruesit mundësinë për të shkarkuar të gjitha grupet e të dhënave të cilat janë portretizuar në platformën The Future Workplace. Në këtë mënyrë mundësohet qasje e të dhënave të hapura ndaj platformës. Kjo qasje e të dhënave të hapura është integruar në platformën The Future WorkPlace për të mundësuar përdorimin më të gjerë të të dhënave për qëllime të ndryshme nga persona të ndryshëm. Pasi  besojmë se, kur të dhënat e këtilla janë të hapura dhe të arritshme, ato mundësojnë krijimin e qasjes në punë të bazuar në të dhëna',
     'select_document' => 'Zgjedh Dokumentin',
