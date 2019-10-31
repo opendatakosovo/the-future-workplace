@@ -58,7 +58,7 @@ return array(
     'workforce_data_graph1_title' => 'Studentët e Diplomuar Në Univertitete në Bazë të Sektorëve të TIK-ut',
     'workforce_data_graph2_title' => 'Studentët e Diplomuar në Bazë të Aftësive',
     'workforce_data_map_title' => 'Harta e Fuqisë Punëtore',
-    'workforce_data_map_desc' => 'Më poshtë është një hartë e Kosovës me shumicën e komunave që tregon numrin në bazë të sa studentëve kanë mbaruar në TIK në nivelin universitar.',
+    'workforce_data_map_desc' => 'Më poshtë është një hartë e Kosovës me shumicën e komunave që tregon numrin në bazë të sa studentëve kanë mbaruar në TIK në nivelin universitar per vitet 2011-2015.',
     'workforce_data_graph3_title' => 'Aggregate supply of ICT graduates broken down by skills Area',
     'workforce_data_graph4_title' => 'Breakdown of supply of ICT graduates by Skills Area',
     'more' => 'Më shumë',
