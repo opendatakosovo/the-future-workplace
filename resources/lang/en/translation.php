@@ -54,6 +54,7 @@ return array(
     'within_hs_years' => 'Within 4 Years',
     'within_10_years' => 'Within 10 Years',
     'comparison_ict_businesses_municipality' => 'Comparison of ICT Businesses by Municipality',
+    'municipality' => 'Select Municipality',
     'filters' => ' Filters',
     'year' => 'Year',
     'all' => 'All',

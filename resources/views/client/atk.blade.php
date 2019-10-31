@@ -9,7 +9,34 @@
 
 @section('title', 'Atk Data')
 @extends('layouts/main')
+<style>
+    .select2-container--classic .select2-selection--multiple .select2-selection__choice, .select2-container--default .select2-selection--multiple .select2-selection__choice {
 
+        border-color: #256960 !important;
+        background-color: #256960 !important;
+    }
+    .btn-primary {
+        border-color: #00e4b5;
+        background-color:  #256960 !important;
+    }
+    .btn-primary:hover {
+        border-color: #00e6b0;
+        background-color: #29ac8c;
+    }
+
+    .highcharts-root{
+        width: 100%;
+        height: 110%;
+        margin-left: -40px;
+    }
+    .highcharts-container{
+        width: 150% ;
+        height: 100% ;
+    }
+    .highcharts-label text{
+        font-weight: normal !important;
+    }
+</style>
 @section('content')
     <div class="content-header-left col-md-6 col-12 mb-2">
         <h3 class="content-header-title">{{Lang::get('translation.atk_data')}}</h3>
@@ -47,6 +74,33 @@
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
+                            <div class="row">
+                                <div class="form-body" style="width: 100%">
+                                    <h6 class="form-section"><i class="la la-eye"></i>{{Lang::get('translation.filters')}}</h6>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label class="col-md-12 label-control" for="userinput2"> {{Lang::get('translation.municipality')}}</label>
+                                                <select class="select2 form-control" id="municipalities">
+                                                    <optgroup label="{{Lang::get('translation.choose_year')}}">
+                                                        <option name='municipality' selected value="all"><span>{{Lang::get('translation.all')}}</span></option>
+                                                        @foreach($data['municipalities'] as $municipality)
+                                                            <option value="{{$municipality}}">{{$municipality}}</option>
+                                                        @endforeach
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2" style="padding: 5px">
+                                            <label class="col-md-12 label-control" for="userinput2"></label>
+                                            <button type="button" onclick="get_filtered('clicked')" style="margin-top: 5%;"
+                                                    class="btn btn-primary filter-button">
+                                                <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div id="chartContainer" style="width:100%; height:300px;"></div>
                         </div>
                     </div>
@@ -84,6 +138,33 @@
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
+                            <div class="row">
+                                <div class="form-body" style="width: 100%">
+                                    <h6 class="form-section"><i class="la la-eye"></i>{{Lang::get('translation.filters')}}</h6>
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label class="col-md-12 label-control" for="userinput2"> {{Lang::get('translation.municipality')}}</label>
+                                                <select class="select2 form-control" id="municipalities2">
+                                                    <optgroup label="{{Lang::get('translation.choose_year')}}">
+                                                        <option selected value="all"><span>{{Lang::get('translation.all')}}</span></option>
+                                                        @foreach($data['municipalities'] as $municipality)
+                                                            <option value="{{$municipality}}">{{$municipality}}</option>
+                                                        @endforeach
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2" style="padding: 5px">
+                                            <label class="col-md-12 label-control" for="userinput2"></label>
+                                            <button type="button" onclick="get_filtered2('clicked')" style="margin-top: 5%;"
+                                                    class="btn btn-primary filter-button">
+                                                <i class="la la-check-square-o"></i> {{Lang::get('translation.filter_button')}}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div id="chartContainer2" style="width:100%; height:300px;"></div>
                         </div>
                     </div>
@@ -104,15 +185,15 @@
     <script>
         function get_filtered(clicked = null) {
 
-            var year = $('#year').find(":selected").val();
-            var status = $('#status').find(":selected").val();
-            var cities = $('#cities').val();
-            var activity = $('#activity').find(":selected").val();
+            // var year = $('#year').find(":selected").val();
+            // var status = $('#status').find(":selected").val();
+            // var cities = $('#cities').val();
+            var municipality = $('#municipalities').find(":selected").val();
 
             $.ajax({
                 type: "GET",
                 url: "get_number_atk_categories",
-                data: {"year": year, "status": status, "activity": activity, "cities": cities},
+                data: {"municipality": municipality},
                 // beforeSend: function() {
                 //     reload_data();
                 // },
@@ -231,12 +312,12 @@
             var year = $('#year').find(":selected").val();
             var status = $('#status').find(":selected").val();
             var cities = $('#cities').val();
-            var activity = $('#activity').find(":selected").val();
+            var municipality = $('#municipalities2').find(":selected").val();
 
             $.ajax({
                 type: "GET",
                 url: "get_number_atk_employees",
-                data: {"year": year, "status": status, "activity": activity, "cities": cities},
+                data: {"municipality": municipality},
                 // beforeSend: function() {
                 //     reload_data();
                 // },
