@@ -16,6 +16,7 @@
     .selected-nav{
         background-color: rgba(255, 255, 255, 0.12);
     }
+
     @media screen and (max-width: 480px) {
         .navbar-mobile {
             display: block !important;
@@ -41,11 +42,12 @@
             transform: rotate(-180deg);
         }
 
-
+        .main-menu-content{
+            display: none ;
+        }
     }
 </style>
-<div class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-fixed navbar-dark navbar-without-dd-arrow navbar-shadow"
-     role="navigation" data-menu="menu-wrapper" >
+<div class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-fixed navbar-dark navbar-without-dd-arrow navbar-shadow" role="navigation" data-menu="menu-wrapper" >
     <div class="navbar-container main-menu-content" >
         <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
             <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"
@@ -118,8 +120,8 @@
             <div class="navbar-header navbar-normal"
                  style="direction: ltr; width: 100% !important;">
                 <ul class=" navbar-nav flex-row">
-                    <li class="nav-item d-md-none ">
-                        <a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a>
+                    <li class="nav-item d-md-none "  >
+                        <a class="nav-link nav-menu-main menu-toggle hidden-xs"  onclick="show_nav()" href="#"><i class="ft-menu font-large-1"></i></a>
                     </li>
                     <li class="nav-item"><a class="navbar-brand" style="margin-left: 10%;" href="/">
                             <img class="brand-logo" alt="creaative admin logo" src="/app-assets/images/logo/logo.svg">
@@ -136,7 +138,23 @@
 </div>
 <!-- END: Main Menu-->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" type="text/javascript"></script>
 
+<script>
+    // $(window).on('ready', function() {
+    //     $(".main-menu-content").css('display','block');
+    // });
+    //
+    // $(window).on('load', function() {
+    //     alert('page is loaded');
+    //     $(".main-menu-content").css('display','block');
+    //     setTimeout(function () {
+    //         alert('page is loaded and 1 minute has passed');
+    //     }, 60000);
+    //
+    // });
+    // $(".main-menu-content").css('display','block','!important');
+</script>
 <script>
 /* Get the documentElement (<html>) to display the page in fullscreen */
 var elem = document.documentElement;
@@ -166,4 +184,16 @@ document.webkitExitFullscreen();
 document.msExitFullscreen();
 }
 }
+
+
+//
+// window.addEventListener('load', function () {
+//
+//     $(".main-menu-content").css('display','block')
+// })
+// jQuery(window).load(function () {
+//
+//
+// })
+
 </script>
