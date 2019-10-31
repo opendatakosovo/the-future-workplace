@@ -113,7 +113,7 @@
                             <li class="timeline-line"></li>
                             <li class="timeline-group">
                                 <a href="#" class="btn btn-primary round">
-                                    <i class="ft-calendar"></i> Viti i 1</a>
+                                    <i class="ft-calendar"></i> {{Lang::get('translation.year')}} 1</a>
                             </li>
                         </ul>
                         <ul class="timeline">
@@ -128,7 +128,7 @@
                                 <div class="timeline-card card border-grey border-lighten-2">
                                     <div class="card-header">
                                         <h4 class="card-title">
-                                            <a href="#">Universiteti i Prishtines (FSHMN-Shkenca kompjuterike)</a>
+                                            <a href="#">{{Lang::get('translation.uni_fshmn')}}</a>
                                         </h4>
                                         <p class="card-subtitle text-muted mb-0 pt-1">
                                             <span class="font-small-3">2019</span>
@@ -167,7 +167,7 @@
                                 <div class="timeline-card card border-grey border-lighten-2">
                                     <div class="card-header">
                                         <h4 class="card-title black">
-                                            <a href="#">Universiteti i Prishtines (Teknik-Inxhinieri Kompjuterike)</a>
+                                            <a href="#">{{Lang::get('translation.uni_comp_engineering')}}</a>
                                         </h4>
                                         <p class="card-subtitle text-muted mb-0 pt-1">
                                             <span class="font-small-3">2019</span>
@@ -225,7 +225,7 @@
                                 <div class="timeline-card card border-grey border-lighten-2" style="width: 60%; margin: auto;">
                                     <div class="card-header">
                                         <div class="text-center">
-                                            <h4 style="margin: 2%">Universiteti i Prishtines (Teknik-Telekomunikacion)</h4>
+                                            <h4 style="margin: 2%">{{Lang::get('translation.uni_telecommunication')}}</h4>
                                         </div>
                                     </div>
                                     <div class="card-content">
@@ -259,7 +259,7 @@
                             <li class="timeline-line"></li>
                             <li class="timeline-group">
                                 <a href="#" class="btn btn-primary round">
-                                    <i class="ft-calendar"></i> Viti 2</a>
+                                    <i class="ft-calendar"></i> {{Lang::get('translation.year')}} 2</a>
                             </li>
                         </ul>
                         <ul class="timeline">
@@ -276,7 +276,7 @@
                                 <div class="timeline-card card border-grey border-lighten-2">
                                     <div class="card-header">
                                         <h4 class="card-title">
-                                            <a href="#">Universiteti i Prishtines (FSHMN-Shkenca kompjuterike)</a>
+                                            <a href="#">{{Lang::get('translation.uni_fshmn')}}</a>
                                         </h4>
                                         <p class="card-subtitle text-muted mb-0 pt-1">
                                             <span class="font-small-3">2019</span>
@@ -315,7 +315,7 @@
                                 <div class="timeline-card card border-grey border-lighten-2">
                                     <div class="card-header">
                                         <h4 class="card-title black">
-                                            <a href="#">Universiteti i Prishtines (Teknik-Inxhinieri Kompjuterike)</a>
+                                            <a href="#">{{Lang::get('translation.uni_comp_engineering')}}</a>
                                         </h4>
                                         <p class="card-subtitle text-muted mb-0 pt-1">
                                             <span class="font-small-3">2019</span>
@@ -375,7 +375,7 @@
                                     {{--<div class="overlay"></div>--}}
                                     <div class="card-header">
                                         <div class="text-center">
-                                            <h4 style="margin: 2%">Universiteti i Prishtines (Teknik-Telekomunikacion)</h4>
+                                            <h4 style="margin: 2%">{{Lang::get('translation.uni_telecommunication')}}</h4>
                                         </div>
                                     </div>
                                     <div class="card-content">
@@ -408,7 +408,7 @@
                             <li class="timeline-line"></li>
                             <li class="timeline-group">
                                 <a href="#" class="btn btn-primary round">
-                                    <i class="ft-calendar"></i> Viti 3</a>
+                                    <i class="ft-calendar"></i> {{Lang::get('translation.year')}} 3</a>
                             </li>
                         </ul>
                         <!-- 2015 -->
@@ -424,7 +424,7 @@
                                 <div class="timeline-card card border-grey border-lighten-2">
                                     <div class="card-header">
                                         <h4 class="card-title">
-                                            <a href="#">Universiteti i Prishtines (FSHMN-Shkenca kompjuterike)</a>
+                                            <a href="#">{{Lang::get('translation.uni_fshmn')}}</a>
                                         </h4>
                                         <p class="card-subtitle text-muted mb-0 pt-1">
                                             <span class="font-small-3">2019</span>
@@ -463,7 +463,7 @@
                                 <div class="timeline-card card border-grey border-lighten-2">
                                     <div class="card-header">
                                         <h4 class="card-title black">
-                                            <a href="#">Universiteti i Prishtines (Teknik-Inxhinieri Kompjuterike</a>
+                                            <a href="#">{{Lang::get('translation.uni_comp_engineering')}}</a>
                                         </h4>
                                         <p class="card-subtitle text-muted mb-0 pt-1">
                                             <span class="font-small-3">2019</span>
@@ -523,7 +523,7 @@
                                     {{--<div class="overlay"></div>--}}
                                     <div class="card-header">
                                         <div class="text-center">
-                                            <h4 style="margin: 2%">Universiteti i Prishtines (Teknik-Telekomunikacion)</h4>
+                                            <h4 style="margin: 2%">{{Lang::get('translation.uni_telecommunication')}}</h4>
                                         </div>
                                     </div>
                                     <div class="card-content">
