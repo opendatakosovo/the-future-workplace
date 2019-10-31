@@ -141,7 +141,8 @@ class StatsController extends Controller
         $query = Graduates::query();
 
         $query = $query->select(DB::raw(' sum(number_of_males) male_count,sum(number_of_females)as female_count'), 'year');
-
+        $query = $query->join('schools', 'schools.id', '=', 'graduates.school_id');
+        $query = $query->where('is_high_school', '=', '1');
 
         $query = $query->groupBy('graduates.year');
         $results = $query->get();
@@ -387,6 +388,10 @@ class StatsController extends Controller
         $query = $query->select(DB::raw(' sum(number_of_graduates) as total'));
         $query = $query->join('schools','schools.id','=','graduates.school_id');
         $query = $query->where('is_high_school','=','0');
+        $query = $query->where('year','!=','2016');
+        $query = $query->where('year','!=','2017');
+        $query = $query->where('year','!=','2018');
+        $query = $query->where('year','!=','2019');
         $results = $query->get();
 
         foreach ($results as $result) {
