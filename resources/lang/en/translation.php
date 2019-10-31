@@ -35,7 +35,7 @@ return array(
     'num_ict_grads' => 'Number of High School Graduates in ICT',
     'num_ict_grads_uni' => 'Number of University Graduates in ICT',
 
-    'statistics_graph1' => 'This graph shows the number of university graduates in ICT-related fields in Kosovo from 20011 to 2015.',
+    'statistics_graph1' => 'This graph shows the number of university graduates in ICT-related fields in Kosovo from 2011 to 2015.',
     'statistics_graph2' => 'This graph shows the number of high school graduates in ICT-related field in Kosovo from 2015 to 2018.',
     'statistics_graph3' => 'This graph shows the percentage of ICT businesses that are engaged in different activities categorized by Municipalities. One block represents the percentage of businesses that are engaged in one specific activity in a specific Municipality. ',
     'statistics_graph4' => 'This graph shows the number of businesses registered within the ICT sector within the last 10 years. For example, it shows the number of businesses in the ICT sector registered per year i.e. 1086 ICT businesses have been registered in 2017.',
