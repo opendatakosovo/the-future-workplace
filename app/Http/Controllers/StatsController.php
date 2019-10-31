@@ -371,6 +371,8 @@ class StatsController extends Controller
     {
         $query = Graduates::query();
         $query = $query->select(DB::raw(' sum(number_of_graduates) as total'));
+        $query = $query->join('schools','schools.id','=','graduates.school_id');
+        $query = $query->where('is_high_school','=','1');
         $results = $query->get();
 
         foreach ($results as $result) {
