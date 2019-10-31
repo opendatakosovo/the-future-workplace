@@ -133,7 +133,7 @@
                     <div class="card-content collapse show">
                         <div class="card-body p-0 pb-0">
                             <p class="card-body">
-                                {{Lang::get('translation.workforce_data_map_desc')}}
+                                {{Lang::get('translation.highschool_data_map_desc')}}
                             </p>
                         </div>
                     </div>
