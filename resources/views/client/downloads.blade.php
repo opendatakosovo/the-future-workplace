@@ -25,9 +25,15 @@
         <div class="col-xl-8 col-lg-8 col-md-8 mobile" style="left: 15%;">
             <div class="card">
                 {{--<img class="card-img-top" src="app-assets/videos/Landingpagevideo.mp4" alt="Card image cap">--}}
-                <video class="card-img-top" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-                    <source src="/app-assets/videos/DownloadSample.mp4" type="video/mp4">
-                </video>
+                @if(is_mobile())
+                    <video class="card-img-top" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                        <source src="/app-assets/videos/DownloadSample2.mp4" type="video/mp4">
+                    </video>
+                @else
+                    <video class="card-img-top" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                        <source src="/app-assets/videos/DownloadSample.mp4" type="video/mp4">
+                    </video>
+                @endif
                 <div class="card-body">
                     <h5 class="card-title">{{Lang::get('translation.download')}}</h5>
                     <hr>
