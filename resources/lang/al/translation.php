@@ -7,7 +7,7 @@
  */
 
 return array(
-    'home' => 'Balina',
+    'home' => 'Ballina',
     'statistics' => 'Statistikat',
     'company_data' => 'Bizneset',
     'roadmap' => 'Kurrikula',
