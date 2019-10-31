@@ -152,7 +152,7 @@
             <div class="col-md-12 col-lg-12">
                 <div class="card">
                     <div class="card-header p-1">
-                        <h4 class="card-title float-left" >{{Lang::get('translation.general_stats')}} - <span class="blue-grey lighten-2 font-small-3 mb-0">2018</span></h4>
+                        <h4 class="card-title float-left" >{{Lang::get('translation.general_stats')}} - <span class="blue-grey lighten-2 font-small-3 mb-0"><b>2018</b></span></h4>
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-footer text-center p-1">

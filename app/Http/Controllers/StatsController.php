@@ -98,7 +98,7 @@ class StatsController extends Controller
 
     public function number_businnesses()
     {
-        for ($i = 2015; $i < 2019; $i++) {
+        for ($i = 2008; $i < 2019; $i++) {
             $years_result[] = $i;
         }
 
@@ -122,7 +122,7 @@ class StatsController extends Controller
 
             $query = $query->select(DB::raw('count(id) as total', 'date_of_registration'));
 
-            $query = $query->where('date_of_registration', 'like', '%' . $year . '%');
+            $query = $query->where('date_of_registration', 'like', '%/' . $year . '%');
 
             $results = $query->get();
             foreach ($results as $result) {
