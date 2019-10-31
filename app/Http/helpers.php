@@ -47,16 +47,25 @@ function get_current_url(){
     return $page = end($link_array);
 }
 
-function get_short_uni_name(){
+function get_short_uni_name($uni_name){
     $names = array(
         "Universiteti i Prishtines - Fakulteti i Shkencave Matematiko-Natyrore" => "Up-FSHMN",
         "Universiteti i Prishtines - Fakulteti Ekonomik" => "Up-FE",
         "Universiteti i Prishtines - Fakulteti i Inxhinierise Elektrike dhe Kompjuterike" => "Up-FIEK",
-        "Universiteti i Prishtines - Fakulteti i Edukimit" => "Up-",
-        "Universiteti i Prishtines - Fakulteti i Shkencave te Aplikuara" => "",
-        'Universiteti i Mitrovices "Isa Boletini" - Fakulteti i Teknologjise Ushqimore' => "",
-        'Universiteti i Mitrovices "Isa Boletini" - Fakulteti i Inxhinierise Mekanike dhe Kompjuterike' => "",
-        'Universiteti i Mitrovices "Ukshin Hoti" - Fakulteti i Shkencave Kompjuterike' => ""
-
+        "Universiteti i Prishtines - Fakulteti i Edukimit" => "Up-FE",
+        "Universiteti i Prishtines - Fakulteti i Inxhinierise Mekanike" => "Up-FIM",
+        "Universiteti i Prishtines - Fakulteti i Shkencave te Aplikuara" => "UP-FSHA",
+        'Universiteti i Mitrovices "Isa Boletini" - Fakulteti i Teknologjise Ushqimore' => "UMITRO-FTU",
+        'Universiteti i Mitrovices "Isa Boletini" - Fakulteti i Inxhinierise Mekanike dhe Kompjuterike' => "UMITRO-FIMK",
+        'Universiteti i Mitrovices "Ukshin Hoti" - Fakulteti i Shkencave Kompjuterike' => "UMITRO-FSHK"
     );
+
+
+    if(isset($names[$uni_name])){
+        return $names[$uni_name];
+    }
+    else{
+        return$uni_name;
+    }
+
 }
