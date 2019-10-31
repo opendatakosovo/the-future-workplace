@@ -1,6 +1,16 @@
 <!-- BEGIN: Footer-->
+<style>
+    .copy-text{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+        margin-left: 45%;
+        font-size: 11px;
+    }
+</style>
 <footer class="footer footer-static footer-light navbar-shadow">
-    <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
+    <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2" style="position: relative">
           <span class="float-md-left d-block footer-funded-text d-md-inline-block" style="font-size: 13px; text-align: left;float: right ">{{ Lang::get('translation.powered_by')}}
               <div class="funded-logos">
               <a href="https://millenniumkosovo.org/" target="_blank"><img src="/app-assets/css/about_us/img/clients/digdata.png" style="width: 70px; " alt=""></a>
@@ -8,16 +18,14 @@
                   <a href="https://www.mcc.gov/" target="_blank"><img src="/app-assets/css/about_us/img/clients/MCC.png" style="width: 130px; " alt=""></a>
             </div>
         </span>
+
         <span class="float-md-right d-block footer-funded-text d-md-inline-block" style="font-size: 13px; text-align: left;float: right ">{{Lang::get('translation.implemented_by')}}
             <div class="funded-logos">
                <a href="https://opendatakosovo.org" target="_blank"><img src="/app-assets/css/about_us/img/clients/ODK.png" style="margin-top:3%; width: 79px; padding-right: 14px" alt=""></a>
                <a href="https://www.oek-kcc.org/" target="_blank"><img src="/app-assets/css/about_us/img/clients/oek.svg" style="margin-top:0%; width: 70px; " alt=""></a>
             </div>
         </span>
-        {{--<span class="float-md-left d-block d-md-inline-block" style="margin-top: 1%;"><span class="copytirght-text">{{ now()->year }} &copy; Copyright </span><a--}}
-                    {{--class="text-bold-800 grey darken-2 odk-footer-text"--}}
-                    {{--href="https://opendatakosovo.org"--}}
-                    {{--target="_blank">Open Data Kosovo</a></span>--}}
+        <span class="float-md-center copy-text d-block d-md-inline-block" style="margin-top: 1%;"><span class="copytirght-text">{{ now()->year }} &copy; Copyright </span></span>
     </div>
 </footer>
 <!-- END: Footer-->
