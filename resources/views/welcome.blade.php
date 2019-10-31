@@ -21,10 +21,17 @@
         }
     </style>
     <!-- Start Banner Area -->
+
     <section class="home-banner-area relative" style="width: 100%">
+        @if(is_mobile())
         <video style="width: 100%" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src="/app-assets/videos/home-video-compressed3.mp4" type="video/mp4">
+            <source src="/app-assets/videos/home-video-compressed5.mp4" type="video/mp4">
         </video>
+        @else
+            <video style="width: 100%" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="/app-assets/videos/home-video-compressed2.mp4" type="video/mp4">
+            </video>
+        @endif
         <div class="container">
             <div class="row fullscreen d-flex align-items-center justify-content-center">
                 <div class="banner-content col-lg-8 col-md-12" style="position: absolute; margin-top: -35%">
