@@ -146,7 +146,7 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
 
 }
 
-@media screen and (min-width: 370px) and (max-width: 480px) {
+@media screen and (min-width: 350px) and (max-width: 480px) {
     .copy-text {
         position: relative !important;
         margin: 0 !important;
