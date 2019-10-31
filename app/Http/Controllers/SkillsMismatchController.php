@@ -23,7 +23,7 @@ class SkillsMismatchController extends Controller
         $logos = ["primary", "info", 'danger'];
         $up_fshmn_shk_year1 = ["Matematikë elementare", "Matematikë diskrete", "Programimi dhe algoritmet", "Hyrje në shkencë kompjuterike", "Gjuhe Angleze I", "Kalkulus I", "Algjebër lineare me gjeometri analitike", "Strukturat e të dhënave", "Rrjetat kompjuterike dhe WWW", "Aplikacione kompjuterike I", "Gjuhe Angleze II"];
         $up_teknik_inxh_year1 = [
-            "Matematika 1",
+            trans('translation.matematika_1'),
             "Fizika 1",
             "Bazat e elektroteknikes",
             "Gjuhe Programuese",
