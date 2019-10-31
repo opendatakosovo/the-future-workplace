@@ -7,47 +7,52 @@
  */
 
 
-function get_skill_name($id){
+function get_skill_name($id)
+{
 
     $name = \App\Skills::find($id);
-    if($name){
+    if ($name) {
         return $name->skill_name;
     }
 
 }
 
-function get_skill_names($skills_array){
+function get_skill_names($skills_array)
+{
     $skills_res = [];
-    $skills_array = explode(',',$skills_array);
-    foreach ($skills_array as $skill){
+    $skills_array = explode(',', $skills_array);
+    foreach ($skills_array as $skill) {
         $name = \App\Skills::find($skill);
-        if($name){
+        if ($name) {
             $skills_res[] = $name->skill_name;
         }
 
     }
 
-    return implode(',',$skills_res);
+    return implode(',', $skills_res);
 }
 
-function get_skills(){
+function get_skills()
+{
 
     $skills = \App\Skills::all();
 
-    foreach($skills as $skill){
+    foreach ($skills as $skill) {
         $skill_names[] = $skill->skill_name;
     }
 
     return json_encode($skill_names);
 }
 
-function get_current_url(){
+function get_current_url()
+{
     $link = $_SERVER['REQUEST_URI'];
-    $link_array = explode('/',$link);
+    $link_array = explode('/', $link);
     return $page = end($link_array);
 }
 
-function get_short_uni_name($uni_name){
+function get_short_uni_name($uni_name)
+{
     $names = array(
         "Universiteti i Prishtines - Fakulteti i Shkencave Matematiko-Natyrore" => "Up-FSHMN",
         "Universiteti i Prishtines - Fakulteti Ekonomik" => "Up-FE",
@@ -61,11 +66,17 @@ function get_short_uni_name($uni_name){
     );
 
 
-    if(isset($names[$uni_name])){
+    if (isset($names[$uni_name])) {
         return $names[$uni_name];
+    } else {
+        return $uni_name;
     }
-    else{
-        return$uni_name;
-    }
+
+}
+
+function is_mobile()
+{
+
+    return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
 
 }
