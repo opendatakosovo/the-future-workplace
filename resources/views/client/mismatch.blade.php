@@ -628,6 +628,7 @@
                             height: 350,
                             type: 'bar',
                         },
+                        colors: ['#215048', '#42a695'],
                         plotOptions: {
                             bar: {
                                 horizontal: false,
