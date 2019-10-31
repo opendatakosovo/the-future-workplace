@@ -135,6 +135,7 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
         bottom: -17px !important;
     }
 
+
 }
 
 
@@ -146,6 +147,10 @@ body.horizontal-layout[data-color=bg-gradient-x-orca] .content-wrapper-before {
 }
 
 @media screen and (max-width: 480px) {
+    .copy-text {
+        position: relative !important;
+        margin: 0 !important;
+    }
     .footer-funded-text{
         text-align: center !important;
     }
