@@ -27,7 +27,7 @@
         <!-- Revenue, Hit Rate & Deals -->
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12">
-                <div class="card" style="height: 100%">
+                <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">{{Lang::get('translation.skills_mismatch')}}</h4><br>
                         <p class="content-graph">{{Lang::get('translation.mismatch_graph1')}}</p>
@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                             <hr>
-                            <div id="chartContainer" style="width:100%; height:300px;"></div>
+                            <div id="chartContainer" style="width:100%;"></div>
                         </div>
                     </div>
                 </div>
@@ -553,48 +553,7 @@
                     </section>
                 </div>
             </div>
-            {{--<div class="col-xl-4 col-lg-4 col-md-4">--}}
-            {{--<div class="card" style="height: 100%">--}}
-            {{--<div class="card-header">--}}
-            {{--<h4 class="card-title"> {{Lang::get('translation.skills_mismatch_data_graph2_title')}} </h4>--}}
-            {{--<a class="heading-elements-toggle">--}}
-            {{--<i class="la la-ellipsis-v font-medium-3"></i>--}}
-            {{--</a>--}}
-            {{--<div class="heading-elements">--}}
-            {{--<ul class="list-inline mb-0">--}}
-            {{--<li>--}}
-            {{--<a data-action="collapse">--}}
-            {{--<i class="ft-minus"></i>--}}
-            {{--</a>--}}
-            {{--</li>--}}
-            {{--<li>--}}
-            {{--<a data-action="reload">--}}
-            {{--<i class="ft-rotate-cw"></i>--}}
-            {{--</a>--}}
-            {{--</li>--}}
-            {{--<li>--}}
-            {{--<a data-action="close">--}}
-            {{--<i class="ft-x"></i>--}}
-            {{--</a>--}}
-            {{--</li>--}}
-            {{--</ul>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="card-body">--}}
-            {{--<div class="card-content collapse show">--}}
-            {{--<div class="card-body p-0 pb-0">--}}
-            {{--<p class="card-body">--}}
-            {{--{{Lang::get('translation.workforce_data_map_desc')}}--}}
-            {{--</p>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--<div id="chartContainer2" style="width:100%; height:300px;"></div>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--</div>--}}
         </div>
-
-
     </div>
 
     <!-- BEGIN: Page JS-->
