@@ -17,3 +17,10 @@
 <!-- BEGIN: Page JS-->
 <script src="{{URL::asset('/app-assets/js/scripts/pages/dashboard-analytics.js')}}" type="text/javascript"></script>
 <!-- END: Page JS-->
+
+<script>
+    function show_nav(){
+
+        $(".main-menu-content").css('display','block','important');
+    }
+</script>
