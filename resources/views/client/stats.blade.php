@@ -24,7 +24,7 @@
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
                                 <li>
-                                    <a class="btn btn-glow btn-round btn-bg-gradient-x-green-pink" href=""{{URL::route('workforce-map')}}"">{{Lang::get('translation.more')}}</a>
+                                    <a class="btn btn-glow btn-round btn-bg-gradient-x-green-pink" href="{{route('workforce-map')}}">{{Lang::get('translation.more')}}</a>
                             </ul>
                         </div>
                     </div>
