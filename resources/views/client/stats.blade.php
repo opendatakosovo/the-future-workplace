@@ -24,7 +24,7 @@
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
                                 <li>
-                                    <a class="btn btn-glow btn-round btn-bg-gradient-x-green-pink" href="{{ url('workforce-map') }}">{{Lang::get('translation.more')}}</a>
+                                    <a class="btn btn-glow btn-round btn-bg-gradient-x-green-pink" href="{{ url(app()->getLocale().'/workforce-map') }}">{{Lang::get('translation.more')}}</a>
                             </ul>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                         <div class="heading-elements">
                             <ul class="list-inline mb-0">
                                 <li>
-                                    <a class="btn btn-glow btn-round btn-bg-gradient-x-green-pink" href="{{ url(app()->getLocale().'/workforce-map') }}">{{Lang::get('translation.more')}}</a>
+                                    <a class="btn btn-glow btn-round btn-bg-gradient-x-green-pink" href="{{ url(app()->getLocale().'/highschool-data') }}">{{Lang::get('translation.more')}}</a>
                             </ul>
                         </div>
                     </div>
