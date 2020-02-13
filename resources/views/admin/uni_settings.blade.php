@@ -22,6 +22,20 @@
         background-color: #fff;
         border: 1px solid #626E82;
     }
+
+     .current
+    {
+         background-color: #1a9cad;
+         color: white;
+    }
+    .paginate_button
+    {
+        color: black;
+        padding: 8px 8px;
+        text-decoration: none;
+
+    }
+
 </style>
 @section('content')
     @include('admin.universities_crud.universities.create_edit')
