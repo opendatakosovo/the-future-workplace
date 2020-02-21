@@ -50,5 +50,5 @@
 <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/file-uploaders/dropzone.css">
 
 <!-- BEGIN: Custom CSS-->
-{{--<link rel="stylesheet" type="text/css" href="/admin/assets/css/style.css">--}}
+<link rel="stylesheet" type="text/css" href="/admin/app-assets/css/style.css">
 <!-- END: Custom CSS-->

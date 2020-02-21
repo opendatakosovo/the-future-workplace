@@ -44,10 +44,11 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-xl-4 col-lg-6 col-md-12">
                 <div class="card">
                     <div class="card-header ">
-                        <!-- <h4 class="card-title">New Projects</h4> -->
+                        <!-- <h4 class="card-title">New Projects</h4>-->
                         <a class="heading-elements-toggle">
                             <i class="la la-ellipsis-v font-medium-3"></i>
                         </a>
@@ -69,8 +70,8 @@
                             </div>
                             <div class="card-content">
                                 <div id="new-projects" class="height-150 newProjectsdonutShadow">
-                                    <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%"
-                                         class="ct-chart-donut" style="width: 100%; height: 100%;">
+                                    <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" viewBox="0 0 360 auto"
+                                         class="ct-chart-donut-2">
                                         <g class="ct-series ct-series-a">
                                             <path d="M232.55,5A70,70,0,1,0,232.563,5L232.563,15A60,60,0,1,1,232.552,15Z"
                                                   class="ct-slice-donut-solid" ct:value="100"></path>
@@ -88,7 +89,6 @@
                                         </defs>
                                     </svg>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -118,8 +118,23 @@
                                 <h3 class="display-4 blue-grey lighten-1">{{$data['total_pageViews_today']}}</h3>
                             </div>
                             <div class="card-content">
-                                <div id="tasks-completed" class="height-150 tasksCompleteddonutShadow"><svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" width="100%" height="100%" class="ct-chart-donut" style="width: 100%; height: 100%;"><g class="ct-series ct-series-a"><path d="M232.55,5A70,70,0,1,0,232.563,5L232.563,15A60,60,0,1,1,232.552,15Z" class="ct-slice-donut-solid" ct:value="100"></path></g><g><text dx="232.5625" dy="82.001953125" text-anchor="middle" class="ct-label" font-family="feather"></text></g><defs><linearGradient id="donutGradient7" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="rgba(253,185,1,1)"></stop><stop offset="95%" stop-color="rgba(253,185,1, 0.3)"></stop></linearGradient></defs></svg></div>
-
+                                <div id="tasks-completed" class="height-150 tasksCompleteddonutShadow">
+                                    <svg xmlns:ct="http://gionkunz.github.com/chartist-js/ct" viewBox="0 0 360 auto"
+                                         class="ct-chart-donut">
+                                        <g class="ct-series ct-series-a">
+                                            <path d="M232.55,5A70,70,0,1,0,232.563,5L232.563,15A60,60,0,1,1,232.552,15Z"
+                                                  class="ct-slice-donut-solid" ct:value="100"></path>
+                                        </g>
+                                        <g><text dx="232.5625" dy="82.001953125" text-anchor="middle" class="ct-label" font-family="feather">
+                                            </text>
+                                        </g>
+                                        <defs><linearGradient id="donutGradient7" x1="0" y1="1" x2="0" y2="0">
+                                                <stop offset="0%" stop-color="rgba(253,185,1,1)"></stop>
+                                                <stop offset="95%" stop-color="rgba(253,185,1, 0.3)"></stop>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
