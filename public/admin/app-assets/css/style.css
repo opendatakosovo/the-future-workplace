@@ -1,0 +1,29 @@
+.dataTables_paginate .paginate_button{
+    padding-right: 2px !important;
+}
+
+
+.current
+{
+    background-color: #1a9cad !important;
+    color: white !important;
+}
+
+
+.paginate_button
+{
+    color: black !important;
+    padding: 8px 8px !important;
+    text-decoration: none !important;
+
+}
+
+#new-projects
+{
+    margin-left: -165px !important;
+}
+
+#tasks-completed
+{
+    margin-left: -165px !important;
+}
