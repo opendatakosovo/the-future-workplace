@@ -236,4 +236,26 @@ return array (
     'opt_com_tech' => 'Optička komunikaciona tehnologija',
     'intro_electromagnetics' => 'Uvod u bioelektromagnetiku',
     'digital_tv' => 'Digitalna televizija',
+
+
+
+    'FAQ'=>'Često postavljana pitanja',
+    'question_1' =>'1. Koji podaci su dostupni na platformi?',
+    'question_2' =>'2. Kako mogu preuzeti podatke sa platforme ?',
+    'question_3' =>'3. Odakle ste dobili podatke?',
+    'question_4' =>'4. Kako možemo da koristimo filtere u grafikonima i grafikonima? ',
+    'question_5' =>'5. U kom formatu se nalaze podaci?',
+    'question_6' =>'6. Koje ICT veštine preduzeća najviše traže u 2019. godini?',
+    'question_7' =>'7. Kakve koristi donosi studentima i preduzećima?',
+    'answer_1'=>'1. Platforma „Buduće radno mesto“ pruža brojne statistike koje pokazuju broj diplomanata u srednjim školama i na Univerzitetu, broj IKT preduzeća sa sedištem u kosovskim opštinama, aktivnosti i prihode preduzeća i neusklađenost veština.',
+    'answer_2'=>'2. Svi podaci vizualizovani na našoj platformi mogu se preuzeti kao ekcel listovi, prvo morate da kliknete na opciju „Dovnload“ na navigacijskoj traci platforme, a zatim odaberete opcije koje vam se dopadaju, npr. tip podataka, vrsta formata i godina.',
+    'answer_3'=>'3. Podaci prikazani na platformi su dostavljeni od strane Ministarstva prosvete, nauke i tehnologije, Ministarstva trgovine i industrije, Poreske uprave Kosova i ICT preduzeća.',
+    'answer_4'=>'4. Na etiketama, podaci koji se vide u glavnom meniju „Podaci kompanije“ i „Podaci o diplomiranim licima“, podaci u odgovarajućim grafikonima mogu se očitati u zavisnosti od kriterijuma koji vas zanimaju. Ovaj izbor se vrši kroz postavljene filtere koji su kap donji meni sa podacima koje trebate da izaberete za svaki od postavljenih filtera: godine, status, aktivnosti, grad, akademski nivo i univerzitet. Nakon odabira svakog od njih na dnu pritisnite „Filter“ za vizualizaciju podataka grafikona na odgovarajućim grafovima.',
+    'answer_5'=>'5. Možete prenijeti format podataka u opciji za odabir prilikom preuzimanja kao što su Json i CSV.',
+    'answer_6'=>'6. Neke veštine koje preduzeća moraju da razviju dosledno u svojim aktivnostima su; PHP, Javascript, Html, Css, C #, Java, jKueri, Svift, SKL i mnogi drugi.',
+    'answer_7'=>'7. Platforma Future Vokrplace omogućava svima pristup najnovijim dostignućima u oblasti tehnologije, u ovom slučaju je posebno korisna studentima i preduzećima. Platforma im omogućava da odaberu pravi kurs za dodiplomske i diplomske studije, pružajući im priliku da vide šta je najpotrebnije u našoj zemlji, a sa druge strane pomaže preduzećima da vide najnovija dostignuća na tržištu rada tamo gde imaju da odabere najprofitabilnije i najperspektivnije aktivnosti.
+
+
+
+    
     );

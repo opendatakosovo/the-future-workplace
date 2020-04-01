@@ -232,7 +232,25 @@ return array(
             'commutating_signals' => 'Commutating Signals',
             'optic_technology' => 'Optic Technology',
             'intro_electromagnetics' => 'Intro to Electromagnetics',
-            'digital_tv' => 'Digital Television'
+            'digital_tv' => 'Digital Television',
+
+
+
+            'FAQ'=>'Frequently asked questions',
+            'question_1' => '1. What data are available on the platform?',
+            'question_2' => '2. How can I download data from the platform?',
+            'question_3' => '3. Where did you get the data from?',
+            'question_4' => '4. How can we use the filters in the graphs and charts?',
+            'question_5' => '5. In which format is the data? ',
+            'question_6' => '6. What ICT skills are most sought after by businesses in 2019?',
+            'question_7' => '7. What benefits does it bring to students and businesses?',
+            'answer_1'=>'1.  The "Future Workplace" platform provides numerous statistics showing the number of ICT graduates in high school and University, the number of ICT businesses based in Kosovo municipalities, the businesses’ activities and income, and the skills mismatch.',
+            'answer_2'=>'2.  All data visualized on our platform can be downloaded as excel sheets, you must first click on the “Download” option on the navigation bar of the platform, then from there select the options you prefer e.g. data type, format type, and year.',
+            'answer_3'=>'3. The data displayed in the platform have been provided by the Ministry of Education, Science and Technology, Ministry of Trade and Industry, Tax Administration of Kosovo, and ICT businesses.',
+            'answer_4'=>'4.  In the labels, data seen in the main menu “Company Data” and “Graduates Data” the data in the respective graphs can be read depending on the criteria you are interested in. This selection is made through set filters which are a drop down menu with the data you need to select for each of the set filters: years, status, activities, city, academic level and university. After selecting each one at the bottom press the “Filter” for visualizing graph data in the respective graphs.',
+            'answer_5'=>'5.  You can specify the data format in the selection option when downloading such as Json and CSV. ',
+            'answer_6'=>'6.  Some of the skills businesses need to develop consistent in their activities are; PHP, Javascript, Html, Css, C#, Java, jQuery, Swift, SQL and many more.',
+            'answer_7'=>'7.  The Future Workplace platform allows everyone access to the latest developments in the field of technology, in this case it is particularly beneficial to students and businesses. The platform enables them to choose the right course for undergraduate and graduate studies, providing them with the opportunity to see what is most needed in our country, and on the other hand helps businesses to see the latest developments large in the labor market where they have to choose the most profitable and most promising activities.'
 
 
 );

@@ -226,7 +226,26 @@ return array(
     'commutating_signals' => 'Sisteme komutuese',
     'optic_technology' => 'Teknologjia e komunikimeve optike',
     'intro_electromagnetics' => 'Hyrje në bioelektromagnetikë',
-    'digital_tv' => 'Televizioni digjital'
+    'digital_tv' => 'Televizioni digjital',
+
+
+
+
+    'FAQ'=>'Pyetjet më të kërkurara së fundmi',
+    'question_1' =>'1. Cilat të dhëna janë të disponueshme në platformë?',
+    'question_2' =>'2. Si mund t’i shkarkoj të dhënat nga platforma?',
+    'question_3' =>'3. Si i keni siguruar të dhënat? ',
+    'question_4' =>'4.   Si përdoren filterat në grafe?',
+    'question_5' =>'5.   Cfarë formati janë të dhënat?',
+    'question_6' =>'6.   Cilat aftësi të TIK-ut kërkohen nga bizneset në vitin 2019?',
+    'question_7' =>'7.   Cfare përfitime i sjell nxënësve dhe bizneseve? ',
+    'answer_1'=>'1.  Platforma “The Future Workplace” ofron statistika të shumta të cilat tregojnë numrin e të diplomuarve në shkolla të mesme dhe universitete në fushen e TIK, numrin e bizneseve në fushen e TIK në bazë të komunave të Kosovës, aktivitetet me të cilat merren bizneset dhe të ardhurat e tyre si dhe mosperputhjen e aftësive.',
+    'answer_2'=>'2.  Të gjitha të dhënat e vizualizuara në platformën tonë mund t’i shkarkoni në formë të fletave të excel-it, fillimisht duhet të shtypni opsionin “Download” në shiritin e navigimit të platformës, pastaj nga atje zgjedhni opsionet që preferoni, psh: llojin e të dhënave, llojin e formatit dhe vitin.',
+    'answer_3'=>'3.  Të dhënat në platformë i kemi siguruar nga Ministria e Arsimit Shkencës dhe Teknologjisë, Ministria e Tregtisë dhe Industrisë, Administrata Tatimore e Kosovës dhe bizneset e TIK-ut.',
+    'answer_4'=>'4.  Tek etiketat e vendosura në menynë kryesore “Company Data” dhe “Graduates Data” të dhënat në grafet përkatëse mund të lexohen varësisht nga kriteret që ju interesojnë. Kjo përzgjedhje bëhet përmes filterave të vendosur të cilët janë një nënmeny rënëse me të dhënat që ju duhet t’i selektoni për secilin prej filterave të vendosur për; vitin, statusin, aktivitetet, qytetin, nivelin akademik dhe universitetin. Pas zgjedhjes së secilit në fund shtypni "Filter" për të vizualizuar të dhënat e grafikëve në grafikët përkatës.',
+    'answer_5'=>'5.  Formatin e të dhënave mund ta përcaktoni tek opsioni për seleksionim gjatë shkarkimit të të dhënave; json ose csv.',
+    'answer_6'=>'6.  Disa nga aftësitë që bizneset duhet t’i zhvillojnë në përputhje me aktivitetet e tyre janë; PHP, Javascript, Html, Css, C #, Java, jQuery, Swift, SQL dhe shumë më tepër.',
+    'answer_7'=>'7.  Platforma “The Future Workplace” u lejon të gjithve qasje në zhvillimet më të fundit në fushën e teknologjisë, në këtë rast është e dobishme vecanërisht për studentët dhe bizneset. Platforma u mundëson atyre të zgjedhin drejtimin e duhur për studime parauniversitare dhe universitare, duke u siguruar atyre mundësinë për të parë se çfarë është më e nevojshme në vendin tonë, dhe nga ana tjetër ndihmon bizneset të shohin zhvillimet e fundit më të mëdha në tregun e punës, ku ata kanë për të zgjedhur aktivitetet më fitimprurëse dhe më premtuese.'
 
 
 );
